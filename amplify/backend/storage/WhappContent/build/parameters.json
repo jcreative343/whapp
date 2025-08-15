@@ -1,0 +1,33 @@
+{
+  "bucketName": "wholistichealthapp1ff4b8b301944852a9bdb77c39f1e",
+  "selectedGuestPermissions": [
+    "s3:PutObject"
+  ],
+  "selectedAuthenticatedPermissions": [
+    "s3:PutObject",
+    "s3:GetObject",
+    "s3:ListBucket",
+    "s3:DeleteObject"
+  ],
+  "unauthRoleName": {
+    "Ref": "UnauthRoleName"
+  },
+  "authRoleName": {
+    "Ref": "AuthRoleName"
+  },
+  "s3PrivatePolicy": "Private_policy_1a464d45",
+  "s3ProtectedPolicy": "Protected_policy_1a464d45",
+  "s3PublicPolicy": "Public_policy_1a464d45",
+  "s3ReadPolicy": "read_policy_1a464d45",
+  "s3UploadsPolicy": "Uploads_policy_1a464d45",
+  "authPolicyName": "s3_amplify_1a464d45",
+  "unauthPolicyName": "s3_amplify_1a464d45",
+  "AuthenticatedAllowList": "ALLOW",
+  "GuestAllowList": "DISALLOW",
+  "s3PermissionsAuthenticatedPrivate": "s3:PutObject,s3:GetObject,s3:DeleteObject",
+  "s3PermissionsAuthenticatedProtected": "s3:PutObject,s3:GetObject,s3:DeleteObject",
+  "s3PermissionsAuthenticatedPublic": "s3:PutObject,s3:GetObject,s3:DeleteObject",
+  "s3PermissionsAuthenticatedUploads": "s3:PutObject",
+  "s3PermissionsGuestPublic": "s3:PutObject",
+  "s3PermissionsGuestUploads": "s3:PutObject"
+}

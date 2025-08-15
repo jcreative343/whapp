@@ -1,0 +1,19 @@
+{
+    "AppSyncApiName": "WholisticHealthApp",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authWholisticHealthApp",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "S3DeploymentBucket": "amplify-wholistichealthapp-staging-7b5b0-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/d3ec16bbf65af1a932edca9f5ded9e93cf79482f"
+}

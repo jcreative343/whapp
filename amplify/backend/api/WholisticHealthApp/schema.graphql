@@ -1,0 +1,585 @@
+type Login @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  Email: AWSEmail
+  Password: String
+  LoginDate: AWSDate
+  LoginTime: AWSTime
+  ProfileType: String
+  GeneralInformation: [GeneralInformation] @manyToMany(relationName: "LoginGeneralInformation")
+}
+
+type CreatePlan @model @auth(rules: [{allow: public}, {allow: owner}]) {
+  id: ID!
+  userId: ID!
+  PSProblemSolving: Boolean
+  PSSelfEsteem: Boolean
+  PSChoiceAutonomy: Boolean
+  PSSelfCare: Boolean
+  PSSelfAwareness: Boolean
+  PSCreativity: Boolean
+
+  CSForgiveness: Boolean
+  CSKindness: Boolean
+  CSGratitude: Boolean
+  CSPatience: Boolean
+  CSCourage: Boolean
+
+  CMSCopingChoice: Boolean
+  CMSResilience: Boolean
+  CMSSelfRegulation: Boolean
+  CMSOptimism: Boolean
+
+  COMSupportSystem: Boolean
+  COMSocialIntelligence: Boolean
+  COMCommunication: Boolean
+  COMFaithCommunity: Boolean
+  COMAccomplishments: Boolean
+
+  BRStableHousing: Boolean
+  BRQualityHealthcare: Boolean
+  BRProfessionalAccess: Boolean
+  BRInsuranceCoverage: Boolean
+  BRFinancialConstraints: Boolean
+  BREducationAttainment: Boolean
+  BRSocialStigma: Boolean
+  BRUnsupportiveCommunity: Boolean
+  BRNonexistentCommunity: Boolean
+  BRCommunityResources: Boolean
+  BRProfessionalTrust: Boolean
+  BRHealthcareSystemTrust: Boolean
+  BRCognitiveImpairments: Boolean
+  BRDependentCare: Boolean
+  BRTransportation: Boolean
+  BRTechnologyAccess: Boolean
+  BRLanguage: Boolean
+  BRHealthcareProcess: Boolean
+  BROther: Boolean
+  BRResponseNote: String
+
+  TGBetrayal: Boolean
+  TGBoundaries: Boolean
+  TGDisorder: Boolean
+  TGPain: Boolean
+  TGRejection: Boolean
+  TGStress: Boolean
+  TGMemories: Boolean
+  TGUnjustTreatment: Boolean
+  TGUnpleasantConversations: Boolean
+  TGUnsafeEnvironments: Boolean
+  TGOther: Boolean
+
+  WSFlashbacks: Boolean
+  WSIncreasedAppetite: Boolean
+  WSDecreasedAppetite: Boolean
+  WSIntenseEmotions: Boolean
+  WSDisconnecting: Boolean
+  WSTime: Boolean
+  WSNegativeSelfTalk: Boolean
+  WSNeglectingSelfCare: Boolean
+  WSNightmares: Boolean
+  WSRecklessBehavior: Boolean
+  WSOther: Boolean
+
+
+}
+
+type GeneralInformation @model @auth(rules: [{allow: public}, {allow: owner}]) {
+  id: ID!
+  userId: ID!
+  FirstName: String!
+  LastName: String!
+
+  Email: AWSEmail!
+  ProfessionalRole: String
+  BusinessName: String
+  BusinessEIN: Int
+  BusinessCountry: String
+  BusinessAddress: String
+  BusinessCity: String
+  BusinessState: String
+  BusinessZipCode: Int
+  BusinessPhoneNumber: String
+  BusinessWebsite: String
+  OrganizationAdministrator: Boolean
+  OrganizationEmployee: Boolean
+  Department: String
+  Service: String
+  ProgramsUnit: String
+  TrackPlan: [TrackPlan] @manyToMany(relationName: "GeneralInformationTrackPlan")
+  AssessmentAnswers: [AssessmentAnswers] @manyToMany(relationName: "GeneralInformationAssessmentAnswers")
+  
+  ProfileType: String
+  Login: [Login] @manyToMany(relationName: "LoginGeneralInformation")
+}
+
+type AssessmentAnswers @model @auth(rules: [{allow: public}, {allow: owner}]) {
+  id: ID!
+  userId: ID!
+  CompletedDate: String
+  CompletedTime: String
+  TRHurtfulNames: Boolean
+  TRNoNurturing: Boolean
+  TRHit: Boolean
+  TRNeedsNotMet: Boolean
+  TRForcedSex: Boolean
+  TRResponsible: Boolean
+  TRViolence: Boolean
+  TRSubstanceAbuse: Boolean
+  TRMentalIllness: Boolean
+  TRParentDivorce: Boolean
+  TRParentIncarcerated: Boolean
+  TRHomelessness: Boolean
+  TRBodyFunction: Boolean
+  TRNaturalDisaster: Boolean
+  TRDirectTerrorism: Boolean
+  TRIndirectTerrorism: Boolean
+  TRLovedOne: Boolean
+  TRBelief: Boolean
+  TRResponseProfessional: Boolean
+  TRResponseFamilyFriend: Boolean
+  TRResponseGod: Boolean
+  TRResponseNoOne: Boolean
+  TRNoTrauma: Boolean
+  CMAlcohol: String!
+  CMDrugs: String!
+  CMOvereating: String!
+  CMSmoking: String!
+  CMGaming: String!
+  CMShopping: String!
+  CMGambling: String!
+  CMSex: String!
+  CMPorn: String!
+  CMBlaming: String!
+  CMHurting: String!
+  CMDisengage: String!
+  CMArt: String!
+  CMMusic: String!
+  CMPoetry: String!
+  CMReading: String!
+  CMGroups: String!
+  CMCounseling: String!
+  CMVenting: String!
+  CMWriting: String!
+  CMSensory: String!
+  CMDancing: String!
+  CMExercising: String!
+  CMWalking: String!
+  CMChange: String!
+  CMAnalyze: String!
+  CMDaydream: String!
+  CMPositive: String!
+  MHDxPTSD: Boolean!
+  MHDxDepression: Boolean!
+  MHDxSUD: Boolean!
+  MHDxOtherMental: Boolean!
+  MHSleeplessness: String!
+  MHAlcoholUse: String!
+  MHAnxiety: String!
+  MHDepression: String!
+  MHDrugUse: String!
+  MHGrief: String!
+  MHGuilt: String!
+  MHIrritability: String!
+  MHStress: String!
+  MHRegret: String!
+  MHSuicidalThoughts: String!
+  MHLoneliness: String!
+  MHWorry: String!
+  PHDxInfertility: Boolean!
+  PHDxCurableSTD: Boolean!
+  PHDxIncurableSTD: Boolean!
+  PHDxCancer: Boolean!
+  PHDxDiabetes: Boolean!
+  PHDxHighBlood: Boolean!
+  PHDxHeartDisease: Boolean!
+  PHDxIrritableBowel: Boolean!
+  PHDxVitA: Boolean!
+  PHDxVitB: Boolean!
+  PHDxVitC: Boolean!
+  PHDxVitD: Boolean!
+  PHDxVitE: Boolean!
+  PHDxVitK: Boolean!
+  PHDxAutoimmune: Boolean!
+  PHDxOtherPhysical: Boolean!
+  PHVegeFruits: String!
+  PHBeanLentils: String!
+  PHGrainBreads: String!
+  PHDairy: String!
+  PHMeat: String!
+  PHFishSeafood: String!
+  PHSweets: String!
+  PHWater: String!
+  PHPhysicalActivity: String!
+  SHSpiritualDefine: String
+  SHSpiritualIntegrate: String
+  SHPrayer: String
+  SHSpiritualActivity: String
+  SHReadText: String
+  SHAlignText: String
+  SHCommunity: String
+  OLHope: String!
+  OLPeace: String!
+  OLLearning: String!
+  OLJoy: String!
+  OLStable: String!
+  OLSafety: String!
+  OLKindness: String!
+  OLForgiveness: String!
+  OLPatience: String!
+  OLRelationships: String!
+  OLBoundaries: String!
+  OLEUnpleasant: String!
+  OLEPleasant: String!
+  OLEControl: String!
+  OLENumber: String!
+  SDoHAgeRange: String
+  SDoHRace: String
+  SDoHGeographicRegion: String
+  SDoHEthnicity: String
+  SDoHState: String
+  SDoHZipCode: String
+  SDoHMaritalStatus: String
+  SDoHMilitaryStatus: String
+  SDoHGender: String
+  SDoHEducation: String
+  SDoHJobStatus: String
+  SDoHIncome: String
+  SDoHHousingStatus: String
+  SDoHHomeAsChild: String
+  TrackPlan: [TrackPlan] @manyToMany(relationName: "AssessmentAnswersTrackPlan")
+  GeneralInformation: [GeneralInformation] @manyToMany(relationName: "GeneralInformationAssessmentAnswers")
+  SDoHReligion: String
+  SDoHDenomination: String
+  isActive: Boolean!
+  SHSkip: Boolean
+  ProAssessmentFinalizedReview1: Boolean
+  ProAssessmentFinalizedReviewDate1: AWSDate
+  ProAssessmentFinalizedName1: String
+  ProAssessmentFinalizedRole1: String
+  ProAssessmentFinalizedReview2: Boolean
+  ProAssessmentFinalizedReviewDate2: AWSDate
+  ProAssessmentFinalizedName2: String
+  ProAssessmentFinalizedRole2: String
+  ProAssessmentFinalizedReview3: Boolean
+  ProAssessmentFinalizedReviewDate3: AWSDate
+  ProAssessmentFinalizedName3: String
+  ProAssessmentFinalizedRole3: String
+  
+}
+
+type AssessmentScores @model @auth(rules: [{allow: public}, {allow: owner}]) {
+  id: ID!
+  userId: ID!
+  CompletedDate: String
+  CompletedTime: String
+  TRHurtfulNames: Int
+  TRNoNurturing: Int
+  TRHit: Int
+  TRNeedsNotMet: Int
+  TRForcedSex: Int
+  TRResponsible: Int
+  TRViolence: Int
+  TRSubstanceAbuse: Int
+  TRMentalIllness: Int
+  TRParentDivorce: Int
+  TRParentIncarcerated: Int
+  TRHomelessness: Int
+  TRBodyFunction: Int
+  TRNaturalDisaster: Int
+  TRDirectTerrorism: Int
+  TRIndirectTerrorism: Int
+  TRLovedOne: Int
+  TRBelief: Float
+  TRResponseProfessional: Float
+  TRResponseFamilyFriend: Float
+  TRResponseGod: Float
+  TRResponseNoOne: Float
+  TRNoTrauma: Float
+  CMAlcohol: Int
+  CMDrugs: Int
+  CMOvereating: Int
+  CMSmoking: Int
+  CMGaming: Int
+  CMShopping: Int
+  CMGambling: Int
+  CMSex: Int
+  CMPorn: Int
+  CMBlaming: Int
+  CMHurting: Int
+  CMDisengage: Int
+  CMArt: Float
+  CMMusic: Float
+  CMPoetry: Float
+  CMReading: Float
+  CMGroups: Float
+  CMCounseling: Float
+  CMVenting: Float
+  CMWriting: Float
+  CMSensory: Float
+  CMDancing: Float
+  CMExercising: Float
+  CMWalking: Float
+  CMChange: Float
+  CMAnalyze: Float
+  CMDaydream: Float
+  CMPositive: Float
+  MHDxPTSD: Float
+  MHDxDepression: Float
+  MHDxSUD: Float
+  MHDxOtherMental: Float
+  MHSleeplessness: Int
+  MHAlcoholUse: Int
+  MHAnxiety: Int
+  MHDepression: Int
+  MHDrugUse: Int
+  MHGrief: Int
+  MHGuilt: Int
+  MHIrritability: Int
+  MHStress: Int
+  MHRegret: Int
+  MHSuicidalThoughts: Int
+  MHLoneliness: Int
+  MHWorry: Int
+  PHDxInfertility: Float
+  PHDxCurableSTD: Float
+  PHDxIncurableSTD: Float
+  PHDxCancer: Float
+  PHDxDiabetes: Float
+  PHDxHighBlood: Float
+  PHDxHeartDisease: Float
+  PHDxIrritableBowel: Float
+  PHDxVitA: Float
+  PHDxVitB: Float
+  PHDxVitC: Float
+  PHDxVitD: Float
+  PHDxVitE: Float
+  PHDxVitK: Float
+  PHDxAutoimmune: Float
+  PHDxOtherPhysical: Float
+  PHVegeFruits: Int
+  PHBeanLentils: Int
+  PHGrainBreads: Float
+  PHDairy: Float
+  PHMeat: Float
+  PHFishSeafood: Float
+  PHSweets: Int
+  PHWater: Int
+  PHPhysicalActivity: Int
+  SHSpiritualDefine: Int
+  SHSpiritualIntegrate: Int
+  SHPrayer: Int
+  SHSpiritualActivity: Int
+  SHReadText: Int
+  SHAlignText: Int
+  SHCommunity: Int
+  OLHope: Int
+  OLPeace: Int
+  OLLearning: Int
+  OLJoy: Int
+  OLStable: Int
+  OLSafety: Int
+  OLKindness: Int
+  OLForgiveness: Int
+  OLPatience: Int
+  OLRelationships: Int
+  OLBoundaries: Int
+  OLEUnpleasant: Int
+  OLEPleasant: Int
+  OLEControl: Int
+  OLENumber: Int
+  SDoHAgeRange: String
+  SDoHRace: String
+  SDoHGeographicRegion: String
+  SDoHEthnicity: String
+  SDoHState: String
+  SDoHZipCode: String
+  SDoHMaritalStatus: String
+  SDoHMilitaryStatus: String
+  SDoHGender: String
+  SDoHEducation: String
+  SDoHJobStatus: String
+  SDoHIncome: String
+  SDoHHousingStatus: String
+  SDoHHomeAsChild: String
+  SDoHReligion: String
+  SDoHDenomination: String
+  TRScore: String
+  CMScore: String
+  MHScore: String
+  PHScore: String
+  SHScore: String
+  OLScore: String
+  isActive: Boolean!
+  SHSkip: Boolean
+  ProAssessmentFinalizedReview1: Boolean
+  ProAssessmentFinalizedReviewDate1: AWSDate
+  ProAssessmentFinalizedName1: String
+  ProAssessmentFinalizedRole1: String
+  ProAssessmentFinalizedReview2: Boolean
+  ProAssessmentFinalizedReviewDate2: AWSDate
+  ProAssessmentFinalizedName2: String
+  ProAssessmentFinalizedRole2: String
+  ProAssessmentFinalizedReview3: Boolean
+  ProAssessmentFinalizedReviewDate3: AWSDate
+  ProAssessmentFinalizedName3: String
+  ProAssessmentFinalizedRole3: String
+}
+
+
+type TrackPlan @model @auth(rules: [{allow: public}, {allow: owner}]) {
+  id: ID!
+  userId: ID!
+  CompletedDate: AWSDate
+  CompletedTime: AWSTime
+  ActionDomain: String
+  ActionQuestion: String
+  Action: String
+  Frequency: String
+  ActionNote: String
+  Update1Points: Float
+  Update1Note: String
+  Update1Date: AWSDate
+  Update2Points: Float
+  Update2Note: String
+  Update2Date: AWSDate
+  Update3Points: Float
+  Update3Note: String
+  Update3Date: AWSDate
+  Update4Points: Float
+  Update4Note: String
+  Update4Date: AWSDate
+  Update5Points: Float
+  Update5Note: String
+  Update5Date: AWSDate
+  Update6Points: Float
+  Update6Note: String
+  Update6Date: AWSDate
+  Update7Points: Float
+  Update7Note: String
+  Update7Date: AWSDate
+  Update8Points: Float
+  Update8Note: String
+  Update8Date: AWSDate
+  Percentage: Int
+  Discontinued: Boolean
+  DiscontinuedDate: AWSDate
+  Successful: Boolean
+  SuccessfulDate: AWSDate
+  
+  AssessmentAnswers: [AssessmentAnswers] @manyToMany(relationName: "AssessmentAnswersTrackPlan")
+  GeneralInformation: [GeneralInformation] @manyToMany(relationName: "GeneralInformationTrackPlan")
+  
+}
+ type ConnectionRequest @model @auth(rules: [{ allow: public }, { allow: owner }]) {
+  id: ID!
+  requesterId: String!
+  requesterFirstName: String!
+  requesterLastName: String!
+  requesterEmail: AWSEmail!
+  targetEmail: AWSEmail!
+  status: String! # "pending", "accepted", "declined"
+  direction: String! # "toProfessional" or "toIndividual"
+}
+
+type UserLink @model @auth(rules: [{ allow: public }, { allow: owner }]) {
+  id: ID!
+  professionalId: String!
+  professionalEmail: String!
+  professionalFirstName: String!
+  professionalLastName: String!
+  clientId: String!
+  clientEmail: String!
+  clientFirstName: String!
+  clientLastName: String!
+  clientViewable: Boolean!
+  subscriptionId: String
+}
+
+
+type OrganizationInformation @model @auth(rules: [{ allow: public }, { allow: owner }]) {
+  id: ID!
+  userId: ID!
+  
+  BusinessName: String
+  BusinessEIN: Int
+  BusinessCountry: String
+  BusinessAddress: String
+  BusinessCity: String
+  BusinessState: String
+  BusinessZipCode: Int
+  BusinessPhoneNumber: String
+  BusinessWebsite: String
+  Departments: [String]
+  ProgramsUnits: [String]
+  Services: [String]
+  clientsServed: Int
+}
+
+type OrganizationCPs @model @auth(rules: [{ allow: owner }, { allow: public }]) {
+  id: ID!
+  OrganizationId: ID!
+  OrganizationCPFirstName: String
+  OrganizationCPLastName: String
+  OrganizationCPEmail: AWSEmail!
+  OrganizationCPRole: String
+  primaryDepartment: String
+  primaryProgramsUnit: String
+  primaryService: String
+  OrganizationAdministrator: Boolean!
+  PrimaryOrganizationAdministrator: Boolean!
+}
+type Notifications @model @auth(rules: [{ allow: owner }, { allow: public }]) {
+  id: ID!
+  RecommedationResult: String
+  RecommedationAction: String
+  RecommedationActionFrequency: String
+  RecommedationType: String
+  RecommedationNote: String
+  RecommendationDate: AWSDate
+  SenderId: String!
+  SenderFirstName: String!
+  SenderLastName: String!
+  SenderEmail: String!
+  TargetEmail: String!
+  NotificationType: String!
+  StatusDate: AWSDate
+  Status: String! # "pending", "accepted", "declined", "read"
+}
+
+
+type UserPayments @model @auth(rules: [{ allow: owner }, { allow: public }]) {  
+  id: ID!
+  userId: ID!
+  organizationId: ID        # always same as userId for orgs
+  organizationName: String
+
+  paymentType: String        # "annual" or "monthly"
+  subscriptionId: String      # PayPal subscription ID (if used)
+  paymentStatus: String       # "paid", "pending", "cancelled", etc.
+  
+  
+  clientsProjected: Int
+  costPerClient: Int         # used in cost calc
+  couponCode: String          # e.g. "BACKTOSCHOOL20"
+  couponPercent: Int         # e.g. 20 for 20%
+
+  paidUntil: AWSDateTime     # cutoff access after this date
+  paymentFor: String! # "organization", "individual", "professional"
+}
+type Coupon @model @auth(rules: [{ allow: owner }, { allow: public }]) {
+  id: ID!
+  type: String! 
+  value: Float! 
+  isActive: Boolean!
+  maxUses: Int!
+  timesUsed: Int!
+  expiresAt: AWSDateTime!
+}
+type ProfessionalReviews @model @auth(rules: [{ allow: owner }, { allow: public }]) {
+  id: ID!
+  ReviewedId: ID!
+  ReviewType: String!
+  ProfessionalName: String!
+  ProfessionalRole: String!
+  ReviewDate: AWSDate!
+}

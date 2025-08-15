@@ -1,0 +1,16 @@
+{
+  "resourceName": "WhappContent",
+  "policyUUID": "1a464d45",
+  "bucketName": "wholistichealthapp1ff4b8b301944852a9bdb77c39f1e",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "CREATE_AND_UPDATE"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

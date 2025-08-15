@@ -1,0 +1,60 @@
+## [Start] Authorization Steps. **
+$util.qr($ctx.stash.put("hasAuth", true))
+#set( $inputFields = $util.parseJson($util.toJson($ctx.args.input.keySet())) )
+#set( $isAuthorized = false )
+#set( $allowedFields = [] )
+#if( $util.authType() == "API Key Authorization" )
+  #set( $isAuthorized = true )
+#end
+#if( $util.authType() == "IAM Authorization" )
+  #foreach( $adminRole in $ctx.stash.adminRoles )
+    #if( $ctx.identity.userArn.contains($adminRole) && $ctx.identity.userArn != $ctx.stash.authRole && $ctx.identity.userArn != $ctx.stash.unauthRole )
+      #return($util.toJson({}))
+    #end
+  #end
+$util.unauthorized()
+#end
+#if( $util.authType() == "User Pool Authorization" )
+  #set( $ownerEntity0 = $util.defaultIfNull($ctx.args.input.owner, null) )
+  #set( $ownerClaim0 = $util.defaultIfNull($ctx.identity.claims.get("sub"), null) )
+  #set( $currentClaim1 = $util.defaultIfNull($ctx.identity.claims.get("username"), $util.defaultIfNull($ctx.identity.claims.get("cognito:username"), null)) )
+  #if( !$util.isNull($ownerClaim0) && !$util.isNull($currentClaim1) )
+    #set( $ownerClaim0 = "$ownerClaim0::$currentClaim1" )
+    #if( $isAuthorized && $util.isNull($ownerEntity0) && !$ctx.args.input.containsKey("owner") )
+      $util.qr($ctx.args.input.put("owner", $ownerClaim0))
+    #end
+    #if( !$isAuthorized )
+      #set( $ownerClaimsList0 = [] )
+      $util.qr($ownerClaimsList0.add($util.defaultIfNull($ctx.identity.claims.get("sub"), null)))
+      $util.qr($ownerClaimsList0.add($util.defaultIfNull($ctx.identity.claims.get("username"), $util.defaultIfNull($ctx.identity.claims.get("cognito:username"), null))))
+      #set( $ownerAllowedFields0 = ["id","userId","CompletedDate","CompletedTime","TRHurtfulNames","TRNoNurturing","TRHit","TRNeedsNotMet","TRForcedSex","TRResponsible","TRViolence","TRSubstanceAbuse","TRMentalIllness","TRParentDivorce","TRParentIncarcerated","TRHomelessness","TRBodyFunction","TRNaturalDisaster","TRDirectTerrorism","TRIndirectTerrorism","TRLovedOne","TRBelief","TRResponseProfessional","TRResponseFamilyFriend","TRResponseGod","TRResponseNoOne","TRNoTrauma","CMAlcohol","CMDrugs","CMOvereating","CMSmoking","CMGaming","CMShopping","CMGambling","CMSex","CMPorn","CMBlaming","CMHurting","CMDisengage","CMArt","CMMusic","CMPoetry","CMReading","CMGroups","CMCounseling","CMVenting","CMWriting","CMSensory","CMDancing","CMExercising","CMWalking","CMChange","CMAnalyze","CMDaydream","CMPositive","MHDxPTSD","MHDxDepression","MHDxSUD","MHDxOtherMental","MHSleeplessness","MHAlcoholUse","MHAnxiety","MHDepression","MHDrugUse","MHGrief","MHGuilt","MHIrritability","MHStress","MHRegret","MHSuicidalThoughts","MHLoneliness","MHWorry","PHDxInfertility","PHDxCurableSTD","PHDxIncurableSTD","PHDxCancer","PHDxDiabetes","PHDxHighBlood","PHDxHeartDisease","PHDxIrritableBowel","PHDxVitA","PHDxVitB","PHDxVitC","PHDxVitD","PHDxVitE","PHDxVitK","PHDxAutoimmune","PHDxOtherPhysical","PHVegeFruits","PHBeanLentils","PHGrainBreads","PHDairy","PHMeat","PHFishSeafood","PHSweets","PHWater","PHPhysicalActivity","SHSpiritualDefine","SHSpiritualIntegrate","SHPrayer","SHSpiritualActivity","SHReadText","SHAlignText","SHCommunity","OLHope","OLPeace","OLLearning","OLJoy","OLStable","OLSafety","OLKindness","OLForgiveness","OLPatience","OLRelationships","OLBoundaries","OLEUnpleasant","OLEPleasant","OLEControl","OLENumber","SDoHAgeRange","SDoHRace","SDoHGeographicRegion","SDoHEthnicity","SDoHState","SDoHZipCode","SDoHMaritalStatus","SDoHMilitaryStatus","SDoHGender","SDoHEducation","SDoHJobStatus","SDoHIncome","SDoHHousingStatus","SDoHHomeAsChild","SDoHReligion","SDoHDenomination","TRScore","CMScore","MHScore","PHScore","SHScore","OLScore","isActive","SHSkip","ProAssessmentFinalizedReview1","ProAssessmentFinalizedReviewDate1","ProAssessmentFinalizedName1","ProAssessmentFinalizedRole1","ProAssessmentFinalizedReview2","ProAssessmentFinalizedReviewDate2","ProAssessmentFinalizedName2","ProAssessmentFinalizedRole2","ProAssessmentFinalizedReview3","ProAssessmentFinalizedReviewDate3","ProAssessmentFinalizedName3","ProAssessmentFinalizedRole3"] )
+      #set( $isAuthorizedOnAllFields0 = true )
+      #if( $ownerClaim0 == $ownerEntity0 || $ownerClaimsList0.contains($ownerEntity0) )
+        #if( $isAuthorizedOnAllFields0 )
+          #set( $isAuthorized = true )
+        #else
+          $util.qr($allowedFields.addAll($ownerAllowedFields0))
+        #end
+      #end
+      #if( $util.isNull($ownerEntity0) && !$ctx.args.input.containsKey("owner") )
+        $util.qr($ctx.args.input.put("owner", $ownerClaim0))
+        #if( $isAuthorizedOnAllFields0 )
+          #set( $isAuthorized = true )
+        #else
+          $util.qr($allowedFields.addAll($ownerAllowedFields0))
+        #end
+      #end
+    #end
+  #end
+#end
+#if( !$isAuthorized && $allowedFields.isEmpty() )
+$util.unauthorized()
+#end
+#if( !$isAuthorized )
+  #set( $deniedFields = $util.list.copyAndRemoveAll($inputFields, $allowedFields) )
+  #if( $deniedFields.size() > 0 )
+    $util.error("Unauthorized on ${deniedFields}", "Unauthorized")
+  #end
+#end
+$util.toJson({"version":"2018-05-29","payload":{}})
+## [End] Authorization Steps. **

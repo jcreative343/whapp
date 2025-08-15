@@ -1,0 +1,4336 @@
+type Login @aws_iam @aws_api_key {
+  id: ID!
+  Email: AWSEmail
+  Password: String
+  LoginDate: AWSDate
+  LoginTime: AWSTime
+  ProfileType: String
+  GeneralInformation(filter: ModelLoginGeneralInformationFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelLoginGeneralInformationConnection
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type CreatePlan @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  userId: ID!
+  PSProblemSolving: Boolean
+  PSSelfEsteem: Boolean
+  PSChoiceAutonomy: Boolean
+  PSSelfCare: Boolean
+  PSSelfAwareness: Boolean
+  PSCreativity: Boolean
+  CSForgiveness: Boolean
+  CSKindness: Boolean
+  CSGratitude: Boolean
+  CSPatience: Boolean
+  CSCourage: Boolean
+  CMSCopingChoice: Boolean
+  CMSResilience: Boolean
+  CMSSelfRegulation: Boolean
+  CMSOptimism: Boolean
+  COMSupportSystem: Boolean
+  COMSocialIntelligence: Boolean
+  COMCommunication: Boolean
+  COMFaithCommunity: Boolean
+  COMAccomplishments: Boolean
+  BRStableHousing: Boolean
+  BRQualityHealthcare: Boolean
+  BRProfessionalAccess: Boolean
+  BRInsuranceCoverage: Boolean
+  BRFinancialConstraints: Boolean
+  BREducationAttainment: Boolean
+  BRSocialStigma: Boolean
+  BRUnsupportiveCommunity: Boolean
+  BRNonexistentCommunity: Boolean
+  BRCommunityResources: Boolean
+  BRProfessionalTrust: Boolean
+  BRHealthcareSystemTrust: Boolean
+  BRCognitiveImpairments: Boolean
+  BRDependentCare: Boolean
+  BRTransportation: Boolean
+  BRTechnologyAccess: Boolean
+  BRLanguage: Boolean
+  BRHealthcareProcess: Boolean
+  BROther: Boolean
+  BRResponseNote: String
+  TGBetrayal: Boolean
+  TGBoundaries: Boolean
+  TGDisorder: Boolean
+  TGPain: Boolean
+  TGRejection: Boolean
+  TGStress: Boolean
+  TGMemories: Boolean
+  TGUnjustTreatment: Boolean
+  TGUnpleasantConversations: Boolean
+  TGUnsafeEnvironments: Boolean
+  TGOther: Boolean
+  WSFlashbacks: Boolean
+  WSIncreasedAppetite: Boolean
+  WSDecreasedAppetite: Boolean
+  WSIntenseEmotions: Boolean
+  WSDisconnecting: Boolean
+  WSTime: Boolean
+  WSNegativeSelfTalk: Boolean
+  WSNeglectingSelfCare: Boolean
+  WSNightmares: Boolean
+  WSRecklessBehavior: Boolean
+  WSOther: Boolean
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type GeneralInformation @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  userId: ID!
+  FirstName: String!
+  LastName: String!
+  Email: AWSEmail!
+  ProfessionalRole: String
+  BusinessName: String
+  BusinessEIN: Int
+  BusinessCountry: String
+  BusinessAddress: String
+  BusinessCity: String
+  BusinessState: String
+  BusinessZipCode: Int
+  BusinessPhoneNumber: String
+  BusinessWebsite: String
+  OrganizationAdministrator: Boolean
+  OrganizationEmployee: Boolean
+  Department: String
+  Service: String
+  ProgramsUnit: String
+  TrackPlan(filter: ModelGeneralInformationTrackPlanFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelGeneralInformationTrackPlanConnection
+  AssessmentAnswers(filter: ModelGeneralInformationAssessmentAnswersFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelGeneralInformationAssessmentAnswersConnection
+  ProfileType: String
+  Login(filter: ModelLoginGeneralInformationFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelLoginGeneralInformationConnection
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type AssessmentAnswers @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  userId: ID!
+  CompletedDate: String
+  CompletedTime: String
+  TRHurtfulNames: Boolean
+  TRNoNurturing: Boolean
+  TRHit: Boolean
+  TRNeedsNotMet: Boolean
+  TRForcedSex: Boolean
+  TRResponsible: Boolean
+  TRViolence: Boolean
+  TRSubstanceAbuse: Boolean
+  TRMentalIllness: Boolean
+  TRParentDivorce: Boolean
+  TRParentIncarcerated: Boolean
+  TRHomelessness: Boolean
+  TRBodyFunction: Boolean
+  TRNaturalDisaster: Boolean
+  TRDirectTerrorism: Boolean
+  TRIndirectTerrorism: Boolean
+  TRLovedOne: Boolean
+  TRBelief: Boolean
+  TRResponseProfessional: Boolean
+  TRResponseFamilyFriend: Boolean
+  TRResponseGod: Boolean
+  TRResponseNoOne: Boolean
+  TRNoTrauma: Boolean
+  CMAlcohol: String!
+  CMDrugs: String!
+  CMOvereating: String!
+  CMSmoking: String!
+  CMGaming: String!
+  CMShopping: String!
+  CMGambling: String!
+  CMSex: String!
+  CMPorn: String!
+  CMBlaming: String!
+  CMHurting: String!
+  CMDisengage: String!
+  CMArt: String!
+  CMMusic: String!
+  CMPoetry: String!
+  CMReading: String!
+  CMGroups: String!
+  CMCounseling: String!
+  CMVenting: String!
+  CMWriting: String!
+  CMSensory: String!
+  CMDancing: String!
+  CMExercising: String!
+  CMWalking: String!
+  CMChange: String!
+  CMAnalyze: String!
+  CMDaydream: String!
+  CMPositive: String!
+  MHDxPTSD: Boolean!
+  MHDxDepression: Boolean!
+  MHDxSUD: Boolean!
+  MHDxOtherMental: Boolean!
+  MHSleeplessness: String!
+  MHAlcoholUse: String!
+  MHAnxiety: String!
+  MHDepression: String!
+  MHDrugUse: String!
+  MHGrief: String!
+  MHGuilt: String!
+  MHIrritability: String!
+  MHStress: String!
+  MHRegret: String!
+  MHSuicidalThoughts: String!
+  MHLoneliness: String!
+  MHWorry: String!
+  PHDxInfertility: Boolean!
+  PHDxCurableSTD: Boolean!
+  PHDxIncurableSTD: Boolean!
+  PHDxCancer: Boolean!
+  PHDxDiabetes: Boolean!
+  PHDxHighBlood: Boolean!
+  PHDxHeartDisease: Boolean!
+  PHDxIrritableBowel: Boolean!
+  PHDxVitA: Boolean!
+  PHDxVitB: Boolean!
+  PHDxVitC: Boolean!
+  PHDxVitD: Boolean!
+  PHDxVitE: Boolean!
+  PHDxVitK: Boolean!
+  PHDxAutoimmune: Boolean!
+  PHDxOtherPhysical: Boolean!
+  PHVegeFruits: String!
+  PHBeanLentils: String!
+  PHGrainBreads: String!
+  PHDairy: String!
+  PHMeat: String!
+  PHFishSeafood: String!
+  PHSweets: String!
+  PHWater: String!
+  PHPhysicalActivity: String!
+  SHSpiritualDefine: String
+  SHSpiritualIntegrate: String
+  SHPrayer: String
+  SHSpiritualActivity: String
+  SHReadText: String
+  SHAlignText: String
+  SHCommunity: String
+  OLHope: String!
+  OLPeace: String!
+  OLLearning: String!
+  OLJoy: String!
+  OLStable: String!
+  OLSafety: String!
+  OLKindness: String!
+  OLForgiveness: String!
+  OLPatience: String!
+  OLRelationships: String!
+  OLBoundaries: String!
+  OLEUnpleasant: String!
+  OLEPleasant: String!
+  OLEControl: String!
+  OLENumber: String!
+  SDoHAgeRange: String
+  SDoHRace: String
+  SDoHGeographicRegion: String
+  SDoHEthnicity: String
+  SDoHState: String
+  SDoHZipCode: String
+  SDoHMaritalStatus: String
+  SDoHMilitaryStatus: String
+  SDoHGender: String
+  SDoHEducation: String
+  SDoHJobStatus: String
+  SDoHIncome: String
+  SDoHHousingStatus: String
+  SDoHHomeAsChild: String
+  TrackPlan(filter: ModelAssessmentAnswersTrackPlanFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelAssessmentAnswersTrackPlanConnection
+  GeneralInformation(filter: ModelGeneralInformationAssessmentAnswersFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelGeneralInformationAssessmentAnswersConnection
+  SDoHReligion: String
+  SDoHDenomination: String
+  isActive: Boolean!
+  SHSkip: Boolean
+  ProAssessmentFinalizedReview1: Boolean
+  ProAssessmentFinalizedReviewDate1: AWSDate
+  ProAssessmentFinalizedName1: String
+  ProAssessmentFinalizedRole1: String
+  ProAssessmentFinalizedReview2: Boolean
+  ProAssessmentFinalizedReviewDate2: AWSDate
+  ProAssessmentFinalizedName2: String
+  ProAssessmentFinalizedRole2: String
+  ProAssessmentFinalizedReview3: Boolean
+  ProAssessmentFinalizedReviewDate3: AWSDate
+  ProAssessmentFinalizedName3: String
+  ProAssessmentFinalizedRole3: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type AssessmentScores @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  userId: ID!
+  CompletedDate: String
+  CompletedTime: String
+  TRHurtfulNames: Int
+  TRNoNurturing: Int
+  TRHit: Int
+  TRNeedsNotMet: Int
+  TRForcedSex: Int
+  TRResponsible: Int
+  TRViolence: Int
+  TRSubstanceAbuse: Int
+  TRMentalIllness: Int
+  TRParentDivorce: Int
+  TRParentIncarcerated: Int
+  TRHomelessness: Int
+  TRBodyFunction: Int
+  TRNaturalDisaster: Int
+  TRDirectTerrorism: Int
+  TRIndirectTerrorism: Int
+  TRLovedOne: Int
+  TRBelief: Float
+  TRResponseProfessional: Float
+  TRResponseFamilyFriend: Float
+  TRResponseGod: Float
+  TRResponseNoOne: Float
+  TRNoTrauma: Float
+  CMAlcohol: Int
+  CMDrugs: Int
+  CMOvereating: Int
+  CMSmoking: Int
+  CMGaming: Int
+  CMShopping: Int
+  CMGambling: Int
+  CMSex: Int
+  CMPorn: Int
+  CMBlaming: Int
+  CMHurting: Int
+  CMDisengage: Int
+  CMArt: Float
+  CMMusic: Float
+  CMPoetry: Float
+  CMReading: Float
+  CMGroups: Float
+  CMCounseling: Float
+  CMVenting: Float
+  CMWriting: Float
+  CMSensory: Float
+  CMDancing: Float
+  CMExercising: Float
+  CMWalking: Float
+  CMChange: Float
+  CMAnalyze: Float
+  CMDaydream: Float
+  CMPositive: Float
+  MHDxPTSD: Float
+  MHDxDepression: Float
+  MHDxSUD: Float
+  MHDxOtherMental: Float
+  MHSleeplessness: Int
+  MHAlcoholUse: Int
+  MHAnxiety: Int
+  MHDepression: Int
+  MHDrugUse: Int
+  MHGrief: Int
+  MHGuilt: Int
+  MHIrritability: Int
+  MHStress: Int
+  MHRegret: Int
+  MHSuicidalThoughts: Int
+  MHLoneliness: Int
+  MHWorry: Int
+  PHDxInfertility: Float
+  PHDxCurableSTD: Float
+  PHDxIncurableSTD: Float
+  PHDxCancer: Float
+  PHDxDiabetes: Float
+  PHDxHighBlood: Float
+  PHDxHeartDisease: Float
+  PHDxIrritableBowel: Float
+  PHDxVitA: Float
+  PHDxVitB: Float
+  PHDxVitC: Float
+  PHDxVitD: Float
+  PHDxVitE: Float
+  PHDxVitK: Float
+  PHDxAutoimmune: Float
+  PHDxOtherPhysical: Float
+  PHVegeFruits: Int
+  PHBeanLentils: Int
+  PHGrainBreads: Float
+  PHDairy: Float
+  PHMeat: Float
+  PHFishSeafood: Float
+  PHSweets: Int
+  PHWater: Int
+  PHPhysicalActivity: Int
+  SHSpiritualDefine: Int
+  SHSpiritualIntegrate: Int
+  SHPrayer: Int
+  SHSpiritualActivity: Int
+  SHReadText: Int
+  SHAlignText: Int
+  SHCommunity: Int
+  OLHope: Int
+  OLPeace: Int
+  OLLearning: Int
+  OLJoy: Int
+  OLStable: Int
+  OLSafety: Int
+  OLKindness: Int
+  OLForgiveness: Int
+  OLPatience: Int
+  OLRelationships: Int
+  OLBoundaries: Int
+  OLEUnpleasant: Int
+  OLEPleasant: Int
+  OLEControl: Int
+  OLENumber: Int
+  SDoHAgeRange: String
+  SDoHRace: String
+  SDoHGeographicRegion: String
+  SDoHEthnicity: String
+  SDoHState: String
+  SDoHZipCode: String
+  SDoHMaritalStatus: String
+  SDoHMilitaryStatus: String
+  SDoHGender: String
+  SDoHEducation: String
+  SDoHJobStatus: String
+  SDoHIncome: String
+  SDoHHousingStatus: String
+  SDoHHomeAsChild: String
+  SDoHReligion: String
+  SDoHDenomination: String
+  TRScore: String
+  CMScore: String
+  MHScore: String
+  PHScore: String
+  SHScore: String
+  OLScore: String
+  isActive: Boolean!
+  SHSkip: Boolean
+  ProAssessmentFinalizedReview1: Boolean
+  ProAssessmentFinalizedReviewDate1: AWSDate
+  ProAssessmentFinalizedName1: String
+  ProAssessmentFinalizedRole1: String
+  ProAssessmentFinalizedReview2: Boolean
+  ProAssessmentFinalizedReviewDate2: AWSDate
+  ProAssessmentFinalizedName2: String
+  ProAssessmentFinalizedRole2: String
+  ProAssessmentFinalizedReview3: Boolean
+  ProAssessmentFinalizedReviewDate3: AWSDate
+  ProAssessmentFinalizedName3: String
+  ProAssessmentFinalizedRole3: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type TrackPlan @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  userId: ID!
+  CompletedDate: AWSDate
+  CompletedTime: AWSTime
+  ActionDomain: String
+  ActionQuestion: String
+  Action: String
+  Frequency: String
+  ActionNote: String
+  Update1Points: Float
+  Update1Note: String
+  Update1Date: AWSDate
+  Update2Points: Float
+  Update2Note: String
+  Update2Date: AWSDate
+  Update3Points: Float
+  Update3Note: String
+  Update3Date: AWSDate
+  Update4Points: Float
+  Update4Note: String
+  Update4Date: AWSDate
+  Update5Points: Float
+  Update5Note: String
+  Update5Date: AWSDate
+  Update6Points: Float
+  Update6Note: String
+  Update6Date: AWSDate
+  Update7Points: Float
+  Update7Note: String
+  Update7Date: AWSDate
+  Update8Points: Float
+  Update8Note: String
+  Update8Date: AWSDate
+  Percentage: Int
+  Discontinued: Boolean
+  DiscontinuedDate: AWSDate
+  Successful: Boolean
+  SuccessfulDate: AWSDate
+  AssessmentAnswers(filter: ModelAssessmentAnswersTrackPlanFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelAssessmentAnswersTrackPlanConnection
+  GeneralInformation(filter: ModelGeneralInformationTrackPlanFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelGeneralInformationTrackPlanConnection
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type ConnectionRequest @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  requesterId: String!
+  requesterFirstName: String!
+  requesterLastName: String!
+  requesterEmail: AWSEmail!
+  targetEmail: AWSEmail!
+  status: String!
+  direction: String!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type UserLink @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  professionalId: String!
+  professionalEmail: String!
+  professionalFirstName: String!
+  professionalLastName: String!
+  clientId: String!
+  clientEmail: String!
+  clientFirstName: String!
+  clientLastName: String!
+  clientViewable: Boolean!
+  subscriptionId: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type OrganizationInformation @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  userId: ID!
+  BusinessName: String
+  BusinessEIN: Int
+  BusinessCountry: String
+  BusinessAddress: String
+  BusinessCity: String
+  BusinessState: String
+  BusinessZipCode: Int
+  BusinessPhoneNumber: String
+  BusinessWebsite: String
+  Departments: [String]
+  ProgramsUnits: [String]
+  Services: [String]
+  clientsServed: Int
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type OrganizationCPs @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  OrganizationId: ID!
+  OrganizationCPFirstName: String
+  OrganizationCPLastName: String
+  OrganizationCPEmail: AWSEmail!
+  OrganizationCPRole: String
+  primaryDepartment: String
+  primaryProgramsUnit: String
+  primaryService: String
+  OrganizationAdministrator: Boolean!
+  PrimaryOrganizationAdministrator: Boolean!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type Notifications @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  RecommedationResult: String
+  RecommedationAction: String
+  RecommedationActionFrequency: String
+  RecommedationType: String
+  RecommedationNote: String
+  RecommendationDate: AWSDate
+  SenderId: String!
+  SenderFirstName: String!
+  SenderLastName: String!
+  SenderEmail: String!
+  TargetEmail: String!
+  NotificationType: String!
+  StatusDate: AWSDate
+  Status: String!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type UserPayments @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  userId: ID!
+  organizationId: ID
+  organizationName: String
+  paymentType: String
+  subscriptionId: String
+  paymentStatus: String
+  clientsProjected: Int
+  costPerClient: Int
+  couponCode: String
+  couponPercent: Int
+  paidUntil: AWSDateTime
+  paymentFor: String!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type Coupon @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  type: String!
+  value: Float!
+  isActive: Boolean!
+  maxUses: Int!
+  timesUsed: Int!
+  expiresAt: AWSDateTime!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type ProfessionalReviews @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  ReviewedId: ID!
+  ReviewType: String!
+  ProfessionalName: String!
+  ProfessionalRole: String!
+  ReviewDate: AWSDate!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type LoginGeneralInformation @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  loginId: ID!
+  generalInformationId: ID!
+  login: Login!
+  generalInformation: GeneralInformation!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type GeneralInformationTrackPlan @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  generalInformationId: ID!
+  trackPlanId: ID!
+  generalInformation: GeneralInformation!
+  trackPlan: TrackPlan!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type GeneralInformationAssessmentAnswers @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  generalInformationId: ID!
+  assessmentAnswersId: ID!
+  generalInformation: GeneralInformation!
+  assessmentAnswers: AssessmentAnswers!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type AssessmentAnswersTrackPlan @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  assessmentAnswersId: ID!
+  trackPlanId: ID!
+  assessmentAnswers: AssessmentAnswers!
+  trackPlan: TrackPlan!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelLoginConnection @aws_api_key @aws_iam {
+  items: [Login]!
+  nextToken: String
+}
+
+input ModelLoginFilterInput {
+  id: ModelIDInput
+  Email: ModelStringInput
+  Password: ModelStringInput
+  LoginDate: ModelStringInput
+  LoginTime: ModelStringInput
+  ProfileType: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelLoginFilterInput]
+  or: [ModelLoginFilterInput]
+  not: ModelLoginFilterInput
+}
+
+type Query {
+  getLogin(id: ID!): Login @aws_api_key @aws_iam
+  listLogins(filter: ModelLoginFilterInput, limit: Int, nextToken: String): ModelLoginConnection @aws_api_key @aws_iam
+  getCreatePlan(id: ID!): CreatePlan @aws_api_key @aws_iam @aws_cognito_user_pools
+  listCreatePlans(filter: ModelCreatePlanFilterInput, limit: Int, nextToken: String): ModelCreatePlanConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  getGeneralInformation(id: ID!): GeneralInformation @aws_api_key @aws_iam @aws_cognito_user_pools
+  listGeneralInformations(filter: ModelGeneralInformationFilterInput, limit: Int, nextToken: String): ModelGeneralInformationConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  getAssessmentAnswers(id: ID!): AssessmentAnswers @aws_api_key @aws_iam @aws_cognito_user_pools
+  listAssessmentAnswers(filter: ModelAssessmentAnswersFilterInput, limit: Int, nextToken: String): ModelAssessmentAnswersConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  getAssessmentScores(id: ID!): AssessmentScores @aws_api_key @aws_iam @aws_cognito_user_pools
+  listAssessmentScores(filter: ModelAssessmentScoresFilterInput, limit: Int, nextToken: String): ModelAssessmentScoresConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  getTrackPlan(id: ID!): TrackPlan @aws_api_key @aws_iam @aws_cognito_user_pools
+  listTrackPlans(filter: ModelTrackPlanFilterInput, limit: Int, nextToken: String): ModelTrackPlanConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  getConnectionRequest(id: ID!): ConnectionRequest @aws_api_key @aws_iam @aws_cognito_user_pools
+  listConnectionRequests(filter: ModelConnectionRequestFilterInput, limit: Int, nextToken: String): ModelConnectionRequestConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  getUserLink(id: ID!): UserLink @aws_api_key @aws_iam @aws_cognito_user_pools
+  listUserLinks(filter: ModelUserLinkFilterInput, limit: Int, nextToken: String): ModelUserLinkConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  getOrganizationInformation(id: ID!): OrganizationInformation @aws_api_key @aws_iam @aws_cognito_user_pools
+  listOrganizationInformations(filter: ModelOrganizationInformationFilterInput, limit: Int, nextToken: String): ModelOrganizationInformationConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  getOrganizationCPs(id: ID!): OrganizationCPs @aws_api_key @aws_iam @aws_cognito_user_pools
+  listOrganizationCPs(filter: ModelOrganizationCPsFilterInput, limit: Int, nextToken: String): ModelOrganizationCPsConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  getNotifications(id: ID!): Notifications @aws_api_key @aws_iam @aws_cognito_user_pools
+  listNotifications(filter: ModelNotificationsFilterInput, limit: Int, nextToken: String): ModelNotificationsConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  getUserPayments(id: ID!): UserPayments @aws_api_key @aws_iam @aws_cognito_user_pools
+  listUserPayments(filter: ModelUserPaymentsFilterInput, limit: Int, nextToken: String): ModelUserPaymentsConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  getCoupon(id: ID!): Coupon @aws_api_key @aws_iam @aws_cognito_user_pools
+  listCoupons(filter: ModelCouponFilterInput, limit: Int, nextToken: String): ModelCouponConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  getProfessionalReviews(id: ID!): ProfessionalReviews @aws_api_key @aws_iam @aws_cognito_user_pools
+  listProfessionalReviews(filter: ModelProfessionalReviewsFilterInput, limit: Int, nextToken: String): ModelProfessionalReviewsConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  getLoginGeneralInformation(id: ID!): LoginGeneralInformation @aws_api_key @aws_iam @aws_cognito_user_pools
+  listLoginGeneralInformations(filter: ModelLoginGeneralInformationFilterInput, limit: Int, nextToken: String): ModelLoginGeneralInformationConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  loginGeneralInformationsByLoginId(loginId: ID!, sortDirection: ModelSortDirection, filter: ModelLoginGeneralInformationFilterInput, limit: Int, nextToken: String): ModelLoginGeneralInformationConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  loginGeneralInformationsByGeneralInformationId(generalInformationId: ID!, sortDirection: ModelSortDirection, filter: ModelLoginGeneralInformationFilterInput, limit: Int, nextToken: String): ModelLoginGeneralInformationConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  getGeneralInformationTrackPlan(id: ID!): GeneralInformationTrackPlan @aws_api_key @aws_iam @aws_cognito_user_pools
+  listGeneralInformationTrackPlans(filter: ModelGeneralInformationTrackPlanFilterInput, limit: Int, nextToken: String): ModelGeneralInformationTrackPlanConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  generalInformationTrackPlansByGeneralInformationId(generalInformationId: ID!, sortDirection: ModelSortDirection, filter: ModelGeneralInformationTrackPlanFilterInput, limit: Int, nextToken: String): ModelGeneralInformationTrackPlanConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  generalInformationTrackPlansByTrackPlanId(trackPlanId: ID!, sortDirection: ModelSortDirection, filter: ModelGeneralInformationTrackPlanFilterInput, limit: Int, nextToken: String): ModelGeneralInformationTrackPlanConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  getGeneralInformationAssessmentAnswers(id: ID!): GeneralInformationAssessmentAnswers @aws_api_key @aws_iam @aws_cognito_user_pools
+  listGeneralInformationAssessmentAnswers(filter: ModelGeneralInformationAssessmentAnswersFilterInput, limit: Int, nextToken: String): ModelGeneralInformationAssessmentAnswersConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  generalInformationAssessmentAnswersByGeneralInformationId(generalInformationId: ID!, sortDirection: ModelSortDirection, filter: ModelGeneralInformationAssessmentAnswersFilterInput, limit: Int, nextToken: String): ModelGeneralInformationAssessmentAnswersConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  generalInformationAssessmentAnswersByAssessmentAnswersId(assessmentAnswersId: ID!, sortDirection: ModelSortDirection, filter: ModelGeneralInformationAssessmentAnswersFilterInput, limit: Int, nextToken: String): ModelGeneralInformationAssessmentAnswersConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  getAssessmentAnswersTrackPlan(id: ID!): AssessmentAnswersTrackPlan @aws_api_key @aws_iam @aws_cognito_user_pools
+  listAssessmentAnswersTrackPlans(filter: ModelAssessmentAnswersTrackPlanFilterInput, limit: Int, nextToken: String): ModelAssessmentAnswersTrackPlanConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  assessmentAnswersTrackPlansByAssessmentAnswersId(assessmentAnswersId: ID!, sortDirection: ModelSortDirection, filter: ModelAssessmentAnswersTrackPlanFilterInput, limit: Int, nextToken: String): ModelAssessmentAnswersTrackPlanConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+  assessmentAnswersTrackPlansByTrackPlanId(trackPlanId: ID!, sortDirection: ModelSortDirection, filter: ModelAssessmentAnswersTrackPlanFilterInput, limit: Int, nextToken: String): ModelAssessmentAnswersTrackPlanConnection @aws_api_key @aws_iam @aws_cognito_user_pools
+}
+
+input ModelLoginConditionInput {
+  Email: ModelStringInput
+  Password: ModelStringInput
+  LoginDate: ModelStringInput
+  LoginTime: ModelStringInput
+  ProfileType: ModelStringInput
+  and: [ModelLoginConditionInput]
+  or: [ModelLoginConditionInput]
+  not: ModelLoginConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+}
+
+input CreateLoginInput {
+  id: ID
+  Email: AWSEmail
+  Password: String
+  LoginDate: AWSDate
+  LoginTime: AWSTime
+  ProfileType: String
+}
+
+input UpdateLoginInput {
+  id: ID!
+  Email: AWSEmail
+  Password: String
+  LoginDate: AWSDate
+  LoginTime: AWSTime
+  ProfileType: String
+}
+
+input DeleteLoginInput {
+  id: ID!
+}
+
+type Mutation {
+  createLogin(input: CreateLoginInput!, condition: ModelLoginConditionInput): Login @aws_api_key @aws_iam
+  updateLogin(input: UpdateLoginInput!, condition: ModelLoginConditionInput): Login @aws_api_key @aws_iam
+  deleteLogin(input: DeleteLoginInput!, condition: ModelLoginConditionInput): Login @aws_api_key @aws_iam
+  createCreatePlan(input: CreateCreatePlanInput!, condition: ModelCreatePlanConditionInput): CreatePlan @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateCreatePlan(input: UpdateCreatePlanInput!, condition: ModelCreatePlanConditionInput): CreatePlan @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteCreatePlan(input: DeleteCreatePlanInput!, condition: ModelCreatePlanConditionInput): CreatePlan @aws_api_key @aws_iam @aws_cognito_user_pools
+  createGeneralInformation(input: CreateGeneralInformationInput!, condition: ModelGeneralInformationConditionInput): GeneralInformation @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateGeneralInformation(input: UpdateGeneralInformationInput!, condition: ModelGeneralInformationConditionInput): GeneralInformation @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteGeneralInformation(input: DeleteGeneralInformationInput!, condition: ModelGeneralInformationConditionInput): GeneralInformation @aws_api_key @aws_iam @aws_cognito_user_pools
+  createAssessmentAnswers(input: CreateAssessmentAnswersInput!, condition: ModelAssessmentAnswersConditionInput): AssessmentAnswers @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateAssessmentAnswers(input: UpdateAssessmentAnswersInput!, condition: ModelAssessmentAnswersConditionInput): AssessmentAnswers @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteAssessmentAnswers(input: DeleteAssessmentAnswersInput!, condition: ModelAssessmentAnswersConditionInput): AssessmentAnswers @aws_api_key @aws_iam @aws_cognito_user_pools
+  createAssessmentScores(input: CreateAssessmentScoresInput!, condition: ModelAssessmentScoresConditionInput): AssessmentScores @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateAssessmentScores(input: UpdateAssessmentScoresInput!, condition: ModelAssessmentScoresConditionInput): AssessmentScores @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteAssessmentScores(input: DeleteAssessmentScoresInput!, condition: ModelAssessmentScoresConditionInput): AssessmentScores @aws_api_key @aws_iam @aws_cognito_user_pools
+  createTrackPlan(input: CreateTrackPlanInput!, condition: ModelTrackPlanConditionInput): TrackPlan @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateTrackPlan(input: UpdateTrackPlanInput!, condition: ModelTrackPlanConditionInput): TrackPlan @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteTrackPlan(input: DeleteTrackPlanInput!, condition: ModelTrackPlanConditionInput): TrackPlan @aws_api_key @aws_iam @aws_cognito_user_pools
+  createConnectionRequest(input: CreateConnectionRequestInput!, condition: ModelConnectionRequestConditionInput): ConnectionRequest @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateConnectionRequest(input: UpdateConnectionRequestInput!, condition: ModelConnectionRequestConditionInput): ConnectionRequest @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteConnectionRequest(input: DeleteConnectionRequestInput!, condition: ModelConnectionRequestConditionInput): ConnectionRequest @aws_api_key @aws_iam @aws_cognito_user_pools
+  createUserLink(input: CreateUserLinkInput!, condition: ModelUserLinkConditionInput): UserLink @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateUserLink(input: UpdateUserLinkInput!, condition: ModelUserLinkConditionInput): UserLink @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteUserLink(input: DeleteUserLinkInput!, condition: ModelUserLinkConditionInput): UserLink @aws_api_key @aws_iam @aws_cognito_user_pools
+  createOrganizationInformation(input: CreateOrganizationInformationInput!, condition: ModelOrganizationInformationConditionInput): OrganizationInformation @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateOrganizationInformation(input: UpdateOrganizationInformationInput!, condition: ModelOrganizationInformationConditionInput): OrganizationInformation @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteOrganizationInformation(input: DeleteOrganizationInformationInput!, condition: ModelOrganizationInformationConditionInput): OrganizationInformation @aws_api_key @aws_iam @aws_cognito_user_pools
+  createOrganizationCPs(input: CreateOrganizationCPsInput!, condition: ModelOrganizationCPsConditionInput): OrganizationCPs @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateOrganizationCPs(input: UpdateOrganizationCPsInput!, condition: ModelOrganizationCPsConditionInput): OrganizationCPs @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteOrganizationCPs(input: DeleteOrganizationCPsInput!, condition: ModelOrganizationCPsConditionInput): OrganizationCPs @aws_api_key @aws_iam @aws_cognito_user_pools
+  createNotifications(input: CreateNotificationsInput!, condition: ModelNotificationsConditionInput): Notifications @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateNotifications(input: UpdateNotificationsInput!, condition: ModelNotificationsConditionInput): Notifications @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteNotifications(input: DeleteNotificationsInput!, condition: ModelNotificationsConditionInput): Notifications @aws_api_key @aws_iam @aws_cognito_user_pools
+  createUserPayments(input: CreateUserPaymentsInput!, condition: ModelUserPaymentsConditionInput): UserPayments @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateUserPayments(input: UpdateUserPaymentsInput!, condition: ModelUserPaymentsConditionInput): UserPayments @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteUserPayments(input: DeleteUserPaymentsInput!, condition: ModelUserPaymentsConditionInput): UserPayments @aws_api_key @aws_iam @aws_cognito_user_pools
+  createCoupon(input: CreateCouponInput!, condition: ModelCouponConditionInput): Coupon @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateCoupon(input: UpdateCouponInput!, condition: ModelCouponConditionInput): Coupon @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteCoupon(input: DeleteCouponInput!, condition: ModelCouponConditionInput): Coupon @aws_api_key @aws_iam @aws_cognito_user_pools
+  createProfessionalReviews(input: CreateProfessionalReviewsInput!, condition: ModelProfessionalReviewsConditionInput): ProfessionalReviews @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateProfessionalReviews(input: UpdateProfessionalReviewsInput!, condition: ModelProfessionalReviewsConditionInput): ProfessionalReviews @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteProfessionalReviews(input: DeleteProfessionalReviewsInput!, condition: ModelProfessionalReviewsConditionInput): ProfessionalReviews @aws_api_key @aws_iam @aws_cognito_user_pools
+  createLoginGeneralInformation(input: CreateLoginGeneralInformationInput!, condition: ModelLoginGeneralInformationConditionInput): LoginGeneralInformation @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateLoginGeneralInformation(input: UpdateLoginGeneralInformationInput!, condition: ModelLoginGeneralInformationConditionInput): LoginGeneralInformation @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteLoginGeneralInformation(input: DeleteLoginGeneralInformationInput!, condition: ModelLoginGeneralInformationConditionInput): LoginGeneralInformation @aws_api_key @aws_iam @aws_cognito_user_pools
+  createGeneralInformationTrackPlan(input: CreateGeneralInformationTrackPlanInput!, condition: ModelGeneralInformationTrackPlanConditionInput): GeneralInformationTrackPlan @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateGeneralInformationTrackPlan(input: UpdateGeneralInformationTrackPlanInput!, condition: ModelGeneralInformationTrackPlanConditionInput): GeneralInformationTrackPlan @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteGeneralInformationTrackPlan(input: DeleteGeneralInformationTrackPlanInput!, condition: ModelGeneralInformationTrackPlanConditionInput): GeneralInformationTrackPlan @aws_api_key @aws_iam @aws_cognito_user_pools
+  createGeneralInformationAssessmentAnswers(input: CreateGeneralInformationAssessmentAnswersInput!, condition: ModelGeneralInformationAssessmentAnswersConditionInput): GeneralInformationAssessmentAnswers @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateGeneralInformationAssessmentAnswers(input: UpdateGeneralInformationAssessmentAnswersInput!, condition: ModelGeneralInformationAssessmentAnswersConditionInput): GeneralInformationAssessmentAnswers @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteGeneralInformationAssessmentAnswers(input: DeleteGeneralInformationAssessmentAnswersInput!, condition: ModelGeneralInformationAssessmentAnswersConditionInput): GeneralInformationAssessmentAnswers @aws_api_key @aws_iam @aws_cognito_user_pools
+  createAssessmentAnswersTrackPlan(input: CreateAssessmentAnswersTrackPlanInput!, condition: ModelAssessmentAnswersTrackPlanConditionInput): AssessmentAnswersTrackPlan @aws_api_key @aws_iam @aws_cognito_user_pools
+  updateAssessmentAnswersTrackPlan(input: UpdateAssessmentAnswersTrackPlanInput!, condition: ModelAssessmentAnswersTrackPlanConditionInput): AssessmentAnswersTrackPlan @aws_api_key @aws_iam @aws_cognito_user_pools
+  deleteAssessmentAnswersTrackPlan(input: DeleteAssessmentAnswersTrackPlanInput!, condition: ModelAssessmentAnswersTrackPlanConditionInput): AssessmentAnswersTrackPlan @aws_api_key @aws_iam @aws_cognito_user_pools
+}
+
+input ModelSubscriptionLoginFilterInput {
+  id: ModelSubscriptionIDInput
+  Email: ModelSubscriptionStringInput
+  Password: ModelSubscriptionStringInput
+  LoginDate: ModelSubscriptionStringInput
+  LoginTime: ModelSubscriptionStringInput
+  ProfileType: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionLoginFilterInput]
+  or: [ModelSubscriptionLoginFilterInput]
+}
+
+type Subscription {
+  onCreateLogin(filter: ModelSubscriptionLoginFilterInput): Login @aws_subscribe(mutations: ["createLogin"]) @aws_api_key @aws_iam
+  onUpdateLogin(filter: ModelSubscriptionLoginFilterInput): Login @aws_subscribe(mutations: ["updateLogin"]) @aws_api_key @aws_iam
+  onDeleteLogin(filter: ModelSubscriptionLoginFilterInput): Login @aws_subscribe(mutations: ["deleteLogin"]) @aws_api_key @aws_iam
+  onCreateCreatePlan(filter: ModelSubscriptionCreatePlanFilterInput, owner: String): CreatePlan @aws_subscribe(mutations: ["createCreatePlan"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateCreatePlan(filter: ModelSubscriptionCreatePlanFilterInput, owner: String): CreatePlan @aws_subscribe(mutations: ["updateCreatePlan"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteCreatePlan(filter: ModelSubscriptionCreatePlanFilterInput, owner: String): CreatePlan @aws_subscribe(mutations: ["deleteCreatePlan"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateGeneralInformation(filter: ModelSubscriptionGeneralInformationFilterInput, owner: String): GeneralInformation @aws_subscribe(mutations: ["createGeneralInformation"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateGeneralInformation(filter: ModelSubscriptionGeneralInformationFilterInput, owner: String): GeneralInformation @aws_subscribe(mutations: ["updateGeneralInformation"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteGeneralInformation(filter: ModelSubscriptionGeneralInformationFilterInput, owner: String): GeneralInformation @aws_subscribe(mutations: ["deleteGeneralInformation"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateAssessmentAnswers(filter: ModelSubscriptionAssessmentAnswersFilterInput, owner: String): AssessmentAnswers @aws_subscribe(mutations: ["createAssessmentAnswers"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateAssessmentAnswers(filter: ModelSubscriptionAssessmentAnswersFilterInput, owner: String): AssessmentAnswers @aws_subscribe(mutations: ["updateAssessmentAnswers"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteAssessmentAnswers(filter: ModelSubscriptionAssessmentAnswersFilterInput, owner: String): AssessmentAnswers @aws_subscribe(mutations: ["deleteAssessmentAnswers"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateAssessmentScores(filter: ModelSubscriptionAssessmentScoresFilterInput, owner: String): AssessmentScores @aws_subscribe(mutations: ["createAssessmentScores"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateAssessmentScores(filter: ModelSubscriptionAssessmentScoresFilterInput, owner: String): AssessmentScores @aws_subscribe(mutations: ["updateAssessmentScores"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteAssessmentScores(filter: ModelSubscriptionAssessmentScoresFilterInput, owner: String): AssessmentScores @aws_subscribe(mutations: ["deleteAssessmentScores"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateTrackPlan(filter: ModelSubscriptionTrackPlanFilterInput, owner: String): TrackPlan @aws_subscribe(mutations: ["createTrackPlan"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateTrackPlan(filter: ModelSubscriptionTrackPlanFilterInput, owner: String): TrackPlan @aws_subscribe(mutations: ["updateTrackPlan"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteTrackPlan(filter: ModelSubscriptionTrackPlanFilterInput, owner: String): TrackPlan @aws_subscribe(mutations: ["deleteTrackPlan"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateConnectionRequest(filter: ModelSubscriptionConnectionRequestFilterInput, owner: String): ConnectionRequest @aws_subscribe(mutations: ["createConnectionRequest"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateConnectionRequest(filter: ModelSubscriptionConnectionRequestFilterInput, owner: String): ConnectionRequest @aws_subscribe(mutations: ["updateConnectionRequest"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteConnectionRequest(filter: ModelSubscriptionConnectionRequestFilterInput, owner: String): ConnectionRequest @aws_subscribe(mutations: ["deleteConnectionRequest"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateUserLink(filter: ModelSubscriptionUserLinkFilterInput, owner: String): UserLink @aws_subscribe(mutations: ["createUserLink"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateUserLink(filter: ModelSubscriptionUserLinkFilterInput, owner: String): UserLink @aws_subscribe(mutations: ["updateUserLink"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteUserLink(filter: ModelSubscriptionUserLinkFilterInput, owner: String): UserLink @aws_subscribe(mutations: ["deleteUserLink"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateOrganizationInformation(filter: ModelSubscriptionOrganizationInformationFilterInput, owner: String): OrganizationInformation @aws_subscribe(mutations: ["createOrganizationInformation"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateOrganizationInformation(filter: ModelSubscriptionOrganizationInformationFilterInput, owner: String): OrganizationInformation @aws_subscribe(mutations: ["updateOrganizationInformation"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteOrganizationInformation(filter: ModelSubscriptionOrganizationInformationFilterInput, owner: String): OrganizationInformation @aws_subscribe(mutations: ["deleteOrganizationInformation"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateOrganizationCPs(filter: ModelSubscriptionOrganizationCPsFilterInput, owner: String): OrganizationCPs @aws_subscribe(mutations: ["createOrganizationCPs"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateOrganizationCPs(filter: ModelSubscriptionOrganizationCPsFilterInput, owner: String): OrganizationCPs @aws_subscribe(mutations: ["updateOrganizationCPs"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteOrganizationCPs(filter: ModelSubscriptionOrganizationCPsFilterInput, owner: String): OrganizationCPs @aws_subscribe(mutations: ["deleteOrganizationCPs"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateNotifications(filter: ModelSubscriptionNotificationsFilterInput, owner: String): Notifications @aws_subscribe(mutations: ["createNotifications"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateNotifications(filter: ModelSubscriptionNotificationsFilterInput, owner: String): Notifications @aws_subscribe(mutations: ["updateNotifications"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteNotifications(filter: ModelSubscriptionNotificationsFilterInput, owner: String): Notifications @aws_subscribe(mutations: ["deleteNotifications"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateUserPayments(filter: ModelSubscriptionUserPaymentsFilterInput, owner: String): UserPayments @aws_subscribe(mutations: ["createUserPayments"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateUserPayments(filter: ModelSubscriptionUserPaymentsFilterInput, owner: String): UserPayments @aws_subscribe(mutations: ["updateUserPayments"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteUserPayments(filter: ModelSubscriptionUserPaymentsFilterInput, owner: String): UserPayments @aws_subscribe(mutations: ["deleteUserPayments"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateCoupon(filter: ModelSubscriptionCouponFilterInput, owner: String): Coupon @aws_subscribe(mutations: ["createCoupon"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateCoupon(filter: ModelSubscriptionCouponFilterInput, owner: String): Coupon @aws_subscribe(mutations: ["updateCoupon"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteCoupon(filter: ModelSubscriptionCouponFilterInput, owner: String): Coupon @aws_subscribe(mutations: ["deleteCoupon"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateProfessionalReviews(filter: ModelSubscriptionProfessionalReviewsFilterInput, owner: String): ProfessionalReviews @aws_subscribe(mutations: ["createProfessionalReviews"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateProfessionalReviews(filter: ModelSubscriptionProfessionalReviewsFilterInput, owner: String): ProfessionalReviews @aws_subscribe(mutations: ["updateProfessionalReviews"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteProfessionalReviews(filter: ModelSubscriptionProfessionalReviewsFilterInput, owner: String): ProfessionalReviews @aws_subscribe(mutations: ["deleteProfessionalReviews"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateLoginGeneralInformation(filter: ModelSubscriptionLoginGeneralInformationFilterInput, owner: String): LoginGeneralInformation @aws_subscribe(mutations: ["createLoginGeneralInformation"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateLoginGeneralInformation(filter: ModelSubscriptionLoginGeneralInformationFilterInput, owner: String): LoginGeneralInformation @aws_subscribe(mutations: ["updateLoginGeneralInformation"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteLoginGeneralInformation(filter: ModelSubscriptionLoginGeneralInformationFilterInput, owner: String): LoginGeneralInformation @aws_subscribe(mutations: ["deleteLoginGeneralInformation"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateGeneralInformationTrackPlan(filter: ModelSubscriptionGeneralInformationTrackPlanFilterInput, owner: String): GeneralInformationTrackPlan @aws_subscribe(mutations: ["createGeneralInformationTrackPlan"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateGeneralInformationTrackPlan(filter: ModelSubscriptionGeneralInformationTrackPlanFilterInput, owner: String): GeneralInformationTrackPlan @aws_subscribe(mutations: ["updateGeneralInformationTrackPlan"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteGeneralInformationTrackPlan(filter: ModelSubscriptionGeneralInformationTrackPlanFilterInput, owner: String): GeneralInformationTrackPlan @aws_subscribe(mutations: ["deleteGeneralInformationTrackPlan"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateGeneralInformationAssessmentAnswers(filter: ModelSubscriptionGeneralInformationAssessmentAnswersFilterInput, owner: String): GeneralInformationAssessmentAnswers @aws_subscribe(mutations: ["createGeneralInformationAssessmentAnswers"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateGeneralInformationAssessmentAnswers(filter: ModelSubscriptionGeneralInformationAssessmentAnswersFilterInput, owner: String): GeneralInformationAssessmentAnswers @aws_subscribe(mutations: ["updateGeneralInformationAssessmentAnswers"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteGeneralInformationAssessmentAnswers(filter: ModelSubscriptionGeneralInformationAssessmentAnswersFilterInput, owner: String): GeneralInformationAssessmentAnswers @aws_subscribe(mutations: ["deleteGeneralInformationAssessmentAnswers"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onCreateAssessmentAnswersTrackPlan(filter: ModelSubscriptionAssessmentAnswersTrackPlanFilterInput, owner: String): AssessmentAnswersTrackPlan @aws_subscribe(mutations: ["createAssessmentAnswersTrackPlan"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onUpdateAssessmentAnswersTrackPlan(filter: ModelSubscriptionAssessmentAnswersTrackPlanFilterInput, owner: String): AssessmentAnswersTrackPlan @aws_subscribe(mutations: ["updateAssessmentAnswersTrackPlan"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+  onDeleteAssessmentAnswersTrackPlan(filter: ModelSubscriptionAssessmentAnswersTrackPlanFilterInput, owner: String): AssessmentAnswersTrackPlan @aws_subscribe(mutations: ["deleteAssessmentAnswersTrackPlan"]) @aws_api_key @aws_iam @aws_cognito_user_pools
+}
+
+type ModelCreatePlanConnection @aws_api_key @aws_iam @aws_cognito_user_pools {
+  items: [CreatePlan]!
+  nextToken: String
+}
+
+input ModelCreatePlanFilterInput {
+  id: ModelIDInput
+  userId: ModelIDInput
+  PSProblemSolving: ModelBooleanInput
+  PSSelfEsteem: ModelBooleanInput
+  PSChoiceAutonomy: ModelBooleanInput
+  PSSelfCare: ModelBooleanInput
+  PSSelfAwareness: ModelBooleanInput
+  PSCreativity: ModelBooleanInput
+  CSForgiveness: ModelBooleanInput
+  CSKindness: ModelBooleanInput
+  CSGratitude: ModelBooleanInput
+  CSPatience: ModelBooleanInput
+  CSCourage: ModelBooleanInput
+  CMSCopingChoice: ModelBooleanInput
+  CMSResilience: ModelBooleanInput
+  CMSSelfRegulation: ModelBooleanInput
+  CMSOptimism: ModelBooleanInput
+  COMSupportSystem: ModelBooleanInput
+  COMSocialIntelligence: ModelBooleanInput
+  COMCommunication: ModelBooleanInput
+  COMFaithCommunity: ModelBooleanInput
+  COMAccomplishments: ModelBooleanInput
+  BRStableHousing: ModelBooleanInput
+  BRQualityHealthcare: ModelBooleanInput
+  BRProfessionalAccess: ModelBooleanInput
+  BRInsuranceCoverage: ModelBooleanInput
+  BRFinancialConstraints: ModelBooleanInput
+  BREducationAttainment: ModelBooleanInput
+  BRSocialStigma: ModelBooleanInput
+  BRUnsupportiveCommunity: ModelBooleanInput
+  BRNonexistentCommunity: ModelBooleanInput
+  BRCommunityResources: ModelBooleanInput
+  BRProfessionalTrust: ModelBooleanInput
+  BRHealthcareSystemTrust: ModelBooleanInput
+  BRCognitiveImpairments: ModelBooleanInput
+  BRDependentCare: ModelBooleanInput
+  BRTransportation: ModelBooleanInput
+  BRTechnologyAccess: ModelBooleanInput
+  BRLanguage: ModelBooleanInput
+  BRHealthcareProcess: ModelBooleanInput
+  BROther: ModelBooleanInput
+  BRResponseNote: ModelStringInput
+  TGBetrayal: ModelBooleanInput
+  TGBoundaries: ModelBooleanInput
+  TGDisorder: ModelBooleanInput
+  TGPain: ModelBooleanInput
+  TGRejection: ModelBooleanInput
+  TGStress: ModelBooleanInput
+  TGMemories: ModelBooleanInput
+  TGUnjustTreatment: ModelBooleanInput
+  TGUnpleasantConversations: ModelBooleanInput
+  TGUnsafeEnvironments: ModelBooleanInput
+  TGOther: ModelBooleanInput
+  WSFlashbacks: ModelBooleanInput
+  WSIncreasedAppetite: ModelBooleanInput
+  WSDecreasedAppetite: ModelBooleanInput
+  WSIntenseEmotions: ModelBooleanInput
+  WSDisconnecting: ModelBooleanInput
+  WSTime: ModelBooleanInput
+  WSNegativeSelfTalk: ModelBooleanInput
+  WSNeglectingSelfCare: ModelBooleanInput
+  WSNightmares: ModelBooleanInput
+  WSRecklessBehavior: ModelBooleanInput
+  WSOther: ModelBooleanInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelCreatePlanFilterInput]
+  or: [ModelCreatePlanFilterInput]
+  not: ModelCreatePlanFilterInput
+  owner: ModelStringInput
+}
+
+input ModelCreatePlanConditionInput {
+  userId: ModelIDInput
+  PSProblemSolving: ModelBooleanInput
+  PSSelfEsteem: ModelBooleanInput
+  PSChoiceAutonomy: ModelBooleanInput
+  PSSelfCare: ModelBooleanInput
+  PSSelfAwareness: ModelBooleanInput
+  PSCreativity: ModelBooleanInput
+  CSForgiveness: ModelBooleanInput
+  CSKindness: ModelBooleanInput
+  CSGratitude: ModelBooleanInput
+  CSPatience: ModelBooleanInput
+  CSCourage: ModelBooleanInput
+  CMSCopingChoice: ModelBooleanInput
+  CMSResilience: ModelBooleanInput
+  CMSSelfRegulation: ModelBooleanInput
+  CMSOptimism: ModelBooleanInput
+  COMSupportSystem: ModelBooleanInput
+  COMSocialIntelligence: ModelBooleanInput
+  COMCommunication: ModelBooleanInput
+  COMFaithCommunity: ModelBooleanInput
+  COMAccomplishments: ModelBooleanInput
+  BRStableHousing: ModelBooleanInput
+  BRQualityHealthcare: ModelBooleanInput
+  BRProfessionalAccess: ModelBooleanInput
+  BRInsuranceCoverage: ModelBooleanInput
+  BRFinancialConstraints: ModelBooleanInput
+  BREducationAttainment: ModelBooleanInput
+  BRSocialStigma: ModelBooleanInput
+  BRUnsupportiveCommunity: ModelBooleanInput
+  BRNonexistentCommunity: ModelBooleanInput
+  BRCommunityResources: ModelBooleanInput
+  BRProfessionalTrust: ModelBooleanInput
+  BRHealthcareSystemTrust: ModelBooleanInput
+  BRCognitiveImpairments: ModelBooleanInput
+  BRDependentCare: ModelBooleanInput
+  BRTransportation: ModelBooleanInput
+  BRTechnologyAccess: ModelBooleanInput
+  BRLanguage: ModelBooleanInput
+  BRHealthcareProcess: ModelBooleanInput
+  BROther: ModelBooleanInput
+  BRResponseNote: ModelStringInput
+  TGBetrayal: ModelBooleanInput
+  TGBoundaries: ModelBooleanInput
+  TGDisorder: ModelBooleanInput
+  TGPain: ModelBooleanInput
+  TGRejection: ModelBooleanInput
+  TGStress: ModelBooleanInput
+  TGMemories: ModelBooleanInput
+  TGUnjustTreatment: ModelBooleanInput
+  TGUnpleasantConversations: ModelBooleanInput
+  TGUnsafeEnvironments: ModelBooleanInput
+  TGOther: ModelBooleanInput
+  WSFlashbacks: ModelBooleanInput
+  WSIncreasedAppetite: ModelBooleanInput
+  WSDecreasedAppetite: ModelBooleanInput
+  WSIntenseEmotions: ModelBooleanInput
+  WSDisconnecting: ModelBooleanInput
+  WSTime: ModelBooleanInput
+  WSNegativeSelfTalk: ModelBooleanInput
+  WSNeglectingSelfCare: ModelBooleanInput
+  WSNightmares: ModelBooleanInput
+  WSRecklessBehavior: ModelBooleanInput
+  WSOther: ModelBooleanInput
+  and: [ModelCreatePlanConditionInput]
+  or: [ModelCreatePlanConditionInput]
+  not: ModelCreatePlanConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateCreatePlanInput {
+  id: ID
+  userId: ID!
+  PSProblemSolving: Boolean
+  PSSelfEsteem: Boolean
+  PSChoiceAutonomy: Boolean
+  PSSelfCare: Boolean
+  PSSelfAwareness: Boolean
+  PSCreativity: Boolean
+  CSForgiveness: Boolean
+  CSKindness: Boolean
+  CSGratitude: Boolean
+  CSPatience: Boolean
+  CSCourage: Boolean
+  CMSCopingChoice: Boolean
+  CMSResilience: Boolean
+  CMSSelfRegulation: Boolean
+  CMSOptimism: Boolean
+  COMSupportSystem: Boolean
+  COMSocialIntelligence: Boolean
+  COMCommunication: Boolean
+  COMFaithCommunity: Boolean
+  COMAccomplishments: Boolean
+  BRStableHousing: Boolean
+  BRQualityHealthcare: Boolean
+  BRProfessionalAccess: Boolean
+  BRInsuranceCoverage: Boolean
+  BRFinancialConstraints: Boolean
+  BREducationAttainment: Boolean
+  BRSocialStigma: Boolean
+  BRUnsupportiveCommunity: Boolean
+  BRNonexistentCommunity: Boolean
+  BRCommunityResources: Boolean
+  BRProfessionalTrust: Boolean
+  BRHealthcareSystemTrust: Boolean
+  BRCognitiveImpairments: Boolean
+  BRDependentCare: Boolean
+  BRTransportation: Boolean
+  BRTechnologyAccess: Boolean
+  BRLanguage: Boolean
+  BRHealthcareProcess: Boolean
+  BROther: Boolean
+  BRResponseNote: String
+  TGBetrayal: Boolean
+  TGBoundaries: Boolean
+  TGDisorder: Boolean
+  TGPain: Boolean
+  TGRejection: Boolean
+  TGStress: Boolean
+  TGMemories: Boolean
+  TGUnjustTreatment: Boolean
+  TGUnpleasantConversations: Boolean
+  TGUnsafeEnvironments: Boolean
+  TGOther: Boolean
+  WSFlashbacks: Boolean
+  WSIncreasedAppetite: Boolean
+  WSDecreasedAppetite: Boolean
+  WSIntenseEmotions: Boolean
+  WSDisconnecting: Boolean
+  WSTime: Boolean
+  WSNegativeSelfTalk: Boolean
+  WSNeglectingSelfCare: Boolean
+  WSNightmares: Boolean
+  WSRecklessBehavior: Boolean
+  WSOther: Boolean
+}
+
+input UpdateCreatePlanInput {
+  id: ID!
+  userId: ID
+  PSProblemSolving: Boolean
+  PSSelfEsteem: Boolean
+  PSChoiceAutonomy: Boolean
+  PSSelfCare: Boolean
+  PSSelfAwareness: Boolean
+  PSCreativity: Boolean
+  CSForgiveness: Boolean
+  CSKindness: Boolean
+  CSGratitude: Boolean
+  CSPatience: Boolean
+  CSCourage: Boolean
+  CMSCopingChoice: Boolean
+  CMSResilience: Boolean
+  CMSSelfRegulation: Boolean
+  CMSOptimism: Boolean
+  COMSupportSystem: Boolean
+  COMSocialIntelligence: Boolean
+  COMCommunication: Boolean
+  COMFaithCommunity: Boolean
+  COMAccomplishments: Boolean
+  BRStableHousing: Boolean
+  BRQualityHealthcare: Boolean
+  BRProfessionalAccess: Boolean
+  BRInsuranceCoverage: Boolean
+  BRFinancialConstraints: Boolean
+  BREducationAttainment: Boolean
+  BRSocialStigma: Boolean
+  BRUnsupportiveCommunity: Boolean
+  BRNonexistentCommunity: Boolean
+  BRCommunityResources: Boolean
+  BRProfessionalTrust: Boolean
+  BRHealthcareSystemTrust: Boolean
+  BRCognitiveImpairments: Boolean
+  BRDependentCare: Boolean
+  BRTransportation: Boolean
+  BRTechnologyAccess: Boolean
+  BRLanguage: Boolean
+  BRHealthcareProcess: Boolean
+  BROther: Boolean
+  BRResponseNote: String
+  TGBetrayal: Boolean
+  TGBoundaries: Boolean
+  TGDisorder: Boolean
+  TGPain: Boolean
+  TGRejection: Boolean
+  TGStress: Boolean
+  TGMemories: Boolean
+  TGUnjustTreatment: Boolean
+  TGUnpleasantConversations: Boolean
+  TGUnsafeEnvironments: Boolean
+  TGOther: Boolean
+  WSFlashbacks: Boolean
+  WSIncreasedAppetite: Boolean
+  WSDecreasedAppetite: Boolean
+  WSIntenseEmotions: Boolean
+  WSDisconnecting: Boolean
+  WSTime: Boolean
+  WSNegativeSelfTalk: Boolean
+  WSNeglectingSelfCare: Boolean
+  WSNightmares: Boolean
+  WSRecklessBehavior: Boolean
+  WSOther: Boolean
+}
+
+input DeleteCreatePlanInput {
+  id: ID!
+}
+
+input ModelSubscriptionCreatePlanFilterInput {
+  id: ModelSubscriptionIDInput
+  userId: ModelSubscriptionIDInput
+  PSProblemSolving: ModelSubscriptionBooleanInput
+  PSSelfEsteem: ModelSubscriptionBooleanInput
+  PSChoiceAutonomy: ModelSubscriptionBooleanInput
+  PSSelfCare: ModelSubscriptionBooleanInput
+  PSSelfAwareness: ModelSubscriptionBooleanInput
+  PSCreativity: ModelSubscriptionBooleanInput
+  CSForgiveness: ModelSubscriptionBooleanInput
+  CSKindness: ModelSubscriptionBooleanInput
+  CSGratitude: ModelSubscriptionBooleanInput
+  CSPatience: ModelSubscriptionBooleanInput
+  CSCourage: ModelSubscriptionBooleanInput
+  CMSCopingChoice: ModelSubscriptionBooleanInput
+  CMSResilience: ModelSubscriptionBooleanInput
+  CMSSelfRegulation: ModelSubscriptionBooleanInput
+  CMSOptimism: ModelSubscriptionBooleanInput
+  COMSupportSystem: ModelSubscriptionBooleanInput
+  COMSocialIntelligence: ModelSubscriptionBooleanInput
+  COMCommunication: ModelSubscriptionBooleanInput
+  COMFaithCommunity: ModelSubscriptionBooleanInput
+  COMAccomplishments: ModelSubscriptionBooleanInput
+  BRStableHousing: ModelSubscriptionBooleanInput
+  BRQualityHealthcare: ModelSubscriptionBooleanInput
+  BRProfessionalAccess: ModelSubscriptionBooleanInput
+  BRInsuranceCoverage: ModelSubscriptionBooleanInput
+  BRFinancialConstraints: ModelSubscriptionBooleanInput
+  BREducationAttainment: ModelSubscriptionBooleanInput
+  BRSocialStigma: ModelSubscriptionBooleanInput
+  BRUnsupportiveCommunity: ModelSubscriptionBooleanInput
+  BRNonexistentCommunity: ModelSubscriptionBooleanInput
+  BRCommunityResources: ModelSubscriptionBooleanInput
+  BRProfessionalTrust: ModelSubscriptionBooleanInput
+  BRHealthcareSystemTrust: ModelSubscriptionBooleanInput
+  BRCognitiveImpairments: ModelSubscriptionBooleanInput
+  BRDependentCare: ModelSubscriptionBooleanInput
+  BRTransportation: ModelSubscriptionBooleanInput
+  BRTechnologyAccess: ModelSubscriptionBooleanInput
+  BRLanguage: ModelSubscriptionBooleanInput
+  BRHealthcareProcess: ModelSubscriptionBooleanInput
+  BROther: ModelSubscriptionBooleanInput
+  BRResponseNote: ModelSubscriptionStringInput
+  TGBetrayal: ModelSubscriptionBooleanInput
+  TGBoundaries: ModelSubscriptionBooleanInput
+  TGDisorder: ModelSubscriptionBooleanInput
+  TGPain: ModelSubscriptionBooleanInput
+  TGRejection: ModelSubscriptionBooleanInput
+  TGStress: ModelSubscriptionBooleanInput
+  TGMemories: ModelSubscriptionBooleanInput
+  TGUnjustTreatment: ModelSubscriptionBooleanInput
+  TGUnpleasantConversations: ModelSubscriptionBooleanInput
+  TGUnsafeEnvironments: ModelSubscriptionBooleanInput
+  TGOther: ModelSubscriptionBooleanInput
+  WSFlashbacks: ModelSubscriptionBooleanInput
+  WSIncreasedAppetite: ModelSubscriptionBooleanInput
+  WSDecreasedAppetite: ModelSubscriptionBooleanInput
+  WSIntenseEmotions: ModelSubscriptionBooleanInput
+  WSDisconnecting: ModelSubscriptionBooleanInput
+  WSTime: ModelSubscriptionBooleanInput
+  WSNegativeSelfTalk: ModelSubscriptionBooleanInput
+  WSNeglectingSelfCare: ModelSubscriptionBooleanInput
+  WSNightmares: ModelSubscriptionBooleanInput
+  WSRecklessBehavior: ModelSubscriptionBooleanInput
+  WSOther: ModelSubscriptionBooleanInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionCreatePlanFilterInput]
+  or: [ModelSubscriptionCreatePlanFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelGeneralInformationConnection @aws_api_key @aws_iam @aws_cognito_user_pools {
+  items: [GeneralInformation]!
+  nextToken: String
+}
+
+input ModelGeneralInformationFilterInput {
+  id: ModelIDInput
+  userId: ModelIDInput
+  FirstName: ModelStringInput
+  LastName: ModelStringInput
+  Email: ModelStringInput
+  ProfessionalRole: ModelStringInput
+  BusinessName: ModelStringInput
+  BusinessEIN: ModelIntInput
+  BusinessCountry: ModelStringInput
+  BusinessAddress: ModelStringInput
+  BusinessCity: ModelStringInput
+  BusinessState: ModelStringInput
+  BusinessZipCode: ModelIntInput
+  BusinessPhoneNumber: ModelStringInput
+  BusinessWebsite: ModelStringInput
+  OrganizationAdministrator: ModelBooleanInput
+  OrganizationEmployee: ModelBooleanInput
+  Department: ModelStringInput
+  Service: ModelStringInput
+  ProgramsUnit: ModelStringInput
+  ProfileType: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelGeneralInformationFilterInput]
+  or: [ModelGeneralInformationFilterInput]
+  not: ModelGeneralInformationFilterInput
+  owner: ModelStringInput
+}
+
+input ModelGeneralInformationConditionInput {
+  userId: ModelIDInput
+  FirstName: ModelStringInput
+  LastName: ModelStringInput
+  Email: ModelStringInput
+  ProfessionalRole: ModelStringInput
+  BusinessName: ModelStringInput
+  BusinessEIN: ModelIntInput
+  BusinessCountry: ModelStringInput
+  BusinessAddress: ModelStringInput
+  BusinessCity: ModelStringInput
+  BusinessState: ModelStringInput
+  BusinessZipCode: ModelIntInput
+  BusinessPhoneNumber: ModelStringInput
+  BusinessWebsite: ModelStringInput
+  OrganizationAdministrator: ModelBooleanInput
+  OrganizationEmployee: ModelBooleanInput
+  Department: ModelStringInput
+  Service: ModelStringInput
+  ProgramsUnit: ModelStringInput
+  ProfileType: ModelStringInput
+  and: [ModelGeneralInformationConditionInput]
+  or: [ModelGeneralInformationConditionInput]
+  not: ModelGeneralInformationConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateGeneralInformationInput {
+  id: ID
+  userId: ID!
+  FirstName: String!
+  LastName: String!
+  Email: AWSEmail!
+  ProfessionalRole: String
+  BusinessName: String
+  BusinessEIN: Int
+  BusinessCountry: String
+  BusinessAddress: String
+  BusinessCity: String
+  BusinessState: String
+  BusinessZipCode: Int
+  BusinessPhoneNumber: String
+  BusinessWebsite: String
+  OrganizationAdministrator: Boolean
+  OrganizationEmployee: Boolean
+  Department: String
+  Service: String
+  ProgramsUnit: String
+  ProfileType: String
+}
+
+input UpdateGeneralInformationInput {
+  id: ID!
+  userId: ID
+  FirstName: String
+  LastName: String
+  Email: AWSEmail
+  ProfessionalRole: String
+  BusinessName: String
+  BusinessEIN: Int
+  BusinessCountry: String
+  BusinessAddress: String
+  BusinessCity: String
+  BusinessState: String
+  BusinessZipCode: Int
+  BusinessPhoneNumber: String
+  BusinessWebsite: String
+  OrganizationAdministrator: Boolean
+  OrganizationEmployee: Boolean
+  Department: String
+  Service: String
+  ProgramsUnit: String
+  ProfileType: String
+}
+
+input DeleteGeneralInformationInput {
+  id: ID!
+}
+
+input ModelSubscriptionGeneralInformationFilterInput {
+  id: ModelSubscriptionIDInput
+  userId: ModelSubscriptionIDInput
+  FirstName: ModelSubscriptionStringInput
+  LastName: ModelSubscriptionStringInput
+  Email: ModelSubscriptionStringInput
+  ProfessionalRole: ModelSubscriptionStringInput
+  BusinessName: ModelSubscriptionStringInput
+  BusinessEIN: ModelSubscriptionIntInput
+  BusinessCountry: ModelSubscriptionStringInput
+  BusinessAddress: ModelSubscriptionStringInput
+  BusinessCity: ModelSubscriptionStringInput
+  BusinessState: ModelSubscriptionStringInput
+  BusinessZipCode: ModelSubscriptionIntInput
+  BusinessPhoneNumber: ModelSubscriptionStringInput
+  BusinessWebsite: ModelSubscriptionStringInput
+  OrganizationAdministrator: ModelSubscriptionBooleanInput
+  OrganizationEmployee: ModelSubscriptionBooleanInput
+  Department: ModelSubscriptionStringInput
+  Service: ModelSubscriptionStringInput
+  ProgramsUnit: ModelSubscriptionStringInput
+  ProfileType: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionGeneralInformationFilterInput]
+  or: [ModelSubscriptionGeneralInformationFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelAssessmentAnswersConnection @aws_api_key @aws_iam @aws_cognito_user_pools {
+  items: [AssessmentAnswers]!
+  nextToken: String
+}
+
+input ModelAssessmentAnswersFilterInput {
+  id: ModelIDInput
+  userId: ModelIDInput
+  CompletedDate: ModelStringInput
+  CompletedTime: ModelStringInput
+  TRHurtfulNames: ModelBooleanInput
+  TRNoNurturing: ModelBooleanInput
+  TRHit: ModelBooleanInput
+  TRNeedsNotMet: ModelBooleanInput
+  TRForcedSex: ModelBooleanInput
+  TRResponsible: ModelBooleanInput
+  TRViolence: ModelBooleanInput
+  TRSubstanceAbuse: ModelBooleanInput
+  TRMentalIllness: ModelBooleanInput
+  TRParentDivorce: ModelBooleanInput
+  TRParentIncarcerated: ModelBooleanInput
+  TRHomelessness: ModelBooleanInput
+  TRBodyFunction: ModelBooleanInput
+  TRNaturalDisaster: ModelBooleanInput
+  TRDirectTerrorism: ModelBooleanInput
+  TRIndirectTerrorism: ModelBooleanInput
+  TRLovedOne: ModelBooleanInput
+  TRBelief: ModelBooleanInput
+  TRResponseProfessional: ModelBooleanInput
+  TRResponseFamilyFriend: ModelBooleanInput
+  TRResponseGod: ModelBooleanInput
+  TRResponseNoOne: ModelBooleanInput
+  TRNoTrauma: ModelBooleanInput
+  CMAlcohol: ModelStringInput
+  CMDrugs: ModelStringInput
+  CMOvereating: ModelStringInput
+  CMSmoking: ModelStringInput
+  CMGaming: ModelStringInput
+  CMShopping: ModelStringInput
+  CMGambling: ModelStringInput
+  CMSex: ModelStringInput
+  CMPorn: ModelStringInput
+  CMBlaming: ModelStringInput
+  CMHurting: ModelStringInput
+  CMDisengage: ModelStringInput
+  CMArt: ModelStringInput
+  CMMusic: ModelStringInput
+  CMPoetry: ModelStringInput
+  CMReading: ModelStringInput
+  CMGroups: ModelStringInput
+  CMCounseling: ModelStringInput
+  CMVenting: ModelStringInput
+  CMWriting: ModelStringInput
+  CMSensory: ModelStringInput
+  CMDancing: ModelStringInput
+  CMExercising: ModelStringInput
+  CMWalking: ModelStringInput
+  CMChange: ModelStringInput
+  CMAnalyze: ModelStringInput
+  CMDaydream: ModelStringInput
+  CMPositive: ModelStringInput
+  MHDxPTSD: ModelBooleanInput
+  MHDxDepression: ModelBooleanInput
+  MHDxSUD: ModelBooleanInput
+  MHDxOtherMental: ModelBooleanInput
+  MHSleeplessness: ModelStringInput
+  MHAlcoholUse: ModelStringInput
+  MHAnxiety: ModelStringInput
+  MHDepression: ModelStringInput
+  MHDrugUse: ModelStringInput
+  MHGrief: ModelStringInput
+  MHGuilt: ModelStringInput
+  MHIrritability: ModelStringInput
+  MHStress: ModelStringInput
+  MHRegret: ModelStringInput
+  MHSuicidalThoughts: ModelStringInput
+  MHLoneliness: ModelStringInput
+  MHWorry: ModelStringInput
+  PHDxInfertility: ModelBooleanInput
+  PHDxCurableSTD: ModelBooleanInput
+  PHDxIncurableSTD: ModelBooleanInput
+  PHDxCancer: ModelBooleanInput
+  PHDxDiabetes: ModelBooleanInput
+  PHDxHighBlood: ModelBooleanInput
+  PHDxHeartDisease: ModelBooleanInput
+  PHDxIrritableBowel: ModelBooleanInput
+  PHDxVitA: ModelBooleanInput
+  PHDxVitB: ModelBooleanInput
+  PHDxVitC: ModelBooleanInput
+  PHDxVitD: ModelBooleanInput
+  PHDxVitE: ModelBooleanInput
+  PHDxVitK: ModelBooleanInput
+  PHDxAutoimmune: ModelBooleanInput
+  PHDxOtherPhysical: ModelBooleanInput
+  PHVegeFruits: ModelStringInput
+  PHBeanLentils: ModelStringInput
+  PHGrainBreads: ModelStringInput
+  PHDairy: ModelStringInput
+  PHMeat: ModelStringInput
+  PHFishSeafood: ModelStringInput
+  PHSweets: ModelStringInput
+  PHWater: ModelStringInput
+  PHPhysicalActivity: ModelStringInput
+  SHSpiritualDefine: ModelStringInput
+  SHSpiritualIntegrate: ModelStringInput
+  SHPrayer: ModelStringInput
+  SHSpiritualActivity: ModelStringInput
+  SHReadText: ModelStringInput
+  SHAlignText: ModelStringInput
+  SHCommunity: ModelStringInput
+  OLHope: ModelStringInput
+  OLPeace: ModelStringInput
+  OLLearning: ModelStringInput
+  OLJoy: ModelStringInput
+  OLStable: ModelStringInput
+  OLSafety: ModelStringInput
+  OLKindness: ModelStringInput
+  OLForgiveness: ModelStringInput
+  OLPatience: ModelStringInput
+  OLRelationships: ModelStringInput
+  OLBoundaries: ModelStringInput
+  OLEUnpleasant: ModelStringInput
+  OLEPleasant: ModelStringInput
+  OLEControl: ModelStringInput
+  OLENumber: ModelStringInput
+  SDoHAgeRange: ModelStringInput
+  SDoHRace: ModelStringInput
+  SDoHGeographicRegion: ModelStringInput
+  SDoHEthnicity: ModelStringInput
+  SDoHState: ModelStringInput
+  SDoHZipCode: ModelStringInput
+  SDoHMaritalStatus: ModelStringInput
+  SDoHMilitaryStatus: ModelStringInput
+  SDoHGender: ModelStringInput
+  SDoHEducation: ModelStringInput
+  SDoHJobStatus: ModelStringInput
+  SDoHIncome: ModelStringInput
+  SDoHHousingStatus: ModelStringInput
+  SDoHHomeAsChild: ModelStringInput
+  SDoHReligion: ModelStringInput
+  SDoHDenomination: ModelStringInput
+  isActive: ModelBooleanInput
+  SHSkip: ModelBooleanInput
+  ProAssessmentFinalizedReview1: ModelBooleanInput
+  ProAssessmentFinalizedReviewDate1: ModelStringInput
+  ProAssessmentFinalizedName1: ModelStringInput
+  ProAssessmentFinalizedRole1: ModelStringInput
+  ProAssessmentFinalizedReview2: ModelBooleanInput
+  ProAssessmentFinalizedReviewDate2: ModelStringInput
+  ProAssessmentFinalizedName2: ModelStringInput
+  ProAssessmentFinalizedRole2: ModelStringInput
+  ProAssessmentFinalizedReview3: ModelBooleanInput
+  ProAssessmentFinalizedReviewDate3: ModelStringInput
+  ProAssessmentFinalizedName3: ModelStringInput
+  ProAssessmentFinalizedRole3: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelAssessmentAnswersFilterInput]
+  or: [ModelAssessmentAnswersFilterInput]
+  not: ModelAssessmentAnswersFilterInput
+  owner: ModelStringInput
+}
+
+input ModelAssessmentAnswersConditionInput {
+  userId: ModelIDInput
+  CompletedDate: ModelStringInput
+  CompletedTime: ModelStringInput
+  TRHurtfulNames: ModelBooleanInput
+  TRNoNurturing: ModelBooleanInput
+  TRHit: ModelBooleanInput
+  TRNeedsNotMet: ModelBooleanInput
+  TRForcedSex: ModelBooleanInput
+  TRResponsible: ModelBooleanInput
+  TRViolence: ModelBooleanInput
+  TRSubstanceAbuse: ModelBooleanInput
+  TRMentalIllness: ModelBooleanInput
+  TRParentDivorce: ModelBooleanInput
+  TRParentIncarcerated: ModelBooleanInput
+  TRHomelessness: ModelBooleanInput
+  TRBodyFunction: ModelBooleanInput
+  TRNaturalDisaster: ModelBooleanInput
+  TRDirectTerrorism: ModelBooleanInput
+  TRIndirectTerrorism: ModelBooleanInput
+  TRLovedOne: ModelBooleanInput
+  TRBelief: ModelBooleanInput
+  TRResponseProfessional: ModelBooleanInput
+  TRResponseFamilyFriend: ModelBooleanInput
+  TRResponseGod: ModelBooleanInput
+  TRResponseNoOne: ModelBooleanInput
+  TRNoTrauma: ModelBooleanInput
+  CMAlcohol: ModelStringInput
+  CMDrugs: ModelStringInput
+  CMOvereating: ModelStringInput
+  CMSmoking: ModelStringInput
+  CMGaming: ModelStringInput
+  CMShopping: ModelStringInput
+  CMGambling: ModelStringInput
+  CMSex: ModelStringInput
+  CMPorn: ModelStringInput
+  CMBlaming: ModelStringInput
+  CMHurting: ModelStringInput
+  CMDisengage: ModelStringInput
+  CMArt: ModelStringInput
+  CMMusic: ModelStringInput
+  CMPoetry: ModelStringInput
+  CMReading: ModelStringInput
+  CMGroups: ModelStringInput
+  CMCounseling: ModelStringInput
+  CMVenting: ModelStringInput
+  CMWriting: ModelStringInput
+  CMSensory: ModelStringInput
+  CMDancing: ModelStringInput
+  CMExercising: ModelStringInput
+  CMWalking: ModelStringInput
+  CMChange: ModelStringInput
+  CMAnalyze: ModelStringInput
+  CMDaydream: ModelStringInput
+  CMPositive: ModelStringInput
+  MHDxPTSD: ModelBooleanInput
+  MHDxDepression: ModelBooleanInput
+  MHDxSUD: ModelBooleanInput
+  MHDxOtherMental: ModelBooleanInput
+  MHSleeplessness: ModelStringInput
+  MHAlcoholUse: ModelStringInput
+  MHAnxiety: ModelStringInput
+  MHDepression: ModelStringInput
+  MHDrugUse: ModelStringInput
+  MHGrief: ModelStringInput
+  MHGuilt: ModelStringInput
+  MHIrritability: ModelStringInput
+  MHStress: ModelStringInput
+  MHRegret: ModelStringInput
+  MHSuicidalThoughts: ModelStringInput
+  MHLoneliness: ModelStringInput
+  MHWorry: ModelStringInput
+  PHDxInfertility: ModelBooleanInput
+  PHDxCurableSTD: ModelBooleanInput
+  PHDxIncurableSTD: ModelBooleanInput
+  PHDxCancer: ModelBooleanInput
+  PHDxDiabetes: ModelBooleanInput
+  PHDxHighBlood: ModelBooleanInput
+  PHDxHeartDisease: ModelBooleanInput
+  PHDxIrritableBowel: ModelBooleanInput
+  PHDxVitA: ModelBooleanInput
+  PHDxVitB: ModelBooleanInput
+  PHDxVitC: ModelBooleanInput
+  PHDxVitD: ModelBooleanInput
+  PHDxVitE: ModelBooleanInput
+  PHDxVitK: ModelBooleanInput
+  PHDxAutoimmune: ModelBooleanInput
+  PHDxOtherPhysical: ModelBooleanInput
+  PHVegeFruits: ModelStringInput
+  PHBeanLentils: ModelStringInput
+  PHGrainBreads: ModelStringInput
+  PHDairy: ModelStringInput
+  PHMeat: ModelStringInput
+  PHFishSeafood: ModelStringInput
+  PHSweets: ModelStringInput
+  PHWater: ModelStringInput
+  PHPhysicalActivity: ModelStringInput
+  SHSpiritualDefine: ModelStringInput
+  SHSpiritualIntegrate: ModelStringInput
+  SHPrayer: ModelStringInput
+  SHSpiritualActivity: ModelStringInput
+  SHReadText: ModelStringInput
+  SHAlignText: ModelStringInput
+  SHCommunity: ModelStringInput
+  OLHope: ModelStringInput
+  OLPeace: ModelStringInput
+  OLLearning: ModelStringInput
+  OLJoy: ModelStringInput
+  OLStable: ModelStringInput
+  OLSafety: ModelStringInput
+  OLKindness: ModelStringInput
+  OLForgiveness: ModelStringInput
+  OLPatience: ModelStringInput
+  OLRelationships: ModelStringInput
+  OLBoundaries: ModelStringInput
+  OLEUnpleasant: ModelStringInput
+  OLEPleasant: ModelStringInput
+  OLEControl: ModelStringInput
+  OLENumber: ModelStringInput
+  SDoHAgeRange: ModelStringInput
+  SDoHRace: ModelStringInput
+  SDoHGeographicRegion: ModelStringInput
+  SDoHEthnicity: ModelStringInput
+  SDoHState: ModelStringInput
+  SDoHZipCode: ModelStringInput
+  SDoHMaritalStatus: ModelStringInput
+  SDoHMilitaryStatus: ModelStringInput
+  SDoHGender: ModelStringInput
+  SDoHEducation: ModelStringInput
+  SDoHJobStatus: ModelStringInput
+  SDoHIncome: ModelStringInput
+  SDoHHousingStatus: ModelStringInput
+  SDoHHomeAsChild: ModelStringInput
+  SDoHReligion: ModelStringInput
+  SDoHDenomination: ModelStringInput
+  isActive: ModelBooleanInput
+  SHSkip: ModelBooleanInput
+  ProAssessmentFinalizedReview1: ModelBooleanInput
+  ProAssessmentFinalizedReviewDate1: ModelStringInput
+  ProAssessmentFinalizedName1: ModelStringInput
+  ProAssessmentFinalizedRole1: ModelStringInput
+  ProAssessmentFinalizedReview2: ModelBooleanInput
+  ProAssessmentFinalizedReviewDate2: ModelStringInput
+  ProAssessmentFinalizedName2: ModelStringInput
+  ProAssessmentFinalizedRole2: ModelStringInput
+  ProAssessmentFinalizedReview3: ModelBooleanInput
+  ProAssessmentFinalizedReviewDate3: ModelStringInput
+  ProAssessmentFinalizedName3: ModelStringInput
+  ProAssessmentFinalizedRole3: ModelStringInput
+  and: [ModelAssessmentAnswersConditionInput]
+  or: [ModelAssessmentAnswersConditionInput]
+  not: ModelAssessmentAnswersConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateAssessmentAnswersInput {
+  id: ID
+  userId: ID!
+  CompletedDate: String
+  CompletedTime: String
+  TRHurtfulNames: Boolean
+  TRNoNurturing: Boolean
+  TRHit: Boolean
+  TRNeedsNotMet: Boolean
+  TRForcedSex: Boolean
+  TRResponsible: Boolean
+  TRViolence: Boolean
+  TRSubstanceAbuse: Boolean
+  TRMentalIllness: Boolean
+  TRParentDivorce: Boolean
+  TRParentIncarcerated: Boolean
+  TRHomelessness: Boolean
+  TRBodyFunction: Boolean
+  TRNaturalDisaster: Boolean
+  TRDirectTerrorism: Boolean
+  TRIndirectTerrorism: Boolean
+  TRLovedOne: Boolean
+  TRBelief: Boolean
+  TRResponseProfessional: Boolean
+  TRResponseFamilyFriend: Boolean
+  TRResponseGod: Boolean
+  TRResponseNoOne: Boolean
+  TRNoTrauma: Boolean
+  CMAlcohol: String!
+  CMDrugs: String!
+  CMOvereating: String!
+  CMSmoking: String!
+  CMGaming: String!
+  CMShopping: String!
+  CMGambling: String!
+  CMSex: String!
+  CMPorn: String!
+  CMBlaming: String!
+  CMHurting: String!
+  CMDisengage: String!
+  CMArt: String!
+  CMMusic: String!
+  CMPoetry: String!
+  CMReading: String!
+  CMGroups: String!
+  CMCounseling: String!
+  CMVenting: String!
+  CMWriting: String!
+  CMSensory: String!
+  CMDancing: String!
+  CMExercising: String!
+  CMWalking: String!
+  CMChange: String!
+  CMAnalyze: String!
+  CMDaydream: String!
+  CMPositive: String!
+  MHDxPTSD: Boolean!
+  MHDxDepression: Boolean!
+  MHDxSUD: Boolean!
+  MHDxOtherMental: Boolean!
+  MHSleeplessness: String!
+  MHAlcoholUse: String!
+  MHAnxiety: String!
+  MHDepression: String!
+  MHDrugUse: String!
+  MHGrief: String!
+  MHGuilt: String!
+  MHIrritability: String!
+  MHStress: String!
+  MHRegret: String!
+  MHSuicidalThoughts: String!
+  MHLoneliness: String!
+  MHWorry: String!
+  PHDxInfertility: Boolean!
+  PHDxCurableSTD: Boolean!
+  PHDxIncurableSTD: Boolean!
+  PHDxCancer: Boolean!
+  PHDxDiabetes: Boolean!
+  PHDxHighBlood: Boolean!
+  PHDxHeartDisease: Boolean!
+  PHDxIrritableBowel: Boolean!
+  PHDxVitA: Boolean!
+  PHDxVitB: Boolean!
+  PHDxVitC: Boolean!
+  PHDxVitD: Boolean!
+  PHDxVitE: Boolean!
+  PHDxVitK: Boolean!
+  PHDxAutoimmune: Boolean!
+  PHDxOtherPhysical: Boolean!
+  PHVegeFruits: String!
+  PHBeanLentils: String!
+  PHGrainBreads: String!
+  PHDairy: String!
+  PHMeat: String!
+  PHFishSeafood: String!
+  PHSweets: String!
+  PHWater: String!
+  PHPhysicalActivity: String!
+  SHSpiritualDefine: String
+  SHSpiritualIntegrate: String
+  SHPrayer: String
+  SHSpiritualActivity: String
+  SHReadText: String
+  SHAlignText: String
+  SHCommunity: String
+  OLHope: String!
+  OLPeace: String!
+  OLLearning: String!
+  OLJoy: String!
+  OLStable: String!
+  OLSafety: String!
+  OLKindness: String!
+  OLForgiveness: String!
+  OLPatience: String!
+  OLRelationships: String!
+  OLBoundaries: String!
+  OLEUnpleasant: String!
+  OLEPleasant: String!
+  OLEControl: String!
+  OLENumber: String!
+  SDoHAgeRange: String
+  SDoHRace: String
+  SDoHGeographicRegion: String
+  SDoHEthnicity: String
+  SDoHState: String
+  SDoHZipCode: String
+  SDoHMaritalStatus: String
+  SDoHMilitaryStatus: String
+  SDoHGender: String
+  SDoHEducation: String
+  SDoHJobStatus: String
+  SDoHIncome: String
+  SDoHHousingStatus: String
+  SDoHHomeAsChild: String
+  SDoHReligion: String
+  SDoHDenomination: String
+  isActive: Boolean!
+  SHSkip: Boolean
+  ProAssessmentFinalizedReview1: Boolean
+  ProAssessmentFinalizedReviewDate1: AWSDate
+  ProAssessmentFinalizedName1: String
+  ProAssessmentFinalizedRole1: String
+  ProAssessmentFinalizedReview2: Boolean
+  ProAssessmentFinalizedReviewDate2: AWSDate
+  ProAssessmentFinalizedName2: String
+  ProAssessmentFinalizedRole2: String
+  ProAssessmentFinalizedReview3: Boolean
+  ProAssessmentFinalizedReviewDate3: AWSDate
+  ProAssessmentFinalizedName3: String
+  ProAssessmentFinalizedRole3: String
+}
+
+input UpdateAssessmentAnswersInput {
+  id: ID!
+  userId: ID
+  CompletedDate: String
+  CompletedTime: String
+  TRHurtfulNames: Boolean
+  TRNoNurturing: Boolean
+  TRHit: Boolean
+  TRNeedsNotMet: Boolean
+  TRForcedSex: Boolean
+  TRResponsible: Boolean
+  TRViolence: Boolean
+  TRSubstanceAbuse: Boolean
+  TRMentalIllness: Boolean
+  TRParentDivorce: Boolean
+  TRParentIncarcerated: Boolean
+  TRHomelessness: Boolean
+  TRBodyFunction: Boolean
+  TRNaturalDisaster: Boolean
+  TRDirectTerrorism: Boolean
+  TRIndirectTerrorism: Boolean
+  TRLovedOne: Boolean
+  TRBelief: Boolean
+  TRResponseProfessional: Boolean
+  TRResponseFamilyFriend: Boolean
+  TRResponseGod: Boolean
+  TRResponseNoOne: Boolean
+  TRNoTrauma: Boolean
+  CMAlcohol: String
+  CMDrugs: String
+  CMOvereating: String
+  CMSmoking: String
+  CMGaming: String
+  CMShopping: String
+  CMGambling: String
+  CMSex: String
+  CMPorn: String
+  CMBlaming: String
+  CMHurting: String
+  CMDisengage: String
+  CMArt: String
+  CMMusic: String
+  CMPoetry: String
+  CMReading: String
+  CMGroups: String
+  CMCounseling: String
+  CMVenting: String
+  CMWriting: String
+  CMSensory: String
+  CMDancing: String
+  CMExercising: String
+  CMWalking: String
+  CMChange: String
+  CMAnalyze: String
+  CMDaydream: String
+  CMPositive: String
+  MHDxPTSD: Boolean
+  MHDxDepression: Boolean
+  MHDxSUD: Boolean
+  MHDxOtherMental: Boolean
+  MHSleeplessness: String
+  MHAlcoholUse: String
+  MHAnxiety: String
+  MHDepression: String
+  MHDrugUse: String
+  MHGrief: String
+  MHGuilt: String
+  MHIrritability: String
+  MHStress: String
+  MHRegret: String
+  MHSuicidalThoughts: String
+  MHLoneliness: String
+  MHWorry: String
+  PHDxInfertility: Boolean
+  PHDxCurableSTD: Boolean
+  PHDxIncurableSTD: Boolean
+  PHDxCancer: Boolean
+  PHDxDiabetes: Boolean
+  PHDxHighBlood: Boolean
+  PHDxHeartDisease: Boolean
+  PHDxIrritableBowel: Boolean
+  PHDxVitA: Boolean
+  PHDxVitB: Boolean
+  PHDxVitC: Boolean
+  PHDxVitD: Boolean
+  PHDxVitE: Boolean
+  PHDxVitK: Boolean
+  PHDxAutoimmune: Boolean
+  PHDxOtherPhysical: Boolean
+  PHVegeFruits: String
+  PHBeanLentils: String
+  PHGrainBreads: String
+  PHDairy: String
+  PHMeat: String
+  PHFishSeafood: String
+  PHSweets: String
+  PHWater: String
+  PHPhysicalActivity: String
+  SHSpiritualDefine: String
+  SHSpiritualIntegrate: String
+  SHPrayer: String
+  SHSpiritualActivity: String
+  SHReadText: String
+  SHAlignText: String
+  SHCommunity: String
+  OLHope: String
+  OLPeace: String
+  OLLearning: String
+  OLJoy: String
+  OLStable: String
+  OLSafety: String
+  OLKindness: String
+  OLForgiveness: String
+  OLPatience: String
+  OLRelationships: String
+  OLBoundaries: String
+  OLEUnpleasant: String
+  OLEPleasant: String
+  OLEControl: String
+  OLENumber: String
+  SDoHAgeRange: String
+  SDoHRace: String
+  SDoHGeographicRegion: String
+  SDoHEthnicity: String
+  SDoHState: String
+  SDoHZipCode: String
+  SDoHMaritalStatus: String
+  SDoHMilitaryStatus: String
+  SDoHGender: String
+  SDoHEducation: String
+  SDoHJobStatus: String
+  SDoHIncome: String
+  SDoHHousingStatus: String
+  SDoHHomeAsChild: String
+  SDoHReligion: String
+  SDoHDenomination: String
+  isActive: Boolean
+  SHSkip: Boolean
+  ProAssessmentFinalizedReview1: Boolean
+  ProAssessmentFinalizedReviewDate1: AWSDate
+  ProAssessmentFinalizedName1: String
+  ProAssessmentFinalizedRole1: String
+  ProAssessmentFinalizedReview2: Boolean
+  ProAssessmentFinalizedReviewDate2: AWSDate
+  ProAssessmentFinalizedName2: String
+  ProAssessmentFinalizedRole2: String
+  ProAssessmentFinalizedReview3: Boolean
+  ProAssessmentFinalizedReviewDate3: AWSDate
+  ProAssessmentFinalizedName3: String
+  ProAssessmentFinalizedRole3: String
+}
+
+input DeleteAssessmentAnswersInput {
+  id: ID!
+}
+
+input ModelSubscriptionAssessmentAnswersFilterInput {
+  id: ModelSubscriptionIDInput
+  userId: ModelSubscriptionIDInput
+  CompletedDate: ModelSubscriptionStringInput
+  CompletedTime: ModelSubscriptionStringInput
+  TRHurtfulNames: ModelSubscriptionBooleanInput
+  TRNoNurturing: ModelSubscriptionBooleanInput
+  TRHit: ModelSubscriptionBooleanInput
+  TRNeedsNotMet: ModelSubscriptionBooleanInput
+  TRForcedSex: ModelSubscriptionBooleanInput
+  TRResponsible: ModelSubscriptionBooleanInput
+  TRViolence: ModelSubscriptionBooleanInput
+  TRSubstanceAbuse: ModelSubscriptionBooleanInput
+  TRMentalIllness: ModelSubscriptionBooleanInput
+  TRParentDivorce: ModelSubscriptionBooleanInput
+  TRParentIncarcerated: ModelSubscriptionBooleanInput
+  TRHomelessness: ModelSubscriptionBooleanInput
+  TRBodyFunction: ModelSubscriptionBooleanInput
+  TRNaturalDisaster: ModelSubscriptionBooleanInput
+  TRDirectTerrorism: ModelSubscriptionBooleanInput
+  TRIndirectTerrorism: ModelSubscriptionBooleanInput
+  TRLovedOne: ModelSubscriptionBooleanInput
+  TRBelief: ModelSubscriptionBooleanInput
+  TRResponseProfessional: ModelSubscriptionBooleanInput
+  TRResponseFamilyFriend: ModelSubscriptionBooleanInput
+  TRResponseGod: ModelSubscriptionBooleanInput
+  TRResponseNoOne: ModelSubscriptionBooleanInput
+  TRNoTrauma: ModelSubscriptionBooleanInput
+  CMAlcohol: ModelSubscriptionStringInput
+  CMDrugs: ModelSubscriptionStringInput
+  CMOvereating: ModelSubscriptionStringInput
+  CMSmoking: ModelSubscriptionStringInput
+  CMGaming: ModelSubscriptionStringInput
+  CMShopping: ModelSubscriptionStringInput
+  CMGambling: ModelSubscriptionStringInput
+  CMSex: ModelSubscriptionStringInput
+  CMPorn: ModelSubscriptionStringInput
+  CMBlaming: ModelSubscriptionStringInput
+  CMHurting: ModelSubscriptionStringInput
+  CMDisengage: ModelSubscriptionStringInput
+  CMArt: ModelSubscriptionStringInput
+  CMMusic: ModelSubscriptionStringInput
+  CMPoetry: ModelSubscriptionStringInput
+  CMReading: ModelSubscriptionStringInput
+  CMGroups: ModelSubscriptionStringInput
+  CMCounseling: ModelSubscriptionStringInput
+  CMVenting: ModelSubscriptionStringInput
+  CMWriting: ModelSubscriptionStringInput
+  CMSensory: ModelSubscriptionStringInput
+  CMDancing: ModelSubscriptionStringInput
+  CMExercising: ModelSubscriptionStringInput
+  CMWalking: ModelSubscriptionStringInput
+  CMChange: ModelSubscriptionStringInput
+  CMAnalyze: ModelSubscriptionStringInput
+  CMDaydream: ModelSubscriptionStringInput
+  CMPositive: ModelSubscriptionStringInput
+  MHDxPTSD: ModelSubscriptionBooleanInput
+  MHDxDepression: ModelSubscriptionBooleanInput
+  MHDxSUD: ModelSubscriptionBooleanInput
+  MHDxOtherMental: ModelSubscriptionBooleanInput
+  MHSleeplessness: ModelSubscriptionStringInput
+  MHAlcoholUse: ModelSubscriptionStringInput
+  MHAnxiety: ModelSubscriptionStringInput
+  MHDepression: ModelSubscriptionStringInput
+  MHDrugUse: ModelSubscriptionStringInput
+  MHGrief: ModelSubscriptionStringInput
+  MHGuilt: ModelSubscriptionStringInput
+  MHIrritability: ModelSubscriptionStringInput
+  MHStress: ModelSubscriptionStringInput
+  MHRegret: ModelSubscriptionStringInput
+  MHSuicidalThoughts: ModelSubscriptionStringInput
+  MHLoneliness: ModelSubscriptionStringInput
+  MHWorry: ModelSubscriptionStringInput
+  PHDxInfertility: ModelSubscriptionBooleanInput
+  PHDxCurableSTD: ModelSubscriptionBooleanInput
+  PHDxIncurableSTD: ModelSubscriptionBooleanInput
+  PHDxCancer: ModelSubscriptionBooleanInput
+  PHDxDiabetes: ModelSubscriptionBooleanInput
+  PHDxHighBlood: ModelSubscriptionBooleanInput
+  PHDxHeartDisease: ModelSubscriptionBooleanInput
+  PHDxIrritableBowel: ModelSubscriptionBooleanInput
+  PHDxVitA: ModelSubscriptionBooleanInput
+  PHDxVitB: ModelSubscriptionBooleanInput
+  PHDxVitC: ModelSubscriptionBooleanInput
+  PHDxVitD: ModelSubscriptionBooleanInput
+  PHDxVitE: ModelSubscriptionBooleanInput
+  PHDxVitK: ModelSubscriptionBooleanInput
+  PHDxAutoimmune: ModelSubscriptionBooleanInput
+  PHDxOtherPhysical: ModelSubscriptionBooleanInput
+  PHVegeFruits: ModelSubscriptionStringInput
+  PHBeanLentils: ModelSubscriptionStringInput
+  PHGrainBreads: ModelSubscriptionStringInput
+  PHDairy: ModelSubscriptionStringInput
+  PHMeat: ModelSubscriptionStringInput
+  PHFishSeafood: ModelSubscriptionStringInput
+  PHSweets: ModelSubscriptionStringInput
+  PHWater: ModelSubscriptionStringInput
+  PHPhysicalActivity: ModelSubscriptionStringInput
+  SHSpiritualDefine: ModelSubscriptionStringInput
+  SHSpiritualIntegrate: ModelSubscriptionStringInput
+  SHPrayer: ModelSubscriptionStringInput
+  SHSpiritualActivity: ModelSubscriptionStringInput
+  SHReadText: ModelSubscriptionStringInput
+  SHAlignText: ModelSubscriptionStringInput
+  SHCommunity: ModelSubscriptionStringInput
+  OLHope: ModelSubscriptionStringInput
+  OLPeace: ModelSubscriptionStringInput
+  OLLearning: ModelSubscriptionStringInput
+  OLJoy: ModelSubscriptionStringInput
+  OLStable: ModelSubscriptionStringInput
+  OLSafety: ModelSubscriptionStringInput
+  OLKindness: ModelSubscriptionStringInput
+  OLForgiveness: ModelSubscriptionStringInput
+  OLPatience: ModelSubscriptionStringInput
+  OLRelationships: ModelSubscriptionStringInput
+  OLBoundaries: ModelSubscriptionStringInput
+  OLEUnpleasant: ModelSubscriptionStringInput
+  OLEPleasant: ModelSubscriptionStringInput
+  OLEControl: ModelSubscriptionStringInput
+  OLENumber: ModelSubscriptionStringInput
+  SDoHAgeRange: ModelSubscriptionStringInput
+  SDoHRace: ModelSubscriptionStringInput
+  SDoHGeographicRegion: ModelSubscriptionStringInput
+  SDoHEthnicity: ModelSubscriptionStringInput
+  SDoHState: ModelSubscriptionStringInput
+  SDoHZipCode: ModelSubscriptionStringInput
+  SDoHMaritalStatus: ModelSubscriptionStringInput
+  SDoHMilitaryStatus: ModelSubscriptionStringInput
+  SDoHGender: ModelSubscriptionStringInput
+  SDoHEducation: ModelSubscriptionStringInput
+  SDoHJobStatus: ModelSubscriptionStringInput
+  SDoHIncome: ModelSubscriptionStringInput
+  SDoHHousingStatus: ModelSubscriptionStringInput
+  SDoHHomeAsChild: ModelSubscriptionStringInput
+  SDoHReligion: ModelSubscriptionStringInput
+  SDoHDenomination: ModelSubscriptionStringInput
+  isActive: ModelSubscriptionBooleanInput
+  SHSkip: ModelSubscriptionBooleanInput
+  ProAssessmentFinalizedReview1: ModelSubscriptionBooleanInput
+  ProAssessmentFinalizedReviewDate1: ModelSubscriptionStringInput
+  ProAssessmentFinalizedName1: ModelSubscriptionStringInput
+  ProAssessmentFinalizedRole1: ModelSubscriptionStringInput
+  ProAssessmentFinalizedReview2: ModelSubscriptionBooleanInput
+  ProAssessmentFinalizedReviewDate2: ModelSubscriptionStringInput
+  ProAssessmentFinalizedName2: ModelSubscriptionStringInput
+  ProAssessmentFinalizedRole2: ModelSubscriptionStringInput
+  ProAssessmentFinalizedReview3: ModelSubscriptionBooleanInput
+  ProAssessmentFinalizedReviewDate3: ModelSubscriptionStringInput
+  ProAssessmentFinalizedName3: ModelSubscriptionStringInput
+  ProAssessmentFinalizedRole3: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionAssessmentAnswersFilterInput]
+  or: [ModelSubscriptionAssessmentAnswersFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelAssessmentScoresConnection @aws_api_key @aws_iam @aws_cognito_user_pools {
+  items: [AssessmentScores]!
+  nextToken: String
+}
+
+input ModelAssessmentScoresFilterInput {
+  id: ModelIDInput
+  userId: ModelIDInput
+  CompletedDate: ModelStringInput
+  CompletedTime: ModelStringInput
+  TRHurtfulNames: ModelIntInput
+  TRNoNurturing: ModelIntInput
+  TRHit: ModelIntInput
+  TRNeedsNotMet: ModelIntInput
+  TRForcedSex: ModelIntInput
+  TRResponsible: ModelIntInput
+  TRViolence: ModelIntInput
+  TRSubstanceAbuse: ModelIntInput
+  TRMentalIllness: ModelIntInput
+  TRParentDivorce: ModelIntInput
+  TRParentIncarcerated: ModelIntInput
+  TRHomelessness: ModelIntInput
+  TRBodyFunction: ModelIntInput
+  TRNaturalDisaster: ModelIntInput
+  TRDirectTerrorism: ModelIntInput
+  TRIndirectTerrorism: ModelIntInput
+  TRLovedOne: ModelIntInput
+  TRBelief: ModelFloatInput
+  TRResponseProfessional: ModelFloatInput
+  TRResponseFamilyFriend: ModelFloatInput
+  TRResponseGod: ModelFloatInput
+  TRResponseNoOne: ModelFloatInput
+  TRNoTrauma: ModelFloatInput
+  CMAlcohol: ModelIntInput
+  CMDrugs: ModelIntInput
+  CMOvereating: ModelIntInput
+  CMSmoking: ModelIntInput
+  CMGaming: ModelIntInput
+  CMShopping: ModelIntInput
+  CMGambling: ModelIntInput
+  CMSex: ModelIntInput
+  CMPorn: ModelIntInput
+  CMBlaming: ModelIntInput
+  CMHurting: ModelIntInput
+  CMDisengage: ModelIntInput
+  CMArt: ModelFloatInput
+  CMMusic: ModelFloatInput
+  CMPoetry: ModelFloatInput
+  CMReading: ModelFloatInput
+  CMGroups: ModelFloatInput
+  CMCounseling: ModelFloatInput
+  CMVenting: ModelFloatInput
+  CMWriting: ModelFloatInput
+  CMSensory: ModelFloatInput
+  CMDancing: ModelFloatInput
+  CMExercising: ModelFloatInput
+  CMWalking: ModelFloatInput
+  CMChange: ModelFloatInput
+  CMAnalyze: ModelFloatInput
+  CMDaydream: ModelFloatInput
+  CMPositive: ModelFloatInput
+  MHDxPTSD: ModelFloatInput
+  MHDxDepression: ModelFloatInput
+  MHDxSUD: ModelFloatInput
+  MHDxOtherMental: ModelFloatInput
+  MHSleeplessness: ModelIntInput
+  MHAlcoholUse: ModelIntInput
+  MHAnxiety: ModelIntInput
+  MHDepression: ModelIntInput
+  MHDrugUse: ModelIntInput
+  MHGrief: ModelIntInput
+  MHGuilt: ModelIntInput
+  MHIrritability: ModelIntInput
+  MHStress: ModelIntInput
+  MHRegret: ModelIntInput
+  MHSuicidalThoughts: ModelIntInput
+  MHLoneliness: ModelIntInput
+  MHWorry: ModelIntInput
+  PHDxInfertility: ModelFloatInput
+  PHDxCurableSTD: ModelFloatInput
+  PHDxIncurableSTD: ModelFloatInput
+  PHDxCancer: ModelFloatInput
+  PHDxDiabetes: ModelFloatInput
+  PHDxHighBlood: ModelFloatInput
+  PHDxHeartDisease: ModelFloatInput
+  PHDxIrritableBowel: ModelFloatInput
+  PHDxVitA: ModelFloatInput
+  PHDxVitB: ModelFloatInput
+  PHDxVitC: ModelFloatInput
+  PHDxVitD: ModelFloatInput
+  PHDxVitE: ModelFloatInput
+  PHDxVitK: ModelFloatInput
+  PHDxAutoimmune: ModelFloatInput
+  PHDxOtherPhysical: ModelFloatInput
+  PHVegeFruits: ModelIntInput
+  PHBeanLentils: ModelIntInput
+  PHGrainBreads: ModelFloatInput
+  PHDairy: ModelFloatInput
+  PHMeat: ModelFloatInput
+  PHFishSeafood: ModelFloatInput
+  PHSweets: ModelIntInput
+  PHWater: ModelIntInput
+  PHPhysicalActivity: ModelIntInput
+  SHSpiritualDefine: ModelIntInput
+  SHSpiritualIntegrate: ModelIntInput
+  SHPrayer: ModelIntInput
+  SHSpiritualActivity: ModelIntInput
+  SHReadText: ModelIntInput
+  SHAlignText: ModelIntInput
+  SHCommunity: ModelIntInput
+  OLHope: ModelIntInput
+  OLPeace: ModelIntInput
+  OLLearning: ModelIntInput
+  OLJoy: ModelIntInput
+  OLStable: ModelIntInput
+  OLSafety: ModelIntInput
+  OLKindness: ModelIntInput
+  OLForgiveness: ModelIntInput
+  OLPatience: ModelIntInput
+  OLRelationships: ModelIntInput
+  OLBoundaries: ModelIntInput
+  OLEUnpleasant: ModelIntInput
+  OLEPleasant: ModelIntInput
+  OLEControl: ModelIntInput
+  OLENumber: ModelIntInput
+  SDoHAgeRange: ModelStringInput
+  SDoHRace: ModelStringInput
+  SDoHGeographicRegion: ModelStringInput
+  SDoHEthnicity: ModelStringInput
+  SDoHState: ModelStringInput
+  SDoHZipCode: ModelStringInput
+  SDoHMaritalStatus: ModelStringInput
+  SDoHMilitaryStatus: ModelStringInput
+  SDoHGender: ModelStringInput
+  SDoHEducation: ModelStringInput
+  SDoHJobStatus: ModelStringInput
+  SDoHIncome: ModelStringInput
+  SDoHHousingStatus: ModelStringInput
+  SDoHHomeAsChild: ModelStringInput
+  SDoHReligion: ModelStringInput
+  SDoHDenomination: ModelStringInput
+  TRScore: ModelStringInput
+  CMScore: ModelStringInput
+  MHScore: ModelStringInput
+  PHScore: ModelStringInput
+  SHScore: ModelStringInput
+  OLScore: ModelStringInput
+  isActive: ModelBooleanInput
+  SHSkip: ModelBooleanInput
+  ProAssessmentFinalizedReview1: ModelBooleanInput
+  ProAssessmentFinalizedReviewDate1: ModelStringInput
+  ProAssessmentFinalizedName1: ModelStringInput
+  ProAssessmentFinalizedRole1: ModelStringInput
+  ProAssessmentFinalizedReview2: ModelBooleanInput
+  ProAssessmentFinalizedReviewDate2: ModelStringInput
+  ProAssessmentFinalizedName2: ModelStringInput
+  ProAssessmentFinalizedRole2: ModelStringInput
+  ProAssessmentFinalizedReview3: ModelBooleanInput
+  ProAssessmentFinalizedReviewDate3: ModelStringInput
+  ProAssessmentFinalizedName3: ModelStringInput
+  ProAssessmentFinalizedRole3: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelAssessmentScoresFilterInput]
+  or: [ModelAssessmentScoresFilterInput]
+  not: ModelAssessmentScoresFilterInput
+  owner: ModelStringInput
+}
+
+input ModelAssessmentScoresConditionInput {
+  userId: ModelIDInput
+  CompletedDate: ModelStringInput
+  CompletedTime: ModelStringInput
+  TRHurtfulNames: ModelIntInput
+  TRNoNurturing: ModelIntInput
+  TRHit: ModelIntInput
+  TRNeedsNotMet: ModelIntInput
+  TRForcedSex: ModelIntInput
+  TRResponsible: ModelIntInput
+  TRViolence: ModelIntInput
+  TRSubstanceAbuse: ModelIntInput
+  TRMentalIllness: ModelIntInput
+  TRParentDivorce: ModelIntInput
+  TRParentIncarcerated: ModelIntInput
+  TRHomelessness: ModelIntInput
+  TRBodyFunction: ModelIntInput
+  TRNaturalDisaster: ModelIntInput
+  TRDirectTerrorism: ModelIntInput
+  TRIndirectTerrorism: ModelIntInput
+  TRLovedOne: ModelIntInput
+  TRBelief: ModelFloatInput
+  TRResponseProfessional: ModelFloatInput
+  TRResponseFamilyFriend: ModelFloatInput
+  TRResponseGod: ModelFloatInput
+  TRResponseNoOne: ModelFloatInput
+  TRNoTrauma: ModelFloatInput
+  CMAlcohol: ModelIntInput
+  CMDrugs: ModelIntInput
+  CMOvereating: ModelIntInput
+  CMSmoking: ModelIntInput
+  CMGaming: ModelIntInput
+  CMShopping: ModelIntInput
+  CMGambling: ModelIntInput
+  CMSex: ModelIntInput
+  CMPorn: ModelIntInput
+  CMBlaming: ModelIntInput
+  CMHurting: ModelIntInput
+  CMDisengage: ModelIntInput
+  CMArt: ModelFloatInput
+  CMMusic: ModelFloatInput
+  CMPoetry: ModelFloatInput
+  CMReading: ModelFloatInput
+  CMGroups: ModelFloatInput
+  CMCounseling: ModelFloatInput
+  CMVenting: ModelFloatInput
+  CMWriting: ModelFloatInput
+  CMSensory: ModelFloatInput
+  CMDancing: ModelFloatInput
+  CMExercising: ModelFloatInput
+  CMWalking: ModelFloatInput
+  CMChange: ModelFloatInput
+  CMAnalyze: ModelFloatInput
+  CMDaydream: ModelFloatInput
+  CMPositive: ModelFloatInput
+  MHDxPTSD: ModelFloatInput
+  MHDxDepression: ModelFloatInput
+  MHDxSUD: ModelFloatInput
+  MHDxOtherMental: ModelFloatInput
+  MHSleeplessness: ModelIntInput
+  MHAlcoholUse: ModelIntInput
+  MHAnxiety: ModelIntInput
+  MHDepression: ModelIntInput
+  MHDrugUse: ModelIntInput
+  MHGrief: ModelIntInput
+  MHGuilt: ModelIntInput
+  MHIrritability: ModelIntInput
+  MHStress: ModelIntInput
+  MHRegret: ModelIntInput
+  MHSuicidalThoughts: ModelIntInput
+  MHLoneliness: ModelIntInput
+  MHWorry: ModelIntInput
+  PHDxInfertility: ModelFloatInput
+  PHDxCurableSTD: ModelFloatInput
+  PHDxIncurableSTD: ModelFloatInput
+  PHDxCancer: ModelFloatInput
+  PHDxDiabetes: ModelFloatInput
+  PHDxHighBlood: ModelFloatInput
+  PHDxHeartDisease: ModelFloatInput
+  PHDxIrritableBowel: ModelFloatInput
+  PHDxVitA: ModelFloatInput
+  PHDxVitB: ModelFloatInput
+  PHDxVitC: ModelFloatInput
+  PHDxVitD: ModelFloatInput
+  PHDxVitE: ModelFloatInput
+  PHDxVitK: ModelFloatInput
+  PHDxAutoimmune: ModelFloatInput
+  PHDxOtherPhysical: ModelFloatInput
+  PHVegeFruits: ModelIntInput
+  PHBeanLentils: ModelIntInput
+  PHGrainBreads: ModelFloatInput
+  PHDairy: ModelFloatInput
+  PHMeat: ModelFloatInput
+  PHFishSeafood: ModelFloatInput
+  PHSweets: ModelIntInput
+  PHWater: ModelIntInput
+  PHPhysicalActivity: ModelIntInput
+  SHSpiritualDefine: ModelIntInput
+  SHSpiritualIntegrate: ModelIntInput
+  SHPrayer: ModelIntInput
+  SHSpiritualActivity: ModelIntInput
+  SHReadText: ModelIntInput
+  SHAlignText: ModelIntInput
+  SHCommunity: ModelIntInput
+  OLHope: ModelIntInput
+  OLPeace: ModelIntInput
+  OLLearning: ModelIntInput
+  OLJoy: ModelIntInput
+  OLStable: ModelIntInput
+  OLSafety: ModelIntInput
+  OLKindness: ModelIntInput
+  OLForgiveness: ModelIntInput
+  OLPatience: ModelIntInput
+  OLRelationships: ModelIntInput
+  OLBoundaries: ModelIntInput
+  OLEUnpleasant: ModelIntInput
+  OLEPleasant: ModelIntInput
+  OLEControl: ModelIntInput
+  OLENumber: ModelIntInput
+  SDoHAgeRange: ModelStringInput
+  SDoHRace: ModelStringInput
+  SDoHGeographicRegion: ModelStringInput
+  SDoHEthnicity: ModelStringInput
+  SDoHState: ModelStringInput
+  SDoHZipCode: ModelStringInput
+  SDoHMaritalStatus: ModelStringInput
+  SDoHMilitaryStatus: ModelStringInput
+  SDoHGender: ModelStringInput
+  SDoHEducation: ModelStringInput
+  SDoHJobStatus: ModelStringInput
+  SDoHIncome: ModelStringInput
+  SDoHHousingStatus: ModelStringInput
+  SDoHHomeAsChild: ModelStringInput
+  SDoHReligion: ModelStringInput
+  SDoHDenomination: ModelStringInput
+  TRScore: ModelStringInput
+  CMScore: ModelStringInput
+  MHScore: ModelStringInput
+  PHScore: ModelStringInput
+  SHScore: ModelStringInput
+  OLScore: ModelStringInput
+  isActive: ModelBooleanInput
+  SHSkip: ModelBooleanInput
+  ProAssessmentFinalizedReview1: ModelBooleanInput
+  ProAssessmentFinalizedReviewDate1: ModelStringInput
+  ProAssessmentFinalizedName1: ModelStringInput
+  ProAssessmentFinalizedRole1: ModelStringInput
+  ProAssessmentFinalizedReview2: ModelBooleanInput
+  ProAssessmentFinalizedReviewDate2: ModelStringInput
+  ProAssessmentFinalizedName2: ModelStringInput
+  ProAssessmentFinalizedRole2: ModelStringInput
+  ProAssessmentFinalizedReview3: ModelBooleanInput
+  ProAssessmentFinalizedReviewDate3: ModelStringInput
+  ProAssessmentFinalizedName3: ModelStringInput
+  ProAssessmentFinalizedRole3: ModelStringInput
+  and: [ModelAssessmentScoresConditionInput]
+  or: [ModelAssessmentScoresConditionInput]
+  not: ModelAssessmentScoresConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateAssessmentScoresInput {
+  id: ID
+  userId: ID!
+  CompletedDate: String
+  CompletedTime: String
+  TRHurtfulNames: Int
+  TRNoNurturing: Int
+  TRHit: Int
+  TRNeedsNotMet: Int
+  TRForcedSex: Int
+  TRResponsible: Int
+  TRViolence: Int
+  TRSubstanceAbuse: Int
+  TRMentalIllness: Int
+  TRParentDivorce: Int
+  TRParentIncarcerated: Int
+  TRHomelessness: Int
+  TRBodyFunction: Int
+  TRNaturalDisaster: Int
+  TRDirectTerrorism: Int
+  TRIndirectTerrorism: Int
+  TRLovedOne: Int
+  TRBelief: Float
+  TRResponseProfessional: Float
+  TRResponseFamilyFriend: Float
+  TRResponseGod: Float
+  TRResponseNoOne: Float
+  TRNoTrauma: Float
+  CMAlcohol: Int
+  CMDrugs: Int
+  CMOvereating: Int
+  CMSmoking: Int
+  CMGaming: Int
+  CMShopping: Int
+  CMGambling: Int
+  CMSex: Int
+  CMPorn: Int
+  CMBlaming: Int
+  CMHurting: Int
+  CMDisengage: Int
+  CMArt: Float
+  CMMusic: Float
+  CMPoetry: Float
+  CMReading: Float
+  CMGroups: Float
+  CMCounseling: Float
+  CMVenting: Float
+  CMWriting: Float
+  CMSensory: Float
+  CMDancing: Float
+  CMExercising: Float
+  CMWalking: Float
+  CMChange: Float
+  CMAnalyze: Float
+  CMDaydream: Float
+  CMPositive: Float
+  MHDxPTSD: Float
+  MHDxDepression: Float
+  MHDxSUD: Float
+  MHDxOtherMental: Float
+  MHSleeplessness: Int
+  MHAlcoholUse: Int
+  MHAnxiety: Int
+  MHDepression: Int
+  MHDrugUse: Int
+  MHGrief: Int
+  MHGuilt: Int
+  MHIrritability: Int
+  MHStress: Int
+  MHRegret: Int
+  MHSuicidalThoughts: Int
+  MHLoneliness: Int
+  MHWorry: Int
+  PHDxInfertility: Float
+  PHDxCurableSTD: Float
+  PHDxIncurableSTD: Float
+  PHDxCancer: Float
+  PHDxDiabetes: Float
+  PHDxHighBlood: Float
+  PHDxHeartDisease: Float
+  PHDxIrritableBowel: Float
+  PHDxVitA: Float
+  PHDxVitB: Float
+  PHDxVitC: Float
+  PHDxVitD: Float
+  PHDxVitE: Float
+  PHDxVitK: Float
+  PHDxAutoimmune: Float
+  PHDxOtherPhysical: Float
+  PHVegeFruits: Int
+  PHBeanLentils: Int
+  PHGrainBreads: Float
+  PHDairy: Float
+  PHMeat: Float
+  PHFishSeafood: Float
+  PHSweets: Int
+  PHWater: Int
+  PHPhysicalActivity: Int
+  SHSpiritualDefine: Int
+  SHSpiritualIntegrate: Int
+  SHPrayer: Int
+  SHSpiritualActivity: Int
+  SHReadText: Int
+  SHAlignText: Int
+  SHCommunity: Int
+  OLHope: Int
+  OLPeace: Int
+  OLLearning: Int
+  OLJoy: Int
+  OLStable: Int
+  OLSafety: Int
+  OLKindness: Int
+  OLForgiveness: Int
+  OLPatience: Int
+  OLRelationships: Int
+  OLBoundaries: Int
+  OLEUnpleasant: Int
+  OLEPleasant: Int
+  OLEControl: Int
+  OLENumber: Int
+  SDoHAgeRange: String
+  SDoHRace: String
+  SDoHGeographicRegion: String
+  SDoHEthnicity: String
+  SDoHState: String
+  SDoHZipCode: String
+  SDoHMaritalStatus: String
+  SDoHMilitaryStatus: String
+  SDoHGender: String
+  SDoHEducation: String
+  SDoHJobStatus: String
+  SDoHIncome: String
+  SDoHHousingStatus: String
+  SDoHHomeAsChild: String
+  SDoHReligion: String
+  SDoHDenomination: String
+  TRScore: String
+  CMScore: String
+  MHScore: String
+  PHScore: String
+  SHScore: String
+  OLScore: String
+  isActive: Boolean!
+  SHSkip: Boolean
+  ProAssessmentFinalizedReview1: Boolean
+  ProAssessmentFinalizedReviewDate1: AWSDate
+  ProAssessmentFinalizedName1: String
+  ProAssessmentFinalizedRole1: String
+  ProAssessmentFinalizedReview2: Boolean
+  ProAssessmentFinalizedReviewDate2: AWSDate
+  ProAssessmentFinalizedName2: String
+  ProAssessmentFinalizedRole2: String
+  ProAssessmentFinalizedReview3: Boolean
+  ProAssessmentFinalizedReviewDate3: AWSDate
+  ProAssessmentFinalizedName3: String
+  ProAssessmentFinalizedRole3: String
+}
+
+input UpdateAssessmentScoresInput {
+  id: ID!
+  userId: ID
+  CompletedDate: String
+  CompletedTime: String
+  TRHurtfulNames: Int
+  TRNoNurturing: Int
+  TRHit: Int
+  TRNeedsNotMet: Int
+  TRForcedSex: Int
+  TRResponsible: Int
+  TRViolence: Int
+  TRSubstanceAbuse: Int
+  TRMentalIllness: Int
+  TRParentDivorce: Int
+  TRParentIncarcerated: Int
+  TRHomelessness: Int
+  TRBodyFunction: Int
+  TRNaturalDisaster: Int
+  TRDirectTerrorism: Int
+  TRIndirectTerrorism: Int
+  TRLovedOne: Int
+  TRBelief: Float
+  TRResponseProfessional: Float
+  TRResponseFamilyFriend: Float
+  TRResponseGod: Float
+  TRResponseNoOne: Float
+  TRNoTrauma: Float
+  CMAlcohol: Int
+  CMDrugs: Int
+  CMOvereating: Int
+  CMSmoking: Int
+  CMGaming: Int
+  CMShopping: Int
+  CMGambling: Int
+  CMSex: Int
+  CMPorn: Int
+  CMBlaming: Int
+  CMHurting: Int
+  CMDisengage: Int
+  CMArt: Float
+  CMMusic: Float
+  CMPoetry: Float
+  CMReading: Float
+  CMGroups: Float
+  CMCounseling: Float
+  CMVenting: Float
+  CMWriting: Float
+  CMSensory: Float
+  CMDancing: Float
+  CMExercising: Float
+  CMWalking: Float
+  CMChange: Float
+  CMAnalyze: Float
+  CMDaydream: Float
+  CMPositive: Float
+  MHDxPTSD: Float
+  MHDxDepression: Float
+  MHDxSUD: Float
+  MHDxOtherMental: Float
+  MHSleeplessness: Int
+  MHAlcoholUse: Int
+  MHAnxiety: Int
+  MHDepression: Int
+  MHDrugUse: Int
+  MHGrief: Int
+  MHGuilt: Int
+  MHIrritability: Int
+  MHStress: Int
+  MHRegret: Int
+  MHSuicidalThoughts: Int
+  MHLoneliness: Int
+  MHWorry: Int
+  PHDxInfertility: Float
+  PHDxCurableSTD: Float
+  PHDxIncurableSTD: Float
+  PHDxCancer: Float
+  PHDxDiabetes: Float
+  PHDxHighBlood: Float
+  PHDxHeartDisease: Float
+  PHDxIrritableBowel: Float
+  PHDxVitA: Float
+  PHDxVitB: Float
+  PHDxVitC: Float
+  PHDxVitD: Float
+  PHDxVitE: Float
+  PHDxVitK: Float
+  PHDxAutoimmune: Float
+  PHDxOtherPhysical: Float
+  PHVegeFruits: Int
+  PHBeanLentils: Int
+  PHGrainBreads: Float
+  PHDairy: Float
+  PHMeat: Float
+  PHFishSeafood: Float
+  PHSweets: Int
+  PHWater: Int
+  PHPhysicalActivity: Int
+  SHSpiritualDefine: Int
+  SHSpiritualIntegrate: Int
+  SHPrayer: Int
+  SHSpiritualActivity: Int
+  SHReadText: Int
+  SHAlignText: Int
+  SHCommunity: Int
+  OLHope: Int
+  OLPeace: Int
+  OLLearning: Int
+  OLJoy: Int
+  OLStable: Int
+  OLSafety: Int
+  OLKindness: Int
+  OLForgiveness: Int
+  OLPatience: Int
+  OLRelationships: Int
+  OLBoundaries: Int
+  OLEUnpleasant: Int
+  OLEPleasant: Int
+  OLEControl: Int
+  OLENumber: Int
+  SDoHAgeRange: String
+  SDoHRace: String
+  SDoHGeographicRegion: String
+  SDoHEthnicity: String
+  SDoHState: String
+  SDoHZipCode: String
+  SDoHMaritalStatus: String
+  SDoHMilitaryStatus: String
+  SDoHGender: String
+  SDoHEducation: String
+  SDoHJobStatus: String
+  SDoHIncome: String
+  SDoHHousingStatus: String
+  SDoHHomeAsChild: String
+  SDoHReligion: String
+  SDoHDenomination: String
+  TRScore: String
+  CMScore: String
+  MHScore: String
+  PHScore: String
+  SHScore: String
+  OLScore: String
+  isActive: Boolean
+  SHSkip: Boolean
+  ProAssessmentFinalizedReview1: Boolean
+  ProAssessmentFinalizedReviewDate1: AWSDate
+  ProAssessmentFinalizedName1: String
+  ProAssessmentFinalizedRole1: String
+  ProAssessmentFinalizedReview2: Boolean
+  ProAssessmentFinalizedReviewDate2: AWSDate
+  ProAssessmentFinalizedName2: String
+  ProAssessmentFinalizedRole2: String
+  ProAssessmentFinalizedReview3: Boolean
+  ProAssessmentFinalizedReviewDate3: AWSDate
+  ProAssessmentFinalizedName3: String
+  ProAssessmentFinalizedRole3: String
+}
+
+input DeleteAssessmentScoresInput {
+  id: ID!
+}
+
+input ModelSubscriptionAssessmentScoresFilterInput {
+  id: ModelSubscriptionIDInput
+  userId: ModelSubscriptionIDInput
+  CompletedDate: ModelSubscriptionStringInput
+  CompletedTime: ModelSubscriptionStringInput
+  TRHurtfulNames: ModelSubscriptionIntInput
+  TRNoNurturing: ModelSubscriptionIntInput
+  TRHit: ModelSubscriptionIntInput
+  TRNeedsNotMet: ModelSubscriptionIntInput
+  TRForcedSex: ModelSubscriptionIntInput
+  TRResponsible: ModelSubscriptionIntInput
+  TRViolence: ModelSubscriptionIntInput
+  TRSubstanceAbuse: ModelSubscriptionIntInput
+  TRMentalIllness: ModelSubscriptionIntInput
+  TRParentDivorce: ModelSubscriptionIntInput
+  TRParentIncarcerated: ModelSubscriptionIntInput
+  TRHomelessness: ModelSubscriptionIntInput
+  TRBodyFunction: ModelSubscriptionIntInput
+  TRNaturalDisaster: ModelSubscriptionIntInput
+  TRDirectTerrorism: ModelSubscriptionIntInput
+  TRIndirectTerrorism: ModelSubscriptionIntInput
+  TRLovedOne: ModelSubscriptionIntInput
+  TRBelief: ModelSubscriptionFloatInput
+  TRResponseProfessional: ModelSubscriptionFloatInput
+  TRResponseFamilyFriend: ModelSubscriptionFloatInput
+  TRResponseGod: ModelSubscriptionFloatInput
+  TRResponseNoOne: ModelSubscriptionFloatInput
+  TRNoTrauma: ModelSubscriptionFloatInput
+  CMAlcohol: ModelSubscriptionIntInput
+  CMDrugs: ModelSubscriptionIntInput
+  CMOvereating: ModelSubscriptionIntInput
+  CMSmoking: ModelSubscriptionIntInput
+  CMGaming: ModelSubscriptionIntInput
+  CMShopping: ModelSubscriptionIntInput
+  CMGambling: ModelSubscriptionIntInput
+  CMSex: ModelSubscriptionIntInput
+  CMPorn: ModelSubscriptionIntInput
+  CMBlaming: ModelSubscriptionIntInput
+  CMHurting: ModelSubscriptionIntInput
+  CMDisengage: ModelSubscriptionIntInput
+  CMArt: ModelSubscriptionFloatInput
+  CMMusic: ModelSubscriptionFloatInput
+  CMPoetry: ModelSubscriptionFloatInput
+  CMReading: ModelSubscriptionFloatInput
+  CMGroups: ModelSubscriptionFloatInput
+  CMCounseling: ModelSubscriptionFloatInput
+  CMVenting: ModelSubscriptionFloatInput
+  CMWriting: ModelSubscriptionFloatInput
+  CMSensory: ModelSubscriptionFloatInput
+  CMDancing: ModelSubscriptionFloatInput
+  CMExercising: ModelSubscriptionFloatInput
+  CMWalking: ModelSubscriptionFloatInput
+  CMChange: ModelSubscriptionFloatInput
+  CMAnalyze: ModelSubscriptionFloatInput
+  CMDaydream: ModelSubscriptionFloatInput
+  CMPositive: ModelSubscriptionFloatInput
+  MHDxPTSD: ModelSubscriptionFloatInput
+  MHDxDepression: ModelSubscriptionFloatInput
+  MHDxSUD: ModelSubscriptionFloatInput
+  MHDxOtherMental: ModelSubscriptionFloatInput
+  MHSleeplessness: ModelSubscriptionIntInput
+  MHAlcoholUse: ModelSubscriptionIntInput
+  MHAnxiety: ModelSubscriptionIntInput
+  MHDepression: ModelSubscriptionIntInput
+  MHDrugUse: ModelSubscriptionIntInput
+  MHGrief: ModelSubscriptionIntInput
+  MHGuilt: ModelSubscriptionIntInput
+  MHIrritability: ModelSubscriptionIntInput
+  MHStress: ModelSubscriptionIntInput
+  MHRegret: ModelSubscriptionIntInput
+  MHSuicidalThoughts: ModelSubscriptionIntInput
+  MHLoneliness: ModelSubscriptionIntInput
+  MHWorry: ModelSubscriptionIntInput
+  PHDxInfertility: ModelSubscriptionFloatInput
+  PHDxCurableSTD: ModelSubscriptionFloatInput
+  PHDxIncurableSTD: ModelSubscriptionFloatInput
+  PHDxCancer: ModelSubscriptionFloatInput
+  PHDxDiabetes: ModelSubscriptionFloatInput
+  PHDxHighBlood: ModelSubscriptionFloatInput
+  PHDxHeartDisease: ModelSubscriptionFloatInput
+  PHDxIrritableBowel: ModelSubscriptionFloatInput
+  PHDxVitA: ModelSubscriptionFloatInput
+  PHDxVitB: ModelSubscriptionFloatInput
+  PHDxVitC: ModelSubscriptionFloatInput
+  PHDxVitD: ModelSubscriptionFloatInput
+  PHDxVitE: ModelSubscriptionFloatInput
+  PHDxVitK: ModelSubscriptionFloatInput
+  PHDxAutoimmune: ModelSubscriptionFloatInput
+  PHDxOtherPhysical: ModelSubscriptionFloatInput
+  PHVegeFruits: ModelSubscriptionIntInput
+  PHBeanLentils: ModelSubscriptionIntInput
+  PHGrainBreads: ModelSubscriptionFloatInput
+  PHDairy: ModelSubscriptionFloatInput
+  PHMeat: ModelSubscriptionFloatInput
+  PHFishSeafood: ModelSubscriptionFloatInput
+  PHSweets: ModelSubscriptionIntInput
+  PHWater: ModelSubscriptionIntInput
+  PHPhysicalActivity: ModelSubscriptionIntInput
+  SHSpiritualDefine: ModelSubscriptionIntInput
+  SHSpiritualIntegrate: ModelSubscriptionIntInput
+  SHPrayer: ModelSubscriptionIntInput
+  SHSpiritualActivity: ModelSubscriptionIntInput
+  SHReadText: ModelSubscriptionIntInput
+  SHAlignText: ModelSubscriptionIntInput
+  SHCommunity: ModelSubscriptionIntInput
+  OLHope: ModelSubscriptionIntInput
+  OLPeace: ModelSubscriptionIntInput
+  OLLearning: ModelSubscriptionIntInput
+  OLJoy: ModelSubscriptionIntInput
+  OLStable: ModelSubscriptionIntInput
+  OLSafety: ModelSubscriptionIntInput
+  OLKindness: ModelSubscriptionIntInput
+  OLForgiveness: ModelSubscriptionIntInput
+  OLPatience: ModelSubscriptionIntInput
+  OLRelationships: ModelSubscriptionIntInput
+  OLBoundaries: ModelSubscriptionIntInput
+  OLEUnpleasant: ModelSubscriptionIntInput
+  OLEPleasant: ModelSubscriptionIntInput
+  OLEControl: ModelSubscriptionIntInput
+  OLENumber: ModelSubscriptionIntInput
+  SDoHAgeRange: ModelSubscriptionStringInput
+  SDoHRace: ModelSubscriptionStringInput
+  SDoHGeographicRegion: ModelSubscriptionStringInput
+  SDoHEthnicity: ModelSubscriptionStringInput
+  SDoHState: ModelSubscriptionStringInput
+  SDoHZipCode: ModelSubscriptionStringInput
+  SDoHMaritalStatus: ModelSubscriptionStringInput
+  SDoHMilitaryStatus: ModelSubscriptionStringInput
+  SDoHGender: ModelSubscriptionStringInput
+  SDoHEducation: ModelSubscriptionStringInput
+  SDoHJobStatus: ModelSubscriptionStringInput
+  SDoHIncome: ModelSubscriptionStringInput
+  SDoHHousingStatus: ModelSubscriptionStringInput
+  SDoHHomeAsChild: ModelSubscriptionStringInput
+  SDoHReligion: ModelSubscriptionStringInput
+  SDoHDenomination: ModelSubscriptionStringInput
+  TRScore: ModelSubscriptionStringInput
+  CMScore: ModelSubscriptionStringInput
+  MHScore: ModelSubscriptionStringInput
+  PHScore: ModelSubscriptionStringInput
+  SHScore: ModelSubscriptionStringInput
+  OLScore: ModelSubscriptionStringInput
+  isActive: ModelSubscriptionBooleanInput
+  SHSkip: ModelSubscriptionBooleanInput
+  ProAssessmentFinalizedReview1: ModelSubscriptionBooleanInput
+  ProAssessmentFinalizedReviewDate1: ModelSubscriptionStringInput
+  ProAssessmentFinalizedName1: ModelSubscriptionStringInput
+  ProAssessmentFinalizedRole1: ModelSubscriptionStringInput
+  ProAssessmentFinalizedReview2: ModelSubscriptionBooleanInput
+  ProAssessmentFinalizedReviewDate2: ModelSubscriptionStringInput
+  ProAssessmentFinalizedName2: ModelSubscriptionStringInput
+  ProAssessmentFinalizedRole2: ModelSubscriptionStringInput
+  ProAssessmentFinalizedReview3: ModelSubscriptionBooleanInput
+  ProAssessmentFinalizedReviewDate3: ModelSubscriptionStringInput
+  ProAssessmentFinalizedName3: ModelSubscriptionStringInput
+  ProAssessmentFinalizedRole3: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionAssessmentScoresFilterInput]
+  or: [ModelSubscriptionAssessmentScoresFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelTrackPlanConnection @aws_api_key @aws_iam @aws_cognito_user_pools {
+  items: [TrackPlan]!
+  nextToken: String
+}
+
+input ModelTrackPlanFilterInput {
+  id: ModelIDInput
+  userId: ModelIDInput
+  CompletedDate: ModelStringInput
+  CompletedTime: ModelStringInput
+  ActionDomain: ModelStringInput
+  ActionQuestion: ModelStringInput
+  Action: ModelStringInput
+  Frequency: ModelStringInput
+  ActionNote: ModelStringInput
+  Update1Points: ModelFloatInput
+  Update1Note: ModelStringInput
+  Update1Date: ModelStringInput
+  Update2Points: ModelFloatInput
+  Update2Note: ModelStringInput
+  Update2Date: ModelStringInput
+  Update3Points: ModelFloatInput
+  Update3Note: ModelStringInput
+  Update3Date: ModelStringInput
+  Update4Points: ModelFloatInput
+  Update4Note: ModelStringInput
+  Update4Date: ModelStringInput
+  Update5Points: ModelFloatInput
+  Update5Note: ModelStringInput
+  Update5Date: ModelStringInput
+  Update6Points: ModelFloatInput
+  Update6Note: ModelStringInput
+  Update6Date: ModelStringInput
+  Update7Points: ModelFloatInput
+  Update7Note: ModelStringInput
+  Update7Date: ModelStringInput
+  Update8Points: ModelFloatInput
+  Update8Note: ModelStringInput
+  Update8Date: ModelStringInput
+  Percentage: ModelIntInput
+  Discontinued: ModelBooleanInput
+  DiscontinuedDate: ModelStringInput
+  Successful: ModelBooleanInput
+  SuccessfulDate: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelTrackPlanFilterInput]
+  or: [ModelTrackPlanFilterInput]
+  not: ModelTrackPlanFilterInput
+  owner: ModelStringInput
+}
+
+input ModelTrackPlanConditionInput {
+  userId: ModelIDInput
+  CompletedDate: ModelStringInput
+  CompletedTime: ModelStringInput
+  ActionDomain: ModelStringInput
+  ActionQuestion: ModelStringInput
+  Action: ModelStringInput
+  Frequency: ModelStringInput
+  ActionNote: ModelStringInput
+  Update1Points: ModelFloatInput
+  Update1Note: ModelStringInput
+  Update1Date: ModelStringInput
+  Update2Points: ModelFloatInput
+  Update2Note: ModelStringInput
+  Update2Date: ModelStringInput
+  Update3Points: ModelFloatInput
+  Update3Note: ModelStringInput
+  Update3Date: ModelStringInput
+  Update4Points: ModelFloatInput
+  Update4Note: ModelStringInput
+  Update4Date: ModelStringInput
+  Update5Points: ModelFloatInput
+  Update5Note: ModelStringInput
+  Update5Date: ModelStringInput
+  Update6Points: ModelFloatInput
+  Update6Note: ModelStringInput
+  Update6Date: ModelStringInput
+  Update7Points: ModelFloatInput
+  Update7Note: ModelStringInput
+  Update7Date: ModelStringInput
+  Update8Points: ModelFloatInput
+  Update8Note: ModelStringInput
+  Update8Date: ModelStringInput
+  Percentage: ModelIntInput
+  Discontinued: ModelBooleanInput
+  DiscontinuedDate: ModelStringInput
+  Successful: ModelBooleanInput
+  SuccessfulDate: ModelStringInput
+  and: [ModelTrackPlanConditionInput]
+  or: [ModelTrackPlanConditionInput]
+  not: ModelTrackPlanConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateTrackPlanInput {
+  id: ID
+  userId: ID!
+  CompletedDate: AWSDate
+  CompletedTime: AWSTime
+  ActionDomain: String
+  ActionQuestion: String
+  Action: String
+  Frequency: String
+  ActionNote: String
+  Update1Points: Float
+  Update1Note: String
+  Update1Date: AWSDate
+  Update2Points: Float
+  Update2Note: String
+  Update2Date: AWSDate
+  Update3Points: Float
+  Update3Note: String
+  Update3Date: AWSDate
+  Update4Points: Float
+  Update4Note: String
+  Update4Date: AWSDate
+  Update5Points: Float
+  Update5Note: String
+  Update5Date: AWSDate
+  Update6Points: Float
+  Update6Note: String
+  Update6Date: AWSDate
+  Update7Points: Float
+  Update7Note: String
+  Update7Date: AWSDate
+  Update8Points: Float
+  Update8Note: String
+  Update8Date: AWSDate
+  Percentage: Int
+  Discontinued: Boolean
+  DiscontinuedDate: AWSDate
+  Successful: Boolean
+  SuccessfulDate: AWSDate
+}
+
+input UpdateTrackPlanInput {
+  id: ID!
+  userId: ID
+  CompletedDate: AWSDate
+  CompletedTime: AWSTime
+  ActionDomain: String
+  ActionQuestion: String
+  Action: String
+  Frequency: String
+  ActionNote: String
+  Update1Points: Float
+  Update1Note: String
+  Update1Date: AWSDate
+  Update2Points: Float
+  Update2Note: String
+  Update2Date: AWSDate
+  Update3Points: Float
+  Update3Note: String
+  Update3Date: AWSDate
+  Update4Points: Float
+  Update4Note: String
+  Update4Date: AWSDate
+  Update5Points: Float
+  Update5Note: String
+  Update5Date: AWSDate
+  Update6Points: Float
+  Update6Note: String
+  Update6Date: AWSDate
+  Update7Points: Float
+  Update7Note: String
+  Update7Date: AWSDate
+  Update8Points: Float
+  Update8Note: String
+  Update8Date: AWSDate
+  Percentage: Int
+  Discontinued: Boolean
+  DiscontinuedDate: AWSDate
+  Successful: Boolean
+  SuccessfulDate: AWSDate
+}
+
+input DeleteTrackPlanInput {
+  id: ID!
+}
+
+input ModelSubscriptionTrackPlanFilterInput {
+  id: ModelSubscriptionIDInput
+  userId: ModelSubscriptionIDInput
+  CompletedDate: ModelSubscriptionStringInput
+  CompletedTime: ModelSubscriptionStringInput
+  ActionDomain: ModelSubscriptionStringInput
+  ActionQuestion: ModelSubscriptionStringInput
+  Action: ModelSubscriptionStringInput
+  Frequency: ModelSubscriptionStringInput
+  ActionNote: ModelSubscriptionStringInput
+  Update1Points: ModelSubscriptionFloatInput
+  Update1Note: ModelSubscriptionStringInput
+  Update1Date: ModelSubscriptionStringInput
+  Update2Points: ModelSubscriptionFloatInput
+  Update2Note: ModelSubscriptionStringInput
+  Update2Date: ModelSubscriptionStringInput
+  Update3Points: ModelSubscriptionFloatInput
+  Update3Note: ModelSubscriptionStringInput
+  Update3Date: ModelSubscriptionStringInput
+  Update4Points: ModelSubscriptionFloatInput
+  Update4Note: ModelSubscriptionStringInput
+  Update4Date: ModelSubscriptionStringInput
+  Update5Points: ModelSubscriptionFloatInput
+  Update5Note: ModelSubscriptionStringInput
+  Update5Date: ModelSubscriptionStringInput
+  Update6Points: ModelSubscriptionFloatInput
+  Update6Note: ModelSubscriptionStringInput
+  Update6Date: ModelSubscriptionStringInput
+  Update7Points: ModelSubscriptionFloatInput
+  Update7Note: ModelSubscriptionStringInput
+  Update7Date: ModelSubscriptionStringInput
+  Update8Points: ModelSubscriptionFloatInput
+  Update8Note: ModelSubscriptionStringInput
+  Update8Date: ModelSubscriptionStringInput
+  Percentage: ModelSubscriptionIntInput
+  Discontinued: ModelSubscriptionBooleanInput
+  DiscontinuedDate: ModelSubscriptionStringInput
+  Successful: ModelSubscriptionBooleanInput
+  SuccessfulDate: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionTrackPlanFilterInput]
+  or: [ModelSubscriptionTrackPlanFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelConnectionRequestConnection @aws_api_key @aws_iam @aws_cognito_user_pools {
+  items: [ConnectionRequest]!
+  nextToken: String
+}
+
+input ModelConnectionRequestFilterInput {
+  id: ModelIDInput
+  requesterId: ModelStringInput
+  requesterFirstName: ModelStringInput
+  requesterLastName: ModelStringInput
+  requesterEmail: ModelStringInput
+  targetEmail: ModelStringInput
+  status: ModelStringInput
+  direction: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelConnectionRequestFilterInput]
+  or: [ModelConnectionRequestFilterInput]
+  not: ModelConnectionRequestFilterInput
+  owner: ModelStringInput
+}
+
+input ModelConnectionRequestConditionInput {
+  requesterId: ModelStringInput
+  requesterFirstName: ModelStringInput
+  requesterLastName: ModelStringInput
+  requesterEmail: ModelStringInput
+  targetEmail: ModelStringInput
+  status: ModelStringInput
+  direction: ModelStringInput
+  and: [ModelConnectionRequestConditionInput]
+  or: [ModelConnectionRequestConditionInput]
+  not: ModelConnectionRequestConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateConnectionRequestInput {
+  id: ID
+  requesterId: String!
+  requesterFirstName: String!
+  requesterLastName: String!
+  requesterEmail: AWSEmail!
+  targetEmail: AWSEmail!
+  status: String!
+  direction: String!
+}
+
+input UpdateConnectionRequestInput {
+  id: ID!
+  requesterId: String
+  requesterFirstName: String
+  requesterLastName: String
+  requesterEmail: AWSEmail
+  targetEmail: AWSEmail
+  status: String
+  direction: String
+}
+
+input DeleteConnectionRequestInput {
+  id: ID!
+}
+
+input ModelSubscriptionConnectionRequestFilterInput {
+  id: ModelSubscriptionIDInput
+  requesterId: ModelSubscriptionStringInput
+  requesterFirstName: ModelSubscriptionStringInput
+  requesterLastName: ModelSubscriptionStringInput
+  requesterEmail: ModelSubscriptionStringInput
+  targetEmail: ModelSubscriptionStringInput
+  status: ModelSubscriptionStringInput
+  direction: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionConnectionRequestFilterInput]
+  or: [ModelSubscriptionConnectionRequestFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelUserLinkConnection @aws_api_key @aws_iam @aws_cognito_user_pools {
+  items: [UserLink]!
+  nextToken: String
+}
+
+input ModelUserLinkFilterInput {
+  id: ModelIDInput
+  professionalId: ModelStringInput
+  professionalEmail: ModelStringInput
+  professionalFirstName: ModelStringInput
+  professionalLastName: ModelStringInput
+  clientId: ModelStringInput
+  clientEmail: ModelStringInput
+  clientFirstName: ModelStringInput
+  clientLastName: ModelStringInput
+  clientViewable: ModelBooleanInput
+  subscriptionId: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelUserLinkFilterInput]
+  or: [ModelUserLinkFilterInput]
+  not: ModelUserLinkFilterInput
+  owner: ModelStringInput
+}
+
+input ModelUserLinkConditionInput {
+  professionalId: ModelStringInput
+  professionalEmail: ModelStringInput
+  professionalFirstName: ModelStringInput
+  professionalLastName: ModelStringInput
+  clientId: ModelStringInput
+  clientEmail: ModelStringInput
+  clientFirstName: ModelStringInput
+  clientLastName: ModelStringInput
+  clientViewable: ModelBooleanInput
+  subscriptionId: ModelStringInput
+  and: [ModelUserLinkConditionInput]
+  or: [ModelUserLinkConditionInput]
+  not: ModelUserLinkConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateUserLinkInput {
+  id: ID
+  professionalId: String!
+  professionalEmail: String!
+  professionalFirstName: String!
+  professionalLastName: String!
+  clientId: String!
+  clientEmail: String!
+  clientFirstName: String!
+  clientLastName: String!
+  clientViewable: Boolean!
+  subscriptionId: String
+}
+
+input UpdateUserLinkInput {
+  id: ID!
+  professionalId: String
+  professionalEmail: String
+  professionalFirstName: String
+  professionalLastName: String
+  clientId: String
+  clientEmail: String
+  clientFirstName: String
+  clientLastName: String
+  clientViewable: Boolean
+  subscriptionId: String
+}
+
+input DeleteUserLinkInput {
+  id: ID!
+}
+
+input ModelSubscriptionUserLinkFilterInput {
+  id: ModelSubscriptionIDInput
+  professionalId: ModelSubscriptionStringInput
+  professionalEmail: ModelSubscriptionStringInput
+  professionalFirstName: ModelSubscriptionStringInput
+  professionalLastName: ModelSubscriptionStringInput
+  clientId: ModelSubscriptionStringInput
+  clientEmail: ModelSubscriptionStringInput
+  clientFirstName: ModelSubscriptionStringInput
+  clientLastName: ModelSubscriptionStringInput
+  clientViewable: ModelSubscriptionBooleanInput
+  subscriptionId: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionUserLinkFilterInput]
+  or: [ModelSubscriptionUserLinkFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelOrganizationInformationConnection @aws_api_key @aws_iam @aws_cognito_user_pools {
+  items: [OrganizationInformation]!
+  nextToken: String
+}
+
+input ModelOrganizationInformationFilterInput {
+  id: ModelIDInput
+  userId: ModelIDInput
+  BusinessName: ModelStringInput
+  BusinessEIN: ModelIntInput
+  BusinessCountry: ModelStringInput
+  BusinessAddress: ModelStringInput
+  BusinessCity: ModelStringInput
+  BusinessState: ModelStringInput
+  BusinessZipCode: ModelIntInput
+  BusinessPhoneNumber: ModelStringInput
+  BusinessWebsite: ModelStringInput
+  Departments: ModelStringInput
+  ProgramsUnits: ModelStringInput
+  Services: ModelStringInput
+  clientsServed: ModelIntInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelOrganizationInformationFilterInput]
+  or: [ModelOrganizationInformationFilterInput]
+  not: ModelOrganizationInformationFilterInput
+  owner: ModelStringInput
+}
+
+input ModelOrganizationInformationConditionInput {
+  userId: ModelIDInput
+  BusinessName: ModelStringInput
+  BusinessEIN: ModelIntInput
+  BusinessCountry: ModelStringInput
+  BusinessAddress: ModelStringInput
+  BusinessCity: ModelStringInput
+  BusinessState: ModelStringInput
+  BusinessZipCode: ModelIntInput
+  BusinessPhoneNumber: ModelStringInput
+  BusinessWebsite: ModelStringInput
+  Departments: ModelStringInput
+  ProgramsUnits: ModelStringInput
+  Services: ModelStringInput
+  clientsServed: ModelIntInput
+  and: [ModelOrganizationInformationConditionInput]
+  or: [ModelOrganizationInformationConditionInput]
+  not: ModelOrganizationInformationConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateOrganizationInformationInput {
+  id: ID
+  userId: ID!
+  BusinessName: String
+  BusinessEIN: Int
+  BusinessCountry: String
+  BusinessAddress: String
+  BusinessCity: String
+  BusinessState: String
+  BusinessZipCode: Int
+  BusinessPhoneNumber: String
+  BusinessWebsite: String
+  Departments: [String]
+  ProgramsUnits: [String]
+  Services: [String]
+  clientsServed: Int
+}
+
+input UpdateOrganizationInformationInput {
+  id: ID!
+  userId: ID
+  BusinessName: String
+  BusinessEIN: Int
+  BusinessCountry: String
+  BusinessAddress: String
+  BusinessCity: String
+  BusinessState: String
+  BusinessZipCode: Int
+  BusinessPhoneNumber: String
+  BusinessWebsite: String
+  Departments: [String]
+  ProgramsUnits: [String]
+  Services: [String]
+  clientsServed: Int
+}
+
+input DeleteOrganizationInformationInput {
+  id: ID!
+}
+
+input ModelSubscriptionOrganizationInformationFilterInput {
+  id: ModelSubscriptionIDInput
+  userId: ModelSubscriptionIDInput
+  BusinessName: ModelSubscriptionStringInput
+  BusinessEIN: ModelSubscriptionIntInput
+  BusinessCountry: ModelSubscriptionStringInput
+  BusinessAddress: ModelSubscriptionStringInput
+  BusinessCity: ModelSubscriptionStringInput
+  BusinessState: ModelSubscriptionStringInput
+  BusinessZipCode: ModelSubscriptionIntInput
+  BusinessPhoneNumber: ModelSubscriptionStringInput
+  BusinessWebsite: ModelSubscriptionStringInput
+  Departments: ModelSubscriptionStringInput
+  ProgramsUnits: ModelSubscriptionStringInput
+  Services: ModelSubscriptionStringInput
+  clientsServed: ModelSubscriptionIntInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionOrganizationInformationFilterInput]
+  or: [ModelSubscriptionOrganizationInformationFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelOrganizationCPsConnection @aws_api_key @aws_iam @aws_cognito_user_pools {
+  items: [OrganizationCPs]!
+  nextToken: String
+}
+
+input ModelOrganizationCPsFilterInput {
+  id: ModelIDInput
+  OrganizationId: ModelIDInput
+  OrganizationCPFirstName: ModelStringInput
+  OrganizationCPLastName: ModelStringInput
+  OrganizationCPEmail: ModelStringInput
+  OrganizationCPRole: ModelStringInput
+  primaryDepartment: ModelStringInput
+  primaryProgramsUnit: ModelStringInput
+  primaryService: ModelStringInput
+  OrganizationAdministrator: ModelBooleanInput
+  PrimaryOrganizationAdministrator: ModelBooleanInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelOrganizationCPsFilterInput]
+  or: [ModelOrganizationCPsFilterInput]
+  not: ModelOrganizationCPsFilterInput
+  owner: ModelStringInput
+}
+
+input ModelOrganizationCPsConditionInput {
+  OrganizationId: ModelIDInput
+  OrganizationCPFirstName: ModelStringInput
+  OrganizationCPLastName: ModelStringInput
+  OrganizationCPEmail: ModelStringInput
+  OrganizationCPRole: ModelStringInput
+  primaryDepartment: ModelStringInput
+  primaryProgramsUnit: ModelStringInput
+  primaryService: ModelStringInput
+  OrganizationAdministrator: ModelBooleanInput
+  PrimaryOrganizationAdministrator: ModelBooleanInput
+  and: [ModelOrganizationCPsConditionInput]
+  or: [ModelOrganizationCPsConditionInput]
+  not: ModelOrganizationCPsConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateOrganizationCPsInput {
+  id: ID
+  OrganizationId: ID!
+  OrganizationCPFirstName: String
+  OrganizationCPLastName: String
+  OrganizationCPEmail: AWSEmail!
+  OrganizationCPRole: String
+  primaryDepartment: String
+  primaryProgramsUnit: String
+  primaryService: String
+  OrganizationAdministrator: Boolean!
+  PrimaryOrganizationAdministrator: Boolean!
+}
+
+input UpdateOrganizationCPsInput {
+  id: ID!
+  OrganizationId: ID
+  OrganizationCPFirstName: String
+  OrganizationCPLastName: String
+  OrganizationCPEmail: AWSEmail
+  OrganizationCPRole: String
+  primaryDepartment: String
+  primaryProgramsUnit: String
+  primaryService: String
+  OrganizationAdministrator: Boolean
+  PrimaryOrganizationAdministrator: Boolean
+}
+
+input DeleteOrganizationCPsInput {
+  id: ID!
+}
+
+input ModelSubscriptionOrganizationCPsFilterInput {
+  id: ModelSubscriptionIDInput
+  OrganizationId: ModelSubscriptionIDInput
+  OrganizationCPFirstName: ModelSubscriptionStringInput
+  OrganizationCPLastName: ModelSubscriptionStringInput
+  OrganizationCPEmail: ModelSubscriptionStringInput
+  OrganizationCPRole: ModelSubscriptionStringInput
+  primaryDepartment: ModelSubscriptionStringInput
+  primaryProgramsUnit: ModelSubscriptionStringInput
+  primaryService: ModelSubscriptionStringInput
+  OrganizationAdministrator: ModelSubscriptionBooleanInput
+  PrimaryOrganizationAdministrator: ModelSubscriptionBooleanInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionOrganizationCPsFilterInput]
+  or: [ModelSubscriptionOrganizationCPsFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelNotificationsConnection @aws_api_key @aws_iam @aws_cognito_user_pools {
+  items: [Notifications]!
+  nextToken: String
+}
+
+input ModelNotificationsFilterInput {
+  id: ModelIDInput
+  RecommedationResult: ModelStringInput
+  RecommedationAction: ModelStringInput
+  RecommedationActionFrequency: ModelStringInput
+  RecommedationType: ModelStringInput
+  RecommedationNote: ModelStringInput
+  RecommendationDate: ModelStringInput
+  SenderId: ModelStringInput
+  SenderFirstName: ModelStringInput
+  SenderLastName: ModelStringInput
+  SenderEmail: ModelStringInput
+  TargetEmail: ModelStringInput
+  NotificationType: ModelStringInput
+  StatusDate: ModelStringInput
+  Status: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelNotificationsFilterInput]
+  or: [ModelNotificationsFilterInput]
+  not: ModelNotificationsFilterInput
+  owner: ModelStringInput
+}
+
+input ModelNotificationsConditionInput {
+  RecommedationResult: ModelStringInput
+  RecommedationAction: ModelStringInput
+  RecommedationActionFrequency: ModelStringInput
+  RecommedationType: ModelStringInput
+  RecommedationNote: ModelStringInput
+  RecommendationDate: ModelStringInput
+  SenderId: ModelStringInput
+  SenderFirstName: ModelStringInput
+  SenderLastName: ModelStringInput
+  SenderEmail: ModelStringInput
+  TargetEmail: ModelStringInput
+  NotificationType: ModelStringInput
+  StatusDate: ModelStringInput
+  Status: ModelStringInput
+  and: [ModelNotificationsConditionInput]
+  or: [ModelNotificationsConditionInput]
+  not: ModelNotificationsConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateNotificationsInput {
+  id: ID
+  RecommedationResult: String
+  RecommedationAction: String
+  RecommedationActionFrequency: String
+  RecommedationType: String
+  RecommedationNote: String
+  RecommendationDate: AWSDate
+  SenderId: String!
+  SenderFirstName: String!
+  SenderLastName: String!
+  SenderEmail: String!
+  TargetEmail: String!
+  NotificationType: String!
+  StatusDate: AWSDate
+  Status: String!
+}
+
+input UpdateNotificationsInput {
+  id: ID!
+  RecommedationResult: String
+  RecommedationAction: String
+  RecommedationActionFrequency: String
+  RecommedationType: String
+  RecommedationNote: String
+  RecommendationDate: AWSDate
+  SenderId: String
+  SenderFirstName: String
+  SenderLastName: String
+  SenderEmail: String
+  TargetEmail: String
+  NotificationType: String
+  StatusDate: AWSDate
+  Status: String
+}
+
+input DeleteNotificationsInput {
+  id: ID!
+}
+
+input ModelSubscriptionNotificationsFilterInput {
+  id: ModelSubscriptionIDInput
+  RecommedationResult: ModelSubscriptionStringInput
+  RecommedationAction: ModelSubscriptionStringInput
+  RecommedationActionFrequency: ModelSubscriptionStringInput
+  RecommedationType: ModelSubscriptionStringInput
+  RecommedationNote: ModelSubscriptionStringInput
+  RecommendationDate: ModelSubscriptionStringInput
+  SenderId: ModelSubscriptionStringInput
+  SenderFirstName: ModelSubscriptionStringInput
+  SenderLastName: ModelSubscriptionStringInput
+  SenderEmail: ModelSubscriptionStringInput
+  TargetEmail: ModelSubscriptionStringInput
+  NotificationType: ModelSubscriptionStringInput
+  StatusDate: ModelSubscriptionStringInput
+  Status: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionNotificationsFilterInput]
+  or: [ModelSubscriptionNotificationsFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelUserPaymentsConnection @aws_api_key @aws_iam @aws_cognito_user_pools {
+  items: [UserPayments]!
+  nextToken: String
+}
+
+input ModelUserPaymentsFilterInput {
+  id: ModelIDInput
+  userId: ModelIDInput
+  organizationId: ModelIDInput
+  organizationName: ModelStringInput
+  paymentType: ModelStringInput
+  subscriptionId: ModelStringInput
+  paymentStatus: ModelStringInput
+  clientsProjected: ModelIntInput
+  costPerClient: ModelIntInput
+  couponCode: ModelStringInput
+  couponPercent: ModelIntInput
+  paidUntil: ModelStringInput
+  paymentFor: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelUserPaymentsFilterInput]
+  or: [ModelUserPaymentsFilterInput]
+  not: ModelUserPaymentsFilterInput
+  owner: ModelStringInput
+}
+
+input ModelUserPaymentsConditionInput {
+  userId: ModelIDInput
+  organizationId: ModelIDInput
+  organizationName: ModelStringInput
+  paymentType: ModelStringInput
+  subscriptionId: ModelStringInput
+  paymentStatus: ModelStringInput
+  clientsProjected: ModelIntInput
+  costPerClient: ModelIntInput
+  couponCode: ModelStringInput
+  couponPercent: ModelIntInput
+  paidUntil: ModelStringInput
+  paymentFor: ModelStringInput
+  and: [ModelUserPaymentsConditionInput]
+  or: [ModelUserPaymentsConditionInput]
+  not: ModelUserPaymentsConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateUserPaymentsInput {
+  id: ID
+  userId: ID!
+  organizationId: ID
+  organizationName: String
+  paymentType: String
+  subscriptionId: String
+  paymentStatus: String
+  clientsProjected: Int
+  costPerClient: Int
+  couponCode: String
+  couponPercent: Int
+  paidUntil: AWSDateTime
+  paymentFor: String!
+}
+
+input UpdateUserPaymentsInput {
+  id: ID!
+  userId: ID
+  organizationId: ID
+  organizationName: String
+  paymentType: String
+  subscriptionId: String
+  paymentStatus: String
+  clientsProjected: Int
+  costPerClient: Int
+  couponCode: String
+  couponPercent: Int
+  paidUntil: AWSDateTime
+  paymentFor: String
+}
+
+input DeleteUserPaymentsInput {
+  id: ID!
+}
+
+input ModelSubscriptionUserPaymentsFilterInput {
+  id: ModelSubscriptionIDInput
+  userId: ModelSubscriptionIDInput
+  organizationId: ModelSubscriptionIDInput
+  organizationName: ModelSubscriptionStringInput
+  paymentType: ModelSubscriptionStringInput
+  subscriptionId: ModelSubscriptionStringInput
+  paymentStatus: ModelSubscriptionStringInput
+  clientsProjected: ModelSubscriptionIntInput
+  costPerClient: ModelSubscriptionIntInput
+  couponCode: ModelSubscriptionStringInput
+  couponPercent: ModelSubscriptionIntInput
+  paidUntil: ModelSubscriptionStringInput
+  paymentFor: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionUserPaymentsFilterInput]
+  or: [ModelSubscriptionUserPaymentsFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelCouponConnection @aws_api_key @aws_iam @aws_cognito_user_pools {
+  items: [Coupon]!
+  nextToken: String
+}
+
+input ModelCouponFilterInput {
+  id: ModelIDInput
+  type: ModelStringInput
+  value: ModelFloatInput
+  isActive: ModelBooleanInput
+  maxUses: ModelIntInput
+  timesUsed: ModelIntInput
+  expiresAt: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelCouponFilterInput]
+  or: [ModelCouponFilterInput]
+  not: ModelCouponFilterInput
+  owner: ModelStringInput
+}
+
+input ModelCouponConditionInput {
+  type: ModelStringInput
+  value: ModelFloatInput
+  isActive: ModelBooleanInput
+  maxUses: ModelIntInput
+  timesUsed: ModelIntInput
+  expiresAt: ModelStringInput
+  and: [ModelCouponConditionInput]
+  or: [ModelCouponConditionInput]
+  not: ModelCouponConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateCouponInput {
+  id: ID
+  type: String!
+  value: Float!
+  isActive: Boolean!
+  maxUses: Int!
+  timesUsed: Int!
+  expiresAt: AWSDateTime!
+}
+
+input UpdateCouponInput {
+  id: ID!
+  type: String
+  value: Float
+  isActive: Boolean
+  maxUses: Int
+  timesUsed: Int
+  expiresAt: AWSDateTime
+}
+
+input DeleteCouponInput {
+  id: ID!
+}
+
+input ModelSubscriptionCouponFilterInput {
+  id: ModelSubscriptionIDInput
+  type: ModelSubscriptionStringInput
+  value: ModelSubscriptionFloatInput
+  isActive: ModelSubscriptionBooleanInput
+  maxUses: ModelSubscriptionIntInput
+  timesUsed: ModelSubscriptionIntInput
+  expiresAt: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionCouponFilterInput]
+  or: [ModelSubscriptionCouponFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelProfessionalReviewsConnection @aws_api_key @aws_iam @aws_cognito_user_pools {
+  items: [ProfessionalReviews]!
+  nextToken: String
+}
+
+input ModelProfessionalReviewsFilterInput {
+  id: ModelIDInput
+  ReviewedId: ModelIDInput
+  ReviewType: ModelStringInput
+  ProfessionalName: ModelStringInput
+  ProfessionalRole: ModelStringInput
+  ReviewDate: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelProfessionalReviewsFilterInput]
+  or: [ModelProfessionalReviewsFilterInput]
+  not: ModelProfessionalReviewsFilterInput
+  owner: ModelStringInput
+}
+
+input ModelProfessionalReviewsConditionInput {
+  ReviewedId: ModelIDInput
+  ReviewType: ModelStringInput
+  ProfessionalName: ModelStringInput
+  ProfessionalRole: ModelStringInput
+  ReviewDate: ModelStringInput
+  and: [ModelProfessionalReviewsConditionInput]
+  or: [ModelProfessionalReviewsConditionInput]
+  not: ModelProfessionalReviewsConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateProfessionalReviewsInput {
+  id: ID
+  ReviewedId: ID!
+  ReviewType: String!
+  ProfessionalName: String!
+  ProfessionalRole: String!
+  ReviewDate: AWSDate!
+}
+
+input UpdateProfessionalReviewsInput {
+  id: ID!
+  ReviewedId: ID
+  ReviewType: String
+  ProfessionalName: String
+  ProfessionalRole: String
+  ReviewDate: AWSDate
+}
+
+input DeleteProfessionalReviewsInput {
+  id: ID!
+}
+
+input ModelSubscriptionProfessionalReviewsFilterInput {
+  id: ModelSubscriptionIDInput
+  ReviewedId: ModelSubscriptionIDInput
+  ReviewType: ModelSubscriptionStringInput
+  ProfessionalName: ModelSubscriptionStringInput
+  ProfessionalRole: ModelSubscriptionStringInput
+  ReviewDate: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionProfessionalReviewsFilterInput]
+  or: [ModelSubscriptionProfessionalReviewsFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelLoginGeneralInformationConnection @aws_iam @aws_api_key @aws_cognito_user_pools {
+  items: [LoginGeneralInformation]!
+  nextToken: String
+}
+
+input ModelLoginGeneralInformationFilterInput {
+  id: ModelIDInput
+  loginId: ModelIDInput
+  generalInformationId: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelLoginGeneralInformationFilterInput]
+  or: [ModelLoginGeneralInformationFilterInput]
+  not: ModelLoginGeneralInformationFilterInput
+  owner: ModelStringInput
+}
+
+input ModelLoginGeneralInformationConditionInput {
+  loginId: ModelIDInput
+  generalInformationId: ModelIDInput
+  and: [ModelLoginGeneralInformationConditionInput]
+  or: [ModelLoginGeneralInformationConditionInput]
+  not: ModelLoginGeneralInformationConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateLoginGeneralInformationInput {
+  id: ID
+  loginId: ID!
+  generalInformationId: ID!
+}
+
+input UpdateLoginGeneralInformationInput {
+  id: ID!
+  loginId: ID
+  generalInformationId: ID
+}
+
+input DeleteLoginGeneralInformationInput {
+  id: ID!
+}
+
+input ModelSubscriptionLoginGeneralInformationFilterInput {
+  id: ModelSubscriptionIDInput
+  loginId: ModelSubscriptionIDInput
+  generalInformationId: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionLoginGeneralInformationFilterInput]
+  or: [ModelSubscriptionLoginGeneralInformationFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelGeneralInformationTrackPlanConnection @aws_iam @aws_cognito_user_pools @aws_api_key {
+  items: [GeneralInformationTrackPlan]!
+  nextToken: String
+}
+
+input ModelGeneralInformationTrackPlanFilterInput {
+  id: ModelIDInput
+  generalInformationId: ModelIDInput
+  trackPlanId: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelGeneralInformationTrackPlanFilterInput]
+  or: [ModelGeneralInformationTrackPlanFilterInput]
+  not: ModelGeneralInformationTrackPlanFilterInput
+  owner: ModelStringInput
+}
+
+input ModelGeneralInformationTrackPlanConditionInput {
+  generalInformationId: ModelIDInput
+  trackPlanId: ModelIDInput
+  and: [ModelGeneralInformationTrackPlanConditionInput]
+  or: [ModelGeneralInformationTrackPlanConditionInput]
+  not: ModelGeneralInformationTrackPlanConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateGeneralInformationTrackPlanInput {
+  id: ID
+  generalInformationId: ID!
+  trackPlanId: ID!
+}
+
+input UpdateGeneralInformationTrackPlanInput {
+  id: ID!
+  generalInformationId: ID
+  trackPlanId: ID
+}
+
+input DeleteGeneralInformationTrackPlanInput {
+  id: ID!
+}
+
+input ModelSubscriptionGeneralInformationTrackPlanFilterInput {
+  id: ModelSubscriptionIDInput
+  generalInformationId: ModelSubscriptionIDInput
+  trackPlanId: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionGeneralInformationTrackPlanFilterInput]
+  or: [ModelSubscriptionGeneralInformationTrackPlanFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelGeneralInformationAssessmentAnswersConnection @aws_iam @aws_cognito_user_pools @aws_api_key {
+  items: [GeneralInformationAssessmentAnswers]!
+  nextToken: String
+}
+
+input ModelGeneralInformationAssessmentAnswersFilterInput {
+  id: ModelIDInput
+  generalInformationId: ModelIDInput
+  assessmentAnswersId: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelGeneralInformationAssessmentAnswersFilterInput]
+  or: [ModelGeneralInformationAssessmentAnswersFilterInput]
+  not: ModelGeneralInformationAssessmentAnswersFilterInput
+  owner: ModelStringInput
+}
+
+input ModelGeneralInformationAssessmentAnswersConditionInput {
+  generalInformationId: ModelIDInput
+  assessmentAnswersId: ModelIDInput
+  and: [ModelGeneralInformationAssessmentAnswersConditionInput]
+  or: [ModelGeneralInformationAssessmentAnswersConditionInput]
+  not: ModelGeneralInformationAssessmentAnswersConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateGeneralInformationAssessmentAnswersInput {
+  id: ID
+  generalInformationId: ID!
+  assessmentAnswersId: ID!
+}
+
+input UpdateGeneralInformationAssessmentAnswersInput {
+  id: ID!
+  generalInformationId: ID
+  assessmentAnswersId: ID
+}
+
+input DeleteGeneralInformationAssessmentAnswersInput {
+  id: ID!
+}
+
+input ModelSubscriptionGeneralInformationAssessmentAnswersFilterInput {
+  id: ModelSubscriptionIDInput
+  generalInformationId: ModelSubscriptionIDInput
+  assessmentAnswersId: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionGeneralInformationAssessmentAnswersFilterInput]
+  or: [ModelSubscriptionGeneralInformationAssessmentAnswersFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelAssessmentAnswersTrackPlanConnection @aws_iam @aws_cognito_user_pools @aws_api_key {
+  items: [AssessmentAnswersTrackPlan]!
+  nextToken: String
+}
+
+input ModelAssessmentAnswersTrackPlanFilterInput {
+  id: ModelIDInput
+  assessmentAnswersId: ModelIDInput
+  trackPlanId: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelAssessmentAnswersTrackPlanFilterInput]
+  or: [ModelAssessmentAnswersTrackPlanFilterInput]
+  not: ModelAssessmentAnswersTrackPlanFilterInput
+  owner: ModelStringInput
+}
+
+input ModelAssessmentAnswersTrackPlanConditionInput {
+  assessmentAnswersId: ModelIDInput
+  trackPlanId: ModelIDInput
+  and: [ModelAssessmentAnswersTrackPlanConditionInput]
+  or: [ModelAssessmentAnswersTrackPlanConditionInput]
+  not: ModelAssessmentAnswersTrackPlanConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateAssessmentAnswersTrackPlanInput {
+  id: ID
+  assessmentAnswersId: ID!
+  trackPlanId: ID!
+}
+
+input UpdateAssessmentAnswersTrackPlanInput {
+  id: ID!
+  assessmentAnswersId: ID
+  trackPlanId: ID
+}
+
+input DeleteAssessmentAnswersTrackPlanInput {
+  id: ID!
+}
+
+input ModelSubscriptionAssessmentAnswersTrackPlanFilterInput {
+  id: ModelSubscriptionIDInput
+  assessmentAnswersId: ModelSubscriptionIDInput
+  trackPlanId: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionAssessmentAnswersTrackPlanFilterInput]
+  or: [ModelSubscriptionAssessmentAnswersTrackPlanFilterInput]
+  owner: ModelStringInput
+}

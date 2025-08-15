@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "paths": {
+    "/sendConnectionEmail": {
+      "name": "/sendConnectionEmail",
+      "lambdaFunction": "sendConnectionEmail",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create"
+        ]
+      }
+    },
+    "/paypal-webhook": {
+      "name": "/paypal-webhook",
+      "lambdaFunction": "paypalWebhookHandler",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

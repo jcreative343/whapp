@@ -1,0 +1,3870 @@
+/* eslint-disable */
+// this is an auto generated file. This will be overwritten
+
+export const createLogin = /* GraphQL */ `
+  mutation CreateLogin(
+    $input: CreateLoginInput!
+    $condition: ModelLoginConditionInput
+  ) {
+    createLogin(input: $input, condition: $condition) {
+      id
+      Email
+      Password
+      LoginDate
+      LoginTime
+      ProfileType
+      GeneralInformation {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateLogin = /* GraphQL */ `
+  mutation UpdateLogin(
+    $input: UpdateLoginInput!
+    $condition: ModelLoginConditionInput
+  ) {
+    updateLogin(input: $input, condition: $condition) {
+      id
+      Email
+      Password
+      LoginDate
+      LoginTime
+      ProfileType
+      GeneralInformation {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteLogin = /* GraphQL */ `
+  mutation DeleteLogin(
+    $input: DeleteLoginInput!
+    $condition: ModelLoginConditionInput
+  ) {
+    deleteLogin(input: $input, condition: $condition) {
+      id
+      Email
+      Password
+      LoginDate
+      LoginTime
+      ProfileType
+      GeneralInformation {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const createCreatePlan = /* GraphQL */ `
+  mutation CreateCreatePlan(
+    $input: CreateCreatePlanInput!
+    $condition: ModelCreatePlanConditionInput
+  ) {
+    createCreatePlan(input: $input, condition: $condition) {
+      id
+      userId
+      PSProblemSolving
+      PSSelfEsteem
+      PSChoiceAutonomy
+      PSSelfCare
+      PSSelfAwareness
+      PSCreativity
+      CSForgiveness
+      CSKindness
+      CSGratitude
+      CSPatience
+      CSCourage
+      CMSCopingChoice
+      CMSResilience
+      CMSSelfRegulation
+      CMSOptimism
+      COMSupportSystem
+      COMSocialIntelligence
+      COMCommunication
+      COMFaithCommunity
+      COMAccomplishments
+      BRStableHousing
+      BRQualityHealthcare
+      BRProfessionalAccess
+      BRInsuranceCoverage
+      BRFinancialConstraints
+      BREducationAttainment
+      BRSocialStigma
+      BRUnsupportiveCommunity
+      BRNonexistentCommunity
+      BRCommunityResources
+      BRProfessionalTrust
+      BRHealthcareSystemTrust
+      BRCognitiveImpairments
+      BRDependentCare
+      BRTransportation
+      BRTechnologyAccess
+      BRLanguage
+      BRHealthcareProcess
+      BROther
+      BRResponseNote
+      TGBetrayal
+      TGBoundaries
+      TGDisorder
+      TGPain
+      TGRejection
+      TGStress
+      TGMemories
+      TGUnjustTreatment
+      TGUnpleasantConversations
+      TGUnsafeEnvironments
+      TGOther
+      WSFlashbacks
+      WSIncreasedAppetite
+      WSDecreasedAppetite
+      WSIntenseEmotions
+      WSDisconnecting
+      WSTime
+      WSNegativeSelfTalk
+      WSNeglectingSelfCare
+      WSNightmares
+      WSRecklessBehavior
+      WSOther
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateCreatePlan = /* GraphQL */ `
+  mutation UpdateCreatePlan(
+    $input: UpdateCreatePlanInput!
+    $condition: ModelCreatePlanConditionInput
+  ) {
+    updateCreatePlan(input: $input, condition: $condition) {
+      id
+      userId
+      PSProblemSolving
+      PSSelfEsteem
+      PSChoiceAutonomy
+      PSSelfCare
+      PSSelfAwareness
+      PSCreativity
+      CSForgiveness
+      CSKindness
+      CSGratitude
+      CSPatience
+      CSCourage
+      CMSCopingChoice
+      CMSResilience
+      CMSSelfRegulation
+      CMSOptimism
+      COMSupportSystem
+      COMSocialIntelligence
+      COMCommunication
+      COMFaithCommunity
+      COMAccomplishments
+      BRStableHousing
+      BRQualityHealthcare
+      BRProfessionalAccess
+      BRInsuranceCoverage
+      BRFinancialConstraints
+      BREducationAttainment
+      BRSocialStigma
+      BRUnsupportiveCommunity
+      BRNonexistentCommunity
+      BRCommunityResources
+      BRProfessionalTrust
+      BRHealthcareSystemTrust
+      BRCognitiveImpairments
+      BRDependentCare
+      BRTransportation
+      BRTechnologyAccess
+      BRLanguage
+      BRHealthcareProcess
+      BROther
+      BRResponseNote
+      TGBetrayal
+      TGBoundaries
+      TGDisorder
+      TGPain
+      TGRejection
+      TGStress
+      TGMemories
+      TGUnjustTreatment
+      TGUnpleasantConversations
+      TGUnsafeEnvironments
+      TGOther
+      WSFlashbacks
+      WSIncreasedAppetite
+      WSDecreasedAppetite
+      WSIntenseEmotions
+      WSDisconnecting
+      WSTime
+      WSNegativeSelfTalk
+      WSNeglectingSelfCare
+      WSNightmares
+      WSRecklessBehavior
+      WSOther
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteCreatePlan = /* GraphQL */ `
+  mutation DeleteCreatePlan(
+    $input: DeleteCreatePlanInput!
+    $condition: ModelCreatePlanConditionInput
+  ) {
+    deleteCreatePlan(input: $input, condition: $condition) {
+      id
+      userId
+      PSProblemSolving
+      PSSelfEsteem
+      PSChoiceAutonomy
+      PSSelfCare
+      PSSelfAwareness
+      PSCreativity
+      CSForgiveness
+      CSKindness
+      CSGratitude
+      CSPatience
+      CSCourage
+      CMSCopingChoice
+      CMSResilience
+      CMSSelfRegulation
+      CMSOptimism
+      COMSupportSystem
+      COMSocialIntelligence
+      COMCommunication
+      COMFaithCommunity
+      COMAccomplishments
+      BRStableHousing
+      BRQualityHealthcare
+      BRProfessionalAccess
+      BRInsuranceCoverage
+      BRFinancialConstraints
+      BREducationAttainment
+      BRSocialStigma
+      BRUnsupportiveCommunity
+      BRNonexistentCommunity
+      BRCommunityResources
+      BRProfessionalTrust
+      BRHealthcareSystemTrust
+      BRCognitiveImpairments
+      BRDependentCare
+      BRTransportation
+      BRTechnologyAccess
+      BRLanguage
+      BRHealthcareProcess
+      BROther
+      BRResponseNote
+      TGBetrayal
+      TGBoundaries
+      TGDisorder
+      TGPain
+      TGRejection
+      TGStress
+      TGMemories
+      TGUnjustTreatment
+      TGUnpleasantConversations
+      TGUnsafeEnvironments
+      TGOther
+      WSFlashbacks
+      WSIncreasedAppetite
+      WSDecreasedAppetite
+      WSIntenseEmotions
+      WSDisconnecting
+      WSTime
+      WSNegativeSelfTalk
+      WSNeglectingSelfCare
+      WSNightmares
+      WSRecklessBehavior
+      WSOther
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const createGeneralInformation = /* GraphQL */ `
+  mutation CreateGeneralInformation(
+    $input: CreateGeneralInformationInput!
+    $condition: ModelGeneralInformationConditionInput
+  ) {
+    createGeneralInformation(input: $input, condition: $condition) {
+      id
+      userId
+      FirstName
+      LastName
+      Email
+      ProfessionalRole
+      BusinessName
+      BusinessEIN
+      BusinessCountry
+      BusinessAddress
+      BusinessCity
+      BusinessState
+      BusinessZipCode
+      BusinessPhoneNumber
+      BusinessWebsite
+      OrganizationAdministrator
+      OrganizationEmployee
+      Department
+      Service
+      ProgramsUnit
+      TrackPlan {
+        nextToken
+        __typename
+      }
+      AssessmentAnswers {
+        nextToken
+        __typename
+      }
+      ProfileType
+      Login {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateGeneralInformation = /* GraphQL */ `
+  mutation UpdateGeneralInformation(
+    $input: UpdateGeneralInformationInput!
+    $condition: ModelGeneralInformationConditionInput
+  ) {
+    updateGeneralInformation(input: $input, condition: $condition) {
+      id
+      userId
+      FirstName
+      LastName
+      Email
+      ProfessionalRole
+      BusinessName
+      BusinessEIN
+      BusinessCountry
+      BusinessAddress
+      BusinessCity
+      BusinessState
+      BusinessZipCode
+      BusinessPhoneNumber
+      BusinessWebsite
+      OrganizationAdministrator
+      OrganizationEmployee
+      Department
+      Service
+      ProgramsUnit
+      TrackPlan {
+        nextToken
+        __typename
+      }
+      AssessmentAnswers {
+        nextToken
+        __typename
+      }
+      ProfileType
+      Login {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteGeneralInformation = /* GraphQL */ `
+  mutation DeleteGeneralInformation(
+    $input: DeleteGeneralInformationInput!
+    $condition: ModelGeneralInformationConditionInput
+  ) {
+    deleteGeneralInformation(input: $input, condition: $condition) {
+      id
+      userId
+      FirstName
+      LastName
+      Email
+      ProfessionalRole
+      BusinessName
+      BusinessEIN
+      BusinessCountry
+      BusinessAddress
+      BusinessCity
+      BusinessState
+      BusinessZipCode
+      BusinessPhoneNumber
+      BusinessWebsite
+      OrganizationAdministrator
+      OrganizationEmployee
+      Department
+      Service
+      ProgramsUnit
+      TrackPlan {
+        nextToken
+        __typename
+      }
+      AssessmentAnswers {
+        nextToken
+        __typename
+      }
+      ProfileType
+      Login {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const createAssessmentAnswers = /* GraphQL */ `
+  mutation CreateAssessmentAnswers(
+    $input: CreateAssessmentAnswersInput!
+    $condition: ModelAssessmentAnswersConditionInput
+  ) {
+    createAssessmentAnswers(input: $input, condition: $condition) {
+      id
+      userId
+      CompletedDate
+      CompletedTime
+      TRHurtfulNames
+      TRNoNurturing
+      TRHit
+      TRNeedsNotMet
+      TRForcedSex
+      TRResponsible
+      TRViolence
+      TRSubstanceAbuse
+      TRMentalIllness
+      TRParentDivorce
+      TRParentIncarcerated
+      TRHomelessness
+      TRBodyFunction
+      TRNaturalDisaster
+      TRDirectTerrorism
+      TRIndirectTerrorism
+      TRLovedOne
+      TRBelief
+      TRResponseProfessional
+      TRResponseFamilyFriend
+      TRResponseGod
+      TRResponseNoOne
+      TRNoTrauma
+      CMAlcohol
+      CMDrugs
+      CMOvereating
+      CMSmoking
+      CMGaming
+      CMShopping
+      CMGambling
+      CMSex
+      CMPorn
+      CMBlaming
+      CMHurting
+      CMDisengage
+      CMArt
+      CMMusic
+      CMPoetry
+      CMReading
+      CMGroups
+      CMCounseling
+      CMVenting
+      CMWriting
+      CMSensory
+      CMDancing
+      CMExercising
+      CMWalking
+      CMChange
+      CMAnalyze
+      CMDaydream
+      CMPositive
+      MHDxPTSD
+      MHDxDepression
+      MHDxSUD
+      MHDxOtherMental
+      MHSleeplessness
+      MHAlcoholUse
+      MHAnxiety
+      MHDepression
+      MHDrugUse
+      MHGrief
+      MHGuilt
+      MHIrritability
+      MHStress
+      MHRegret
+      MHSuicidalThoughts
+      MHLoneliness
+      MHWorry
+      PHDxInfertility
+      PHDxCurableSTD
+      PHDxIncurableSTD
+      PHDxCancer
+      PHDxDiabetes
+      PHDxHighBlood
+      PHDxHeartDisease
+      PHDxIrritableBowel
+      PHDxVitA
+      PHDxVitB
+      PHDxVitC
+      PHDxVitD
+      PHDxVitE
+      PHDxVitK
+      PHDxAutoimmune
+      PHDxOtherPhysical
+      PHVegeFruits
+      PHBeanLentils
+      PHGrainBreads
+      PHDairy
+      PHMeat
+      PHFishSeafood
+      PHSweets
+      PHWater
+      PHPhysicalActivity
+      SHSpiritualDefine
+      SHSpiritualIntegrate
+      SHPrayer
+      SHSpiritualActivity
+      SHReadText
+      SHAlignText
+      SHCommunity
+      OLHope
+      OLPeace
+      OLLearning
+      OLJoy
+      OLStable
+      OLSafety
+      OLKindness
+      OLForgiveness
+      OLPatience
+      OLRelationships
+      OLBoundaries
+      OLEUnpleasant
+      OLEPleasant
+      OLEControl
+      OLENumber
+      SDoHAgeRange
+      SDoHRace
+      SDoHGeographicRegion
+      SDoHEthnicity
+      SDoHState
+      SDoHZipCode
+      SDoHMaritalStatus
+      SDoHMilitaryStatus
+      SDoHGender
+      SDoHEducation
+      SDoHJobStatus
+      SDoHIncome
+      SDoHHousingStatus
+      SDoHHomeAsChild
+      TrackPlan {
+        nextToken
+        __typename
+      }
+      GeneralInformation {
+        nextToken
+        __typename
+      }
+      SDoHReligion
+      SDoHDenomination
+      isActive
+      SHSkip
+      ProAssessmentFinalizedReview1
+      ProAssessmentFinalizedReviewDate1
+      ProAssessmentFinalizedName1
+      ProAssessmentFinalizedRole1
+      ProAssessmentFinalizedReview2
+      ProAssessmentFinalizedReviewDate2
+      ProAssessmentFinalizedName2
+      ProAssessmentFinalizedRole2
+      ProAssessmentFinalizedReview3
+      ProAssessmentFinalizedReviewDate3
+      ProAssessmentFinalizedName3
+      ProAssessmentFinalizedRole3
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateAssessmentAnswers = /* GraphQL */ `
+  mutation UpdateAssessmentAnswers(
+    $input: UpdateAssessmentAnswersInput!
+    $condition: ModelAssessmentAnswersConditionInput
+  ) {
+    updateAssessmentAnswers(input: $input, condition: $condition) {
+      id
+      userId
+      CompletedDate
+      CompletedTime
+      TRHurtfulNames
+      TRNoNurturing
+      TRHit
+      TRNeedsNotMet
+      TRForcedSex
+      TRResponsible
+      TRViolence
+      TRSubstanceAbuse
+      TRMentalIllness
+      TRParentDivorce
+      TRParentIncarcerated
+      TRHomelessness
+      TRBodyFunction
+      TRNaturalDisaster
+      TRDirectTerrorism
+      TRIndirectTerrorism
+      TRLovedOne
+      TRBelief
+      TRResponseProfessional
+      TRResponseFamilyFriend
+      TRResponseGod
+      TRResponseNoOne
+      TRNoTrauma
+      CMAlcohol
+      CMDrugs
+      CMOvereating
+      CMSmoking
+      CMGaming
+      CMShopping
+      CMGambling
+      CMSex
+      CMPorn
+      CMBlaming
+      CMHurting
+      CMDisengage
+      CMArt
+      CMMusic
+      CMPoetry
+      CMReading
+      CMGroups
+      CMCounseling
+      CMVenting
+      CMWriting
+      CMSensory
+      CMDancing
+      CMExercising
+      CMWalking
+      CMChange
+      CMAnalyze
+      CMDaydream
+      CMPositive
+      MHDxPTSD
+      MHDxDepression
+      MHDxSUD
+      MHDxOtherMental
+      MHSleeplessness
+      MHAlcoholUse
+      MHAnxiety
+      MHDepression
+      MHDrugUse
+      MHGrief
+      MHGuilt
+      MHIrritability
+      MHStress
+      MHRegret
+      MHSuicidalThoughts
+      MHLoneliness
+      MHWorry
+      PHDxInfertility
+      PHDxCurableSTD
+      PHDxIncurableSTD
+      PHDxCancer
+      PHDxDiabetes
+      PHDxHighBlood
+      PHDxHeartDisease
+      PHDxIrritableBowel
+      PHDxVitA
+      PHDxVitB
+      PHDxVitC
+      PHDxVitD
+      PHDxVitE
+      PHDxVitK
+      PHDxAutoimmune
+      PHDxOtherPhysical
+      PHVegeFruits
+      PHBeanLentils
+      PHGrainBreads
+      PHDairy
+      PHMeat
+      PHFishSeafood
+      PHSweets
+      PHWater
+      PHPhysicalActivity
+      SHSpiritualDefine
+      SHSpiritualIntegrate
+      SHPrayer
+      SHSpiritualActivity
+      SHReadText
+      SHAlignText
+      SHCommunity
+      OLHope
+      OLPeace
+      OLLearning
+      OLJoy
+      OLStable
+      OLSafety
+      OLKindness
+      OLForgiveness
+      OLPatience
+      OLRelationships
+      OLBoundaries
+      OLEUnpleasant
+      OLEPleasant
+      OLEControl
+      OLENumber
+      SDoHAgeRange
+      SDoHRace
+      SDoHGeographicRegion
+      SDoHEthnicity
+      SDoHState
+      SDoHZipCode
+      SDoHMaritalStatus
+      SDoHMilitaryStatus
+      SDoHGender
+      SDoHEducation
+      SDoHJobStatus
+      SDoHIncome
+      SDoHHousingStatus
+      SDoHHomeAsChild
+      TrackPlan {
+        nextToken
+        __typename
+      }
+      GeneralInformation {
+        nextToken
+        __typename
+      }
+      SDoHReligion
+      SDoHDenomination
+      isActive
+      SHSkip
+      ProAssessmentFinalizedReview1
+      ProAssessmentFinalizedReviewDate1
+      ProAssessmentFinalizedName1
+      ProAssessmentFinalizedRole1
+      ProAssessmentFinalizedReview2
+      ProAssessmentFinalizedReviewDate2
+      ProAssessmentFinalizedName2
+      ProAssessmentFinalizedRole2
+      ProAssessmentFinalizedReview3
+      ProAssessmentFinalizedReviewDate3
+      ProAssessmentFinalizedName3
+      ProAssessmentFinalizedRole3
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteAssessmentAnswers = /* GraphQL */ `
+  mutation DeleteAssessmentAnswers(
+    $input: DeleteAssessmentAnswersInput!
+    $condition: ModelAssessmentAnswersConditionInput
+  ) {
+    deleteAssessmentAnswers(input: $input, condition: $condition) {
+      id
+      userId
+      CompletedDate
+      CompletedTime
+      TRHurtfulNames
+      TRNoNurturing
+      TRHit
+      TRNeedsNotMet
+      TRForcedSex
+      TRResponsible
+      TRViolence
+      TRSubstanceAbuse
+      TRMentalIllness
+      TRParentDivorce
+      TRParentIncarcerated
+      TRHomelessness
+      TRBodyFunction
+      TRNaturalDisaster
+      TRDirectTerrorism
+      TRIndirectTerrorism
+      TRLovedOne
+      TRBelief
+      TRResponseProfessional
+      TRResponseFamilyFriend
+      TRResponseGod
+      TRResponseNoOne
+      TRNoTrauma
+      CMAlcohol
+      CMDrugs
+      CMOvereating
+      CMSmoking
+      CMGaming
+      CMShopping
+      CMGambling
+      CMSex
+      CMPorn
+      CMBlaming
+      CMHurting
+      CMDisengage
+      CMArt
+      CMMusic
+      CMPoetry
+      CMReading
+      CMGroups
+      CMCounseling
+      CMVenting
+      CMWriting
+      CMSensory
+      CMDancing
+      CMExercising
+      CMWalking
+      CMChange
+      CMAnalyze
+      CMDaydream
+      CMPositive
+      MHDxPTSD
+      MHDxDepression
+      MHDxSUD
+      MHDxOtherMental
+      MHSleeplessness
+      MHAlcoholUse
+      MHAnxiety
+      MHDepression
+      MHDrugUse
+      MHGrief
+      MHGuilt
+      MHIrritability
+      MHStress
+      MHRegret
+      MHSuicidalThoughts
+      MHLoneliness
+      MHWorry
+      PHDxInfertility
+      PHDxCurableSTD
+      PHDxIncurableSTD
+      PHDxCancer
+      PHDxDiabetes
+      PHDxHighBlood
+      PHDxHeartDisease
+      PHDxIrritableBowel
+      PHDxVitA
+      PHDxVitB
+      PHDxVitC
+      PHDxVitD
+      PHDxVitE
+      PHDxVitK
+      PHDxAutoimmune
+      PHDxOtherPhysical
+      PHVegeFruits
+      PHBeanLentils
+      PHGrainBreads
+      PHDairy
+      PHMeat
+      PHFishSeafood
+      PHSweets
+      PHWater
+      PHPhysicalActivity
+      SHSpiritualDefine
+      SHSpiritualIntegrate
+      SHPrayer
+      SHSpiritualActivity
+      SHReadText
+      SHAlignText
+      SHCommunity
+      OLHope
+      OLPeace
+      OLLearning
+      OLJoy
+      OLStable
+      OLSafety
+      OLKindness
+      OLForgiveness
+      OLPatience
+      OLRelationships
+      OLBoundaries
+      OLEUnpleasant
+      OLEPleasant
+      OLEControl
+      OLENumber
+      SDoHAgeRange
+      SDoHRace
+      SDoHGeographicRegion
+      SDoHEthnicity
+      SDoHState
+      SDoHZipCode
+      SDoHMaritalStatus
+      SDoHMilitaryStatus
+      SDoHGender
+      SDoHEducation
+      SDoHJobStatus
+      SDoHIncome
+      SDoHHousingStatus
+      SDoHHomeAsChild
+      TrackPlan {
+        nextToken
+        __typename
+      }
+      GeneralInformation {
+        nextToken
+        __typename
+      }
+      SDoHReligion
+      SDoHDenomination
+      isActive
+      SHSkip
+      ProAssessmentFinalizedReview1
+      ProAssessmentFinalizedReviewDate1
+      ProAssessmentFinalizedName1
+      ProAssessmentFinalizedRole1
+      ProAssessmentFinalizedReview2
+      ProAssessmentFinalizedReviewDate2
+      ProAssessmentFinalizedName2
+      ProAssessmentFinalizedRole2
+      ProAssessmentFinalizedReview3
+      ProAssessmentFinalizedReviewDate3
+      ProAssessmentFinalizedName3
+      ProAssessmentFinalizedRole3
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const createAssessmentScores = /* GraphQL */ `
+  mutation CreateAssessmentScores(
+    $input: CreateAssessmentScoresInput!
+    $condition: ModelAssessmentScoresConditionInput
+  ) {
+    createAssessmentScores(input: $input, condition: $condition) {
+      id
+      userId
+      CompletedDate
+      CompletedTime
+      TRHurtfulNames
+      TRNoNurturing
+      TRHit
+      TRNeedsNotMet
+      TRForcedSex
+      TRResponsible
+      TRViolence
+      TRSubstanceAbuse
+      TRMentalIllness
+      TRParentDivorce
+      TRParentIncarcerated
+      TRHomelessness
+      TRBodyFunction
+      TRNaturalDisaster
+      TRDirectTerrorism
+      TRIndirectTerrorism
+      TRLovedOne
+      TRBelief
+      TRResponseProfessional
+      TRResponseFamilyFriend
+      TRResponseGod
+      TRResponseNoOne
+      TRNoTrauma
+      CMAlcohol
+      CMDrugs
+      CMOvereating
+      CMSmoking
+      CMGaming
+      CMShopping
+      CMGambling
+      CMSex
+      CMPorn
+      CMBlaming
+      CMHurting
+      CMDisengage
+      CMArt
+      CMMusic
+      CMPoetry
+      CMReading
+      CMGroups
+      CMCounseling
+      CMVenting
+      CMWriting
+      CMSensory
+      CMDancing
+      CMExercising
+      CMWalking
+      CMChange
+      CMAnalyze
+      CMDaydream
+      CMPositive
+      MHDxPTSD
+      MHDxDepression
+      MHDxSUD
+      MHDxOtherMental
+      MHSleeplessness
+      MHAlcoholUse
+      MHAnxiety
+      MHDepression
+      MHDrugUse
+      MHGrief
+      MHGuilt
+      MHIrritability
+      MHStress
+      MHRegret
+      MHSuicidalThoughts
+      MHLoneliness
+      MHWorry
+      PHDxInfertility
+      PHDxCurableSTD
+      PHDxIncurableSTD
+      PHDxCancer
+      PHDxDiabetes
+      PHDxHighBlood
+      PHDxHeartDisease
+      PHDxIrritableBowel
+      PHDxVitA
+      PHDxVitB
+      PHDxVitC
+      PHDxVitD
+      PHDxVitE
+      PHDxVitK
+      PHDxAutoimmune
+      PHDxOtherPhysical
+      PHVegeFruits
+      PHBeanLentils
+      PHGrainBreads
+      PHDairy
+      PHMeat
+      PHFishSeafood
+      PHSweets
+      PHWater
+      PHPhysicalActivity
+      SHSpiritualDefine
+      SHSpiritualIntegrate
+      SHPrayer
+      SHSpiritualActivity
+      SHReadText
+      SHAlignText
+      SHCommunity
+      OLHope
+      OLPeace
+      OLLearning
+      OLJoy
+      OLStable
+      OLSafety
+      OLKindness
+      OLForgiveness
+      OLPatience
+      OLRelationships
+      OLBoundaries
+      OLEUnpleasant
+      OLEPleasant
+      OLEControl
+      OLENumber
+      SDoHAgeRange
+      SDoHRace
+      SDoHGeographicRegion
+      SDoHEthnicity
+      SDoHState
+      SDoHZipCode
+      SDoHMaritalStatus
+      SDoHMilitaryStatus
+      SDoHGender
+      SDoHEducation
+      SDoHJobStatus
+      SDoHIncome
+      SDoHHousingStatus
+      SDoHHomeAsChild
+      SDoHReligion
+      SDoHDenomination
+      TRScore
+      CMScore
+      MHScore
+      PHScore
+      SHScore
+      OLScore
+      isActive
+      SHSkip
+      ProAssessmentFinalizedReview1
+      ProAssessmentFinalizedReviewDate1
+      ProAssessmentFinalizedName1
+      ProAssessmentFinalizedRole1
+      ProAssessmentFinalizedReview2
+      ProAssessmentFinalizedReviewDate2
+      ProAssessmentFinalizedName2
+      ProAssessmentFinalizedRole2
+      ProAssessmentFinalizedReview3
+      ProAssessmentFinalizedReviewDate3
+      ProAssessmentFinalizedName3
+      ProAssessmentFinalizedRole3
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateAssessmentScores = /* GraphQL */ `
+  mutation UpdateAssessmentScores(
+    $input: UpdateAssessmentScoresInput!
+    $condition: ModelAssessmentScoresConditionInput
+  ) {
+    updateAssessmentScores(input: $input, condition: $condition) {
+      id
+      userId
+      CompletedDate
+      CompletedTime
+      TRHurtfulNames
+      TRNoNurturing
+      TRHit
+      TRNeedsNotMet
+      TRForcedSex
+      TRResponsible
+      TRViolence
+      TRSubstanceAbuse
+      TRMentalIllness
+      TRParentDivorce
+      TRParentIncarcerated
+      TRHomelessness
+      TRBodyFunction
+      TRNaturalDisaster
+      TRDirectTerrorism
+      TRIndirectTerrorism
+      TRLovedOne
+      TRBelief
+      TRResponseProfessional
+      TRResponseFamilyFriend
+      TRResponseGod
+      TRResponseNoOne
+      TRNoTrauma
+      CMAlcohol
+      CMDrugs
+      CMOvereating
+      CMSmoking
+      CMGaming
+      CMShopping
+      CMGambling
+      CMSex
+      CMPorn
+      CMBlaming
+      CMHurting
+      CMDisengage
+      CMArt
+      CMMusic
+      CMPoetry
+      CMReading
+      CMGroups
+      CMCounseling
+      CMVenting
+      CMWriting
+      CMSensory
+      CMDancing
+      CMExercising
+      CMWalking
+      CMChange
+      CMAnalyze
+      CMDaydream
+      CMPositive
+      MHDxPTSD
+      MHDxDepression
+      MHDxSUD
+      MHDxOtherMental
+      MHSleeplessness
+      MHAlcoholUse
+      MHAnxiety
+      MHDepression
+      MHDrugUse
+      MHGrief
+      MHGuilt
+      MHIrritability
+      MHStress
+      MHRegret
+      MHSuicidalThoughts
+      MHLoneliness
+      MHWorry
+      PHDxInfertility
+      PHDxCurableSTD
+      PHDxIncurableSTD
+      PHDxCancer
+      PHDxDiabetes
+      PHDxHighBlood
+      PHDxHeartDisease
+      PHDxIrritableBowel
+      PHDxVitA
+      PHDxVitB
+      PHDxVitC
+      PHDxVitD
+      PHDxVitE
+      PHDxVitK
+      PHDxAutoimmune
+      PHDxOtherPhysical
+      PHVegeFruits
+      PHBeanLentils
+      PHGrainBreads
+      PHDairy
+      PHMeat
+      PHFishSeafood
+      PHSweets
+      PHWater
+      PHPhysicalActivity
+      SHSpiritualDefine
+      SHSpiritualIntegrate
+      SHPrayer
+      SHSpiritualActivity
+      SHReadText
+      SHAlignText
+      SHCommunity
+      OLHope
+      OLPeace
+      OLLearning
+      OLJoy
+      OLStable
+      OLSafety
+      OLKindness
+      OLForgiveness
+      OLPatience
+      OLRelationships
+      OLBoundaries
+      OLEUnpleasant
+      OLEPleasant
+      OLEControl
+      OLENumber
+      SDoHAgeRange
+      SDoHRace
+      SDoHGeographicRegion
+      SDoHEthnicity
+      SDoHState
+      SDoHZipCode
+      SDoHMaritalStatus
+      SDoHMilitaryStatus
+      SDoHGender
+      SDoHEducation
+      SDoHJobStatus
+      SDoHIncome
+      SDoHHousingStatus
+      SDoHHomeAsChild
+      SDoHReligion
+      SDoHDenomination
+      TRScore
+      CMScore
+      MHScore
+      PHScore
+      SHScore
+      OLScore
+      isActive
+      SHSkip
+      ProAssessmentFinalizedReview1
+      ProAssessmentFinalizedReviewDate1
+      ProAssessmentFinalizedName1
+      ProAssessmentFinalizedRole1
+      ProAssessmentFinalizedReview2
+      ProAssessmentFinalizedReviewDate2
+      ProAssessmentFinalizedName2
+      ProAssessmentFinalizedRole2
+      ProAssessmentFinalizedReview3
+      ProAssessmentFinalizedReviewDate3
+      ProAssessmentFinalizedName3
+      ProAssessmentFinalizedRole3
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteAssessmentScores = /* GraphQL */ `
+  mutation DeleteAssessmentScores(
+    $input: DeleteAssessmentScoresInput!
+    $condition: ModelAssessmentScoresConditionInput
+  ) {
+    deleteAssessmentScores(input: $input, condition: $condition) {
+      id
+      userId
+      CompletedDate
+      CompletedTime
+      TRHurtfulNames
+      TRNoNurturing
+      TRHit
+      TRNeedsNotMet
+      TRForcedSex
+      TRResponsible
+      TRViolence
+      TRSubstanceAbuse
+      TRMentalIllness
+      TRParentDivorce
+      TRParentIncarcerated
+      TRHomelessness
+      TRBodyFunction
+      TRNaturalDisaster
+      TRDirectTerrorism
+      TRIndirectTerrorism
+      TRLovedOne
+      TRBelief
+      TRResponseProfessional
+      TRResponseFamilyFriend
+      TRResponseGod
+      TRResponseNoOne
+      TRNoTrauma
+      CMAlcohol
+      CMDrugs
+      CMOvereating
+      CMSmoking
+      CMGaming
+      CMShopping
+      CMGambling
+      CMSex
+      CMPorn
+      CMBlaming
+      CMHurting
+      CMDisengage
+      CMArt
+      CMMusic
+      CMPoetry
+      CMReading
+      CMGroups
+      CMCounseling
+      CMVenting
+      CMWriting
+      CMSensory
+      CMDancing
+      CMExercising
+      CMWalking
+      CMChange
+      CMAnalyze
+      CMDaydream
+      CMPositive
+      MHDxPTSD
+      MHDxDepression
+      MHDxSUD
+      MHDxOtherMental
+      MHSleeplessness
+      MHAlcoholUse
+      MHAnxiety
+      MHDepression
+      MHDrugUse
+      MHGrief
+      MHGuilt
+      MHIrritability
+      MHStress
+      MHRegret
+      MHSuicidalThoughts
+      MHLoneliness
+      MHWorry
+      PHDxInfertility
+      PHDxCurableSTD
+      PHDxIncurableSTD
+      PHDxCancer
+      PHDxDiabetes
+      PHDxHighBlood
+      PHDxHeartDisease
+      PHDxIrritableBowel
+      PHDxVitA
+      PHDxVitB
+      PHDxVitC
+      PHDxVitD
+      PHDxVitE
+      PHDxVitK
+      PHDxAutoimmune
+      PHDxOtherPhysical
+      PHVegeFruits
+      PHBeanLentils
+      PHGrainBreads
+      PHDairy
+      PHMeat
+      PHFishSeafood
+      PHSweets
+      PHWater
+      PHPhysicalActivity
+      SHSpiritualDefine
+      SHSpiritualIntegrate
+      SHPrayer
+      SHSpiritualActivity
+      SHReadText
+      SHAlignText
+      SHCommunity
+      OLHope
+      OLPeace
+      OLLearning
+      OLJoy
+      OLStable
+      OLSafety
+      OLKindness
+      OLForgiveness
+      OLPatience
+      OLRelationships
+      OLBoundaries
+      OLEUnpleasant
+      OLEPleasant
+      OLEControl
+      OLENumber
+      SDoHAgeRange
+      SDoHRace
+      SDoHGeographicRegion
+      SDoHEthnicity
+      SDoHState
+      SDoHZipCode
+      SDoHMaritalStatus
+      SDoHMilitaryStatus
+      SDoHGender
+      SDoHEducation
+      SDoHJobStatus
+      SDoHIncome
+      SDoHHousingStatus
+      SDoHHomeAsChild
+      SDoHReligion
+      SDoHDenomination
+      TRScore
+      CMScore
+      MHScore
+      PHScore
+      SHScore
+      OLScore
+      isActive
+      SHSkip
+      ProAssessmentFinalizedReview1
+      ProAssessmentFinalizedReviewDate1
+      ProAssessmentFinalizedName1
+      ProAssessmentFinalizedRole1
+      ProAssessmentFinalizedReview2
+      ProAssessmentFinalizedReviewDate2
+      ProAssessmentFinalizedName2
+      ProAssessmentFinalizedRole2
+      ProAssessmentFinalizedReview3
+      ProAssessmentFinalizedReviewDate3
+      ProAssessmentFinalizedName3
+      ProAssessmentFinalizedRole3
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const createTrackPlan = /* GraphQL */ `
+  mutation CreateTrackPlan(
+    $input: CreateTrackPlanInput!
+    $condition: ModelTrackPlanConditionInput
+  ) {
+    createTrackPlan(input: $input, condition: $condition) {
+      id
+      userId
+      CompletedDate
+      CompletedTime
+      ActionDomain
+      ActionQuestion
+      Action
+      Frequency
+      ActionNote
+      Update1Points
+      Update1Note
+      Update1Date
+      Update2Points
+      Update2Note
+      Update2Date
+      Update3Points
+      Update3Note
+      Update3Date
+      Update4Points
+      Update4Note
+      Update4Date
+      Update5Points
+      Update5Note
+      Update5Date
+      Update6Points
+      Update6Note
+      Update6Date
+      Update7Points
+      Update7Note
+      Update7Date
+      Update8Points
+      Update8Note
+      Update8Date
+      Percentage
+      Discontinued
+      DiscontinuedDate
+      Successful
+      SuccessfulDate
+      AssessmentAnswers {
+        nextToken
+        __typename
+      }
+      GeneralInformation {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateTrackPlan = /* GraphQL */ `
+  mutation UpdateTrackPlan(
+    $input: UpdateTrackPlanInput!
+    $condition: ModelTrackPlanConditionInput
+  ) {
+    updateTrackPlan(input: $input, condition: $condition) {
+      id
+      userId
+      CompletedDate
+      CompletedTime
+      ActionDomain
+      ActionQuestion
+      Action
+      Frequency
+      ActionNote
+      Update1Points
+      Update1Note
+      Update1Date
+      Update2Points
+      Update2Note
+      Update2Date
+      Update3Points
+      Update3Note
+      Update3Date
+      Update4Points
+      Update4Note
+      Update4Date
+      Update5Points
+      Update5Note
+      Update5Date
+      Update6Points
+      Update6Note
+      Update6Date
+      Update7Points
+      Update7Note
+      Update7Date
+      Update8Points
+      Update8Note
+      Update8Date
+      Percentage
+      Discontinued
+      DiscontinuedDate
+      Successful
+      SuccessfulDate
+      AssessmentAnswers {
+        nextToken
+        __typename
+      }
+      GeneralInformation {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteTrackPlan = /* GraphQL */ `
+  mutation DeleteTrackPlan(
+    $input: DeleteTrackPlanInput!
+    $condition: ModelTrackPlanConditionInput
+  ) {
+    deleteTrackPlan(input: $input, condition: $condition) {
+      id
+      userId
+      CompletedDate
+      CompletedTime
+      ActionDomain
+      ActionQuestion
+      Action
+      Frequency
+      ActionNote
+      Update1Points
+      Update1Note
+      Update1Date
+      Update2Points
+      Update2Note
+      Update2Date
+      Update3Points
+      Update3Note
+      Update3Date
+      Update4Points
+      Update4Note
+      Update4Date
+      Update5Points
+      Update5Note
+      Update5Date
+      Update6Points
+      Update6Note
+      Update6Date
+      Update7Points
+      Update7Note
+      Update7Date
+      Update8Points
+      Update8Note
+      Update8Date
+      Percentage
+      Discontinued
+      DiscontinuedDate
+      Successful
+      SuccessfulDate
+      AssessmentAnswers {
+        nextToken
+        __typename
+      }
+      GeneralInformation {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const createConnectionRequest = /* GraphQL */ `
+  mutation CreateConnectionRequest(
+    $input: CreateConnectionRequestInput!
+    $condition: ModelConnectionRequestConditionInput
+  ) {
+    createConnectionRequest(input: $input, condition: $condition) {
+      id
+      requesterId
+      requesterFirstName
+      requesterLastName
+      requesterEmail
+      targetEmail
+      status
+      direction
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateConnectionRequest = /* GraphQL */ `
+  mutation UpdateConnectionRequest(
+    $input: UpdateConnectionRequestInput!
+    $condition: ModelConnectionRequestConditionInput
+  ) {
+    updateConnectionRequest(input: $input, condition: $condition) {
+      id
+      requesterId
+      requesterFirstName
+      requesterLastName
+      requesterEmail
+      targetEmail
+      status
+      direction
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteConnectionRequest = /* GraphQL */ `
+  mutation DeleteConnectionRequest(
+    $input: DeleteConnectionRequestInput!
+    $condition: ModelConnectionRequestConditionInput
+  ) {
+    deleteConnectionRequest(input: $input, condition: $condition) {
+      id
+      requesterId
+      requesterFirstName
+      requesterLastName
+      requesterEmail
+      targetEmail
+      status
+      direction
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const createUserLink = /* GraphQL */ `
+  mutation CreateUserLink(
+    $input: CreateUserLinkInput!
+    $condition: ModelUserLinkConditionInput
+  ) {
+    createUserLink(input: $input, condition: $condition) {
+      id
+      professionalId
+      professionalEmail
+      professionalFirstName
+      professionalLastName
+      clientId
+      clientEmail
+      clientFirstName
+      clientLastName
+      clientViewable
+      subscriptionId
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateUserLink = /* GraphQL */ `
+  mutation UpdateUserLink(
+    $input: UpdateUserLinkInput!
+    $condition: ModelUserLinkConditionInput
+  ) {
+    updateUserLink(input: $input, condition: $condition) {
+      id
+      professionalId
+      professionalEmail
+      professionalFirstName
+      professionalLastName
+      clientId
+      clientEmail
+      clientFirstName
+      clientLastName
+      clientViewable
+      subscriptionId
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteUserLink = /* GraphQL */ `
+  mutation DeleteUserLink(
+    $input: DeleteUserLinkInput!
+    $condition: ModelUserLinkConditionInput
+  ) {
+    deleteUserLink(input: $input, condition: $condition) {
+      id
+      professionalId
+      professionalEmail
+      professionalFirstName
+      professionalLastName
+      clientId
+      clientEmail
+      clientFirstName
+      clientLastName
+      clientViewable
+      subscriptionId
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const createOrganizationInformation = /* GraphQL */ `
+  mutation CreateOrganizationInformation(
+    $input: CreateOrganizationInformationInput!
+    $condition: ModelOrganizationInformationConditionInput
+  ) {
+    createOrganizationInformation(input: $input, condition: $condition) {
+      id
+      userId
+      BusinessName
+      BusinessEIN
+      BusinessCountry
+      BusinessAddress
+      BusinessCity
+      BusinessState
+      BusinessZipCode
+      BusinessPhoneNumber
+      BusinessWebsite
+      Departments
+      ProgramsUnits
+      Services
+      clientsServed
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateOrganizationInformation = /* GraphQL */ `
+  mutation UpdateOrganizationInformation(
+    $input: UpdateOrganizationInformationInput!
+    $condition: ModelOrganizationInformationConditionInput
+  ) {
+    updateOrganizationInformation(input: $input, condition: $condition) {
+      id
+      userId
+      BusinessName
+      BusinessEIN
+      BusinessCountry
+      BusinessAddress
+      BusinessCity
+      BusinessState
+      BusinessZipCode
+      BusinessPhoneNumber
+      BusinessWebsite
+      Departments
+      ProgramsUnits
+      Services
+      clientsServed
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteOrganizationInformation = /* GraphQL */ `
+  mutation DeleteOrganizationInformation(
+    $input: DeleteOrganizationInformationInput!
+    $condition: ModelOrganizationInformationConditionInput
+  ) {
+    deleteOrganizationInformation(input: $input, condition: $condition) {
+      id
+      userId
+      BusinessName
+      BusinessEIN
+      BusinessCountry
+      BusinessAddress
+      BusinessCity
+      BusinessState
+      BusinessZipCode
+      BusinessPhoneNumber
+      BusinessWebsite
+      Departments
+      ProgramsUnits
+      Services
+      clientsServed
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const createOrganizationCPs = /* GraphQL */ `
+  mutation CreateOrganizationCPs(
+    $input: CreateOrganizationCPsInput!
+    $condition: ModelOrganizationCPsConditionInput
+  ) {
+    createOrganizationCPs(input: $input, condition: $condition) {
+      id
+      OrganizationId
+      OrganizationCPFirstName
+      OrganizationCPLastName
+      OrganizationCPEmail
+      OrganizationCPRole
+      primaryDepartment
+      primaryProgramsUnit
+      primaryService
+      OrganizationAdministrator
+      PrimaryOrganizationAdministrator
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateOrganizationCPs = /* GraphQL */ `
+  mutation UpdateOrganizationCPs(
+    $input: UpdateOrganizationCPsInput!
+    $condition: ModelOrganizationCPsConditionInput
+  ) {
+    updateOrganizationCPs(input: $input, condition: $condition) {
+      id
+      OrganizationId
+      OrganizationCPFirstName
+      OrganizationCPLastName
+      OrganizationCPEmail
+      OrganizationCPRole
+      primaryDepartment
+      primaryProgramsUnit
+      primaryService
+      OrganizationAdministrator
+      PrimaryOrganizationAdministrator
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteOrganizationCPs = /* GraphQL */ `
+  mutation DeleteOrganizationCPs(
+    $input: DeleteOrganizationCPsInput!
+    $condition: ModelOrganizationCPsConditionInput
+  ) {
+    deleteOrganizationCPs(input: $input, condition: $condition) {
+      id
+      OrganizationId
+      OrganizationCPFirstName
+      OrganizationCPLastName
+      OrganizationCPEmail
+      OrganizationCPRole
+      primaryDepartment
+      primaryProgramsUnit
+      primaryService
+      OrganizationAdministrator
+      PrimaryOrganizationAdministrator
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const createNotifications = /* GraphQL */ `
+  mutation CreateNotifications(
+    $input: CreateNotificationsInput!
+    $condition: ModelNotificationsConditionInput
+  ) {
+    createNotifications(input: $input, condition: $condition) {
+      id
+      RecommedationResult
+      RecommedationAction
+      RecommedationActionFrequency
+      RecommedationType
+      RecommedationNote
+      RecommendationDate
+      SenderId
+      SenderFirstName
+      SenderLastName
+      SenderEmail
+      TargetEmail
+      NotificationType
+      StatusDate
+      Status
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateNotifications = /* GraphQL */ `
+  mutation UpdateNotifications(
+    $input: UpdateNotificationsInput!
+    $condition: ModelNotificationsConditionInput
+  ) {
+    updateNotifications(input: $input, condition: $condition) {
+      id
+      RecommedationResult
+      RecommedationAction
+      RecommedationActionFrequency
+      RecommedationType
+      RecommedationNote
+      RecommendationDate
+      SenderId
+      SenderFirstName
+      SenderLastName
+      SenderEmail
+      TargetEmail
+      NotificationType
+      StatusDate
+      Status
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteNotifications = /* GraphQL */ `
+  mutation DeleteNotifications(
+    $input: DeleteNotificationsInput!
+    $condition: ModelNotificationsConditionInput
+  ) {
+    deleteNotifications(input: $input, condition: $condition) {
+      id
+      RecommedationResult
+      RecommedationAction
+      RecommedationActionFrequency
+      RecommedationType
+      RecommedationNote
+      RecommendationDate
+      SenderId
+      SenderFirstName
+      SenderLastName
+      SenderEmail
+      TargetEmail
+      NotificationType
+      StatusDate
+      Status
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const createUserPayments = /* GraphQL */ `
+  mutation CreateUserPayments(
+    $input: CreateUserPaymentsInput!
+    $condition: ModelUserPaymentsConditionInput
+  ) {
+    createUserPayments(input: $input, condition: $condition) {
+      id
+      userId
+      organizationId
+      organizationName
+      paymentType
+      subscriptionId
+      paymentStatus
+      clientsProjected
+      costPerClient
+      couponCode
+      couponPercent
+      paidUntil
+      paymentFor
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateUserPayments = /* GraphQL */ `
+  mutation UpdateUserPayments(
+    $input: UpdateUserPaymentsInput!
+    $condition: ModelUserPaymentsConditionInput
+  ) {
+    updateUserPayments(input: $input, condition: $condition) {
+      id
+      userId
+      organizationId
+      organizationName
+      paymentType
+      subscriptionId
+      paymentStatus
+      clientsProjected
+      costPerClient
+      couponCode
+      couponPercent
+      paidUntil
+      paymentFor
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteUserPayments = /* GraphQL */ `
+  mutation DeleteUserPayments(
+    $input: DeleteUserPaymentsInput!
+    $condition: ModelUserPaymentsConditionInput
+  ) {
+    deleteUserPayments(input: $input, condition: $condition) {
+      id
+      userId
+      organizationId
+      organizationName
+      paymentType
+      subscriptionId
+      paymentStatus
+      clientsProjected
+      costPerClient
+      couponCode
+      couponPercent
+      paidUntil
+      paymentFor
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const createCoupon = /* GraphQL */ `
+  mutation CreateCoupon(
+    $input: CreateCouponInput!
+    $condition: ModelCouponConditionInput
+  ) {
+    createCoupon(input: $input, condition: $condition) {
+      id
+      type
+      value
+      isActive
+      maxUses
+      timesUsed
+      expiresAt
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateCoupon = /* GraphQL */ `
+  mutation UpdateCoupon(
+    $input: UpdateCouponInput!
+    $condition: ModelCouponConditionInput
+  ) {
+    updateCoupon(input: $input, condition: $condition) {
+      id
+      type
+      value
+      isActive
+      maxUses
+      timesUsed
+      expiresAt
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteCoupon = /* GraphQL */ `
+  mutation DeleteCoupon(
+    $input: DeleteCouponInput!
+    $condition: ModelCouponConditionInput
+  ) {
+    deleteCoupon(input: $input, condition: $condition) {
+      id
+      type
+      value
+      isActive
+      maxUses
+      timesUsed
+      expiresAt
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const createProfessionalReviews = /* GraphQL */ `
+  mutation CreateProfessionalReviews(
+    $input: CreateProfessionalReviewsInput!
+    $condition: ModelProfessionalReviewsConditionInput
+  ) {
+    createProfessionalReviews(input: $input, condition: $condition) {
+      id
+      ReviewedId
+      ReviewType
+      ProfessionalName
+      ProfessionalRole
+      ReviewDate
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateProfessionalReviews = /* GraphQL */ `
+  mutation UpdateProfessionalReviews(
+    $input: UpdateProfessionalReviewsInput!
+    $condition: ModelProfessionalReviewsConditionInput
+  ) {
+    updateProfessionalReviews(input: $input, condition: $condition) {
+      id
+      ReviewedId
+      ReviewType
+      ProfessionalName
+      ProfessionalRole
+      ReviewDate
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteProfessionalReviews = /* GraphQL */ `
+  mutation DeleteProfessionalReviews(
+    $input: DeleteProfessionalReviewsInput!
+    $condition: ModelProfessionalReviewsConditionInput
+  ) {
+    deleteProfessionalReviews(input: $input, condition: $condition) {
+      id
+      ReviewedId
+      ReviewType
+      ProfessionalName
+      ProfessionalRole
+      ReviewDate
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const createLoginGeneralInformation = /* GraphQL */ `
+  mutation CreateLoginGeneralInformation(
+    $input: CreateLoginGeneralInformationInput!
+    $condition: ModelLoginGeneralInformationConditionInput
+  ) {
+    createLoginGeneralInformation(input: $input, condition: $condition) {
+      id
+      loginId
+      generalInformationId
+      login {
+        id
+        Email
+        Password
+        LoginDate
+        LoginTime
+        ProfileType
+        createdAt
+        updatedAt
+        __typename
+      }
+      generalInformation {
+        id
+        userId
+        FirstName
+        LastName
+        Email
+        ProfessionalRole
+        BusinessName
+        BusinessEIN
+        BusinessCountry
+        BusinessAddress
+        BusinessCity
+        BusinessState
+        BusinessZipCode
+        BusinessPhoneNumber
+        BusinessWebsite
+        OrganizationAdministrator
+        OrganizationEmployee
+        Department
+        Service
+        ProgramsUnit
+        ProfileType
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateLoginGeneralInformation = /* GraphQL */ `
+  mutation UpdateLoginGeneralInformation(
+    $input: UpdateLoginGeneralInformationInput!
+    $condition: ModelLoginGeneralInformationConditionInput
+  ) {
+    updateLoginGeneralInformation(input: $input, condition: $condition) {
+      id
+      loginId
+      generalInformationId
+      login {
+        id
+        Email
+        Password
+        LoginDate
+        LoginTime
+        ProfileType
+        createdAt
+        updatedAt
+        __typename
+      }
+      generalInformation {
+        id
+        userId
+        FirstName
+        LastName
+        Email
+        ProfessionalRole
+        BusinessName
+        BusinessEIN
+        BusinessCountry
+        BusinessAddress
+        BusinessCity
+        BusinessState
+        BusinessZipCode
+        BusinessPhoneNumber
+        BusinessWebsite
+        OrganizationAdministrator
+        OrganizationEmployee
+        Department
+        Service
+        ProgramsUnit
+        ProfileType
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteLoginGeneralInformation = /* GraphQL */ `
+  mutation DeleteLoginGeneralInformation(
+    $input: DeleteLoginGeneralInformationInput!
+    $condition: ModelLoginGeneralInformationConditionInput
+  ) {
+    deleteLoginGeneralInformation(input: $input, condition: $condition) {
+      id
+      loginId
+      generalInformationId
+      login {
+        id
+        Email
+        Password
+        LoginDate
+        LoginTime
+        ProfileType
+        createdAt
+        updatedAt
+        __typename
+      }
+      generalInformation {
+        id
+        userId
+        FirstName
+        LastName
+        Email
+        ProfessionalRole
+        BusinessName
+        BusinessEIN
+        BusinessCountry
+        BusinessAddress
+        BusinessCity
+        BusinessState
+        BusinessZipCode
+        BusinessPhoneNumber
+        BusinessWebsite
+        OrganizationAdministrator
+        OrganizationEmployee
+        Department
+        Service
+        ProgramsUnit
+        ProfileType
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const createGeneralInformationTrackPlan = /* GraphQL */ `
+  mutation CreateGeneralInformationTrackPlan(
+    $input: CreateGeneralInformationTrackPlanInput!
+    $condition: ModelGeneralInformationTrackPlanConditionInput
+  ) {
+    createGeneralInformationTrackPlan(input: $input, condition: $condition) {
+      id
+      generalInformationId
+      trackPlanId
+      generalInformation {
+        id
+        userId
+        FirstName
+        LastName
+        Email
+        ProfessionalRole
+        BusinessName
+        BusinessEIN
+        BusinessCountry
+        BusinessAddress
+        BusinessCity
+        BusinessState
+        BusinessZipCode
+        BusinessPhoneNumber
+        BusinessWebsite
+        OrganizationAdministrator
+        OrganizationEmployee
+        Department
+        Service
+        ProgramsUnit
+        ProfileType
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      trackPlan {
+        id
+        userId
+        CompletedDate
+        CompletedTime
+        ActionDomain
+        ActionQuestion
+        Action
+        Frequency
+        ActionNote
+        Update1Points
+        Update1Note
+        Update1Date
+        Update2Points
+        Update2Note
+        Update2Date
+        Update3Points
+        Update3Note
+        Update3Date
+        Update4Points
+        Update4Note
+        Update4Date
+        Update5Points
+        Update5Note
+        Update5Date
+        Update6Points
+        Update6Note
+        Update6Date
+        Update7Points
+        Update7Note
+        Update7Date
+        Update8Points
+        Update8Note
+        Update8Date
+        Percentage
+        Discontinued
+        DiscontinuedDate
+        Successful
+        SuccessfulDate
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateGeneralInformationTrackPlan = /* GraphQL */ `
+  mutation UpdateGeneralInformationTrackPlan(
+    $input: UpdateGeneralInformationTrackPlanInput!
+    $condition: ModelGeneralInformationTrackPlanConditionInput
+  ) {
+    updateGeneralInformationTrackPlan(input: $input, condition: $condition) {
+      id
+      generalInformationId
+      trackPlanId
+      generalInformation {
+        id
+        userId
+        FirstName
+        LastName
+        Email
+        ProfessionalRole
+        BusinessName
+        BusinessEIN
+        BusinessCountry
+        BusinessAddress
+        BusinessCity
+        BusinessState
+        BusinessZipCode
+        BusinessPhoneNumber
+        BusinessWebsite
+        OrganizationAdministrator
+        OrganizationEmployee
+        Department
+        Service
+        ProgramsUnit
+        ProfileType
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      trackPlan {
+        id
+        userId
+        CompletedDate
+        CompletedTime
+        ActionDomain
+        ActionQuestion
+        Action
+        Frequency
+        ActionNote
+        Update1Points
+        Update1Note
+        Update1Date
+        Update2Points
+        Update2Note
+        Update2Date
+        Update3Points
+        Update3Note
+        Update3Date
+        Update4Points
+        Update4Note
+        Update4Date
+        Update5Points
+        Update5Note
+        Update5Date
+        Update6Points
+        Update6Note
+        Update6Date
+        Update7Points
+        Update7Note
+        Update7Date
+        Update8Points
+        Update8Note
+        Update8Date
+        Percentage
+        Discontinued
+        DiscontinuedDate
+        Successful
+        SuccessfulDate
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteGeneralInformationTrackPlan = /* GraphQL */ `
+  mutation DeleteGeneralInformationTrackPlan(
+    $input: DeleteGeneralInformationTrackPlanInput!
+    $condition: ModelGeneralInformationTrackPlanConditionInput
+  ) {
+    deleteGeneralInformationTrackPlan(input: $input, condition: $condition) {
+      id
+      generalInformationId
+      trackPlanId
+      generalInformation {
+        id
+        userId
+        FirstName
+        LastName
+        Email
+        ProfessionalRole
+        BusinessName
+        BusinessEIN
+        BusinessCountry
+        BusinessAddress
+        BusinessCity
+        BusinessState
+        BusinessZipCode
+        BusinessPhoneNumber
+        BusinessWebsite
+        OrganizationAdministrator
+        OrganizationEmployee
+        Department
+        Service
+        ProgramsUnit
+        ProfileType
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      trackPlan {
+        id
+        userId
+        CompletedDate
+        CompletedTime
+        ActionDomain
+        ActionQuestion
+        Action
+        Frequency
+        ActionNote
+        Update1Points
+        Update1Note
+        Update1Date
+        Update2Points
+        Update2Note
+        Update2Date
+        Update3Points
+        Update3Note
+        Update3Date
+        Update4Points
+        Update4Note
+        Update4Date
+        Update5Points
+        Update5Note
+        Update5Date
+        Update6Points
+        Update6Note
+        Update6Date
+        Update7Points
+        Update7Note
+        Update7Date
+        Update8Points
+        Update8Note
+        Update8Date
+        Percentage
+        Discontinued
+        DiscontinuedDate
+        Successful
+        SuccessfulDate
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const createGeneralInformationAssessmentAnswers = /* GraphQL */ `
+  mutation CreateGeneralInformationAssessmentAnswers(
+    $input: CreateGeneralInformationAssessmentAnswersInput!
+    $condition: ModelGeneralInformationAssessmentAnswersConditionInput
+  ) {
+    createGeneralInformationAssessmentAnswers(
+      input: $input
+      condition: $condition
+    ) {
+      id
+      generalInformationId
+      assessmentAnswersId
+      generalInformation {
+        id
+        userId
+        FirstName
+        LastName
+        Email
+        ProfessionalRole
+        BusinessName
+        BusinessEIN
+        BusinessCountry
+        BusinessAddress
+        BusinessCity
+        BusinessState
+        BusinessZipCode
+        BusinessPhoneNumber
+        BusinessWebsite
+        OrganizationAdministrator
+        OrganizationEmployee
+        Department
+        Service
+        ProgramsUnit
+        ProfileType
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      assessmentAnswers {
+        id
+        userId
+        CompletedDate
+        CompletedTime
+        TRHurtfulNames
+        TRNoNurturing
+        TRHit
+        TRNeedsNotMet
+        TRForcedSex
+        TRResponsible
+        TRViolence
+        TRSubstanceAbuse
+        TRMentalIllness
+        TRParentDivorce
+        TRParentIncarcerated
+        TRHomelessness
+        TRBodyFunction
+        TRNaturalDisaster
+        TRDirectTerrorism
+        TRIndirectTerrorism
+        TRLovedOne
+        TRBelief
+        TRResponseProfessional
+        TRResponseFamilyFriend
+        TRResponseGod
+        TRResponseNoOne
+        TRNoTrauma
+        CMAlcohol
+        CMDrugs
+        CMOvereating
+        CMSmoking
+        CMGaming
+        CMShopping
+        CMGambling
+        CMSex
+        CMPorn
+        CMBlaming
+        CMHurting
+        CMDisengage
+        CMArt
+        CMMusic
+        CMPoetry
+        CMReading
+        CMGroups
+        CMCounseling
+        CMVenting
+        CMWriting
+        CMSensory
+        CMDancing
+        CMExercising
+        CMWalking
+        CMChange
+        CMAnalyze
+        CMDaydream
+        CMPositive
+        MHDxPTSD
+        MHDxDepression
+        MHDxSUD
+        MHDxOtherMental
+        MHSleeplessness
+        MHAlcoholUse
+        MHAnxiety
+        MHDepression
+        MHDrugUse
+        MHGrief
+        MHGuilt
+        MHIrritability
+        MHStress
+        MHRegret
+        MHSuicidalThoughts
+        MHLoneliness
+        MHWorry
+        PHDxInfertility
+        PHDxCurableSTD
+        PHDxIncurableSTD
+        PHDxCancer
+        PHDxDiabetes
+        PHDxHighBlood
+        PHDxHeartDisease
+        PHDxIrritableBowel
+        PHDxVitA
+        PHDxVitB
+        PHDxVitC
+        PHDxVitD
+        PHDxVitE
+        PHDxVitK
+        PHDxAutoimmune
+        PHDxOtherPhysical
+        PHVegeFruits
+        PHBeanLentils
+        PHGrainBreads
+        PHDairy
+        PHMeat
+        PHFishSeafood
+        PHSweets
+        PHWater
+        PHPhysicalActivity
+        SHSpiritualDefine
+        SHSpiritualIntegrate
+        SHPrayer
+        SHSpiritualActivity
+        SHReadText
+        SHAlignText
+        SHCommunity
+        OLHope
+        OLPeace
+        OLLearning
+        OLJoy
+        OLStable
+        OLSafety
+        OLKindness
+        OLForgiveness
+        OLPatience
+        OLRelationships
+        OLBoundaries
+        OLEUnpleasant
+        OLEPleasant
+        OLEControl
+        OLENumber
+        SDoHAgeRange
+        SDoHRace
+        SDoHGeographicRegion
+        SDoHEthnicity
+        SDoHState
+        SDoHZipCode
+        SDoHMaritalStatus
+        SDoHMilitaryStatus
+        SDoHGender
+        SDoHEducation
+        SDoHJobStatus
+        SDoHIncome
+        SDoHHousingStatus
+        SDoHHomeAsChild
+        SDoHReligion
+        SDoHDenomination
+        isActive
+        SHSkip
+        ProAssessmentFinalizedReview1
+        ProAssessmentFinalizedReviewDate1
+        ProAssessmentFinalizedName1
+        ProAssessmentFinalizedRole1
+        ProAssessmentFinalizedReview2
+        ProAssessmentFinalizedReviewDate2
+        ProAssessmentFinalizedName2
+        ProAssessmentFinalizedRole2
+        ProAssessmentFinalizedReview3
+        ProAssessmentFinalizedReviewDate3
+        ProAssessmentFinalizedName3
+        ProAssessmentFinalizedRole3
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateGeneralInformationAssessmentAnswers = /* GraphQL */ `
+  mutation UpdateGeneralInformationAssessmentAnswers(
+    $input: UpdateGeneralInformationAssessmentAnswersInput!
+    $condition: ModelGeneralInformationAssessmentAnswersConditionInput
+  ) {
+    updateGeneralInformationAssessmentAnswers(
+      input: $input
+      condition: $condition
+    ) {
+      id
+      generalInformationId
+      assessmentAnswersId
+      generalInformation {
+        id
+        userId
+        FirstName
+        LastName
+        Email
+        ProfessionalRole
+        BusinessName
+        BusinessEIN
+        BusinessCountry
+        BusinessAddress
+        BusinessCity
+        BusinessState
+        BusinessZipCode
+        BusinessPhoneNumber
+        BusinessWebsite
+        OrganizationAdministrator
+        OrganizationEmployee
+        Department
+        Service
+        ProgramsUnit
+        ProfileType
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      assessmentAnswers {
+        id
+        userId
+        CompletedDate
+        CompletedTime
+        TRHurtfulNames
+        TRNoNurturing
+        TRHit
+        TRNeedsNotMet
+        TRForcedSex
+        TRResponsible
+        TRViolence
+        TRSubstanceAbuse
+        TRMentalIllness
+        TRParentDivorce
+        TRParentIncarcerated
+        TRHomelessness
+        TRBodyFunction
+        TRNaturalDisaster
+        TRDirectTerrorism
+        TRIndirectTerrorism
+        TRLovedOne
+        TRBelief
+        TRResponseProfessional
+        TRResponseFamilyFriend
+        TRResponseGod
+        TRResponseNoOne
+        TRNoTrauma
+        CMAlcohol
+        CMDrugs
+        CMOvereating
+        CMSmoking
+        CMGaming
+        CMShopping
+        CMGambling
+        CMSex
+        CMPorn
+        CMBlaming
+        CMHurting
+        CMDisengage
+        CMArt
+        CMMusic
+        CMPoetry
+        CMReading
+        CMGroups
+        CMCounseling
+        CMVenting
+        CMWriting
+        CMSensory
+        CMDancing
+        CMExercising
+        CMWalking
+        CMChange
+        CMAnalyze
+        CMDaydream
+        CMPositive
+        MHDxPTSD
+        MHDxDepression
+        MHDxSUD
+        MHDxOtherMental
+        MHSleeplessness
+        MHAlcoholUse
+        MHAnxiety
+        MHDepression
+        MHDrugUse
+        MHGrief
+        MHGuilt
+        MHIrritability
+        MHStress
+        MHRegret
+        MHSuicidalThoughts
+        MHLoneliness
+        MHWorry
+        PHDxInfertility
+        PHDxCurableSTD
+        PHDxIncurableSTD
+        PHDxCancer
+        PHDxDiabetes
+        PHDxHighBlood
+        PHDxHeartDisease
+        PHDxIrritableBowel
+        PHDxVitA
+        PHDxVitB
+        PHDxVitC
+        PHDxVitD
+        PHDxVitE
+        PHDxVitK
+        PHDxAutoimmune
+        PHDxOtherPhysical
+        PHVegeFruits
+        PHBeanLentils
+        PHGrainBreads
+        PHDairy
+        PHMeat
+        PHFishSeafood
+        PHSweets
+        PHWater
+        PHPhysicalActivity
+        SHSpiritualDefine
+        SHSpiritualIntegrate
+        SHPrayer
+        SHSpiritualActivity
+        SHReadText
+        SHAlignText
+        SHCommunity
+        OLHope
+        OLPeace
+        OLLearning
+        OLJoy
+        OLStable
+        OLSafety
+        OLKindness
+        OLForgiveness
+        OLPatience
+        OLRelationships
+        OLBoundaries
+        OLEUnpleasant
+        OLEPleasant
+        OLEControl
+        OLENumber
+        SDoHAgeRange
+        SDoHRace
+        SDoHGeographicRegion
+        SDoHEthnicity
+        SDoHState
+        SDoHZipCode
+        SDoHMaritalStatus
+        SDoHMilitaryStatus
+        SDoHGender
+        SDoHEducation
+        SDoHJobStatus
+        SDoHIncome
+        SDoHHousingStatus
+        SDoHHomeAsChild
+        SDoHReligion
+        SDoHDenomination
+        isActive
+        SHSkip
+        ProAssessmentFinalizedReview1
+        ProAssessmentFinalizedReviewDate1
+        ProAssessmentFinalizedName1
+        ProAssessmentFinalizedRole1
+        ProAssessmentFinalizedReview2
+        ProAssessmentFinalizedReviewDate2
+        ProAssessmentFinalizedName2
+        ProAssessmentFinalizedRole2
+        ProAssessmentFinalizedReview3
+        ProAssessmentFinalizedReviewDate3
+        ProAssessmentFinalizedName3
+        ProAssessmentFinalizedRole3
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteGeneralInformationAssessmentAnswers = /* GraphQL */ `
+  mutation DeleteGeneralInformationAssessmentAnswers(
+    $input: DeleteGeneralInformationAssessmentAnswersInput!
+    $condition: ModelGeneralInformationAssessmentAnswersConditionInput
+  ) {
+    deleteGeneralInformationAssessmentAnswers(
+      input: $input
+      condition: $condition
+    ) {
+      id
+      generalInformationId
+      assessmentAnswersId
+      generalInformation {
+        id
+        userId
+        FirstName
+        LastName
+        Email
+        ProfessionalRole
+        BusinessName
+        BusinessEIN
+        BusinessCountry
+        BusinessAddress
+        BusinessCity
+        BusinessState
+        BusinessZipCode
+        BusinessPhoneNumber
+        BusinessWebsite
+        OrganizationAdministrator
+        OrganizationEmployee
+        Department
+        Service
+        ProgramsUnit
+        ProfileType
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      assessmentAnswers {
+        id
+        userId
+        CompletedDate
+        CompletedTime
+        TRHurtfulNames
+        TRNoNurturing
+        TRHit
+        TRNeedsNotMet
+        TRForcedSex
+        TRResponsible
+        TRViolence
+        TRSubstanceAbuse
+        TRMentalIllness
+        TRParentDivorce
+        TRParentIncarcerated
+        TRHomelessness
+        TRBodyFunction
+        TRNaturalDisaster
+        TRDirectTerrorism
+        TRIndirectTerrorism
+        TRLovedOne
+        TRBelief
+        TRResponseProfessional
+        TRResponseFamilyFriend
+        TRResponseGod
+        TRResponseNoOne
+        TRNoTrauma
+        CMAlcohol
+        CMDrugs
+        CMOvereating
+        CMSmoking
+        CMGaming
+        CMShopping
+        CMGambling
+        CMSex
+        CMPorn
+        CMBlaming
+        CMHurting
+        CMDisengage
+        CMArt
+        CMMusic
+        CMPoetry
+        CMReading
+        CMGroups
+        CMCounseling
+        CMVenting
+        CMWriting
+        CMSensory
+        CMDancing
+        CMExercising
+        CMWalking
+        CMChange
+        CMAnalyze
+        CMDaydream
+        CMPositive
+        MHDxPTSD
+        MHDxDepression
+        MHDxSUD
+        MHDxOtherMental
+        MHSleeplessness
+        MHAlcoholUse
+        MHAnxiety
+        MHDepression
+        MHDrugUse
+        MHGrief
+        MHGuilt
+        MHIrritability
+        MHStress
+        MHRegret
+        MHSuicidalThoughts
+        MHLoneliness
+        MHWorry
+        PHDxInfertility
+        PHDxCurableSTD
+        PHDxIncurableSTD
+        PHDxCancer
+        PHDxDiabetes
+        PHDxHighBlood
+        PHDxHeartDisease
+        PHDxIrritableBowel
+        PHDxVitA
+        PHDxVitB
+        PHDxVitC
+        PHDxVitD
+        PHDxVitE
+        PHDxVitK
+        PHDxAutoimmune
+        PHDxOtherPhysical
+        PHVegeFruits
+        PHBeanLentils
+        PHGrainBreads
+        PHDairy
+        PHMeat
+        PHFishSeafood
+        PHSweets
+        PHWater
+        PHPhysicalActivity
+        SHSpiritualDefine
+        SHSpiritualIntegrate
+        SHPrayer
+        SHSpiritualActivity
+        SHReadText
+        SHAlignText
+        SHCommunity
+        OLHope
+        OLPeace
+        OLLearning
+        OLJoy
+        OLStable
+        OLSafety
+        OLKindness
+        OLForgiveness
+        OLPatience
+        OLRelationships
+        OLBoundaries
+        OLEUnpleasant
+        OLEPleasant
+        OLEControl
+        OLENumber
+        SDoHAgeRange
+        SDoHRace
+        SDoHGeographicRegion
+        SDoHEthnicity
+        SDoHState
+        SDoHZipCode
+        SDoHMaritalStatus
+        SDoHMilitaryStatus
+        SDoHGender
+        SDoHEducation
+        SDoHJobStatus
+        SDoHIncome
+        SDoHHousingStatus
+        SDoHHomeAsChild
+        SDoHReligion
+        SDoHDenomination
+        isActive
+        SHSkip
+        ProAssessmentFinalizedReview1
+        ProAssessmentFinalizedReviewDate1
+        ProAssessmentFinalizedName1
+        ProAssessmentFinalizedRole1
+        ProAssessmentFinalizedReview2
+        ProAssessmentFinalizedReviewDate2
+        ProAssessmentFinalizedName2
+        ProAssessmentFinalizedRole2
+        ProAssessmentFinalizedReview3
+        ProAssessmentFinalizedReviewDate3
+        ProAssessmentFinalizedName3
+        ProAssessmentFinalizedRole3
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const createAssessmentAnswersTrackPlan = /* GraphQL */ `
+  mutation CreateAssessmentAnswersTrackPlan(
+    $input: CreateAssessmentAnswersTrackPlanInput!
+    $condition: ModelAssessmentAnswersTrackPlanConditionInput
+  ) {
+    createAssessmentAnswersTrackPlan(input: $input, condition: $condition) {
+      id
+      assessmentAnswersId
+      trackPlanId
+      assessmentAnswers {
+        id
+        userId
+        CompletedDate
+        CompletedTime
+        TRHurtfulNames
+        TRNoNurturing
+        TRHit
+        TRNeedsNotMet
+        TRForcedSex
+        TRResponsible
+        TRViolence
+        TRSubstanceAbuse
+        TRMentalIllness
+        TRParentDivorce
+        TRParentIncarcerated
+        TRHomelessness
+        TRBodyFunction
+        TRNaturalDisaster
+        TRDirectTerrorism
+        TRIndirectTerrorism
+        TRLovedOne
+        TRBelief
+        TRResponseProfessional
+        TRResponseFamilyFriend
+        TRResponseGod
+        TRResponseNoOne
+        TRNoTrauma
+        CMAlcohol
+        CMDrugs
+        CMOvereating
+        CMSmoking
+        CMGaming
+        CMShopping
+        CMGambling
+        CMSex
+        CMPorn
+        CMBlaming
+        CMHurting
+        CMDisengage
+        CMArt
+        CMMusic
+        CMPoetry
+        CMReading
+        CMGroups
+        CMCounseling
+        CMVenting
+        CMWriting
+        CMSensory
+        CMDancing
+        CMExercising
+        CMWalking
+        CMChange
+        CMAnalyze
+        CMDaydream
+        CMPositive
+        MHDxPTSD
+        MHDxDepression
+        MHDxSUD
+        MHDxOtherMental
+        MHSleeplessness
+        MHAlcoholUse
+        MHAnxiety
+        MHDepression
+        MHDrugUse
+        MHGrief
+        MHGuilt
+        MHIrritability
+        MHStress
+        MHRegret
+        MHSuicidalThoughts
+        MHLoneliness
+        MHWorry
+        PHDxInfertility
+        PHDxCurableSTD
+        PHDxIncurableSTD
+        PHDxCancer
+        PHDxDiabetes
+        PHDxHighBlood
+        PHDxHeartDisease
+        PHDxIrritableBowel
+        PHDxVitA
+        PHDxVitB
+        PHDxVitC
+        PHDxVitD
+        PHDxVitE
+        PHDxVitK
+        PHDxAutoimmune
+        PHDxOtherPhysical
+        PHVegeFruits
+        PHBeanLentils
+        PHGrainBreads
+        PHDairy
+        PHMeat
+        PHFishSeafood
+        PHSweets
+        PHWater
+        PHPhysicalActivity
+        SHSpiritualDefine
+        SHSpiritualIntegrate
+        SHPrayer
+        SHSpiritualActivity
+        SHReadText
+        SHAlignText
+        SHCommunity
+        OLHope
+        OLPeace
+        OLLearning
+        OLJoy
+        OLStable
+        OLSafety
+        OLKindness
+        OLForgiveness
+        OLPatience
+        OLRelationships
+        OLBoundaries
+        OLEUnpleasant
+        OLEPleasant
+        OLEControl
+        OLENumber
+        SDoHAgeRange
+        SDoHRace
+        SDoHGeographicRegion
+        SDoHEthnicity
+        SDoHState
+        SDoHZipCode
+        SDoHMaritalStatus
+        SDoHMilitaryStatus
+        SDoHGender
+        SDoHEducation
+        SDoHJobStatus
+        SDoHIncome
+        SDoHHousingStatus
+        SDoHHomeAsChild
+        SDoHReligion
+        SDoHDenomination
+        isActive
+        SHSkip
+        ProAssessmentFinalizedReview1
+        ProAssessmentFinalizedReviewDate1
+        ProAssessmentFinalizedName1
+        ProAssessmentFinalizedRole1
+        ProAssessmentFinalizedReview2
+        ProAssessmentFinalizedReviewDate2
+        ProAssessmentFinalizedName2
+        ProAssessmentFinalizedRole2
+        ProAssessmentFinalizedReview3
+        ProAssessmentFinalizedReviewDate3
+        ProAssessmentFinalizedName3
+        ProAssessmentFinalizedRole3
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      trackPlan {
+        id
+        userId
+        CompletedDate
+        CompletedTime
+        ActionDomain
+        ActionQuestion
+        Action
+        Frequency
+        ActionNote
+        Update1Points
+        Update1Note
+        Update1Date
+        Update2Points
+        Update2Note
+        Update2Date
+        Update3Points
+        Update3Note
+        Update3Date
+        Update4Points
+        Update4Note
+        Update4Date
+        Update5Points
+        Update5Note
+        Update5Date
+        Update6Points
+        Update6Note
+        Update6Date
+        Update7Points
+        Update7Note
+        Update7Date
+        Update8Points
+        Update8Note
+        Update8Date
+        Percentage
+        Discontinued
+        DiscontinuedDate
+        Successful
+        SuccessfulDate
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateAssessmentAnswersTrackPlan = /* GraphQL */ `
+  mutation UpdateAssessmentAnswersTrackPlan(
+    $input: UpdateAssessmentAnswersTrackPlanInput!
+    $condition: ModelAssessmentAnswersTrackPlanConditionInput
+  ) {
+    updateAssessmentAnswersTrackPlan(input: $input, condition: $condition) {
+      id
+      assessmentAnswersId
+      trackPlanId
+      assessmentAnswers {
+        id
+        userId
+        CompletedDate
+        CompletedTime
+        TRHurtfulNames
+        TRNoNurturing
+        TRHit
+        TRNeedsNotMet
+        TRForcedSex
+        TRResponsible
+        TRViolence
+        TRSubstanceAbuse
+        TRMentalIllness
+        TRParentDivorce
+        TRParentIncarcerated
+        TRHomelessness
+        TRBodyFunction
+        TRNaturalDisaster
+        TRDirectTerrorism
+        TRIndirectTerrorism
+        TRLovedOne
+        TRBelief
+        TRResponseProfessional
+        TRResponseFamilyFriend
+        TRResponseGod
+        TRResponseNoOne
+        TRNoTrauma
+        CMAlcohol
+        CMDrugs
+        CMOvereating
+        CMSmoking
+        CMGaming
+        CMShopping
+        CMGambling
+        CMSex
+        CMPorn
+        CMBlaming
+        CMHurting
+        CMDisengage
+        CMArt
+        CMMusic
+        CMPoetry
+        CMReading
+        CMGroups
+        CMCounseling
+        CMVenting
+        CMWriting
+        CMSensory
+        CMDancing
+        CMExercising
+        CMWalking
+        CMChange
+        CMAnalyze
+        CMDaydream
+        CMPositive
+        MHDxPTSD
+        MHDxDepression
+        MHDxSUD
+        MHDxOtherMental
+        MHSleeplessness
+        MHAlcoholUse
+        MHAnxiety
+        MHDepression
+        MHDrugUse
+        MHGrief
+        MHGuilt
+        MHIrritability
+        MHStress
+        MHRegret
+        MHSuicidalThoughts
+        MHLoneliness
+        MHWorry
+        PHDxInfertility
+        PHDxCurableSTD
+        PHDxIncurableSTD
+        PHDxCancer
+        PHDxDiabetes
+        PHDxHighBlood
+        PHDxHeartDisease
+        PHDxIrritableBowel
+        PHDxVitA
+        PHDxVitB
+        PHDxVitC
+        PHDxVitD
+        PHDxVitE
+        PHDxVitK
+        PHDxAutoimmune
+        PHDxOtherPhysical
+        PHVegeFruits
+        PHBeanLentils
+        PHGrainBreads
+        PHDairy
+        PHMeat
+        PHFishSeafood
+        PHSweets
+        PHWater
+        PHPhysicalActivity
+        SHSpiritualDefine
+        SHSpiritualIntegrate
+        SHPrayer
+        SHSpiritualActivity
+        SHReadText
+        SHAlignText
+        SHCommunity
+        OLHope
+        OLPeace
+        OLLearning
+        OLJoy
+        OLStable
+        OLSafety
+        OLKindness
+        OLForgiveness
+        OLPatience
+        OLRelationships
+        OLBoundaries
+        OLEUnpleasant
+        OLEPleasant
+        OLEControl
+        OLENumber
+        SDoHAgeRange
+        SDoHRace
+        SDoHGeographicRegion
+        SDoHEthnicity
+        SDoHState
+        SDoHZipCode
+        SDoHMaritalStatus
+        SDoHMilitaryStatus
+        SDoHGender
+        SDoHEducation
+        SDoHJobStatus
+        SDoHIncome
+        SDoHHousingStatus
+        SDoHHomeAsChild
+        SDoHReligion
+        SDoHDenomination
+        isActive
+        SHSkip
+        ProAssessmentFinalizedReview1
+        ProAssessmentFinalizedReviewDate1
+        ProAssessmentFinalizedName1
+        ProAssessmentFinalizedRole1
+        ProAssessmentFinalizedReview2
+        ProAssessmentFinalizedReviewDate2
+        ProAssessmentFinalizedName2
+        ProAssessmentFinalizedRole2
+        ProAssessmentFinalizedReview3
+        ProAssessmentFinalizedReviewDate3
+        ProAssessmentFinalizedName3
+        ProAssessmentFinalizedRole3
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      trackPlan {
+        id
+        userId
+        CompletedDate
+        CompletedTime
+        ActionDomain
+        ActionQuestion
+        Action
+        Frequency
+        ActionNote
+        Update1Points
+        Update1Note
+        Update1Date
+        Update2Points
+        Update2Note
+        Update2Date
+        Update3Points
+        Update3Note
+        Update3Date
+        Update4Points
+        Update4Note
+        Update4Date
+        Update5Points
+        Update5Note
+        Update5Date
+        Update6Points
+        Update6Note
+        Update6Date
+        Update7Points
+        Update7Note
+        Update7Date
+        Update8Points
+        Update8Note
+        Update8Date
+        Percentage
+        Discontinued
+        DiscontinuedDate
+        Successful
+        SuccessfulDate
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteAssessmentAnswersTrackPlan = /* GraphQL */ `
+  mutation DeleteAssessmentAnswersTrackPlan(
+    $input: DeleteAssessmentAnswersTrackPlanInput!
+    $condition: ModelAssessmentAnswersTrackPlanConditionInput
+  ) {
+    deleteAssessmentAnswersTrackPlan(input: $input, condition: $condition) {
+      id
+      assessmentAnswersId
+      trackPlanId
+      assessmentAnswers {
+        id
+        userId
+        CompletedDate
+        CompletedTime
+        TRHurtfulNames
+        TRNoNurturing
+        TRHit
+        TRNeedsNotMet
+        TRForcedSex
+        TRResponsible
+        TRViolence
+        TRSubstanceAbuse
+        TRMentalIllness
+        TRParentDivorce
+        TRParentIncarcerated
+        TRHomelessness
+        TRBodyFunction
+        TRNaturalDisaster
+        TRDirectTerrorism
+        TRIndirectTerrorism
+        TRLovedOne
+        TRBelief
+        TRResponseProfessional
+        TRResponseFamilyFriend
+        TRResponseGod
+        TRResponseNoOne
+        TRNoTrauma
+        CMAlcohol
+        CMDrugs
+        CMOvereating
+        CMSmoking
+        CMGaming
+        CMShopping
+        CMGambling
+        CMSex
+        CMPorn
+        CMBlaming
+        CMHurting
+        CMDisengage
+        CMArt
+        CMMusic
+        CMPoetry
+        CMReading
+        CMGroups
+        CMCounseling
+        CMVenting
+        CMWriting
+        CMSensory
+        CMDancing
+        CMExercising
+        CMWalking
+        CMChange
+        CMAnalyze
+        CMDaydream
+        CMPositive
+        MHDxPTSD
+        MHDxDepression
+        MHDxSUD
+        MHDxOtherMental
+        MHSleeplessness
+        MHAlcoholUse
+        MHAnxiety
+        MHDepression
+        MHDrugUse
+        MHGrief
+        MHGuilt
+        MHIrritability
+        MHStress
+        MHRegret
+        MHSuicidalThoughts
+        MHLoneliness
+        MHWorry
+        PHDxInfertility
+        PHDxCurableSTD
+        PHDxIncurableSTD
+        PHDxCancer
+        PHDxDiabetes
+        PHDxHighBlood
+        PHDxHeartDisease
+        PHDxIrritableBowel
+        PHDxVitA
+        PHDxVitB
+        PHDxVitC
+        PHDxVitD
+        PHDxVitE
+        PHDxVitK
+        PHDxAutoimmune
+        PHDxOtherPhysical
+        PHVegeFruits
+        PHBeanLentils
+        PHGrainBreads
+        PHDairy
+        PHMeat
+        PHFishSeafood
+        PHSweets
+        PHWater
+        PHPhysicalActivity
+        SHSpiritualDefine
+        SHSpiritualIntegrate
+        SHPrayer
+        SHSpiritualActivity
+        SHReadText
+        SHAlignText
+        SHCommunity
+        OLHope
+        OLPeace
+        OLLearning
+        OLJoy
+        OLStable
+        OLSafety
+        OLKindness
+        OLForgiveness
+        OLPatience
+        OLRelationships
+        OLBoundaries
+        OLEUnpleasant
+        OLEPleasant
+        OLEControl
+        OLENumber
+        SDoHAgeRange
+        SDoHRace
+        SDoHGeographicRegion
+        SDoHEthnicity
+        SDoHState
+        SDoHZipCode
+        SDoHMaritalStatus
+        SDoHMilitaryStatus
+        SDoHGender
+        SDoHEducation
+        SDoHJobStatus
+        SDoHIncome
+        SDoHHousingStatus
+        SDoHHomeAsChild
+        SDoHReligion
+        SDoHDenomination
+        isActive
+        SHSkip
+        ProAssessmentFinalizedReview1
+        ProAssessmentFinalizedReviewDate1
+        ProAssessmentFinalizedName1
+        ProAssessmentFinalizedRole1
+        ProAssessmentFinalizedReview2
+        ProAssessmentFinalizedReviewDate2
+        ProAssessmentFinalizedName2
+        ProAssessmentFinalizedRole2
+        ProAssessmentFinalizedReview3
+        ProAssessmentFinalizedReviewDate3
+        ProAssessmentFinalizedName3
+        ProAssessmentFinalizedRole3
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      trackPlan {
+        id
+        userId
+        CompletedDate
+        CompletedTime
+        ActionDomain
+        ActionQuestion
+        Action
+        Frequency
+        ActionNote
+        Update1Points
+        Update1Note
+        Update1Date
+        Update2Points
+        Update2Note
+        Update2Date
+        Update3Points
+        Update3Note
+        Update3Date
+        Update4Points
+        Update4Note
+        Update4Date
+        Update5Points
+        Update5Note
+        Update5Date
+        Update6Points
+        Update6Note
+        Update6Date
+        Update7Points
+        Update7Note
+        Update7Date
+        Update8Points
+        Update8Note
+        Update8Date
+        Percentage
+        Discontinued
+        DiscontinuedDate
+        Successful
+        SuccessfulDate
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;

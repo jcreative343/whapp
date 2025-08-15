@@ -1,0 +1,32 @@
+/* src/components/FrownyFace.css */
+.face {
+  font-size: 64px;
+  text-align: center;
+  position: relative;
+  width: 100px;
+  margin: 40px auto;
+}
+
+.eyes {
+  margin-bottom: 10px;
+}
+
+.mouth {
+  width: 50px;
+  height: 25px;
+  border-bottom: 4px solid black;
+  border-radius: 0 0 50px 50px;
+  margin: 0 auto;
+  animation: frownLoop 1.5s infinite;
+}
+
+@keyframes frownLoop {
+  0%, 100% {
+    transform: rotate(0deg) scaleY(1);
+    border-radius: 0 0 50px 50px;
+  }
+  50% {
+    transform: rotate(0deg) scaleY(-1);
+    border-radius: 50px 50px 0 0;
+  }
+}
