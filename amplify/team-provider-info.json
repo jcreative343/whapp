@@ -13,33 +13,39 @@
       "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-staging-7b5b0-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
-      "auth": {
-        "WholisticHealthApp": {}
-      },
-      "api": {
-        "WholisticHealthApp": {},
-        "emailapi": {}
-      },
       "function": {
         "WholisticHealthAppCustomMessage": {
-          "REDIRECTURL": "http://localhost:3000/",
+          "EMAILMESSAGE": "Your Wholistic Health App account has been successfully created.",
           "EMAILSUBJECT": "WHApp Account Created",
-          "EMAILMESSAGE": "Your Wholistic Health App account has been successfully created."
+          "REDIRECTURL": "http://localhost:3000/"
         },
         "WholisticHealthAppPostConfirmation": {
           "GROUP": "Individual"
         },
-        "sendConnectionEmail": {
-          "deploymentBucketName": "amplify-wholistichealthapp-staging-7b5b0-deployment",
-          "s3Key": "amplify-builds/sendConnectionEmail-4e51414c575971365577-build.zip"
-        },
         "paypalWebhookHandler": {
           "deploymentBucketName": "amplify-wholistichealthapp-staging-7b5b0-deployment",
           "s3Key": "amplify-builds/paypalWebhookHandler-49724378646655717531-build.zip"
+        },
+        "sendConnectionEmail": {
+          "deploymentBucketName": "amplify-wholistichealthapp-staging-7b5b0-deployment",
+          "s3Key": "amplify-builds/sendConnectionEmail-4e51414c575971365577-build.zip"
         }
+      },
+      "auth": {
+        "WholisticHealthApp": {}
       },
       "storage": {
         "WhappContent": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dffst157adsg2",
+          "type": "manual"
+        }
+      },
+      "api": {
+        "WholisticHealthApp": {},
+        "emailapi": {}
       }
     }
   }

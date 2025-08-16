@@ -7,6 +7,13 @@ const awsmobile = {
     "aws_appsync_region": "us-east-1",
     "aws_appsync_authenticationType": "API_KEY",
     "aws_appsync_apiKey": "da2-syktg6ouezgfbo76baqxj766se",
+    "aws_cloud_logic_custom": [
+        {
+            "name": "emailapi",
+            "endpoint": "https://6jyrzm62j5.execute-api.us-east-1.amazonaws.com/staging",
+            "region": "us-east-1"
+        }
+    ],
     "aws_cognito_identity_pool_id": "us-east-1:2024af65-4181-4f8f-bcdf-c77fd2227bb9",
     "aws_cognito_region": "us-east-1",
     "aws_user_pools_id": "us-east-1_nNgKgkkmZ",
@@ -34,7 +41,9 @@ const awsmobile = {
     },
     "aws_cognito_verification_mechanisms": [
         "EMAIL"
-    ]
+    ],
+    "aws_user_files_s3_bucket": "wholistichealthapp1ff4b8b301944852a9bdb77c39f1e7b5b0-staging",
+    "aws_user_files_s3_bucket_region": "us-east-1"
 };
 
 

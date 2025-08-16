@@ -337,17 +337,6 @@
         }
       }
     },
-    "functionsendConnectionEmail": {
-      "Type": "AWS::CloudFormation::Stack",
-      "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-staging-7b5b0-deployment/amplify-cfn-templates/function/sendConnectionEmail-cloudformation-template.json",
-        "Parameters": {
-          "deploymentBucketName": "amplify-wholistichealthapp-staging-7b5b0-deployment",
-          "s3Key": "amplify-builds/sendConnectionEmail-4e51414c575971365577-build.zip",
-          "env": "staging"
-        }
-      }
-    },
     "functionpaypalWebhookHandler": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
@@ -355,6 +344,17 @@
         "Parameters": {
           "deploymentBucketName": "amplify-wholistichealthapp-staging-7b5b0-deployment",
           "s3Key": "amplify-builds/paypalWebhookHandler-49724378646655717531-build.zip",
+          "env": "staging"
+        }
+      }
+    },
+    "functionsendConnectionEmail": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-staging-7b5b0-deployment/amplify-cfn-templates/function/sendConnectionEmail-cloudformation-template.json",
+        "Parameters": {
+          "deploymentBucketName": "amplify-wholistichealthapp-staging-7b5b0-deployment",
+          "s3Key": "amplify-builds/sendConnectionEmail-4e51414c575971365577-build.zip",
           "env": "staging"
         }
       }
@@ -388,6 +388,17 @@
           "s3PermissionsAuthenticatedUploads": "s3:PutObject",
           "s3PermissionsGuestPublic": "s3:PutObject",
           "s3PermissionsGuestUploads": "s3:PutObject",
+          "env": "staging"
+        }
+      }
+    },
+    "hostingamplifyhosting": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-staging-7b5b0-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
+        "Parameters": {
+          "appId": "dffst157adsg2",
+          "type": "manual",
           "env": "staging"
         }
       }
