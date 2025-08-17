@@ -10,14 +10,14 @@ import Sidebar from './ui-components/SideBar';
 const AUTO_LOGOUT_MS = 10 * 60 * 1000; // 10 minutes inactivity
 const POPUP_TIMEOUT_MS = 2 * 60 * 1000; // 2 minutes to respond
 const states = [
-    "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
-    "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois",
-    "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts",
-    "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada",
-    "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota",
-    "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota",
-    "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
-  ];
+  "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
+  "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois",
+  "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts",
+  "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada",
+  "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota",
+  "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota",
+  "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
+];
 export function useAutoLogout() {
   const timeoutRef = useRef(null);
   const popupTimeoutRef = useRef(null);
@@ -92,7 +92,7 @@ export function useAutoLogout() {
 Amplify.configure(awsExports);
 
 export default function App() {
-  // const { showPopup, handleStillHere } = useAutoLogout();
+  const { showPopup, handleStillHere } = useAutoLogout();
   const [accountType, setAccountType] = useState('Individual');
 
 
@@ -103,7 +103,11 @@ export default function App() {
 
     <div style={{ maxWidth: 400, margin: 'auto', marginTop: 40 }}>
       {/* The inactivity popup modal */}
-
+      <img
+          src="/Wholistic-Depiction-Circle-App.png"
+          alt="Logo"
+          style={{ width: '100%', height: "auto" }}
+        />
 
       <Authenticator
         initialState="signIn"
@@ -189,20 +193,20 @@ export default function App() {
                           name="custom:State"
                           style={{
                             width: "100%",
-  padding: 10,
-  fontSize: 15,
-  borderRadius: 8,
-  border: "1.5px solid #ccc",
-  boxSizing: "border-box",
+                            padding: 10,
+                            fontSize: 15,
+                            borderRadius: 8,
+                            border: "1.5px solid #ccc",
+                            boxSizing: "border-box",
                           }}
-                          
+
                         >
                           <option value="">Select a State</option>
                           {states.map((state) => (
                             <option key={state} value={state}>{state}</option>
                           ))}
                         </select>
-                        
+
                       </div>
                       <div className="amplify-field">
                         <label className="amplify-label">Zip Code</label>
@@ -252,6 +256,47 @@ export default function App() {
         {({ signOut, user }) => (
           <main style={{ textAlign: 'center' }}>
             <Sidebar />
+            {showPopup && (
+              <div style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                width: '100vw',
+                height: '100vh',
+                backgroundColor: 'rgba(0,0,0,0.5)',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                zIndex: 9999
+              }}>
+                <div style={{
+                  background: '#fff',
+                  padding: 30,
+                  borderRadius: 12,
+                  width: 400,
+                  maxWidth: '90%',
+                  textAlign: 'center',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.3)'
+                }}>
+                  <h2 style={{ marginBottom: 20 }}>Are you still there?</h2>
+                  <p style={{ marginBottom: 30 }}>For security, you will be logged out soon due to inactivity.</p>
+                  <button
+                    onClick={handleStillHere}
+                    style={{
+                      padding: '10px 20px',
+                      fontSize: 16,
+                      borderRadius: 8,
+                      border: 'none',
+                      backgroundColor: '#007bff',
+                      color: '#fff',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    Yes, I’m here
+                  </button>
+                </div>
+              </div>
+            )}
           </main>
         )}
       </Authenticator>

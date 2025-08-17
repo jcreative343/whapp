@@ -396,7 +396,7 @@ const requiredFieldsBySection = {
 
 
 export default function Assessment() {
-  const isAssessmentRequired = false; // toggle this to enable/disable *all* required validations
+  const isAssessmentRequired = true; // toggle this to enable/disable *all* required validations
   const [formData, setFormData] = useState({});
   const [step, setStep] = useState("trauma");
   const [successMessage, setSuccessMessage] = useState("");

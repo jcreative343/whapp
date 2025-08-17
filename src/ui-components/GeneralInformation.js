@@ -613,11 +613,13 @@ export default function GeneralInformation() {
               style={inputStyle}
             >
               <option value="">Select a role</option>
+              <option value="Admin">Admin</option>
               <option value="Allergist">Allergist</option>
               <option value="Audiologist">Audiologist</option>
               <option value="Dentist">Dentist</option>
-              <option value="Health/Lifestyle Coach">Health/Lifestyle Coach</option>
               <option value="Fitness Trainer">Fitness Trainer</option>
+              <option value="Health/Lifestyle Coach">Health/Lifestyle Coach</option>
+              <option value="Leadership">Leadership</option>
               <option value="Mental Health Therapist">Mental Health Therapist</option>
               <option value="Nurse">Nurse</option>
               <option value="Nurse Practitioner">Nurse Practitioner</option>
@@ -628,13 +630,14 @@ export default function GeneralInformation() {
               <option value="Physician – Naturopathy">Physician – Naturopathy</option>
               <option value="Physician – OD">Physician – OD</option>
               <option value="Social Worker">Social Worker</option>
+              
             </select>
           </div>
 
           <div>
             <label style={labelStyle}>Business EIN:</label>
             <input
-              type="number"
+              type="text"
               name="BusinessEIN"
               disabled={formData.OrganizationEmployee}
               value={formData.BusinessEIN}

@@ -40,11 +40,11 @@ export default function SubscriptionManager() {
     setPaymentStatus("");
   };
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
- useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth <= 768);
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   function PayPalButtonsWithLoading(props) {
 
     const [{ isPending }] = usePayPalScriptReducer();
@@ -258,7 +258,7 @@ export default function SubscriptionManager() {
 
   return (
     <div style={pageWrapper}>
-      <div style={{ ...containerStyle, marginBottom: 0,  width: isMobile? "100%" : 600 }}>
+      <div style={{ ...containerStyle, marginBottom: 0, width: isMobile ? "100%" : 600 }}>
         <div style={{ display: "flex", justifyContent: "center", gap: 20 }}>
           <button
             onClick={() => setPaymentMode("subscription")}
@@ -370,7 +370,7 @@ export default function SubscriptionManager() {
             Remove Coupon
           </button>
         )}
-
+        {paymentStatus && <p style={notificationStyle}>{paymentStatus}</p>}
         {lockedClientsProjected && (hasOrganization || accountType === "Professional") && (
 
           <div>
@@ -596,9 +596,9 @@ export default function SubscriptionManager() {
           </p>
         )}
 
-        {paymentStatus && <p style={notificationStyle}>{paymentStatus}</p>}
+        
       </div>
-      <div style={{ ...containerStyle, width: isMobile? "100%" : 600}}>
+      <div style={{ ...containerStyle, width: isMobile ? "100%" : 600 }}>
         <div style={{ marginBottom: 20 }}>
           <h3 style={titleStyle}>One-Time Payments</h3>
           {payments.filter(p => p.paymentType === "one-time").length === 0 ? (
@@ -627,7 +627,7 @@ export default function SubscriptionManager() {
         </div>
       </div>
 
-      <div style={{...containerStyle, width: isMobile? "100%" : 600}}>
+      <div style={{ ...containerStyle, width: isMobile ? "100%" : 600 }}>
         <div style={{ marginBottom: 20 }}>
           <h3 style={titleStyle}>Subscriptions</h3>
 
@@ -752,7 +752,7 @@ export default function SubscriptionManager() {
 
 
 
-      <div style={{...containerStyle, width: isMobile? "100%" : 600}}>
+      <div style={{ ...containerStyle, width: isMobile ? "100%" : 600 }}>
         <h4 style={titleStyle}>Payment History</h4>
         {payments.length === 0 ? (
           <p>No past payments.</p>
@@ -787,7 +787,7 @@ const paymentBoxStyle = {
   marginBottom: 16,
   boxShadow: "0 1px 4px rgba(0,0,0,0.1)",
   textTransform: "capitalize", // 
-  
+
 };
 
 const pageWrapper = {
@@ -798,12 +798,12 @@ const pageWrapper = {
   justifyContent: "center",
   minHeight: "100vh",
   padding: "40px 16px",
-  
+
 };
 
 const containerStyle = {
   maxWidth: 600,
-  
+
   margin: "40px auto",
   padding: 24,
   borderRadius: 12,
