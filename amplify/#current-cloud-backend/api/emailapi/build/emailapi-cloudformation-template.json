@@ -1,5 +1,5 @@
 {
-  "Description": "API Gateway Resource for AWS Amplify CLI",
+  "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"Amplify\",\"createdWith\":\"13.0.1\",\"stackType\":\"api-API Gateway\",\"metadata\":{\"whyContinueWithGen1\":\"\"}}",
   "AWSTemplateFormatVersion": "2010-09-09",
   "Parameters": {
     "functionsendConnectionEmailName": {
@@ -606,7 +606,7 @@
         "Name": "emailapi"
       }
     },
-    "emailapiDefault4XXResponsef0d94fa1": {
+    "emailapiDefault4XXResponse3fa04262": {
       "Type": "AWS::ApiGateway::GatewayResponse",
       "Properties": {
         "ResponseParameters": {
@@ -621,7 +621,7 @@
         }
       }
     },
-    "emailapiDefault5XXResponsef0d94fa1": {
+    "emailapiDefault5XXResponse3fa04262": {
       "Type": "AWS::ApiGateway::GatewayResponse",
       "Properties": {
         "ResponseParameters": {
@@ -636,7 +636,7 @@
         }
       }
     },
-    "DeploymentAPIGWemailapiab8a9b03": {
+    "DeploymentAPIGWemailapi54a6ce4e": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "Description": "The Development stage deployment of your API.",
@@ -654,8 +654,8 @@
         }
       },
       "DependsOn": [
-        "emailapiDefault4XXResponsef0d94fa1",
-        "emailapiDefault5XXResponsef0d94fa1"
+        "emailapiDefault4XXResponse3fa04262",
+        "emailapiDefault5XXResponse3fa04262"
       ]
     }
   }

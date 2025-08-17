@@ -1,41 +1,58 @@
 {
-  "staging": {
+  "temp": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-wholistichealthapp-staging-7b5b0-authRole",
-      "UnauthRoleArn": "arn:aws:iam::982534380398:role/amplify-wholistichealthapp-staging-7b5b0-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::982534380398:role/amplify-wholistichealthapp-staging-7b5b0-authRole",
+      "AuthRoleName": "amplify-wholistichealthapp-temp-a729b-authRole",
+      "UnauthRoleArn": "arn:aws:iam::982534380398:role/amplify-wholistichealthapp-temp-a729b-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::982534380398:role/amplify-wholistichealthapp-temp-a729b-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-wholistichealthapp-staging-7b5b0-deployment",
-      "UnauthRoleName": "amplify-wholistichealthapp-staging-7b5b0-unauthRole",
-      "StackName": "amplify-wholistichealthapp-staging-7b5b0",
-      "StackId": "arn:aws:cloudformation:us-east-1:982534380398:stack/amplify-wholistichealthapp-staging-7b5b0/7b84de90-5297-11f0-a539-0e5fd5647131",
-      "AmplifyAppId": "dffst157adsg2",
-      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-staging-7b5b0-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+      "DeploymentBucketName": "amplify-wholistichealthapp-temp-a729b-deployment",
+      "UnauthRoleName": "amplify-wholistichealthapp-temp-a729b-unauthRole",
+      "StackName": "amplify-wholistichealthapp-temp-a729b",
+      "StackId": "arn:aws:cloudformation:us-east-1:982534380398:stack/amplify-wholistichealthapp-temp-a729b/7cefe320-7b0e-11f0-ba76-124cd8bf93f7",
+      "AmplifyAppId": "dffst157adsg2"
     },
     "categories": {
-      "function": {
-        "WholisticHealthAppCustomMessage": {
-          "EMAILMESSAGE": "Your Wholistic Health App account has been successfully created.",
-          "EMAILSUBJECT": "WHApp Account Created",
-          "REDIRECTURL": "http://localhost:3000/"
-        },
-        "WholisticHealthAppPostConfirmation": {
-          "GROUP": "Individual"
-        },
-        "paypalWebhookHandler": {
-          "deploymentBucketName": "amplify-wholistichealthapp-staging-7b5b0-deployment",
-          "s3Key": "amplify-builds/paypalWebhookHandler-49724378646655717531-build.zip"
-        },
-        "sendConnectionEmail": {
-          "deploymentBucketName": "amplify-wholistichealthapp-staging-7b5b0-deployment",
-          "s3Key": "amplify-builds/sendConnectionEmail-4e51414c575971365577-build.zip"
-        }
-      },
       "auth": {
         "WholisticHealthApp": {}
       },
-      "storage": {
-        "WhappContent": {}
+      "function": {
+        "paypalWebhookHandler": {},
+        "sendConnectionEmail": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dffst157adsg2",
+          "type": "manual"
+        }
+      }
+    }
+  },
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-wholistichealthapp-prod-6e3e6-authRole",
+      "UnauthRoleArn": "arn:aws:iam::982534380398:role/amplify-wholistichealthapp-prod-6e3e6-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::982534380398:role/amplify-wholistichealthapp-prod-6e3e6-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-wholistichealthapp-prod-6e3e6-deployment",
+      "UnauthRoleName": "amplify-wholistichealthapp-prod-6e3e6-unauthRole",
+      "StackName": "amplify-wholistichealthapp-prod-6e3e6",
+      "StackId": "arn:aws:cloudformation:us-east-1:982534380398:stack/amplify-wholistichealthapp-prod-6e3e6/0cb4d970-7b0f-11f0-b755-125dbe277c39",
+      "AmplifyAppId": "dffst157adsg2",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-prod-6e3e6-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "auth": {
+        "WholisticHealthApp": {}
+      },
+      "function": {
+        "paypalWebhookHandler": {
+          "deploymentBucketName": "amplify-wholistichealthapp-prod-6e3e6-deployment",
+          "s3Key": "amplify-builds/paypalWebhookHandler-49724378646655717531-build.zip"
+        },
+        "sendConnectionEmail": {
+          "deploymentBucketName": "amplify-wholistichealthapp-prod-6e3e6-deployment",
+          "s3Key": "amplify-builds/sendConnectionEmail-4e51414c575971365577-build.zip"
+        }
       },
       "hosting": {
         "amplifyhosting": {
@@ -46,6 +63,9 @@
       "api": {
         "WholisticHealthApp": {},
         "emailapi": {}
+      },
+      "storage": {
+        "WhappContent": {}
       }
     }
   }

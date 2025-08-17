@@ -113,38 +113,6 @@
     }
   },
   "parameters": {
-    "AMPLIFY_function_WholisticHealthAppCustomMessage_EMAILMESSAGE": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "WholisticHealthAppCustomMessage"
-        }
-      ]
-    },
-    "AMPLIFY_function_WholisticHealthAppCustomMessage_EMAILSUBJECT": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "WholisticHealthAppCustomMessage"
-        }
-      ]
-    },
-    "AMPLIFY_function_WholisticHealthAppCustomMessage_REDIRECTURL": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "WholisticHealthAppCustomMessage"
-        }
-      ]
-    },
-    "AMPLIFY_function_WholisticHealthAppPostConfirmation_GROUP": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "WholisticHealthAppPostConfirmation"
-        }
-      ]
-    },
     "AMPLIFY_function_paypalWebhookHandler_deploymentBucketName": {
       "usedBy": [
         {

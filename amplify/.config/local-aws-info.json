@@ -1,5 +1,10 @@
 {
-  "staging": {
+  "temp": {
     "configLevel": "amplifyAdmin"
+  },
+  "prod": {
+    "configLevel": "project",
+    "useProfile": true,
+    "profileName": "default"
   }
 }

@@ -1,5 +1,5 @@
 {
   "projectPath": "C:\\Users\\drshe\\OneDrive\\Desktop\\myapp",
-  "envName": "staging",
-  "defaultEditor": "vscode"
+  "defaultEditor": "vscode",
+  "envName": "prod"
 }

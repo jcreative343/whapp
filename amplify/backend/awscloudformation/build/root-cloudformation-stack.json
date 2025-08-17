@@ -202,7 +202,7 @@
     "APIGatewayAuthStack": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-staging-7b5b0-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-prod-6e3e6-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json",
         "Parameters": {
           "authRoleName": {
             "Ref": "AuthRoleName"
@@ -210,7 +210,7 @@
           "unauthRoleName": {
             "Ref": "UnauthRoleName"
           },
-          "env": "staging",
+          "env": "prod",
           "emailapi": {
             "Fn::GetAtt": [
               "apiemailapi",
@@ -223,7 +223,7 @@
     "apiWholisticHealthApp": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-staging-7b5b0-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-prod-6e3e6-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "Parameters": {
           "AppSyncApiName": "WholisticHealthApp",
           "DynamoDBBillingMode": "PAY_PER_REQUEST",
@@ -240,16 +240,16 @@
           "unauthRoleName": {
             "Ref": "UnauthRoleName"
           },
-          "S3DeploymentBucket": "amplify-wholistichealthapp-staging-7b5b0-deployment",
+          "S3DeploymentBucket": "amplify-wholistichealthapp-prod-6e3e6-deployment",
           "S3DeploymentRootKey": "amplify-appsync-files/d3ec16bbf65af1a932edca9f5ded9e93cf79482f",
-          "env": "staging"
+          "env": "prod"
         }
       }
     },
     "apiemailapi": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-staging-7b5b0-deployment/amplify-cfn-templates/api/emailapi-cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-prod-6e3e6-deployment/amplify-cfn-templates/api/emailapi-cloudformation-template.json",
         "Parameters": {
           "functionsendConnectionEmailName": {
             "Fn::GetAtt": [
@@ -275,14 +275,14 @@
               "Outputs.Arn"
             ]
           },
-          "env": "staging"
+          "env": "prod"
         }
       }
     },
     "authWholisticHealthApp": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-staging-7b5b0-deployment/amplify-cfn-templates/auth/WholisticHealthApp-cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-prod-6e3e6-deployment/amplify-cfn-templates/auth/WholisticHealthApp-cloudformation-template.json",
         "Parameters": {
           "identityPoolName": "testAuthIdentityPool",
           "allowUnauthenticatedIdentities": true,
@@ -333,36 +333,47 @@
           },
           "breakCircularDependency": true,
           "dependsOn": "",
-          "env": "staging"
+          "env": "prod"
         }
       }
     },
     "functionpaypalWebhookHandler": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-staging-7b5b0-deployment/amplify-cfn-templates/function/paypalWebhookHandler-cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-prod-6e3e6-deployment/amplify-cfn-templates/function/paypalWebhookHandler-cloudformation-template.json",
         "Parameters": {
-          "deploymentBucketName": "amplify-wholistichealthapp-staging-7b5b0-deployment",
+          "deploymentBucketName": "amplify-wholistichealthapp-prod-6e3e6-deployment",
           "s3Key": "amplify-builds/paypalWebhookHandler-49724378646655717531-build.zip",
-          "env": "staging"
+          "env": "prod"
         }
       }
     },
     "functionsendConnectionEmail": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-staging-7b5b0-deployment/amplify-cfn-templates/function/sendConnectionEmail-cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-prod-6e3e6-deployment/amplify-cfn-templates/function/sendConnectionEmail-cloudformation-template.json",
         "Parameters": {
-          "deploymentBucketName": "amplify-wholistichealthapp-staging-7b5b0-deployment",
+          "deploymentBucketName": "amplify-wholistichealthapp-prod-6e3e6-deployment",
           "s3Key": "amplify-builds/sendConnectionEmail-4e51414c575971365577-build.zip",
-          "env": "staging"
+          "env": "prod"
+        }
+      }
+    },
+    "hostingamplifyhosting": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-prod-6e3e6-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
+        "Parameters": {
+          "appId": "dffst157adsg2",
+          "type": "manual",
+          "env": "prod"
         }
       }
     },
     "storageWhappContent": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-staging-7b5b0-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-prod-6e3e6-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
         "Parameters": {
           "bucketName": "wholistichealthapp1ff4b8b301944852a9bdb77c39f1e",
           "selectedGuestPermissions": "s3:PutObject",
@@ -388,18 +399,7 @@
           "s3PermissionsAuthenticatedUploads": "s3:PutObject",
           "s3PermissionsGuestPublic": "s3:PutObject",
           "s3PermissionsGuestUploads": "s3:PutObject",
-          "env": "staging"
-        }
-      }
-    },
-    "hostingamplifyhosting": {
-      "Type": "AWS::CloudFormation::Stack",
-      "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-staging-7b5b0-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
-        "Parameters": {
-          "appId": "dffst157adsg2",
-          "type": "manual",
-          "env": "staging"
+          "env": "prod"
         }
       }
     },
