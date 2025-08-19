@@ -606,7 +606,7 @@
         "Name": "emailapi"
       }
     },
-    "emailapiDefault4XXResponsed3d25537": {
+    "emailapiDefault4XXResponse65213363": {
       "Type": "AWS::ApiGateway::GatewayResponse",
       "Properties": {
         "ResponseParameters": {
@@ -621,7 +621,7 @@
         }
       }
     },
-    "emailapiDefault5XXResponsed3d25537": {
+    "emailapiDefault5XXResponse65213363": {
       "Type": "AWS::ApiGateway::GatewayResponse",
       "Properties": {
         "ResponseParameters": {
@@ -636,7 +636,7 @@
         }
       }
     },
-    "DeploymentAPIGWemailapid19f5c6e": {
+    "DeploymentAPIGWemailapic3cc92ec": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "Description": "The Development stage deployment of your API.",
@@ -654,8 +654,8 @@
         }
       },
       "DependsOn": [
-        "emailapiDefault4XXResponsed3d25537",
-        "emailapiDefault5XXResponsed3d25537"
+        "emailapiDefault4XXResponse65213363",
+        "emailapiDefault5XXResponse65213363"
       ]
     }
   }

@@ -187,10 +187,10 @@ export default function ManageConnections() {
             // Update locally so UI reflects the change
             setRequests(prev => prev.filter(r => r.id !== requestId));
 
-            
+
         } catch (err) {
             console.error("Failed to cancel request:", err);
-            
+
         }
     };
     const fetchConnectionRequests = async (email, role) => {
@@ -510,16 +510,17 @@ export default function ManageConnections() {
 
 
             await fetch("https://3vqzvlkgxiokrm4hkj65oefwdy0ckrdp.lambda-url.us-east-1.on.aws/", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-        to: targetEmail,
-        subject: "You have a new connection request!",
-        body: `Hi, ${firstName} ${lastName} sent you a connection request.`,
-        includeButton: true,
-        buttonUrl: "https://app.outcomesexcellence.org"
-    }),
-});
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    to: targetEmail,
+                    subject: "You have a new connection request on the Wholistic Health App®!",
+                    body: `Hi, ${firstName} ${lastName} wants to collaborate with you on the Wholistic Health App®. This app allows individuals to complete an assessment, receive immediate results, create a health plan, track progress, and collaborate with their health team.`,
+                    includeButton: true,
+                    buttonUrl: "https://wholistichealthapp.com/",
+                    buttonText: "Respond to their request"
+                }),
+            });
 
             setNotification("Connection request sent!");
             setTargetEmail("");
@@ -775,12 +776,12 @@ export default function ManageConnections() {
                                                     {!isMobile && <div style={verticalDividerStyle}></div>}
 
                                                     <div style={userColumnStyle}>
-  <strong>Type:</strong> { 
-    req.direction === "toProfessional" 
-      ? `You ➜ ${professionalInfo.ProfessionalRole || "Loading..."}` 
-      : "You ➜ Individual" 
-  }
-</div>
+                                                        <strong>Type:</strong> {
+                                                            req.direction === "toProfessional"
+                                                                ? `You ➜ ${professionalInfo.ProfessionalRole || "Loading..."}`
+                                                                : "You ➜ Individual"
+                                                        }
+                                                    </div>
 
                                                     {!isMobile && <div style={verticalDividerStyle}></div>}
 

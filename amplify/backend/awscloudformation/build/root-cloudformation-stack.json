@@ -365,7 +365,18 @@
         "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-prod-6e3e6-deployment/amplify-cfn-templates/function/sendemail-cloudformation-template.json",
         "Parameters": {
           "deploymentBucketName": "amplify-wholistichealthapp-prod-6e3e6-deployment",
-          "s3Key": "amplify-builds/sendemail-786e4264576e304b3473-build.zip",
+          "s3Key": "amplify-builds/sendemail-68426f2f444a4165714c-build.zip",
+          "env": "prod"
+        }
+      }
+    },
+    "functiontrackprogressreminder": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-prod-6e3e6-deployment/amplify-cfn-templates/function/trackprogressreminder-cloudformation-template.json",
+        "Parameters": {
+          "deploymentBucketName": "amplify-wholistichealthapp-prod-6e3e6-deployment",
+          "s3Key": "amplify-builds/trackprogressreminder-30306c35307471676552-build.zip",
           "env": "prod"
         }
       }

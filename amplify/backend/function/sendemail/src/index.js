@@ -25,7 +25,7 @@ exports.handler = async (event) => {
   } catch {
     bodyData = event.arguments || event;
   }
-  const { to, subject, body, includeButton, buttonUrl } = bodyData;
+  const { to, subject, body, includeButton, buttonUrl, buttonText } = bodyData;
 
   // Build HTML message
   let htmlContent = `
@@ -34,13 +34,13 @@ exports.handler = async (event) => {
         <h2>${subject}</h2>
         <p>${body}</p>
   `;
-  if (includeButton && buttonUrl) {
+  if (includeButton && buttonUrl && buttonText) {
     htmlContent += `
       <a href="${buttonUrl}"
          style="display: inline-block; margin-top: 20px; padding: 12px 24px; 
                 background-color: #4CAF50; color: white; text-decoration: none; 
                 border-radius: 8px; font-size: 16px;">
-        Open App
+        ${buttonText}
       </a>
     `;
   }
@@ -51,7 +51,7 @@ exports.handler = async (event) => {
     Message: {
       Body: {
         Html: { Data: htmlContent },
-        Text: { Data: `${body}${includeButton ? `\n\nOpen App: ${buttonUrl}` : ""}` },
+        Text: { Data: `${body}${includeButton ? `\n\n${buttonText}: ${buttonUrl}` : ""}` },
       },
       Subject: { Data: subject },
     },
@@ -64,22 +64,14 @@ exports.handler = async (event) => {
 
     return {
       statusCode: 200,
-      headers: {
-        "Access-Control-Allow-Origin": "https://wholistichealthapp.com",
-        "Access-Control-Allow-Methods": "POST,OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type",
-      },
+      
       body: JSON.stringify({ success: true, messageId: result.MessageId }),
     };
   } catch (err) {
     console.error("❌ Error sending email:", err);
     return {
       statusCode: 500,
-      headers: {
-        "Access-Control-Allow-Origin": "https://wholistichealthapp.com",
-        "Access-Control-Allow-Methods": "POST,OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type",
-      },
+      
       body: JSON.stringify({ success: false, error: err.message }),
     };
   }

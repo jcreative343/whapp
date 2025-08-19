@@ -959,7 +959,18 @@ export default function ConnectedClientBar() {
           variables: { input },
         });
       }
-
+      await fetch("https://3vqzvlkgxiokrm4hkj65oefwdy0ckrdp.lambda-url.us-east-1.on.aws/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          to: connectedClient?.email,
+          subject: "You have communication from your health team in the Wholistic Health App®!",
+          body: `${senderFirstName} ${senderLastName} added a reccomendation or note to your health plan.`,
+          includeButton: true,
+          buttonUrl: "https://wholistichealthapp.com/",
+          buttonText: "Click here to view"
+        }),
+      });
       alert('Recommendations submitted successfully!');
       // Optionally clear or reset recommendations here
 

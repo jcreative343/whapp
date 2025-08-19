@@ -8,12 +8,7 @@
             "Outputs.UserPoolId"
         ]
     },
-    "authRoleName": {
-        "Ref": "AuthRoleName"
-    },
-    "unauthRoleName": {
-        "Ref": "UnauthRoleName"
-    },
+    "AuthModeLastUpdated": "2025-06-26T22:25:10.606Z",
     "S3DeploymentBucket": "amplify-wholistichealthapp-prod-6e3e6-deployment",
     "S3DeploymentRootKey": "amplify-appsync-files/4a9bca37f8b15b65d4b906ded008af3449993027"
 }

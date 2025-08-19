@@ -108,6 +108,11 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "trackprogressreminder": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "hosting": {
@@ -163,6 +168,22 @@
         {
           "category": "function",
           "resourceName": "sendemail"
+        }
+      ]
+    },
+    "AMPLIFY_function_trackprogressreminder_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "trackprogressreminder"
+        }
+      ]
+    },
+    "AMPLIFY_function_trackprogressreminder_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "trackprogressreminder"
         }
       ]
     },
