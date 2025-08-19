@@ -55,8 +55,8 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-prod-6e3e6-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apiWholisticHealthApp"
       },
-      "lastPushTimeStamp": "2025-08-17T18:42:12.691Z",
-      "lastPushDirHash": "ltoeWGpSV2MN0Upc/sVOVuBVmBk="
+      "lastPushTimeStamp": "2025-08-19T19:25:02.085Z",
+      "lastPushDirHash": "l2tSfF1DbypDrtWY0T8/eJ1v6r0="
     },
     "emailapi": {
       "dependsOn": [
@@ -83,13 +83,13 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-prod-6e3e6-deployment/amplify-cfn-templates/api/emailapi-cloudformation-template.json",
         "logicalId": "apiemailapi"
       },
-      "lastPushTimeStamp": "2025-08-17T18:42:12.694Z",
+      "lastPushTimeStamp": "2025-08-19T19:25:02.085Z",
       "output": {
         "ApiName": "emailapi",
         "RootUrl": "https://toa4mtttr4.execute-api.us-east-1.amazonaws.com/prod",
         "ApiId": "toa4mtttr4"
       },
-      "lastPushDirHash": "XhM+3OBERO1QhgkKHX+jiPLRic0="
+      "lastPushDirHash": "PFdsjSsiC4TTXfRZY13B0Bn2D2c="
     }
   },
   "auth": {
@@ -127,7 +127,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-prod-6e3e6-deployment/amplify-cfn-templates/auth/WholisticHealthApp-cloudformation-template.json",
         "logicalId": "authWholisticHealthApp"
       },
-      "lastPushTimeStamp": "2025-08-17T18:42:12.696Z",
+      "lastPushTimeStamp": "2025-08-19T19:25:02.085Z",
       "output": {
         "UserPoolId": "us-east-1_lIA2rW7R3",
         "AppClientIDWeb": "d6iotnkf181soijrbekhb4kd1",
@@ -137,7 +137,7 @@
         "IdentityPoolName": "testAuthIdentityPool__prod",
         "UserPoolName": "WholisticHealthApp"
       },
-      "lastPushDirHash": "xZ55tkxsDmOj2+uyIoM992NNzdM="
+      "lastPushDirHash": "PlhhnBwjevYzkomtTMwM0GNHxQ0="
     }
   },
   "function": {
@@ -146,9 +146,9 @@
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
-      "lastBuildTimeStamp": "2025-08-17T02:10:41.299Z",
+      "lastBuildTimeStamp": "2025-08-19T19:20:36.151Z",
       "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2025-08-17T02:10:41.338Z",
+      "lastPackageTimeStamp": "2025-08-19T19:20:36.241Z",
       "distZipFilename": "paypalWebhookHandler-49724378646655717531-build.zip",
       "s3Bucket": {
         "deploymentBucketName": "amplify-wholistichealthapp-prod-6e3e6-deployment",
@@ -158,7 +158,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-prod-6e3e6-deployment/amplify-cfn-templates/function/paypalWebhookHandler-cloudformation-template.json",
         "logicalId": "functionpaypalWebhookHandler"
       },
-      "lastPushTimeStamp": "2025-08-17T18:42:12.699Z",
+      "lastPushTimeStamp": "2025-08-19T19:25:02.085Z",
       "output": {
         "LambdaExecutionRoleArn": "arn:aws:iam::982534380398:role/wholistichealthappLambdaRole04e1e576-prod",
         "Region": "us-east-1",
@@ -166,7 +166,7 @@
         "Name": "paypalWebhookHandler-prod",
         "LambdaExecutionRole": "wholistichealthappLambdaRole04e1e576-prod"
       },
-      "lastPushDirHash": "0p8admsCI/qaeLLnW3jw3hIMNrg="
+      "lastPushDirHash": "wKRwOmFU/Z3dN40PHoyQ3P2Nbx0="
     },
     "sendConnectionEmail": {
       "build": true,
@@ -185,7 +185,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-prod-6e3e6-deployment/amplify-cfn-templates/function/sendConnectionEmail-cloudformation-template.json",
         "logicalId": "functionsendConnectionEmail"
       },
-      "lastPushTimeStamp": "2025-08-17T18:42:12.701Z",
+      "lastPushTimeStamp": "2025-08-19T19:24:56.683Z",
       "output": {
         "LambdaExecutionRoleArn": "arn:aws:iam::982534380398:role/wholistichealthappLambdaRole2c495b45-prod",
         "Region": "us-east-1",
@@ -194,6 +194,32 @@
         "LambdaExecutionRole": "wholistichealthappLambdaRole2c495b45-prod"
       },
       "lastPushDirHash": "a9+I2HbvwuZz3zD0pXmv9z6BCro="
+    },
+    "sendemail": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::982534380398:role/wholistichealthappLambdaRoleeaebbf3f-prod",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:982534380398:function:sendemail-prod",
+        "Name": "sendemail-prod",
+        "LambdaExecutionRole": "wholistichealthappLambdaRoleeaebbf3f-prod"
+      },
+      "lastPushTimeStamp": "2025-08-19T19:25:02.085Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-prod-6e3e6-deployment/amplify-cfn-templates/function/sendemail-cloudformation-template.json",
+        "logicalId": "functionsendemail"
+      },
+      "lastBuildTimeStamp": "2025-08-19T19:20:40.667Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2025-08-19T19:20:40.716Z",
+      "distZipFilename": "sendemail-786e4264576e304b3473-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-wholistichealthapp-prod-6e3e6-deployment",
+        "s3Key": "amplify-builds/sendemail-786e4264576e304b3473-build.zip"
+      },
+      "lastPushDirHash": "aGeGigGaGWxIrZ6qEfEl9jKN2YE="
     }
   },
   "hosting": {
@@ -205,7 +231,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-prod-6e3e6-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
         "logicalId": "hostingamplifyhosting"
       },
-      "lastPushTimeStamp": "2025-08-17T18:42:12.704Z",
+      "lastPushTimeStamp": "2025-08-19T19:24:56.692Z",
       "output": {},
       "lastPushDirHash": "pc3oi2qwBvm1/kq4B0jSSf/PeoY="
     }
@@ -215,7 +241,7 @@
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "S3",
-      "lastPushTimeStamp": "2025-08-17T18:42:19.515Z",
+      "lastPushTimeStamp": "2025-08-19T19:24:56.698Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-wholistichealthapp-prod-6e3e6-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
         "logicalId": "storageWhappContent"

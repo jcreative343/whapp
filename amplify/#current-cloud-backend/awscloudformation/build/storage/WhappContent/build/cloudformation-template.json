@@ -1,5 +1,5 @@
 {
-  "Description": "S3 Resource for AWS Amplify CLI",
+  "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"Amplify\",\"createdWith\":\"13.0.1\",\"stackType\":\"storage-S3\",\"metadata\":{\"whyContinueWithGen1\":\"\"}}",
   "AWSTemplateFormatVersion": "2010-09-09",
   "Parameters": {
     "env": {

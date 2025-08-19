@@ -103,6 +103,11 @@
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "sendemail": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "hosting": {
@@ -142,6 +147,22 @@
         {
           "category": "function",
           "resourceName": "sendConnectionEmail"
+        }
+      ]
+    },
+    "AMPLIFY_function_sendemail_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sendemail"
+        }
+      ]
+    },
+    "AMPLIFY_function_sendemail_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sendemail"
         }
       ]
     },

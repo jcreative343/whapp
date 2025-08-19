@@ -137,7 +137,7 @@
           ]
         },
         "Description": "api key description",
-        "Expires": 1757988643
+        "Expires": 1758223242
       }
     },
     "GraphQLAPINONEDS95A13CF0": {
@@ -2681,6 +2681,5 @@
         }
       }
     }
-  },
-  "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"Amplify\",\"createdWith\":\"13.0.1\",\"stackType\":\"api-AppSync\",\"metadata\":{\"whyContinueWithGen1\":\"\"}}"
+  }
 }

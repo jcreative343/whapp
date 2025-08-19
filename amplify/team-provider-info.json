@@ -52,6 +52,10 @@
         "sendConnectionEmail": {
           "deploymentBucketName": "amplify-wholistichealthapp-prod-6e3e6-deployment",
           "s3Key": "amplify-builds/sendConnectionEmail-4e51414c575971365577-build.zip"
+        },
+        "sendemail": {
+          "deploymentBucketName": "amplify-wholistichealthapp-prod-6e3e6-deployment",
+          "s3Key": "amplify-builds/sendemail-786e4264576e304b3473-build.zip"
         }
       },
       "hosting": {

@@ -103,6 +103,11 @@
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "sendemail": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "hosting": {
@@ -110,6 +115,72 @@
       "providerPlugin": "awscloudformation",
       "service": "amplifyhosting",
       "type": "manual"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_paypalWebhookHandler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "paypalWebhookHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_paypalWebhookHandler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "paypalWebhookHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_sendConnectionEmail_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sendConnectionEmail"
+        }
+      ]
+    },
+    "AMPLIFY_function_sendConnectionEmail_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sendConnectionEmail"
+        }
+      ]
+    },
+    "AMPLIFY_function_sendemail_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sendemail"
+        }
+      ]
+    },
+    "AMPLIFY_function_sendemail_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sendemail"
+        }
+      ]
+    },
+    "AMPLIFY_hosting_amplifyhosting_appId": {
+      "usedBy": [
+        {
+          "category": "hosting",
+          "resourceName": "amplifyhosting"
+        }
+      ]
+    },
+    "AMPLIFY_hosting_amplifyhosting_type": {
+      "usedBy": [
+        {
+          "category": "hosting",
+          "resourceName": "amplifyhosting"
+        }
+      ]
     }
   },
   "storage": {

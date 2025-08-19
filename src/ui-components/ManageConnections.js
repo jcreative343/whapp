@@ -509,7 +509,17 @@ export default function ManageConnections() {
             });
 
 
-
+            await fetch("https://3vqzvlkgxiokrm4hkj65oefwdy0ckrdp.lambda-url.us-east-1.on.aws/", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+        to: targetEmail,
+        subject: "You have a new connection request!",
+        body: `Hi, ${firstName} ${lastName} sent you a connection request.`,
+        includeButton: true,
+        buttonUrl: "https://app.outcomesexcellence.org"
+    }),
+});
 
             setNotification("Connection request sent!");
             setTargetEmail("");
