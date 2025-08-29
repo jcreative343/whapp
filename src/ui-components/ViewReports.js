@@ -3,7 +3,12 @@ import { fetchUserAttributes, getCurrentUser } from "aws-amplify/auth";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable"; // ✅ important
 import { useEffect, useRef, useState } from "react";
-import { listAssessmentAnswers, listAssessmentScores, listCreatePlans, listProfessionalReviews } from "../graphql/queries";
+import {
+  listAssessmentAnswers,
+  listAssessmentScores,
+  listCreatePlans,
+  listProfessionalReviews,
+} from "../graphql/queries";
 
 const todayStr = new Date().toISOString().slice(0, 10);
 const oneYearAgo = new Date();
@@ -27,7 +32,8 @@ const keyToQuestionMap = {
   TRParentDivorce: "Have your parents divorced or separated",
   TRParentIncarcerated: "Has a parent been incarcerated",
   TRHomelessness: "Have you experienced homelessness",
-  TRBodyFunction: "Have you experienced issues with body function or disability",
+  TRBodyFunction:
+    "Have you experienced issues with body function or disability",
   TRNaturalDisaster: "Have you been affected by a natural disaster",
   TRDirectTerrorism: "Have you been directly affected by terrorism",
   TRIndirectTerrorism: "Have you been indirectly affected by terrorism",
@@ -168,7 +174,6 @@ const keyToQuestionMap = {
   CompletedTime: "Assessment completed at",
   isActive: "Is this assessment currently active",
 };
-
 
 // Domains grouped by keys for rendering
 const traumaKeys = [
@@ -381,7 +386,6 @@ const keysInLists = [
   ...sdoHKeys,
 ];
 
-
 const styles = {
   container: {
     display: "flex",
@@ -406,7 +410,12 @@ const styles = {
     boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
   },
   planTitle: { marginBottom: -6, color: "#004080" },
-  planQuestion: { marginBottom: 6, fontSize: 25, fontWeight: 600, color: "#004080" },
+  planQuestion: {
+    marginBottom: 6,
+    fontSize: 25,
+    fontWeight: 600,
+    color: "#004080",
+  },
   planText: { marginBottom: 16, fontSize: 15, color: "#004080" },
   weeksGrid: {
     display: "grid",
@@ -514,7 +523,10 @@ const styles = {
 
   modalOverlay: {
     position: "fixed",
-    top: 0, left: 0, right: 0, bottom: 0,
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
     backgroundColor: "rgba(0, 0, 0, 0.5)",
     display: "flex",
     alignItems: "center",
@@ -557,8 +569,6 @@ const styles = {
     fontWeight: "bold",
     cursor: "pointer",
   },
-
-
 };
 
 const RADIUS = 54;
@@ -634,9 +644,9 @@ const categoryThresholds = {
     { min: 4, max: 48, color: "#B00000" },
   ],
   TRScore: [
-    { min: 0, max: 10, color: "#28a745" },     // green
-    { min: 11, max: 20, color: "#ffc107" },    // yellow
-    { min: 21, max: 40, color: "#B00000" },    // red
+    { min: 0, max: 10, color: "#28a745" }, // green
+    { min: 11, max: 20, color: "#ffc107" }, // yellow
+    { min: 21, max: 40, color: "#B00000" }, // red
   ],
 
   MHScore: [
@@ -679,49 +689,104 @@ function AssessmentDetails({ assessmentScores, categoryThresholds, answers }) {
       key: "CMScore",
       label: "Coping Mechanisms",
       questionKeys: [
-        "CMAlcohol", "CMDrugs", "CMOvereating", "CMSmoking", "CMGaming",
-        "CMShopping", "CMGambling", "CMSex", "CMPorn", "CMBlaming",
-        "CMHurting", "CMDisengage", "CMArt", "CMMusic", "CMPoetry",
-        "CMReading", "CMGroups", "CMCounseling", "CMVenting", "CMWriting",
-        "CMSensory", "CMDancing", "CMExercising", "CMWalking", "CMChange",
-        "CMAnalyze", "CMDaydream", "CMPositive"
+        "CMAlcohol",
+        "CMDrugs",
+        "CMOvereating",
+        "CMSmoking",
+        "CMGaming",
+        "CMShopping",
+        "CMGambling",
+        "CMSex",
+        "CMPorn",
+        "CMBlaming",
+        "CMHurting",
+        "CMDisengage",
+        "CMArt",
+        "CMMusic",
+        "CMPoetry",
+        "CMReading",
+        "CMGroups",
+        "CMCounseling",
+        "CMVenting",
+        "CMWriting",
+        "CMSensory",
+        "CMDancing",
+        "CMExercising",
+        "CMWalking",
+        "CMChange",
+        "CMAnalyze",
+        "CMDaydream",
+        "CMPositive",
       ],
     },
     {
       key: "MHScore",
       label: "Mental Health Symptoms",
       questionKeys: [
-        "MHSleeplessness", "MHAlcoholUse", "MHAnxiety", "MHDepression",
-        "MHDrugUse", "MHGrief", "MHGuilt", "MHIrritability", "MHStress",
-        "MHRegret", "MHSuicidalThoughts", "MHLoneliness", "MHWorry"
+        "MHSleeplessness",
+        "MHAlcoholUse",
+        "MHAnxiety",
+        "MHDepression",
+        "MHDrugUse",
+        "MHGrief",
+        "MHGuilt",
+        "MHIrritability",
+        "MHStress",
+        "MHRegret",
+        "MHSuicidalThoughts",
+        "MHLoneliness",
+        "MHWorry",
       ],
     },
     {
       key: "PHScore",
       label: "Physical Health Behaviors",
       questionKeys: [
-        "PHVegeFruits", "PHBeanLentils", "PHGrainBreads", "PHDairy",
-        "PHMeat", "PHFishSeafood", "PHSweets", "PHWater", "PHPhysicalActivity"
+        "PHVegeFruits",
+        "PHBeanLentils",
+        "PHGrainBreads",
+        "PHDairy",
+        "PHMeat",
+        "PHFishSeafood",
+        "PHSweets",
+        "PHWater",
+        "PHPhysicalActivity",
       ],
     },
     {
       key: "SHScore",
       label: "Spiritual Health",
       questionKeys: [
-        "SHSpiritualDefine", "SHSpiritualIntegrate", "SHPrayer",
-        "SHSpiritualActivity", "SHReadText", "SHAlignText", "SHCommunity"
+        "SHSpiritualDefine",
+        "SHSpiritualIntegrate",
+        "SHPrayer",
+        "SHSpiritualActivity",
+        "SHReadText",
+        "SHAlignText",
+        "SHCommunity",
       ],
     },
     {
       key: "OLScore",
       label: "Outlook On Life",
       questionKeys: [
-        "OLHope", "OLPeace", "OLLearning", "OLJoy", "OLStable", "OLSafety",
-        "OLKindness", "OLForgiveness", "OLPatience", "OLRelationships",
-        "OLBoundaries", "OLEUnpleasant", "OLEPleasant", "OLEControl", "OLENumber"
+        "OLHope",
+        "OLPeace",
+        "OLLearning",
+        "OLJoy",
+        "OLStable",
+        "OLSafety",
+        "OLKindness",
+        "OLForgiveness",
+        "OLPatience",
+        "OLRelationships",
+        "OLBoundaries",
+        "OLEUnpleasant",
+        "OLEPleasant",
+        "OLEControl",
+        "OLENumber",
       ],
     },
-
   ];
 
   // Helper: get color for domain by score (same as your thresholds)
@@ -729,7 +794,8 @@ function AssessmentDetails({ assessmentScores, categoryThresholds, answers }) {
     const t = categoryThresholds[domainKey];
     if (!t) return "gray";
     for (const threshold of t) {
-      if (score >= threshold.min && score <= threshold.max) return threshold.color;
+      if (score >= threshold.min && score <= threshold.max)
+        return threshold.color;
     }
     return "gray";
   };
@@ -744,23 +810,31 @@ function AssessmentDetails({ assessmentScores, categoryThresholds, answers }) {
   };
 
   return (
-    <div style={{ maxWidth: 800, margin: "0 auto", fontFamily: "Arial, sans-serif" }}>
+    <div
+      style={{
+        maxWidth: 800,
+        margin: "0 auto",
+        fontFamily: "Arial, sans-serif",
+      }}
+    >
       {domains.map(({ key, label, questionKeys, isCategorical }) => {
         const domainScore = assessmentScores?.[key];
         const domainColor = getDomainColor(domainScore, key);
 
         return (
           <section key={key} style={{ marginBottom: 40 }}>
-            <h3 style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 12,
-              color: "#004a99",
-              borderBottom: "3px solid #004a99",
-              paddingBottom: 6,
-              fontWeight: "700",
-              fontSize: "1.3rem",
-            }}>
+            <h3
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 12,
+                color: "#004a99",
+                borderBottom: "3px solid #004a99",
+                paddingBottom: 6,
+                fontWeight: "700",
+                fontSize: "1.3rem",
+              }}
+            >
               <span>{label}</span>
               <span
                 style={{
@@ -775,13 +849,17 @@ function AssessmentDetails({ assessmentScores, categoryThresholds, answers }) {
               />
             </h3>
 
-            <ul style={{ marginLeft: 24, listStyleType: "none", paddingLeft: 0 }}>
+            <ul
+              style={{ marginLeft: 24, listStyleType: "none", paddingLeft: 0 }}
+            >
               {questionKeys.map((qKey) => {
                 // Get the answer text/value from answers (not scores)
                 const answerVal = answers?.[qKey];
                 // Get the numeric score for coloring
                 const scoreVal = assessmentScores?.[qKey];
-                const color = isCategorical ? "black" : getQuestionColor(scoreVal);
+                const color = isCategorical
+                  ? "black"
+                  : getQuestionColor(scoreVal);
 
                 return (
                   <li
@@ -809,11 +887,13 @@ function AssessmentDetails({ assessmentScores, categoryThresholds, answers }) {
                         title={`Score: ${scoreVal}`}
                       />
                     )}
-                    <span style={{ flex: 1, textAlign: "left", lineHeight: 1.4 }}>
-                      <strong>{keyToQuestionMap?.[qKey]}</strong>: {answerVal !== undefined ? answerVal.toString() : "N/A"}
+                    <span
+                      style={{ flex: 1, textAlign: "left", lineHeight: 1.4 }}
+                    >
+                      <strong>{keyToQuestionMap?.[qKey]}</strong>:{" "}
+                      {answerVal !== undefined ? answerVal.toString() : "N/A"}
                     </span>
                   </li>
-
                 );
               })}
             </ul>
@@ -823,9 +903,6 @@ function AssessmentDetails({ assessmentScores, categoryThresholds, answers }) {
     </div>
   );
 }
-
-
-
 
 // Helper function stays the same
 function describeArc(cx, cy, innerRadius, outerRadius, startAngle, endAngle) {
@@ -853,8 +930,6 @@ function describeArc(cx, cy, innerRadius, outerRadius, startAngle, endAngle) {
   `;
 }
 
-
-
 export default function ViewReports() {
   const [assessments, setAssessments] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
@@ -876,8 +951,6 @@ export default function ViewReports() {
   });
 
   useEffect(() => {
-
-
     const fetchPlan = async () => {
       const user = await getCurrentUser();
       try {
@@ -899,39 +972,99 @@ export default function ViewReports() {
         console.log("Fetched plan:", plan);
 
         const getChecked = (prefix, fields) => {
-          const checked = fields.filter(f => plan[f] === true);
+          const checked = fields.filter((f) => plan[f] === true);
           console.log(`Checked fields for ${prefix}:`, checked);
-          return checked.map(f => f.replace(prefix, ""));
+          return checked.map((f) => f.replace(prefix, ""));
         };
 
         const newSelectedFields = {
           triggers: getChecked("TG", [
-            "TGBetrayal", "TGBoundaries", "TGDisorder", "TGPain", "TGRejection",
-            "TGStress", "TGMemories", "TGUnjustTreatment", "TGUnpleasantConversations",
-            "TGUnsafeEnvironments", "TGOther"
+            "TGBetrayal",
+            "TGBoundaries",
+            "TGDisorder",
+            "TGPain",
+            "TGRejection",
+            "TGStress",
+            "TGMemories",
+            "TGUnjustTreatment",
+            "TGUnpleasantConversations",
+            "TGUnsafeEnvironments",
+            "TGOther",
           ]),
           warningSigns: getChecked("WS", [
-            "WSFlashbacks", "WSIncreasedAppetite", "WSDecreasedAppetite", "WSIntenseEmotions",
-            "WSDisconnecting", "WSTime", "WSNegativeSelfTalk", "WSNeglectingSelfCare",
-            "WSNightmares", "WSRecklessBehavior", "WSOther"
+            "WSFlashbacks",
+            "WSIncreasedAppetite",
+            "WSDecreasedAppetite",
+            "WSIntenseEmotions",
+            "WSDisconnecting",
+            "WSTime",
+            "WSNegativeSelfTalk",
+            "WSNeglectingSelfCare",
+            "WSNightmares",
+            "WSRecklessBehavior",
+            "WSOther",
           ]),
-          strengths: getChecked("PS", ["PSProblemSolving", "PSSelfEsteem", "PSChoiceAutonomy", "PSSelfCare", "PSSelfAwareness", "PSCreativity"])
-            .concat(getChecked("CS", ["CSForgiveness", "CSKindness", "CSGratitude", "CSPatience", "CSCourage"]))
-            .concat(getChecked("CMS", ["CMSCopingChoice", "CMSResilience", "CMSSelfRegulation", "CMSOptimism"]))
-            .concat(getChecked("COM", ["COMSupportSystem", "COMSocialIntelligence", "COMCommunication", "COMFaithCommunity", "COMAccomplishments"])),
+          strengths: getChecked("PS", [
+            "PSProblemSolving",
+            "PSSelfEsteem",
+            "PSChoiceAutonomy",
+            "PSSelfCare",
+            "PSSelfAwareness",
+            "PSCreativity",
+          ])
+            .concat(
+              getChecked("CS", [
+                "CSForgiveness",
+                "CSKindness",
+                "CSGratitude",
+                "CSPatience",
+                "CSCourage",
+              ])
+            )
+            .concat(
+              getChecked("CMS", [
+                "CMSCopingChoice",
+                "CMSResilience",
+                "CMSSelfRegulation",
+                "CMSOptimism",
+              ])
+            )
+            .concat(
+              getChecked("COM", [
+                "COMSupportSystem",
+                "COMSocialIntelligence",
+                "COMCommunication",
+                "COMFaithCommunity",
+                "COMAccomplishments",
+              ])
+            ),
           barriers: getChecked("BR", [
-            "BRStableHousing", "BRQualityHealthcare", "BRProfessionalAccess", "BRInsuranceCoverage",
-            "BRFinancialConstraints", "BREducationAttainment", "BRSocialStigma", "BRUnsupportiveCommunity",
-            "BRNonexistentCommunity", "BRCommunityResources", "BRProfessionalTrust", "BRHealthcareSystemTrust",
-            "BRCognitiveImpairments", "BRDependentCare", "BRTransportation", "BRTechnologyAccess",
-            "BRLanguage", "BRHealthcareProcess", "BROther", "BRResponseNote"
+            "BRStableHousing",
+            "BRQualityHealthcare",
+            "BRProfessionalAccess",
+            "BRInsuranceCoverage",
+            "BRFinancialConstraints",
+            "BREducationAttainment",
+            "BRSocialStigma",
+            "BRUnsupportiveCommunity",
+            "BRNonexistentCommunity",
+            "BRCommunityResources",
+            "BRProfessionalTrust",
+            "BRHealthcareSystemTrust",
+            "BRCognitiveImpairments",
+            "BRDependentCare",
+            "BRTransportation",
+            "BRTechnologyAccess",
+            "BRLanguage",
+            "BRHealthcareProcess",
+            "BROther",
+            "BRResponseNote",
           ]),
         };
 
         console.log("Selected fields to set:", newSelectedFields);
 
         setSelectedFields(newSelectedFields);
-
       } catch (err) {
         console.error("Error fetching plan:", err);
       }
@@ -958,7 +1091,8 @@ export default function ViewReports() {
           },
         });
 
-        const healthPlans = healthPlanResponse.data.listCreatePlans?.items || [];
+        const healthPlans =
+          healthPlanResponse.data.listCreatePlans?.items || [];
         const healthPlanId = healthPlans.length > 0 ? healthPlans[0].id : null;
         console.log("Health Plan ID:", healthPlanId);
 
@@ -976,9 +1110,9 @@ export default function ViewReports() {
           },
         });
 
-        const reviews = reviewResponse.data.listProfessionalReviews?.items || [];
+        const reviews =
+          reviewResponse.data.listProfessionalReviews?.items || [];
         setHealthPlanReviews(reviews);
-
       } catch (error) {
         console.error("Error fetching health plan reviews:", error);
         setHealthPlanReviews([]);
@@ -987,7 +1121,6 @@ export default function ViewReports() {
 
     fetchHealthPlanReviewsForClient();
   }, [viewFilter]);
-
 
   useEffect(() => {
     async function fetchProfessionalReviews() {
@@ -1001,9 +1134,9 @@ export default function ViewReports() {
           query: listProfessionalReviews,
           variables: {
             filter: {
-              ReviewedId: { eq: selectedId }
-            }
-          }
+              ReviewedId: { eq: selectedId },
+            },
+          },
         });
 
         const items = response.data.listProfessionalReviews?.items || [];
@@ -1017,13 +1150,17 @@ export default function ViewReports() {
     fetchProfessionalReviews();
   }, [selectedId, viewFilter]);
   // filtered plans based on dates
-  const filteredPlans = trackPlans.filter(plan => {
+  const filteredPlans = trackPlans.filter((plan) => {
     if (!plan.CompletedDate) return false;
     // direct string comparison
     return plan.CompletedDate >= startDate && plan.CompletedDate <= endDate;
   });
 
-  function RadialScoreChart({ scores, thresholds = categoryThresholds, size = isMobile ? 200 : 400 }) {
+  function RadialScoreChart({
+    scores,
+    thresholds = categoryThresholds,
+    size = isMobile ? 200 : 400,
+  }) {
     const center = size / 2;
     const radiusStep = isMobile ? 20 : 40;
 
@@ -1040,7 +1177,14 @@ export default function ViewReports() {
     const ringColors = ["#28a745", "#ffc107", "#B00000"];
 
     // Helper to describe arcs for rings (outerRadius added for thickness)
-    function describeArc(cx, cy, innerRadius, outerRadius, startAngle, endAngle) {
+    function describeArc(
+      cx,
+      cy,
+      innerRadius,
+      outerRadius,
+      startAngle,
+      endAngle
+    ) {
       const rad = (deg) => (deg * Math.PI) / 180;
 
       // Points for outer arc
@@ -1077,7 +1221,12 @@ export default function ViewReports() {
     };
 
     return (
-      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} style={{ background: "transparent" }}>
+      <svg
+        width={size}
+        height={size}
+        viewBox={`0 0 ${size} ${size}`}
+        style={{ background: "transparent" }}
+      >
         <g transform={`rotate(-30 ${center} ${center})`}>
           {/* Colored background split into pie slices */}
           {categories.map((cat, i) => {
@@ -1089,14 +1238,20 @@ export default function ViewReports() {
             return (
               <path
                 key={`bg-slice-${i}`}
-                d={describeArc(center, center, innerRadius, outerRadius, startAngle, endAngle)}
+                d={describeArc(
+                  center,
+                  center,
+                  innerRadius,
+                  outerRadius,
+                  startAngle,
+                  endAngle
+                )}
                 fill="rgba(235, 235, 235, 1)" // light orange color
                 stroke="white"
                 strokeWidth={2}
               />
             );
           })}
-
 
           {/* Your existing rings per slice */}
           {categories.map((cat, i) => {
@@ -1114,7 +1269,14 @@ export default function ViewReports() {
               rings.push(
                 <path
                   key={`${cat.key}-ring-${ring}`}
-                  d={describeArc(center, center, innerRadius, outerRadius, startAngle, endAngle)}
+                  d={describeArc(
+                    center,
+                    center,
+                    innerRadius,
+                    outerRadius,
+                    startAngle,
+                    endAngle
+                  )}
                   fill={ringColors[ring]}
                   stroke="white"
                   strokeWidth="2"
@@ -1135,7 +1297,14 @@ export default function ViewReports() {
             return (
               <path
                 key={`grey-ring-slice-${i}`}
-                d={describeArc(center, center, innerRadius, outerRadius, startAngle, endAngle)}
+                d={describeArc(
+                  center,
+                  center,
+                  innerRadius,
+                  outerRadius,
+                  startAngle,
+                  endAngle
+                )}
                 fill="#888888"
                 stroke="white"
                 strokeWidth={2}
@@ -1157,7 +1326,13 @@ export default function ViewReports() {
                 {/* Define path for text */}
                 <path
                   id={pathId}
-                  d={describeTextArc(center, center, textRadius, startAngle + 5, endAngle - 5)} // small padding inside slice angle
+                  d={describeTextArc(
+                    center,
+                    center,
+                    textRadius,
+                    startAngle + 5,
+                    endAngle - 5
+                  )} // small padding inside slice angle
                   fill="none"
                 />
                 <text
@@ -1166,10 +1341,7 @@ export default function ViewReports() {
                   fontWeight="Normal"
                   textAnchor="middle"
                 >
-                  <textPath
-                    href={`#${pathId}`}
-                    startOffset="50%"
-                  >
+                  <textPath href={`#${pathId}`} startOffset="50%">
                     {cat.label}
                   </textPath>
                 </text>
@@ -1177,7 +1349,6 @@ export default function ViewReports() {
             );
           })}
         </g>
-
       </svg>
     );
   }
@@ -1194,7 +1365,6 @@ export default function ViewReports() {
   }, []);
   useEffect(() => {
     async function loadAssessmentScores() {
-
       if (!selectedAssessment) return;
 
       try {
@@ -1250,7 +1420,8 @@ export default function ViewReports() {
           },
         });
 
-        const assessmentsRaw = assessmentResult.data.listAssessmentAnswers.items;
+        const assessmentsRaw =
+          assessmentResult.data.listAssessmentAnswers.items;
         const sortedAssessments = [...assessmentsRaw].sort(
           (a, b) => new Date(b.CompletedDate) - new Date(a.CompletedDate)
         );
@@ -1275,7 +1446,10 @@ export default function ViewReports() {
         setTrackPlans(trackPlansRaw); // ← No more filtering by status
       } catch (error) {
         console.error("Error loading data:", error);
-        alert("Failed to load data: " + (error?.errors?.[0]?.message || error.message || "Unknown error"));
+        alert(
+          "Failed to load data: " +
+            (error?.errors?.[0]?.message || error.message || "Unknown error")
+        );
       }
     }
 
@@ -1288,7 +1462,9 @@ export default function ViewReports() {
   function svgToPng(svgElement, width, height) {
     return new Promise((resolve) => {
       const svgData = new XMLSerializer().serializeToString(svgElement);
-      const svgBlob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
+      const svgBlob = new Blob([svgData], {
+        type: "image/svg+xml;charset=utf-8",
+      });
       const url = URL.createObjectURL(svgBlob);
 
       const img = new Image();
@@ -1337,7 +1513,11 @@ export default function ViewReports() {
 
     let logoBase64 = null;
     try {
-      logoBase64 = await loadImageAsBase64("/Outcomes-Excellence-Logo-Badge-Grow-White.png", 150, 50);
+      logoBase64 = await loadImageAsBase64(
+        "/Outcomes-Excellence-Logo-Badge-Grow-White.png",
+        150,
+        50
+      );
     } catch (err) {
       console.error("Logo load failed:", err);
     }
@@ -1364,10 +1544,6 @@ export default function ViewReports() {
     doc.text(title, (pageWidth - titleWidth) / 2, headerHeight - 8);
     const attr = await fetchUserAttributes();
 
-
-
-
-
     const addSelectedFields = (fieldsObj) => {
       const sections = [
         { label: "Triggers", items: fieldsObj.triggers },
@@ -1379,18 +1555,16 @@ export default function ViewReports() {
       doc.setFontSize(12);
       doc.setTextColor("#004a99");
 
-    const clientName = attr.given_name || "Unknown";
-    const clientLastName = attr.family_name || "";
+      const clientName = attr.given_name || "Unknown";
+      const clientLastName = attr.family_name || "";
 
-    // Then render
-    [
-      `Name: ${clientName} ${clientLastName}`,
-    ].forEach(line => {
-      doc.text(line, 20, y);
-      y += 8;
-    });
-    y += 10;
-      sections.forEach(section => {
+      // Then render
+      [`Name: ${clientName} ${clientLastName}`].forEach((line) => {
+        doc.text(line, 20, y);
+        y += 8;
+      });
+      y += 10;
+      sections.forEach((section) => {
         doc.text(`${section.label}:`, 20, y);
         y += 6;
 
@@ -1398,9 +1572,9 @@ export default function ViewReports() {
         doc.setTextColor(0, 0, 0);
 
         if (section.items.length > 0) {
-          section.items.forEach(item => {
+          section.items.forEach((item) => {
             const lines = doc.splitTextToSize(`- ${item}`, 170);
-            lines.forEach(line => {
+            lines.forEach((line) => {
               doc.text(line, 25, y);
               y += 5;
             });
@@ -1460,18 +1634,18 @@ export default function ViewReports() {
         });
       });
 
-
-
       if (includePercentages) {
         // WEEKLY TABLE
         const weekRows = [];
         for (let i = 1; i <= 8; i++) {
-          const date = plan[`Update${i}Date`] != null ? plan[`Update${i}Date`] : "N/A";
-          const note = plan[`Update${i}Note`] != null ? plan[`Update${i}Note`] : "No note provided.";
+          const date =
+            plan[`Update${i}Date`] != null ? plan[`Update${i}Date`] : "N/A";
+          const note =
+            plan[`Update${i}Note`] != null
+              ? plan[`Update${i}Note`]
+              : "No note provided.";
           weekRows.push([`Update ${i}`, date, note]);
         }
-
-
 
         autoTable(doc, {
           startY: y + 4,
@@ -1482,12 +1656,11 @@ export default function ViewReports() {
           margin: { left: 20, right: 20 },
           theme: "grid",
           columnStyles: {
-            0: { cellWidth: 25 },   // "Update"
-            1: { cellWidth: 40 },   // "Date"
-            2: { cellWidth: 105 },  // "Note" — takes more space
+            0: { cellWidth: 25 }, // "Update"
+            1: { cellWidth: 40 }, // "Date"
+            2: { cellWidth: 105 }, // "Note" — takes more space
           },
         });
-
 
         y = doc.lastAutoTable.finalY + 10;
         const percent = Math.min(plan.Percentage || 0, 100);
@@ -1502,8 +1675,6 @@ export default function ViewReports() {
         y += 10;
       }
 
-
-
       if (y > 270) {
         doc.addPage();
         y = 20;
@@ -1512,7 +1683,8 @@ export default function ViewReports() {
 
     trackPlans.forEach((plan, index) => addPlan(plan, index));
     if (healthPlanReviews && healthPlanReviews.length > 0) {
-      if (y > 270) {  // page break if near bottom
+      if (y > 270) {
+        // page break if near bottom
         doc.addPage();
         y = 20;
       }
@@ -1531,9 +1703,17 @@ export default function ViewReports() {
           y = 20;
         }
 
-        doc.text(`Professional Name: ${review.ProfessionalName || "N/A"}`, 25, y);
+        doc.text(
+          `Professional Name: ${review.ProfessionalName || "N/A"}`,
+          25,
+          y
+        );
         y += 7;
-        doc.text(`Professional Role: ${review.ProfessionalRole || "N/A"}`, 25, y);
+        doc.text(
+          `Professional Role: ${review.ProfessionalRole || "N/A"}`,
+          25,
+          y
+        );
         y += 7;
         doc.text(`Date: ${review.ReviewDate || "N/A"}`, 25, y);
         y += 7;
@@ -1577,7 +1757,11 @@ export default function ViewReports() {
 
     let logoBase64 = null;
     try {
-      logoBase64 = await loadImageAsBase64("/Outcomes-Excellence-Logo-Badge-Grow-White.png", 150, 50);
+      logoBase64 = await loadImageAsBase64(
+        "/Outcomes-Excellence-Logo-Badge-Grow-White.png",
+        150,
+        50
+      );
     } catch (err) {
       console.error("Logo load failed:", err);
     }
@@ -1587,7 +1771,8 @@ export default function ViewReports() {
       const t = categoryThresholds[domainKey];
       if (!t) return "gray";
       for (const threshold of t) {
-        if (score >= threshold.min && score <= threshold.max) return threshold.color;
+        if (score >= threshold.min && score <= threshold.max)
+          return threshold.color;
       }
       return "gray";
     };
@@ -1625,28 +1810,24 @@ export default function ViewReports() {
     doc.setFontSize(18);
     const titleWidth = doc.getTextWidth(title);
 
-
-
     doc.text(title, (pageWidth - titleWidth) / 2, headerHeight - 8);
 
     // Info section
     let y = headerHeight + 15;
     doc.setFontSize(12);
     doc.setTextColor("#004a99");
-    const attr = fetchUserAttributes()
+    const attr = fetchUserAttributes();
     const clientName = (await attr).given_name; // replace with actual client name
     const clientNamel = (await attr).family_name; // replace with actual client name
     const rawDate = selectedAssessment?.createdAt || selectedAssessment?.date;
-const assessmentDate = rawDate
-  ? new Date(rawDate).toLocaleDateString() // formats as "MM/DD/YYYY" by default
-  : "N/A";
-
+    const assessmentDate = rawDate
+      ? new Date(rawDate).toLocaleDateString() // formats as "MM/DD/YYYY" by default
+      : "N/A";
 
     // then render them
     [
       `Name: ${clientName} ${clientNamel}`,
       `Assessment Date: ${assessmentDate}`,
-
     ].forEach((line) => {
       doc.text(line, 20, y);
       y += 8;
@@ -1670,11 +1851,108 @@ const assessmentDate = rawDate
 
     // --- Domains ---
     const domains = [
-      { key: "CMScore", label: "Coping Mechanisms", questionKeys: ["CMAlcohol", "CMDrugs", "CMOvereating", "CMSmoking", "CMGaming", "CMShopping", "CMGambling", "CMSex", "CMPorn", "CMBlaming", "CMHurting", "CMDisengage", "CMArt", "CMMusic", "CMPoetry", "CMReading", "CMGroups", "CMCounseling", "CMVenting", "CMWriting", "CMSensory", "CMDancing", "CMExercising", "CMWalking", "CMChange", "CMAnalyze", "CMDaydream", "CMPositive"] },
-      { key: "MHScore", label: "Mental Health Symptoms", questionKeys: ["MHSleeplessness", "MHAlcoholUse", "MHAnxiety", "MHDepression", "MHDrugUse", "MHGrief", "MHGuilt", "MHIrritability", "MHStress", "MHRegret", "MHSuicidalThoughts", "MHLoneliness", "MHWorry"] },
-      { key: "PHScore", label: "Physical Health Behaviors", questionKeys: ["PHVegeFruits", "PHBeanLentils", "PHGrainBreads", "PHDairy", "PHMeat", "PHFishSeafood", "PHSweets", "PHWater", "PHPhysicalActivity"] },
-      { key: "SHScore", label: "Spiritual Health", questionKeys: ["SHSpiritualDefine", "SHSpiritualIntegrate", "SHPrayer", "SHSpiritualActivity", "SHReadText", "SHAlignText", "SHCommunity"] },
-      { key: "OLScore", label: "Outlook On Life", questionKeys: ["OLHope", "OLPeace", "OLLearning", "OLJoy", "OLStable", "OLSafety", "OLKindness", "OLForgiveness", "OLPatience", "OLRelationships", "OLBoundaries", "OLEUnpleasant", "OLEPleasant", "OLEControl", "OLENumber"] },
+      {
+        key: "CMScore",
+        label: "Coping Mechanisms",
+        questionKeys: [
+          "CMAlcohol",
+          "CMDrugs",
+          "CMOvereating",
+          "CMSmoking",
+          "CMGaming",
+          "CMShopping",
+          "CMGambling",
+          "CMSex",
+          "CMPorn",
+          "CMBlaming",
+          "CMHurting",
+          "CMDisengage",
+          "CMArt",
+          "CMMusic",
+          "CMPoetry",
+          "CMReading",
+          "CMGroups",
+          "CMCounseling",
+          "CMVenting",
+          "CMWriting",
+          "CMSensory",
+          "CMDancing",
+          "CMExercising",
+          "CMWalking",
+          "CMChange",
+          "CMAnalyze",
+          "CMDaydream",
+          "CMPositive",
+        ],
+      },
+      {
+        key: "MHScore",
+        label: "Mental Health Symptoms",
+        questionKeys: [
+          "MHSleeplessness",
+          "MHAlcoholUse",
+          "MHAnxiety",
+          "MHDepression",
+          "MHDrugUse",
+          "MHGrief",
+          "MHGuilt",
+          "MHIrritability",
+          "MHStress",
+          "MHRegret",
+          "MHSuicidalThoughts",
+          "MHLoneliness",
+          "MHWorry",
+        ],
+      },
+      {
+        key: "PHScore",
+        label: "Physical Health Behaviors",
+        questionKeys: [
+          "PHVegeFruits",
+          "PHBeanLentils",
+          "PHGrainBreads",
+          "PHDairy",
+          "PHMeat",
+          "PHFishSeafood",
+          "PHSweets",
+          "PHWater",
+          "PHPhysicalActivity",
+        ],
+      },
+      {
+        key: "SHScore",
+        label: "Spiritual Health",
+        questionKeys: [
+          "SHSpiritualDefine",
+          "SHSpiritualIntegrate",
+          "SHPrayer",
+          "SHSpiritualActivity",
+          "SHReadText",
+          "SHAlignText",
+          "SHCommunity",
+        ],
+      },
+      {
+        key: "OLScore",
+        label: "Outlook On Life",
+        questionKeys: [
+          "OLHope",
+          "OLPeace",
+          "OLLearning",
+          "OLJoy",
+          "OLStable",
+          "OLSafety",
+          "OLKindness",
+          "OLForgiveness",
+          "OLPatience",
+          "OLRelationships",
+          "OLBoundaries",
+          "OLEUnpleasant",
+          "OLEPleasant",
+          "OLEControl",
+          "OLENumber",
+        ],
+      },
     ];
 
     // --- Loop over domains and questions ---
@@ -1720,7 +1998,8 @@ const assessmentDate = rawDate
         doc.circle(22, y - 1, 2, "F");
 
         const questionText = keyToQuestionMap?.[qKey] ?? qKey;
-        const displayVal = typeof valAnswer === "string" ? valAnswer : valAnswer.toString();
+        const displayVal =
+          typeof valAnswer === "string" ? valAnswer : valAnswer.toString();
         const text = `${questionText}: ${displayVal}`;
 
         const lines = doc.splitTextToSize(text, 160);
@@ -1733,7 +2012,8 @@ const assessmentDate = rawDate
       y += 12;
     });
     if (professionalReviews && professionalReviews.length > 0) {
-      if (y > 270) {  // page break if near bottom
+      if (y > 270) {
+        // page break if near bottom
         doc.addPage();
         y = 20;
       }
@@ -1752,9 +2032,17 @@ const assessmentDate = rawDate
           y = 20;
         }
 
-        doc.text(`Professional Name: ${review.ProfessionalName || "N/A"}`, 25, y);
+        doc.text(
+          `Professional Name: ${review.ProfessionalName || "N/A"}`,
+          25,
+          y
+        );
         y += 7;
-        doc.text(`Professional Role: ${review.ProfessionalRole || "N/A"}`, 25, y);
+        doc.text(
+          `Professional Role: ${review.ProfessionalRole || "N/A"}`,
+          25,
+          y
+        );
         y += 7;
         doc.text(`Date: ${review.ReviewDate || "N/A"}`, 25, y);
         y += 7;
@@ -1765,10 +2053,11 @@ const assessmentDate = rawDate
     doc.save("AssessmentResults.pdf");
   };
 
-
   function svgToPngBase64(svgElement, width, height, callback) {
     const svgData = new XMLSerializer().serializeToString(svgElement);
-    const svgBlob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
+    const svgBlob = new Blob([svgData], {
+      type: "image/svg+xml;charset=utf-8",
+    });
     const url = URL.createObjectURL(svgBlob);
 
     const img = new Image();
@@ -1795,9 +2084,7 @@ const assessmentDate = rawDate
     img.src = url;
   }
 
-
   return (
-
     <div
       style={{
         display: "flex",
@@ -1873,14 +2160,10 @@ const assessmentDate = rawDate
           fontWeight: "700",
 
           fontSize: "2rem",
-
         }}
       >
-        {viewFilter === "assessments"
-          ? "View Assessments"
-          : "View Actions"}
+        {viewFilter === "assessments" ? "View Assessments" : "View Actions"}
       </h2>
-
 
       {viewFilter === "assessments" ? (
         assessments.length > 0 ? (
@@ -1947,7 +2230,7 @@ const assessmentDate = rawDate
                 boxShadow: "0 2px 6px rgba(0, 74, 153, 0.3)",
               }}
             >
-              <div id="radialChartContainer" >
+              <div id="radialChartContainer">
                 <RadialScoreChart scores={assessmentScores} />
               </div>
 
@@ -2034,14 +2317,13 @@ const assessmentDate = rawDate
         <div
           style={{
             textAlign: "center",
-            width: "100%",
+            width: "130%",
             marginTop: 20,
             alignItems: "center",
             flexDirection: "column",
             display: "flex",
           }}
         >
-
           <div
             style={{
               display: "flex",
@@ -2058,7 +2340,12 @@ const assessmentDate = rawDate
             <div style={{ flex: "1 1 150px", minWidth: 150 }}>
               <label
                 htmlFor="start-date"
-                style={{ display: "block", marginBottom: 1, fontWeight: "600", color: "#004a99" }}
+                style={{
+                  display: "block",
+                  marginBottom: 1,
+                  fontWeight: "600",
+                  color: "#004a99",
+                }}
               >
                 Start Date
               </label>
@@ -2082,7 +2369,12 @@ const assessmentDate = rawDate
             <div style={{ flex: "1 1 150px", minWidth: 150 }}>
               <label
                 htmlFor="end-date"
-                style={{ display: "block", marginBottom: 1, fontWeight: "600", color: "#004a99" }}
+                style={{
+                  display: "block",
+                  marginBottom: 1,
+                  fontWeight: "600",
+                  color: "#004a99",
+                }}
               >
                 End Date
               </label>
@@ -2145,7 +2437,6 @@ const assessmentDate = rawDate
                   height: 40,
                   cursor: "pointer",
                   marginBottom: 20,
-
                 }}
               >
                 {showPercentages ? "Hide" : "Show"} Progress Percentages
@@ -2167,36 +2458,75 @@ const assessmentDate = rawDate
                     boxShadow: "0 2px 6px rgba(0, 74, 153, 0.3)",
                     marginLeft: "auto",
                     marginRight: "auto", // ✅ centers the block
-
                   }}
                 >
                   <h3>Triggers</h3>
                   {selectedFields.triggers.length > 0 ? (
-                    <ul style={{ listStyleType: "none", padding: 0, marginBottom: 16 }}>
-                      {selectedFields.triggers.map(t => <li key={t}>{t}</li>)}
+                    <ul
+                      style={{
+                        listStyleType: "none",
+                        padding: 0,
+                        marginBottom: 16,
+                      }}
+                    >
+                      {selectedFields.triggers.map((t) => (
+                        <li key={t}>{t}</li>
+                      ))}
                     </ul>
-                  ) : <p style={{ marginBottom: 16 }}>None selected</p>}
+                  ) : (
+                    <p style={{ marginBottom: 16 }}>None selected</p>
+                  )}
 
                   <h3>Warning Signs</h3>
                   {selectedFields.warningSigns.length > 0 ? (
-                    <ul style={{ listStyleType: "none", padding: 0, marginBottom: 16 }}>
-                      {selectedFields.warningSigns.map(w => <li key={w}>{w}</li>)}
+                    <ul
+                      style={{
+                        listStyleType: "none",
+                        padding: 0,
+                        marginBottom: 16,
+                      }}
+                    >
+                      {selectedFields.warningSigns.map((w) => (
+                        <li key={w}>{w}</li>
+                      ))}
                     </ul>
-                  ) : <p style={{ marginBottom: 16 }}>None selected</p>}
+                  ) : (
+                    <p style={{ marginBottom: 16 }}>None selected</p>
+                  )}
 
                   <h3>Strengths</h3>
                   {selectedFields.strengths.length > 0 ? (
-                    <ul style={{ listStyleType: "none", padding: 0, marginBottom: 16 }}>
-                      {selectedFields.strengths.map(s => <li key={s}>{s}</li>)}
+                    <ul
+                      style={{
+                        listStyleType: "none",
+                        padding: 0,
+                        marginBottom: 16,
+                      }}
+                    >
+                      {selectedFields.strengths.map((s) => (
+                        <li key={s}>{s}</li>
+                      ))}
                     </ul>
-                  ) : <p style={{ marginBottom: 16 }}>None selected</p>}
+                  ) : (
+                    <p style={{ marginBottom: 16 }}>None selected</p>
+                  )}
 
                   <h3>Barriers</h3>
                   {selectedFields.barriers.length > 0 ? (
-                    <ul style={{ listStyleType: "none", padding: 0, marginBottom: 16 }}>
-                      {selectedFields.barriers.map(b => <li key={b}>{b}</li>)}
+                    <ul
+                      style={{
+                        listStyleType: "none",
+                        padding: 0,
+                        marginBottom: 16,
+                      }}
+                    >
+                      {selectedFields.barriers.map((b) => (
+                        <li key={b}>{b}</li>
+                      ))}
                     </ul>
-                  ) : <p style={{ marginBottom: 16 }}>None selected</p>}
+                  ) : (
+                    <p style={{ marginBottom: 16 }}>None selected</p>
+                  )}
                   {filteredPlans.map((plan) => (
                     <div
                       key={plan.id}
@@ -2215,7 +2545,8 @@ const assessmentDate = rawDate
                         <strong>Question:</strong> {plan.ActionQuestion}
                       </p>
                       <p style={styles.planText}>
-                        <strong>Start Date:</strong> {plan.CompletedDate || "Unknown"}
+                        <strong>Start Date:</strong>{" "}
+                        {plan.CompletedDate || "Unknown"}
                       </p>
                       <p style={styles.planText}>
                         <strong>Frequency:</strong> {plan.Frequency}
@@ -2258,7 +2589,6 @@ const assessmentDate = rawDate
                           <PercentageWheel percentage={plan.Percentage || 0} />
                         </div>
                       )}
-
                     </div>
                   ))}
                   {healthPlanReviews.length > 0 ? (
@@ -2288,8 +2618,10 @@ const assessmentDate = rawDate
                               boxShadow: "0 1px 3px rgba(0, 74, 153, 0.2)",
                             }}
                           >
-                            <strong>Name:</strong> {review.ProfessionalName} <br />
-                            <strong>Role:</strong> {review.ProfessionalRole} <br />
+                            <strong>Name:</strong> {review.ProfessionalName}{" "}
+                            <br />
+                            <strong>Role:</strong> {review.ProfessionalRole}{" "}
+                            <br />
                             <strong>Date:</strong> {review.ReviewDate}
                           </li>
                         ))}
@@ -2310,5 +2642,4 @@ const assessmentDate = rawDate
       )}
     </div>
   );
-
 }

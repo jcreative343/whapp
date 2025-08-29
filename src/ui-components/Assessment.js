@@ -6,37 +6,95 @@ import { listAssessmentAnswers, listUserLinks } from "../graphql/queries";
 const client = generateClient();
 
 const traumaExperiences = [
-  { key: "TRHurtfulNames", label: "Frequently Called Hurtful Names and Cussed at By Parent, Guardian, or Lover (e.g. mental abuse)" },
-  { key: "TRNoNurturing", label: "Not Provided Attention, Support, or Nurturing Consistently By Parent or Guardian (e.g. emotional abuse)" },
-  { key: "TRHit", label: "Punched, Smacked, Pushed, Tripped, etc. By a Parent, Guardian, or Lover (e.g. physical abuse)" },
-  { key: "TRNeedsNotMet", label: "Not Provided Food or Clothing Consistently By a Parent or Guardian (e.g. neglect)" },
-  { key: "TRForcedSex", label: "Involved in Unwanted or Forced Sexual Activity (e.g. rape)" },
-  { key: "TRResponsible", label: "Adult Responsibilities as a Child Consistently (e.g. paying bills)" },
+  {
+    key: "TRHurtfulNames",
+    label:
+      "Frequently Called Hurtful Names and Cussed at By Parent, Guardian, or Lover (e.g. mental abuse)",
+  },
+  {
+    key: "TRNoNurturing",
+    label:
+      "Not Provided Attention, Support, or Nurturing Consistently By Parent or Guardian (e.g. emotional abuse)",
+  },
+  {
+    key: "TRHit",
+    label:
+      "Punched, Smacked, Pushed, Tripped, etc. By a Parent, Guardian, or Lover (e.g. physical abuse)",
+  },
+  {
+    key: "TRNeedsNotMet",
+    label:
+      "Not Provided Food or Clothing Consistently By a Parent or Guardian (e.g. neglect)",
+  },
+  {
+    key: "TRForcedSex",
+    label: "Involved in Unwanted or Forced Sexual Activity (e.g. rape)",
+  },
+  {
+    key: "TRResponsible",
+    label: "Adult Responsibilities as a Child Consistently (e.g. paying bills)",
+  },
   { key: "TRViolence", label: "Witnessed Violence Consistently at Home" },
-  { key: "TRSubstanceAbuse", label: "Witnessed Substance Abuse Consistently at Home" },
-  { key: "TRMentalIllness", label: "Witnessed Mental Illness Consistently at Home" },
+  {
+    key: "TRSubstanceAbuse",
+    label: "Witnessed Substance Abuse Consistently at Home",
+  },
+  {
+    key: "TRMentalIllness",
+    label: "Witnessed Mental Illness Consistently at Home",
+  },
   { key: "TRParentDivorce", label: "Witnessed Parent(s) Separation/Divorce" },
   { key: "TRParentIncarcerated", label: "Witnessed Parent(s) Incarcerated" },
-  { key: "TRHomelessness", label: "Experienced Homelessness or Moving Consistently (e.g. shelter, street, foster care)" },
-  { key: "TRBodyFunction", label: "Experienced a Loss of Limb(s), Major Bodily Functions, or Extreme Sickness (e.g. cancer)" },
-  { key: "TRNaturalDisaster", label: "Experienced a Significant Natural Disaster (e.g. loss of home/family)" },
-  { key: "TRDirectTerrorism", label: "Directly Affected by Terrorism, Community, or School Violence (e.g. gangs, racism)" },
-  { key: "TRIndirectTerrorism", label: "Indirectly Affected by Terrorism, Community, or School Violence (e.g. school shooting)" },
-  { key: "TRLovedOne", label: "Absent, Inactive, or Death of a Close Loved One (e.g. parental figure or child)" }
+  {
+    key: "TRHomelessness",
+    label:
+      "Experienced Homelessness or Moving Consistently (e.g. shelter, street, foster care)",
+  },
+  {
+    key: "TRBodyFunction",
+    label:
+      "Experienced a Loss of Limb(s), Major Bodily Functions, or Extreme Sickness (e.g. cancer)",
+  },
+  {
+    key: "TRNaturalDisaster",
+    label:
+      "Experienced a Significant Natural Disaster (e.g. loss of home/family)",
+  },
+  {
+    key: "TRDirectTerrorism",
+    label:
+      "Directly Affected by Terrorism, Community, or School Violence (e.g. gangs, racism)",
+  },
+  {
+    key: "TRIndirectTerrorism",
+    label:
+      "Indirectly Affected by Terrorism, Community, or School Violence (e.g. school shooting)",
+  },
+  {
+    key: "TRLovedOne",
+    label:
+      "Absent, Inactive, or Death of a Close Loved One (e.g. parental figure or child)",
+  },
 ];
 
 const traumaResponseOptions = [
-  { key: "TRResponseProfessional", label: "I talked to a professional or counselor about my trauma" },
-  { key: "TRResponseFamilyFriend", label: "I talked to my family and/or friends about my trauma" },
+  {
+    key: "TRResponseProfessional",
+    label: "I talked to a professional or counselor about my trauma",
+  },
+  {
+    key: "TRResponseFamilyFriend",
+    label: "I talked to my family and/or friends about my trauma",
+  },
   { key: "TRResponseGod", label: "I talked to God about my trauma" },
   { key: "TRResponseNoOne", label: "I didn’t talk to anyone about my trauma" },
-  { key: "TRNoTrauma", label: "N/A (I didn't experience trauma)" }
+  { key: "TRNoTrauma", label: "N/A (I didn't experience trauma)" },
 ];
 
 const considerTraumaOptions = [
   { key: "Yes", label: "Yes" },
   { key: "No", label: "No" },
-  { key: "NA", label: "N/A (I didn't experience any of the above)" }
+  { key: "NA", label: "N/A (I didn't experience any of the above)" },
 ];
 
 const copingMechanisms = [
@@ -67,7 +125,7 @@ const copingMechanisms = [
   { key: "CMChange", label: "Change Something for Different Results" },
   { key: "CMAnalyze", label: "Analyze the Situation for Better Understanding" },
   { key: "CMDaydream", label: "Daydream or Imagine a Better Situation" },
-  { key: "CMPositive", label: "Focus on the Positives" }
+  { key: "CMPositive", label: "Focus on the Positives" },
 ];
 
 const frequencyOptions = [
@@ -75,7 +133,7 @@ const frequencyOptions = [
   "3-4x Week",
   "1-2x Week",
   "1-2x Month",
-  "N/A-Rare"
+  "N/A-Rare",
 ];
 
 const frequencyOptions2 = [
@@ -83,20 +141,14 @@ const frequencyOptions2 = [
   "Agree",
   "Neither",
   "Disagree",
-  "Strongly Disagree"
+  "Strongly Disagree",
 ];
-const frequencyOptions3 = [
-  "0-5",
-  "6-9",
-  "10-19",
-  "20-29",
-  "30+"
-];
+const frequencyOptions3 = ["0-5", "6-9", "10-19", "20-29", "30+"];
 const mentalHealthoptions = [
   { key: "MHDxPTSD", label: "Post-Traumatic Stress Disorder Diagnosis" },
   { key: "MHDxDepression", label: "Depression Diagnosis" },
   { key: "MHDxSUD", label: "Substance Use Disorder Diagnosis" },
-  { key: "MHDxOtherMental", label: "Other Serious Mental Health Diagnosis" }
+  { key: "MHDxOtherMental", label: "Other Serious Mental Health Diagnosis" },
 ];
 const mentalHealth = [
   { key: "MHSleeplessness", label: "Sleeplessness" },
@@ -130,7 +182,10 @@ const physicalHealthOptions = [
   { key: "PHDxVitE", label: "Severe Vitamin E Deficiency" },
   { key: "PHDxVitK", label: "Severe Vitamin K Deficiency" },
   { key: "PHDxAutoimmune", label: "Autoimmune Disease Diagnosis" },
-  { key: "PHDxOtherPhysical", label: "Other Serious Physical Health Diagnosis" }
+  {
+    key: "PHDxOtherPhysical",
+    label: "Other Serious Physical Health Diagnosis",
+  },
 ];
 
 const physicalHealth = [
@@ -142,17 +197,29 @@ const physicalHealth = [
   { key: "PHFishSeafood", label: "Fish/seafood?" },
   { key: "PHSweets", label: "Sweets/desserts?" },
   { key: "PHWater", label: "Water?" },
-  { key: "PHPhysicalActivity", label: "Physically active?" }
+  { key: "PHPhysicalActivity", label: "Physically active?" },
 ];
 
 const spiritualHealthOptions = [
   { key: "SHSpiritualDefine", label: "Spirituality helps me define my goals." },
-  { key: "SHSpiritualIntegrate", label: "Spirituality is integrated into my whole life." },
+  {
+    key: "SHSpiritualIntegrate",
+    label: "Spirituality is integrated into my whole life.",
+  },
   { key: "SHPrayer", label: "Pray?" },
-  { key: "SHSpiritualActivity", label: "Communicate with like-minded individuals?" },
+  {
+    key: "SHSpiritualActivity",
+    label: "Communicate with like-minded individuals?",
+  },
   { key: "SHReadText", label: "Read religious text?" },
-  { key: "SHAlignText", label: "Consciously try to align your life with religious texts?" },
-  { key: "SHCommunity", label: "Participate in religious gatherings / groups / prayer?" }
+  {
+    key: "SHAlignText",
+    label: "Consciously try to align your life with religious texts?",
+  },
+  {
+    key: "SHCommunity",
+    label: "Participate in religious gatherings / groups / prayer?",
+  },
 ];
 
 const outlookonlife = [
@@ -163,96 +230,264 @@ const outlookonlife = [
   { key: "OLStable", label: "Stable (e.g. housing, finances, etc.)?" },
   { key: "OLSafety", label: "Safe and secure?" },
   { key: "OLKindness", label: "Kindness toward others?" },
-  { key: "OLForgiveness", label: "Like you were able to forgive yourself and others?" },
+  {
+    key: "OLForgiveness",
+    label: "Like you were able to forgive yourself and others?",
+  },
   { key: "OLPatience", label: "Patience with yourself and others?" },
   { key: "OLRelationships", label: "Supported in your relationships?" },
-  { key: "OLBoundaries", label: "Like you were able to maintain healthy boundaries?" },
-  { key: "OLEUnpleasant", label: "Unpleasant emotions (e.g. frustration, irritability)?" },
-  { key: "OLEPleasant", label: "Pleasant emotions (e.g. appreciation, confidence)?" },
+  {
+    key: "OLBoundaries",
+    label: "Like you were able to maintain healthy boundaries?",
+  },
+  {
+    key: "OLEUnpleasant",
+    label: "Unpleasant emotions (e.g. frustration, irritability)?",
+  },
+  {
+    key: "OLEPleasant",
+    label: "Pleasant emotions (e.g. appreciation, confidence)?",
+  },
   { key: "OLEControl", label: "Control over your emotions?" },
-  { key: "OLENumber", label: "Approximately how many emotions do you communicate consistently?" }
+  {
+    key: "OLENumber",
+    label: "Approximately how many emotions do you communicate consistently?",
+  },
 ];
 
-
 const schemaDefaults = {
-  MHDxPTSD: false, MHDxDepression: false, MHDxSUD: false, MHDxOtherMental: false,
-  MHSleeplessness: "No Answer", MHAlcoholUse: "No Answer", MHAnxiety: "No Answer", MHDepression: "No Answer",
-  MHDrugUse: "No Answer", MHGrief: "No Answer", MHGuilt: "No Answer", MHIrritability: "No Answer",
-  MHStress: "No Answer", MHRegret: "No Answer", MHSuicidalThoughts: "No Answer", MHLoneliness: "No Answer", MHWorry: "No Answer",
+  MHDxPTSD: false,
+  MHDxDepression: false,
+  MHDxSUD: false,
+  MHDxOtherMental: false,
+  MHSleeplessness: "No Answer",
+  MHAlcoholUse: "No Answer",
+  MHAnxiety: "No Answer",
+  MHDepression: "No Answer",
+  MHDrugUse: "No Answer",
+  MHGrief: "No Answer",
+  MHGuilt: "No Answer",
+  MHIrritability: "No Answer",
+  MHStress: "No Answer",
+  MHRegret: "No Answer",
+  MHSuicidalThoughts: "No Answer",
+  MHLoneliness: "No Answer",
+  MHWorry: "No Answer",
 
-  PHDxInfertility: false, PHDxCurableSTD: false, PHDxIncurableSTD: false, PHDxCancer: false,
-  PHDxDiabetes: false, PHDxHighBlood: false, PHDxHeartDisease: false, PHDxIrritableBowel: false,
-  PHDxVitA: false, PHDxVitB: false, PHDxVitC: false, PHDxVitD: false,
-  PHDxVitE: false, PHDxVitK: false, PHDxAutoimmune: false, PHDxOtherPhysical: false,
+  PHDxInfertility: false,
+  PHDxCurableSTD: false,
+  PHDxIncurableSTD: false,
+  PHDxCancer: false,
+  PHDxDiabetes: false,
+  PHDxHighBlood: false,
+  PHDxHeartDisease: false,
+  PHDxIrritableBowel: false,
+  PHDxVitA: false,
+  PHDxVitB: false,
+  PHDxVitC: false,
+  PHDxVitD: false,
+  PHDxVitE: false,
+  PHDxVitK: false,
+  PHDxAutoimmune: false,
+  PHDxOtherPhysical: false,
 
-  PHVegeFruits: "No Answer", PHBeanLentils: "No Answer", PHGrainBreads: "No Answer", PHDairy: "No Answer",
-  PHMeat: "No Answer", PHFishSeafood: "No Answer", PHSweets: "No Answer", PHWater: "No Answer", PHPhysicalActivity: "No Answer",
+  PHVegeFruits: "No Answer",
+  PHBeanLentils: "No Answer",
+  PHGrainBreads: "No Answer",
+  PHDairy: "No Answer",
+  PHMeat: "No Answer",
+  PHFishSeafood: "No Answer",
+  PHSweets: "No Answer",
+  PHWater: "No Answer",
+  PHPhysicalActivity: "No Answer",
 
-  SHSpiritualDefine: "No Answer", SHSpiritualIntegrate: "No Answer", SHPrayer: "No Answer", SHSpiritualActivity: "No Answer",
-  SHReadText: "No Answer", SHAlignText: "No Answer", SHCommunity: "No Answer",
+  SHSpiritualDefine: "No Answer",
+  SHSpiritualIntegrate: "No Answer",
+  SHPrayer: "No Answer",
+  SHSpiritualActivity: "No Answer",
+  SHReadText: "No Answer",
+  SHAlignText: "No Answer",
+  SHCommunity: "No Answer",
 
-  OLHope: "No Answer", OLPeace: "No Answer", OLLearning: "No Answer", OLJoy: "No Answer", OLStable: "No Answer",
-  OLSafety: "No Answer", OLKindness: "No Answer", OLForgiveness: "No Answer", OLPatience: "No Answer", OLRelationships: "No Answer",
-  OLBoundaries: "No Answer", OLEUnpleasant: "No Answer", OLEPleasant: "No Answer", OLEControl: "No Answer", OLENumber: "No Answer",
+  OLHope: "No Answer",
+  OLPeace: "No Answer",
+  OLLearning: "No Answer",
+  OLJoy: "No Answer",
+  OLStable: "No Answer",
+  OLSafety: "No Answer",
+  OLKindness: "No Answer",
+  OLForgiveness: "No Answer",
+  OLPatience: "No Answer",
+  OLRelationships: "No Answer",
+  OLBoundaries: "No Answer",
+  OLEUnpleasant: "No Answer",
+  OLEPleasant: "No Answer",
+  OLEControl: "No Answer",
+  OLENumber: "No Answer",
 
-  SDoHAgeRange: "No Answer", SDoHRace: "No Answer", SDoHGeographicRegion: "No Answer", SDoHEthnicity: "No Answer",
-  SDoHState: "No Answer", SDoHZipCode: "No Answer", SDoHMaritalStatus: "No Answer", SDoHMilitaryStatus: "No Answer",
-  SDoHGender: "No Answer", SDoHEducation: "No Answer", SDoHJobStatus: "No Answer", SDoHIncome: "No Answer",
-  SDoHHousingStatus: "No Answer", SDoHHomeAsChild: "No Answer", SDoHReligion: "No Answer", SDoHDenomination: "No Answer",
+  SDoHAgeRange: "No Answer",
+  SDoHRace: "No Answer",
+  SDoHGeographicRegion: "No Answer",
+  SDoHEthnicity: "No Answer",
+  SDoHState: "No Answer",
+  SDoHZipCode: "No Answer",
+  SDoHMaritalStatus: "No Answer",
+  SDoHMilitaryStatus: "No Answer",
+  SDoHGender: "No Answer",
+  SDoHEducation: "No Answer",
+  SDoHJobStatus: "No Answer",
+  SDoHIncome: "No Answer",
+  SDoHHousingStatus: "No Answer",
+  SDoHHomeAsChild: "No Answer",
+  SDoHReligion: "No Answer",
+  SDoHDenomination: "No Answer",
 };
 
 const scoreDefaults = {
   // Trauma Scores
-  TRHurtfulNames: 0, TRNoNurturing: 0, TRHit: 0, TRNeedsNotMet: 0,
-  TRForcedSex: 0, TRResponsible: 0, TRViolence: 0, TRSubstanceAbuse: 0,
-  TRMentalIllness: 0, TRParentDivorce: 0, TRParentIncarcerated: 0,
-  TRHomelessness: 0, TRBodyFunction: 0, TRNaturalDisaster: 0,
-  TRDirectTerrorism: 0, TRIndirectTerrorism: 0, TRLovedOne: 0, TRBelief: 0,
-  TRResponseProfessional: 0, TRResponseFamilyFriend: 0,
-  TRResponseGod: 0, TRResponseNoOne: 0, TRNoTrauma: 0,
+  TRHurtfulNames: 0,
+  TRNoNurturing: 0,
+  TRHit: 0,
+  TRNeedsNotMet: 0,
+  TRForcedSex: 0,
+  TRResponsible: 0,
+  TRViolence: 0,
+  TRSubstanceAbuse: 0,
+  TRMentalIllness: 0,
+  TRParentDivorce: 0,
+  TRParentIncarcerated: 0,
+  TRHomelessness: 0,
+  TRBodyFunction: 0,
+  TRNaturalDisaster: 0,
+  TRDirectTerrorism: 0,
+  TRIndirectTerrorism: 0,
+  TRLovedOne: 0,
+  TRBelief: 0,
+  TRResponseProfessional: 0,
+  TRResponseFamilyFriend: 0,
+  TRResponseGod: 0,
+  TRResponseNoOne: 0,
+  TRNoTrauma: 0,
 
   // Coping Mechanism Scores
-  CMAlcohol: 0, CMDrugs: 0, CMOvereating: 0, CMSmoking: 0,
-  CMGaming: 0, CMShopping: 0, CMGambling: 0, CMSex: 0, CMPorn: 0,
-  CMBlaming: 0, CMHurting: 0, CMDisengage: 0, CMArt: 0, CMMusic: 0,
-  CMPoetry: 0, CMReading: 0, CMGroups: 0, CMCounseling: 0, CMVenting: 0,
-  CMWriting: 0, CMSensory: 0, CMDancing: 0, CMExercising: 0, CMWalking: 0,
-  CMChange: 0, CMAnalyze: 0, CMDaydream: 0, CMPositive: 0,
+  CMAlcohol: 0,
+  CMDrugs: 0,
+  CMOvereating: 0,
+  CMSmoking: 0,
+  CMGaming: 0,
+  CMShopping: 0,
+  CMGambling: 0,
+  CMSex: 0,
+  CMPorn: 0,
+  CMBlaming: 0,
+  CMHurting: 0,
+  CMDisengage: 0,
+  CMArt: 0,
+  CMMusic: 0,
+  CMPoetry: 0,
+  CMReading: 0,
+  CMGroups: 0,
+  CMCounseling: 0,
+  CMVenting: 0,
+  CMWriting: 0,
+  CMSensory: 0,
+  CMDancing: 0,
+  CMExercising: 0,
+  CMWalking: 0,
+  CMChange: 0,
+  CMAnalyze: 0,
+  CMDaydream: 0,
+  CMPositive: 0,
 
   // Mental Health
-  MHDxPTSD: 0, MHDxDepression: 0, MHDxSUD: 0, MHDxOtherMental: 0,
-  MHSleeplessness: 0, MHAlcoholUse: 0, MHAnxiety: 0, MHDepression: 0,
-  MHDrugUse: 0, MHGrief: 0, MHGuilt: 0, MHIrritability: 0, MHStress: 0,
-  MHRegret: 0, MHSuicidalThoughts: 0, MHLoneliness: 0, MHWorry: 0,
+  MHDxPTSD: 0,
+  MHDxDepression: 0,
+  MHDxSUD: 0,
+  MHDxOtherMental: 0,
+  MHSleeplessness: 0,
+  MHAlcoholUse: 0,
+  MHAnxiety: 0,
+  MHDepression: 0,
+  MHDrugUse: 0,
+  MHGrief: 0,
+  MHGuilt: 0,
+  MHIrritability: 0,
+  MHStress: 0,
+  MHRegret: 0,
+  MHSuicidalThoughts: 0,
+  MHLoneliness: 0,
+  MHWorry: 0,
 
   // Physical Health
-  PHDxInfertility: 0, PHDxCurableSTD: 0, PHDxIncurableSTD: 0,
-  PHDxCancer: 0, PHDxDiabetes: 0, PHDxHighBlood: 0,
-  PHDxHeartDisease: 0, PHDxIrritableBowel: 0, PHDxVitA: 0, PHDxVitB: 0,
-  PHDxVitC: 0, PHDxVitD: 0, PHDxVitE: 0, PHDxVitK: 0, PHDxAutoimmune: 0,
-  PHDxOtherPhysical: 0, PHVegeFruits: 0, PHBeanLentils: 0,
-  PHGrainBreads: 0, PHDairy: 0, PHMeat: 0, PHFishSeafood: 0,
-  PHSweets: 0, PHWater: 0, PHPhysicalActivity: 0,
+  PHDxInfertility: 0,
+  PHDxCurableSTD: 0,
+  PHDxIncurableSTD: 0,
+  PHDxCancer: 0,
+  PHDxDiabetes: 0,
+  PHDxHighBlood: 0,
+  PHDxHeartDisease: 0,
+  PHDxIrritableBowel: 0,
+  PHDxVitA: 0,
+  PHDxVitB: 0,
+  PHDxVitC: 0,
+  PHDxVitD: 0,
+  PHDxVitE: 0,
+  PHDxVitK: 0,
+  PHDxAutoimmune: 0,
+  PHDxOtherPhysical: 0,
+  PHVegeFruits: 0,
+  PHBeanLentils: 0,
+  PHGrainBreads: 0,
+  PHDairy: 0,
+  PHMeat: 0,
+  PHFishSeafood: 0,
+  PHSweets: 0,
+  PHWater: 0,
+  PHPhysicalActivity: 0,
 
   // Spiritual
-  SHSpiritualDefine: 0, SHSpiritualIntegrate: 0, SHPrayer: 0,
-  SHSpiritualActivity: 0, SHReadText: 0, SHAlignText: 0, SHCommunity: 0,
+  SHSpiritualDefine: 0,
+  SHSpiritualIntegrate: 0,
+  SHPrayer: 0,
+  SHSpiritualActivity: 0,
+  SHReadText: 0,
+  SHAlignText: 0,
+  SHCommunity: 0,
 
   // Overall Life
-  OLHope: 0, OLPeace: 0, OLLearning: 0, OLJoy: 0, OLStable: 0,
-  OLSafety: 0, OLKindness: 0, OLForgiveness: 0, OLPatience: 0,
-  OLRelationships: 0, OLBoundaries: 0, OLEUnpleasant: 0,
-  OLEPleasant: 0, OLEControl: 0, OLENumber: 0,
+  OLHope: 0,
+  OLPeace: 0,
+  OLLearning: 0,
+  OLJoy: 0,
+  OLStable: 0,
+  OLSafety: 0,
+  OLKindness: 0,
+  OLForgiveness: 0,
+  OLPatience: 0,
+  OLRelationships: 0,
+  OLBoundaries: 0,
+  OLEUnpleasant: 0,
+  OLEPleasant: 0,
+  OLEControl: 0,
+  OLENumber: 0,
 
   // Social Determinants of Health (set as No Answer since they are strings)
-  SDoHAgeRange: "No Answer", SDoHRace: "No Answer", SDoHGeographicRegion: "No Answer",
-  SDoHEthnicity: "No Answer", SDoHState: "No Answer", SDoHZipCode: "No Answer",
-  SDoHMaritalStatus: "No Answer", SDoHMilitaryStatus: "No Answer",
-  SDoHGender: "No Answer", SDoHEducation: "No Answer", SDoHJobStatus: "No Answer",
-  SDoHIncome: "No Answer", SDoHHousingStatus: "No Answer", SDoHHomeAsChild: "No Answer",
-  SDoHReligion: "No Answer", SDoHDenomination: "No Answer",
-
-
+  SDoHAgeRange: "No Answer",
+  SDoHRace: "No Answer",
+  SDoHGeographicRegion: "No Answer",
+  SDoHEthnicity: "No Answer",
+  SDoHState: "No Answer",
+  SDoHZipCode: "No Answer",
+  SDoHMaritalStatus: "No Answer",
+  SDoHMilitaryStatus: "No Answer",
+  SDoHGender: "No Answer",
+  SDoHEducation: "No Answer",
+  SDoHJobStatus: "No Answer",
+  SDoHIncome: "No Answer",
+  SDoHHousingStatus: "No Answer",
+  SDoHHomeAsChild: "No Answer",
+  SDoHReligion: "No Answer",
+  SDoHDenomination: "No Answer",
 };
 
 const createAssessmentAnswersMutation = `
@@ -302,35 +537,116 @@ const SDOHKeys = [
   { key: "SDoHHousingStatus" },
   { key: "SDoHHomeAsChild" },
   { key: "SDoHReligion" },
-  { key: "SDoHDenomination" }
+  { key: "SDoHDenomination" },
 ];
 const ethnicityOptions = [
-  "Alaskan", "Algerian", "American", "Apache", "Argentinian", "Barbadian",
-  "Brazilian", "Cambodian", "Canadian", "Caribbean", "Chamorros", "Cherokee",
-  "Chinese", "Choctaw", "Columbian", "Cuban", "Dominican", "Dutch", "Ecuadorian",
-  "Egyptian", "English", "Ethiopian", "Fijians", "Filipino", "French", "German",
-  "Ghanian", "Guatemalan", "Haitian", "Hawaiian", "Indian", "Iranian", "Iraqi",
-  "Irish", "Israeli", "Italian", "Jamaican", "Japanese", "Kanaka Maoli", "Korean",
-  "Kurdish", "Lebanese", "Lumbee", "Mexican", "Moroccan", "Native", "Navajo",
-  "Nigerian", "Norwegian", "Ojibwe", "Polish", "Pueblo Sioux", "Puerto Rican",
-  "Rapanui", "Russian", "Salvadoran", "Samoan", "Somalian", "South African",
-  "Spaniard", "Sun'aq", "Syrian", "Tahitians", "Taiwanese", "Tibetan",
-  "Tokelau", "Tongan", "Vietnamese", "I Don’t Know", "Mixed", "Other", "No Answer", ""
+  "Alaskan",
+  "Algerian",
+  "American",
+  "Apache",
+  "Argentinian",
+  "Barbadian",
+  "Brazilian",
+  "Cambodian",
+  "Canadian",
+  "Caribbean",
+  "Chamorros",
+  "Cherokee",
+  "Chinese",
+  "Choctaw",
+  "Columbian",
+  "Cuban",
+  "Dominican",
+  "Dutch",
+  "Ecuadorian",
+  "Egyptian",
+  "English",
+  "Ethiopian",
+  "Fijians",
+  "Filipino",
+  "French",
+  "German",
+  "Ghanian",
+  "Guatemalan",
+  "Haitian",
+  "Hawaiian",
+  "Indian",
+  "Iranian",
+  "Iraqi",
+  "Irish",
+  "Israeli",
+  "Italian",
+  "Jamaican",
+  "Japanese",
+  "Kanaka Maoli",
+  "Korean",
+  "Kurdish",
+  "Lebanese",
+  "Lumbee",
+  "Mexican",
+  "Moroccan",
+  "Native",
+  "Navajo",
+  "Nigerian",
+  "Norwegian",
+  "Ojibwe",
+  "Polish",
+  "Pueblo Sioux",
+  "Puerto Rican",
+  "Rapanui",
+  "Russian",
+  "Salvadoran",
+  "Samoan",
+  "Somalian",
+  "South African",
+  "Spaniard",
+  "Sun'aq",
+  "Syrian",
+  "Tahitians",
+  "Taiwanese",
+  "Tibetan",
+  "Tokelau",
+  "Tongan",
+  "Vietnamese",
+  "I Don’t Know",
+  "Mixed",
+  "Other",
+  "No Answer",
+  "",
 ];
 
 const IdentifyAsOptions = [
-  "Black", "Brown", "White", "I Choose Not to Respond", "Other", "No Answer", ""
+  "Black",
+  "Brown",
+  "White",
+  "I Choose Not to Respond",
+  "Other",
+  "No Answer",
+  "",
 ];
 const NationalityOptions = [
-  "Africa", "Asia", "Australia", "Canada", "Europe", "Middle East",
-  "Russia", "South America", "United States", "I Don’t Know", "Other", "No Answer", ""
+  "Africa",
+  "Asia",
+  "Australia",
+  "Canada",
+  "Europe",
+  "Middle East",
+  "Russia",
+  "South America",
+  "United States",
+  "I Don’t Know",
+  "Other",
+  "No Answer",
+  "",
 ];
 const GenderIdentityOptions = [
   "A male born as male",
   "A female born as female",
   "A male born as female",
   "A female born as male",
-  "Other", "No Answer", ""
+  "Other",
+  "No Answer",
+  "",
 ];
 const HousingOptions = [
   "Rent/Own",
@@ -339,14 +655,18 @@ const HousingOptions = [
   "Family",
   "Shelter",
   "Prison/Jail",
-  "Other", "No Answer", ""
+  "Other",
+  "No Answer",
+  "",
 ];
 const HomeGrewUpOptions = [
   "2 Guardians/Parents",
   "1 Guardian/Parent",
   "Foster Care",
   "Varied/Unstable",
-  "Other", "No Answer", ""
+  "Other",
+  "No Answer",
+  "",
 ];
 const DenominationOptions = [
   "Baptist",
@@ -359,41 +679,102 @@ const DenominationOptions = [
   "Presbyterian",
   "Roman Catholic",
   "Seventh Day Adventist",
-  "Other", "No Answer", ""
+  "Other",
+  "No Answer",
+  "",
 ];
 
 const requiredFieldsBySection = {
   trauma: [
     "TRBelief", // whether they believe it was trauma
     // At least one trauma response
-    "TRResponseProfessional", "TRResponseFamilyFriend", "TRResponseGod", "TRResponseNoOne",
+    "TRResponseProfessional",
+    "TRResponseFamilyFriend",
+    "TRResponseGod",
+    "TRResponseNoOne",
     // At least one trauma experience UNLESS TRBelief is "N/A"
-    "TRHit", "TRHurtfulNames", "TRNoNurturing", "TRNeedsNotMet", "TRForcedSex",
-    "TRResponsible", "TRViolence", "TRSubstanceAbuse", "TRMentalIllness",
-    "TRParentDivorce", "TRParentIncarcerated", "TRHomelessness", "TRBodyFunction",
-    "TRNaturalDisaster", "TRDirectTerrorism", "TRIndirectTerrorism", "TRLovedOne",
+    "TRHit",
+    "TRHurtfulNames",
+    "TRNoNurturing",
+    "TRNeedsNotMet",
+    "TRForcedSex",
+    "TRResponsible",
+    "TRViolence",
+    "TRSubstanceAbuse",
+    "TRMentalIllness",
+    "TRParentDivorce",
+    "TRParentIncarcerated",
+    "TRHomelessness",
+    "TRBodyFunction",
+    "TRNaturalDisaster",
+    "TRDirectTerrorism",
+    "TRIndirectTerrorism",
+    "TRLovedOne",
   ],
   coping: [
-    "CMAlcohol", "CMDrugs", "CMOvereating", "CMSmoking", "CMGaming", "CMShopping",
-    "CMGambling", "CMSex", "CMPorn", "CMBlaming", "CMHurting", "CMDisengage",
-    "CMArt", "CMMusic", "CMPoetry", "CMReading", "CMGroups", "CMCounseling",
-    "CMVenting", "CMWriting", "CMSensory", "CMDancing", "CMExercising",
-    "CMWalking", "CMChange", "CMAnalyze", "CMDaydream", "CMPositive"
+    "CMAlcohol",
+    "CMDrugs",
+    "CMOvereating",
+    "CMSmoking",
+    "CMGaming",
+    "CMShopping",
+    "CMGambling",
+    "CMSex",
+    "CMPorn",
+    "CMBlaming",
+    "CMHurting",
+    "CMDisengage",
+    "CMArt",
+    "CMMusic",
+    "CMPoetry",
+    "CMReading",
+    "CMGroups",
+    "CMCounseling",
+    "CMVenting",
+    "CMWriting",
+    "CMSensory",
+    "CMDancing",
+    "CMExercising",
+    "CMWalking",
+    "CMChange",
+    "CMAnalyze",
+    "CMDaydream",
+    "CMPositive",
   ],
   mental: [
-    "MHSleeplessness", "MHAlcoholUse", "MHAnxiety", "MHDepression", "MHDrugUse",
-    "MHGrief", "MHGuilt", "MHIrritability", "MHStress", "MHRegret",
-    "MHSuicidalThoughts", "MHLoneliness", "MHWorry"
+    "MHSleeplessness",
+    "MHAlcoholUse",
+    "MHAnxiety",
+    "MHDepression",
+    "MHDrugUse",
+    "MHGrief",
+    "MHGuilt",
+    "MHIrritability",
+    "MHStress",
+    "MHRegret",
+    "MHSuicidalThoughts",
+    "MHLoneliness",
+    "MHWorry",
   ],
   sdoh: [
-    "SDoHAgeRange", "SDoHRace", "SDoHGeographicRegion", "SDoHEthnicity", "SDoHState",
-    "SDoHZipCode", "SDoHMaritalStatus", "SDoHMilitaryStatus", "SDoHGender",
-    "SDoHEducation", "SDoHJobStatus", "SDoHIncome", "SDoHHousingStatus",
-    "SDoHHomeAsChild", "SDoHReligion"
+    "SDoHAgeRange",
+    "SDoHRace",
+    "SDoHGeographicRegion",
+    "SDoHEthnicity",
+    "SDoHState",
+    "SDoHZipCode",
+    "SDoHMaritalStatus",
+    "SDoHMilitaryStatus",
+    "SDoHGender",
+    "SDoHEducation",
+    "SDoHJobStatus",
+    "SDoHIncome",
+    "SDoHHousingStatus",
+    "SDoHHomeAsChild",
+    "SDoHReligion",
     // add "SDoHDenomination" only if SDoHReligion === "Christianity"
-  ]
+  ],
 };
-
 
 export default function Assessment() {
   const isAssessmentRequired = true; // toggle this to enable/disable *all* required validations
@@ -413,7 +794,6 @@ export default function Assessment() {
   const [sdohWarning, setSdohWarning] = useState("");
 
   useEffect(() => {
-
     const section = localStorage.getItem("assessmentSection");
     if (section) {
       setStep(section);
@@ -434,7 +814,20 @@ export default function Assessment() {
           }) {
             items {
               id
-              ${[...traumaExperiences, ...traumaResponseOptions, ...copingMechanisms, ...mentalHealthoptions, ...mentalHealth, ...physicalHealthOptions, ...physicalHealth, ...spiritualHealthOptions, ...outlookonlife, ...SDOHKeys].map(({ key }) => key).join("\n")}
+              ${[
+                ...traumaExperiences,
+                ...traumaResponseOptions,
+                ...copingMechanisms,
+                ...mentalHealthoptions,
+                ...mentalHealth,
+                ...physicalHealthOptions,
+                ...physicalHealth,
+                ...spiritualHealthOptions,
+                ...outlookonlife,
+                ...SDOHKeys,
+              ]
+                .map(({ key }) => key)
+                .join("\n")}
               TRBelief
             }
           }
@@ -450,12 +843,12 @@ export default function Assessment() {
             }
           }
         }
-      `
+      `,
         });
 
         const existingAnswer = res?.data?.listAssessmentAnswers?.items?.[0];
         const scoreItems = res?.data?.listAssessmentScores?.items || [];
-        const activeScore = scoreItems.find(item => item.isActive);
+        const activeScore = scoreItems.find((item) => item.isActive);
 
         if (existingAnswer) {
           setExistingRecordId(existingAnswer.id);
@@ -485,7 +878,7 @@ export default function Assessment() {
           }
 
           // Update formData with traumaBeliefKey separately
-          setFormData(prev => ({ ...prev, traumaBeliefKey }));
+          setFormData((prev) => ({ ...prev, traumaBeliefKey }));
 
           // Set existing score id if any
           if (activeScore) {
@@ -497,7 +890,6 @@ export default function Assessment() {
       }
     }
 
-
     loadUserAndRecord();
   }, []);
 
@@ -506,62 +898,111 @@ export default function Assessment() {
 
     // Trauma
     const traumaKeys = [
-      "TRHurtfulNames", "TRNoNurturing", "TRHit", "TRNeedsNotMet", "TRForcedSex",
-      "TRResponsible", "TRViolence", "TRSubstanceAbuse", "TRMentalIllness", "TRParentDivorce",
-      "TRParentIncarcerated", "TRHomelessness", "TRBodyFunction", "TRNaturalDisaster",
-      "TRDirectTerrorism", "TRIndirectTerrorism", "TRLovedOne", "TRBelief",
-      "TRResponseProfessional", "TRResponseFamilyFriend", "TRResponseGod",
-      "TRResponseNoOne", "TRNoTrauma"
+      "TRHurtfulNames",
+      "TRNoNurturing",
+      "TRHit",
+      "TRNeedsNotMet",
+      "TRForcedSex",
+      "TRResponsible",
+      "TRViolence",
+      "TRSubstanceAbuse",
+      "TRMentalIllness",
+      "TRParentDivorce",
+      "TRParentIncarcerated",
+      "TRHomelessness",
+      "TRBodyFunction",
+      "TRNaturalDisaster",
+      "TRDirectTerrorism",
+      "TRIndirectTerrorism",
+      "TRLovedOne",
+      "TRBelief",
+      "TRResponseProfessional",
+      "TRResponseFamilyFriend",
+      "TRResponseGod",
+      "TRResponseNoOne",
+      "TRNoTrauma",
     ];
     const traumaComplete = traumaKeys.some((k) => data[k] === true);
     if (!traumaComplete) missingSections.push("Trauma");
 
     // Coping (CM) — should not be "N/A"
     const copingKeys = Object.keys(data).filter((k) => k.startsWith("CM"));
-    const copingComplete = copingKeys.every((k) => data[k] && data[k] !== "N/A" && data[k] !== "No Answer");
+    const copingComplete = copingKeys.every(
+      (k) => data[k] && data[k] !== "N/A" && data[k] !== "No Answer"
+    );
     if (!copingComplete) missingSections.push("Coping Mechanisms");
 
     // Mental Health (MH)
     const mentalKeys = [
-      "MHSleeplessness", "MHAlcoholUse", "MHAnxiety", "MHDepression", "MHDrugUse",
-      "MHGrief", "MHGuilt", "MHIrritability", "MHStress", "MHRegret",
-      "MHSuicidalThoughts", "MHLoneliness", "MHWorry"
+      "MHSleeplessness",
+      "MHAlcoholUse",
+      "MHAnxiety",
+      "MHDepression",
+      "MHDrugUse",
+      "MHGrief",
+      "MHGuilt",
+      "MHIrritability",
+      "MHStress",
+      "MHRegret",
+      "MHSuicidalThoughts",
+      "MHLoneliness",
+      "MHWorry",
     ];
-    const mentalComplete = mentalKeys.every((k) => data[k] && data[k] !== "No Answer");
+    const mentalComplete = mentalKeys.every(
+      (k) => data[k] && data[k] !== "No Answer"
+    );
     if (!mentalComplete) missingSections.push("Mental Health");
 
     // Physical Health (PH)
     const physicalKeys = [
-      "PHVegeFruits", "PHBeanLentils", "PHGrainBreads", "PHDairy",
-      "PHMeat", "PHFishSeafood", "PHSweets", "PHWater", "PHPhysicalActivity"
+      "PHVegeFruits",
+      "PHBeanLentils",
+      "PHGrainBreads",
+      "PHDairy",
+      "PHMeat",
+      "PHFishSeafood",
+      "PHSweets",
+      "PHWater",
+      "PHPhysicalActivity",
     ];
-    const physicalComplete = physicalKeys.every((k) => data[k] && data[k] !== "No Answer");
+    const physicalComplete = physicalKeys.every(
+      (k) => data[k] && data[k] !== "No Answer"
+    );
     if (!physicalComplete) missingSections.push("Physical Health");
-
-
 
     // Overall Life (OL)
     const olKeys = [
-      "OLHope", "OLPeace", "OLLearning", "OLJoy", "OLStable",
-      "OLSafety", "OLKindness", "OLForgiveness", "OLPatience", "OLRelationships",
-      "OLBoundaries", "OLEUnpleasant", "OLEPleasant", "OLEControl", "OLENumber"
+      "OLHope",
+      "OLPeace",
+      "OLLearning",
+      "OLJoy",
+      "OLStable",
+      "OLSafety",
+      "OLKindness",
+      "OLForgiveness",
+      "OLPatience",
+      "OLRelationships",
+      "OLBoundaries",
+      "OLEUnpleasant",
+      "OLEPleasant",
+      "OLEControl",
+      "OLENumber",
     ];
     const olComplete = olKeys.every((k) => data[k] && data[k] !== "No Answer");
     if (!olComplete) missingSections.push("Overall Life Satisfaction");
 
     // SDoH (basic required ones)
-   // const sdohKeys = [
-     // "SDoHAgeRange", "SDoHRace", "SDoHGeographicRegion", "SDoHEthnicity",
+    // const sdohKeys = [
+    // "SDoHAgeRange", "SDoHRace", "SDoHGeographicRegion", "SDoHEthnicity",
     //  "SDoHState", "SDoHZipCode", "SDoHMaritalStatus", "SDoHMilitaryStatus",
     //  "SDoHGender", "SDoHEducation", "SDoHJobStatus", "SDoHIncome",
     //  "SDoHHousingStatus", "SDoHHomeAsChild", "SDoHReligion"
-   // ];
+    // ];
     //const sdohComplete = sdohKeys.every((k) => data[k] && data[k] !== "No Answer");
     //if (!sdohComplete) missingSections.push("Social Determinants of Health");
 
     return missingSections;
   }
-
 
   const mergeDefaults = (input, options = {}) => {
     const { skipSDOH = false } = options;
@@ -577,7 +1018,6 @@ export default function Assessment() {
     return input;
   };
   function mergeScoreDefaults(input) {
-
     for (let key in scoreDefaults) {
       if (!(key in input)) input[key] = scoreDefaults[key];
     }
@@ -592,7 +1032,7 @@ export default function Assessment() {
     });
 
     traumaResponseOptions.forEach(({ key }) => {
-      scoreData[key] = formData[key] ? 0.01 : 0;  // Keep as float for response options
+      scoreData[key] = formData[key] ? 0.01 : 0; // Keep as float for response options
     });
 
     // TRBelief special case (0.01 = yes, 0.02 = no, 0 = undefined)
@@ -604,8 +1044,6 @@ export default function Assessment() {
       scoreData["TRBelief"] = 0;
     }
 
-
-
     // Trauma Score: count trauma experiences + 4 if TRResponseNoOne selected
     let traumaCount = 0;
     traumaExperiences.forEach(({ key }) => {
@@ -616,7 +1054,6 @@ export default function Assessment() {
     // Convert overall scores to strings
     scoreData.TRScore = String(Number.isFinite(traumaCount) ? traumaCount : 0);
 
-
     return scoreData;
   }
 
@@ -626,11 +1063,10 @@ export default function Assessment() {
 
     traumaExperiences.forEach(({ key }) => {
       scoreData[key] = formData[key] ? 1 : 0;
-
     });
 
     traumaResponseOptions.forEach(({ key }) => {
-      scoreData[key] = formData[key] ? 0.01 : 0;  // Keep as float for response options
+      scoreData[key] = formData[key] ? 0.01 : 0; // Keep as float for response options
     });
 
     // TRBelief special case (0.01 = yes, 0.02 = no, 0 = undefined)
@@ -647,13 +1083,11 @@ export default function Assessment() {
         if (Domain === "TR") {
           Total += 1;
         }
-
     });
-    if (formData["TRResponseNoOne"]) if (Domain === "TR") {
-      Total += 4;
-    }
-
-
+    if (formData["TRResponseNoOne"])
+      if (Domain === "TR") {
+        Total += 4;
+      }
 
     const frequencyMapGroup1 = {
       "5+x Week": 4,
@@ -688,8 +1122,6 @@ export default function Assessment() {
     const group2Keys = copingMechanisms.slice(12).map(({ key }) => key);
     // This includes: CMArt, CMMusic, CMPoetry, CMReading, CMGroups, CMCounseling, CMVenting, CMWriting, CMSensory, CMDancing, CMExercising, CMWalking, CMChange, CMAnalyze, CMDaydream, CMPositive
 
-
-
     // Calculate scores for group 1 with frequency map
     group1Keys.forEach((key) => {
       const freqScore = frequencyMapGroup1[formData[key]] ?? 0;
@@ -703,16 +1135,11 @@ export default function Assessment() {
     group2Keys.forEach((key) => {
       const score = frequencyMapGroup2[formData[key]] ?? 0;
       scoreData[key] = score;
-
     });
-
-
-
 
     mentalHealthoptions.forEach(({ key }) => {
-      scoreData[key] = formData[key] ? 0.01 : 0;  // Keep as float for response options
+      scoreData[key] = formData[key] ? 0.01 : 0; // Keep as float for response options
     });
-
 
     const frequencyMapGroupm = {
       "5+x Week": 4,
@@ -725,9 +1152,6 @@ export default function Assessment() {
       null: 0,
       undefined: 0,
     };
-
-
-
 
     // Calculate scores for group 1 with frequency map
     mentalHealth.forEach(({ key }) => {
@@ -750,9 +1174,8 @@ export default function Assessment() {
     }
 
     physicalHealthOptions.forEach(({ key }) => {
-      scoreData[key] = formData[key] ? 0.01 : 0;  // Keep as float for response options
+      scoreData[key] = formData[key] ? 0.01 : 0; // Keep as float for response options
     });
-
 
     const frequencyMapGroupp1 = {
       "5+x Week": 4,
@@ -800,8 +1223,6 @@ export default function Assessment() {
       undefined: 0,
     };
 
-
-
     // Calculate scores for group 1 with frequency map
     // First 2 items
     physicalHealth.slice(0, 2).forEach(({ key }) => {
@@ -827,7 +1248,6 @@ export default function Assessment() {
           Total += freqScore;
         }
       }
-
     });
     physicalHealth.slice(6, 7).forEach(({ key }) => {
       const freqScore = frequencyMapGroupp1[formData[key]] ?? 0;
@@ -867,16 +1287,15 @@ export default function Assessment() {
     };
     const frequencyMapGroups2 = {
       "Strongly Agree": 0,
-      "Agree": 1,
-      "Neither": 2,
-      "Disagree": 3,
+      Agree: 1,
+      Neither: 2,
+      Disagree: 3,
       "Strongly Disagree": 4,
       "No Answer": 0,
       "": 0,
       null: 0,
       undefined: 0,
     };
-
 
     spiritualHealthOptions.slice(0, 2).forEach(({ key }) => {
       const freqScore = frequencyMapGroups2[formData[key]] ?? 0;
@@ -928,7 +1347,6 @@ export default function Assessment() {
       undefined: 0,
     };
 
-
     outlookonlife.slice(0, 11).forEach(({ key }) => {
       const freqScore = frequencyMapGroupo2[formData[key]] ?? 0;
       scoreData[key] = freqScore;
@@ -978,10 +1396,8 @@ export default function Assessment() {
       scoreData.OLScore = String(Total);
     }
 
-
     return scoreData;
   }
-
 
   const toggleBoolean = (key) =>
     setFormData((prev) => ({ ...prev, [key]: !prev[key] }));
@@ -1011,40 +1427,45 @@ export default function Assessment() {
   const handleInputChange = (key, value) =>
     setFormData((prev) => ({ ...prev, [key]: value }));
 
-
   const handleCopingChange = (key, value) =>
     setFormData((prev) => ({ ...prev, [key]: value }));
-
 
   const handleTraumaNext = async () => {
     if (isAssessmentRequired) {
       const traumaSelected = traumaExperiences.some(({ key }) => formData[key]);
       const traumaBelief = formData.traumaBeliefKey;
-      const traumaResponseSelected = traumaResponseOptions.some(({ key }) => formData[key]);
+      const traumaResponseSelected = traumaResponseOptions.some(
+        ({ key }) => formData[key]
+      );
 
       // Reset warning first
       setTraumaWarning("");
 
       if (!traumaBelief) {
-        setTraumaWarning("Please select one option for the second question regarding whether you consider your experience traumatic.");
+        setTraumaWarning(
+          "Please select one option for the second question regarding whether you consider your experience traumatic."
+        );
         return;
       }
 
       if (!traumaResponseSelected) {
-        setTraumaWarning("Please select at least one statement from the third question regarding your trauma response.");
+        setTraumaWarning(
+          "Please select at least one statement from the third question regarding your trauma response."
+        );
         return;
       }
 
       if (traumaBelief !== "NA" && !traumaSelected) {
-        setTraumaWarning("Since you did not select 'N/A' for the second question, please select at least one experience from the first question.");
+        setTraumaWarning(
+          "Since you did not select 'N/A' for the second question, please select at least one experience from the first question."
+        );
         return;
       }
     }
 
-
-
     // Proceed with submitting or navigating
-    setTimeout(() => { // example async or navigation delay
+    setTimeout(() => {
+      // example async or navigation delay
 
       setTraumaWarning("");
     }, 10000);
@@ -1052,7 +1473,6 @@ export default function Assessment() {
     setIsSubmitting(true);
     try {
       const input = {
-
         userId,
         CompletedDate: new Date().toISOString().slice(0, 10),
         CompletedTime: new Date().toLocaleTimeString(),
@@ -1060,12 +1480,17 @@ export default function Assessment() {
       };
 
       traumaExperiences.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
       traumaResponseOptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
-      input["TRBelief"] = formData["TRBelief"] !== undefined ? formData["TRBelief"] : input["TRBelief"] ?? false;
+      input["TRBelief"] =
+        formData["TRBelief"] !== undefined
+          ? formData["TRBelief"]
+          : input["TRBelief"] ?? false;
 
       copingMechanisms.forEach(({ key }) => {
         const value = formData[key];
@@ -1076,7 +1501,8 @@ export default function Assessment() {
         }
       });
       mentalHealthoptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
       mentalHealth.forEach(({ key }) => {
         const value = formData[key];
@@ -1087,7 +1513,8 @@ export default function Assessment() {
         }
       });
       physicalHealthOptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
       physicalHealth.forEach(({ key }) => {
         const value = formData[key];
@@ -1118,7 +1545,6 @@ export default function Assessment() {
       if (!existingRecordId) {
         mergeDefaults(input);
       }
-
 
       if (existingRecordId) {
         await client.graphql({
@@ -1190,12 +1616,10 @@ export default function Assessment() {
       }
     }
 
-
     setCopingWarning(false); // Clear warning if all answered
     setIsSubmitting(true);
     try {
       const input = {
-
         id: existingRecordId,
         userId,
         CompletedDate: new Date().toISOString().slice(0, 10),
@@ -1204,12 +1628,17 @@ export default function Assessment() {
       };
 
       traumaExperiences.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
       traumaResponseOptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
-      input["TRBelief"] = formData["TRBelief"] !== undefined ? formData["TRBelief"] : input["TRBelief"] ?? false;
+      input["TRBelief"] =
+        formData["TRBelief"] !== undefined
+          ? formData["TRBelief"]
+          : input["TRBelief"] ?? false;
 
       copingMechanisms.forEach(({ key }) => {
         const value = formData[key];
@@ -1220,7 +1649,8 @@ export default function Assessment() {
         }
       });
       mentalHealthoptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
       mentalHealth.forEach(({ key }) => {
         const value = formData[key];
@@ -1231,7 +1661,8 @@ export default function Assessment() {
         }
       });
       physicalHealthOptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
       physicalHealth.forEach(({ key }) => {
         const value = formData[key];
@@ -1316,7 +1747,9 @@ export default function Assessment() {
 
   const handleMentalSubmit = async () => {
     if (isAssessmentRequired) {
-      const allFilled = mentalHealth.every(({ key }) => formData[key] && formData[key] !== "No Answer");
+      const allFilled = mentalHealth.every(
+        ({ key }) => formData[key] && formData[key] !== "No Answer"
+      );
 
       if (!allFilled) {
         setMentalWarning("Please answer all dropdown questions to move on.");
@@ -1327,11 +1760,9 @@ export default function Assessment() {
     // Proceed with saving or navigating
     setMentalWarning("");
 
-
     setIsSubmitting(true);
     try {
       const input = {
-
         id: existingRecordId,
         userId,
         CompletedDate: new Date().toISOString().slice(0, 10),
@@ -1340,12 +1771,17 @@ export default function Assessment() {
       };
 
       traumaExperiences.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
       traumaResponseOptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
-      input["TRBelief"] = formData["TRBelief"] !== undefined ? formData["TRBelief"] : input["TRBelief"] ?? false;
+      input["TRBelief"] =
+        formData["TRBelief"] !== undefined
+          ? formData["TRBelief"]
+          : input["TRBelief"] ?? false;
 
       copingMechanisms.forEach(({ key }) => {
         const value = formData[key];
@@ -1356,7 +1792,8 @@ export default function Assessment() {
         }
       });
       mentalHealthoptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
       mentalHealth.forEach(({ key }) => {
         const value = formData[key];
@@ -1367,7 +1804,8 @@ export default function Assessment() {
         }
       });
       physicalHealthOptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
       physicalHealth.forEach(({ key }) => {
         const value = formData[key];
@@ -1397,7 +1835,6 @@ export default function Assessment() {
       if (!existingRecordId) {
         mergeDefaults(input);
       }
-
 
       if (existingRecordId) {
         await client.graphql({
@@ -1453,7 +1890,9 @@ export default function Assessment() {
 
   const handlePhysicalSubmit = async () => {
     if (isAssessmentRequired) {
-      const allFilled = physicalHealth.every(({ key }) => formData[key] && formData[key] !== "No Answer");
+      const allFilled = physicalHealth.every(
+        ({ key }) => formData[key] && formData[key] !== "No Answer"
+      );
 
       if (!allFilled) {
         setPhysicalWarning("Please answer all dropdown questions to move on.");
@@ -1466,7 +1905,6 @@ export default function Assessment() {
     setIsSubmitting(true);
     try {
       const input = {
-
         id: existingRecordId,
         userId,
         CompletedDate: new Date().toISOString().slice(0, 10),
@@ -1475,12 +1913,17 @@ export default function Assessment() {
       };
 
       traumaExperiences.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
       traumaResponseOptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
-      input["TRBelief"] = formData["TRBelief"] !== undefined ? formData["TRBelief"] : input["TRBelief"] ?? false;
+      input["TRBelief"] =
+        formData["TRBelief"] !== undefined
+          ? formData["TRBelief"]
+          : input["TRBelief"] ?? false;
 
       copingMechanisms.forEach(({ key }) => {
         const value = formData[key];
@@ -1491,7 +1934,8 @@ export default function Assessment() {
         }
       });
       mentalHealthoptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
       mentalHealth.forEach(({ key }) => {
         const value = formData[key];
@@ -1502,7 +1946,8 @@ export default function Assessment() {
         }
       });
       physicalHealthOptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
       physicalHealth.forEach(({ key }) => {
         const value = formData[key];
@@ -1532,7 +1977,6 @@ export default function Assessment() {
       if (!existingRecordId) {
         mergeDefaults(input);
       }
-
 
       if (existingRecordId) {
         await client.graphql({
@@ -1587,14 +2031,11 @@ export default function Assessment() {
   };
 
   const handleSpiritualSubmit = async () => {
-
-
     // Proceed with saving or navigating
     setSpiritualWarning("");
     setIsSubmitting(true);
     try {
       const input = {
-
         id: existingRecordId,
         userId,
         CompletedDate: new Date().toISOString().slice(0, 10),
@@ -1603,12 +2044,17 @@ export default function Assessment() {
       };
 
       traumaExperiences.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
       traumaResponseOptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
-      input["TRBelief"] = formData["TRBelief"] !== undefined ? formData["TRBelief"] : input["TRBelief"] ?? false;
+      input["TRBelief"] =
+        formData["TRBelief"] !== undefined
+          ? formData["TRBelief"]
+          : input["TRBelief"] ?? false;
 
       copingMechanisms.forEach(({ key }) => {
         const value = formData[key];
@@ -1619,7 +2065,8 @@ export default function Assessment() {
         }
       });
       mentalHealthoptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
       mentalHealth.forEach(({ key }) => {
         const value = formData[key];
@@ -1630,7 +2077,8 @@ export default function Assessment() {
         }
       });
       physicalHealthOptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
       physicalHealth.forEach(({ key }) => {
         const value = formData[key];
@@ -1660,7 +2108,6 @@ export default function Assessment() {
       if (!existingRecordId) {
         mergeDefaults(input);
       }
-
 
       if (existingRecordId) {
         await client.graphql({
@@ -1716,7 +2163,13 @@ export default function Assessment() {
 
   const handleOutlookSubmit = async () => {
     if (isAssessmentRequired) {
-      const allFilled = outlookonlife.every(({ key }) => formData[key] && formData[key] !== "No Answer" && formData[key] !== "" && formData[key] !== "Select");
+      const allFilled = outlookonlife.every(
+        ({ key }) =>
+          formData[key] &&
+          formData[key] !== "No Answer" &&
+          formData[key] !== "" &&
+          formData[key] !== "Select"
+      );
 
       if (!allFilled) {
         setOutlookWarning("Please answer all dropdown questions to move on.");
@@ -1729,7 +2182,6 @@ export default function Assessment() {
     setIsSubmitting(true);
     try {
       const input = {
-
         id: existingRecordId,
         userId,
         CompletedDate: new Date().toISOString().slice(0, 10),
@@ -1738,12 +2190,17 @@ export default function Assessment() {
       };
 
       traumaExperiences.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
       traumaResponseOptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
-      input["TRBelief"] = formData["TRBelief"] !== undefined ? formData["TRBelief"] : input["TRBelief"] ?? false;
+      input["TRBelief"] =
+        formData["TRBelief"] !== undefined
+          ? formData["TRBelief"]
+          : input["TRBelief"] ?? false;
 
       copingMechanisms.forEach(({ key }) => {
         const value = formData[key];
@@ -1754,7 +2211,8 @@ export default function Assessment() {
         }
       });
       mentalHealthoptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
       mentalHealth.forEach(({ key }) => {
         const value = formData[key];
@@ -1765,7 +2223,8 @@ export default function Assessment() {
         }
       });
       physicalHealthOptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
       physicalHealth.forEach(({ key }) => {
         const value = formData[key];
@@ -1879,7 +2338,9 @@ export default function Assessment() {
 
         if (failedSections.length > 0) {
           setSdohWarning(
-            `You did not complete all required fields for: ${failedSections.join(", ")}.`
+            `You did not complete all required fields for: ${failedSections.join(
+              ", "
+            )}.`
           );
           return;
         }
@@ -1909,66 +2370,112 @@ export default function Assessment() {
 
       // Populate all previous sections
       traumaExperiences.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
 
       traumaResponseOptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
 
-      input["TRBelief"] = formData["TRBelief"] !== undefined ? formData["TRBelief"] : input["TRBelief"] ?? false;
+      input["TRBelief"] =
+        formData["TRBelief"] !== undefined
+          ? formData["TRBelief"]
+          : input["TRBelief"] ?? false;
 
       copingMechanisms.forEach(({ key }) => {
         const value = formData[key];
-        input[key] = value === "" || value === undefined || value === null ? "No Answer" : value;
+        input[key] =
+          value === "" || value === undefined || value === null
+            ? "No Answer"
+            : value;
       });
 
       mentalHealthoptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
 
       mentalHealth.forEach(({ key }) => {
         const value = formData[key];
-        input[key] = value === "" || value === undefined || value === null ? "No Answer" : value;
+        input[key] =
+          value === "" || value === undefined || value === null
+            ? "No Answer"
+            : value;
       });
 
       physicalHealthOptions.forEach(({ key }) => {
-        input[key] = formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
+        input[key] =
+          formData[key] !== undefined ? !!formData[key] : input[key] ?? false;
       });
 
       physicalHealth.forEach(({ key }) => {
         const value = formData[key];
-        input[key] = value === "" || value === undefined || value === null ? "No Answer" : value;
+        input[key] =
+          value === "" || value === undefined || value === null
+            ? "No Answer"
+            : value;
       });
 
       spiritualHealthOptions.forEach(({ key }) => {
         const value = formData[key];
-        input[key] = value === "" || value === undefined || value === null ? "No Answer" : value;
+        input[key] =
+          value === "" || value === undefined || value === null
+            ? "No Answer"
+            : value;
       });
 
       outlookonlife.forEach(({ key }) => {
         const value = formData[key];
-        input[key] = value === "" || value === undefined || value === null ? "No Answer" : value;
+        input[key] =
+          value === "" || value === undefined || value === null
+            ? "No Answer"
+            : value;
       });
 
       // Add SDoH fields
       Object.assign(input, {
         SDoHAgeRange: formData.SDoHAgeRange || "No Answer",
-        SDoHRace: formData.SDoHRace === "Other" ? (formData.SDoHRaceCustom || "Other") : formData.SDoHRace || "No Answer",
-        SDoHGeographicRegion: formData.SDoHGeographicRegion === "Other" ? (formData.SDoHGeographicRegionCustom || "Other") : formData.SDoHGeographicRegion || "No Answer",
-        SDoHEthnicity: formData.SDoHEthnicity === "Other" ? (formData.SDoHEthnicityCustom || "Other") : formData.SDoHEthnicity || "No Answer",
+        SDoHRace:
+          formData.SDoHRace === "Other"
+            ? formData.SDoHRaceCustom || "Other"
+            : formData.SDoHRace || "No Answer",
+        SDoHGeographicRegion:
+          formData.SDoHGeographicRegion === "Other"
+            ? formData.SDoHGeographicRegionCustom || "Other"
+            : formData.SDoHGeographicRegion || "No Answer",
+        SDoHEthnicity:
+          formData.SDoHEthnicity === "Other"
+            ? formData.SDoHEthnicityCustom || "Other"
+            : formData.SDoHEthnicity || "No Answer",
         SDoHState: formData.SDoHState || "No Answer",
         SDoHZipCode: formData.SDoHZipCode || "No Answer",
         SDoHMaritalStatus: formData.SDoHMaritalStatus || "No Answer",
         SDoHMilitaryStatus: formData.SDoHMilitaryStatus || "No Answer",
-        SDoHGender: formData.SDoHGender === "Other" ? (formData.SDoHGenderCustom || "Other") : formData.SDoHGender || "No Answer",
+        SDoHGender:
+          formData.SDoHGender === "Other"
+            ? formData.SDoHGenderCustom || "Other"
+            : formData.SDoHGender || "No Answer",
         SDoHEducation: formData.SDoHEducation || "No Answer",
         SDoHJobStatus: formData.SDoHJobStatus || "No Answer",
         SDoHIncome: formData.SDoHIncome || "No Answer",
-        SDoHHousingStatus: formData.SDoHHousingStatus === "Other" ? (formData.SDoHHousingStatusCustom || "Other") : formData.SDoHHousingStatus || "No Answer",
-        SDoHHomeAsChild: formData.SDoHHomeAsChild === "Other" ? (formData.SDoHHomeAsChildCustom || "Other") : formData.SDoHHomeAsChild || "No Answer",
-        SDoHReligion: formData.SDoHReligion === "Other" ? (formData.SDoHReligionCustom || "Other") : formData.SDoHReligion || "No Answer",
-        SDoHDenomination: formData.SDoHDenomination === "Christianity" ? (formData.SDoHDenomination || "Other") : formData.SDoHDenomination || "No Answer",
+        SDoHHousingStatus:
+          formData.SDoHHousingStatus === "Other"
+            ? formData.SDoHHousingStatusCustom || "Other"
+            : formData.SDoHHousingStatus || "No Answer",
+        SDoHHomeAsChild:
+          formData.SDoHHomeAsChild === "Other"
+            ? formData.SDoHHomeAsChildCustom || "Other"
+            : formData.SDoHHomeAsChild || "No Answer",
+        SDoHReligion:
+          formData.SDoHReligion === "Other"
+            ? formData.SDoHReligionCustom || "Other"
+            : formData.SDoHReligion || "No Answer",
+        SDoHDenomination:
+          formData.SDoHDenomination === "Christianity"
+            ? formData.SDoHDenomination || "Other"
+            : formData.SDoHDenomination || "No Answer",
       });
 
       // Save the full answers
@@ -2049,11 +2556,10 @@ export default function Assessment() {
           query: listUserLinks,
           variables: {
             filter: {
-              clientEmail: { eq: userEmail }
+              clientEmail: { eq: userEmail },
             },
           },
         });
-
 
         const userLinks = userLinksData.data.listUserLinks.items;
 
@@ -2063,13 +2569,14 @@ export default function Assessment() {
         }
 
         // 2. Extract all professional emails
-        const professionalEmails = userLinks.map(link => link.professionalEmail);
+        const professionalEmails = userLinks.map(
+          (link) => link.professionalEmail
+        );
 
         // 3. Loop through each professional to send a notification
         for (const email of professionalEmails) {
           try {
             // Update original notification status
-
 
             const userAttrs = await fetchUserAttributes();
             const responderId = userAttrs.sub;
@@ -2078,8 +2585,6 @@ export default function Assessment() {
             const responderEmail = userAttrs.email;
             // Create RecommendationBack notification
             const newNote = {
-
-              	
               RecommedationNote: `${responderFirstName} ${responderLastName} has an assessment ready for you to reveiw`,
 
               SenderId: responderId,
@@ -2090,7 +2595,6 @@ export default function Assessment() {
               NotificationType: "ReviewReady",
               Status: "pending",
               StatusDate: new Date().toISOString().split("T")[0],
-
             };
             console.log("Creating notification:", newNote);
 
@@ -2098,18 +2602,14 @@ export default function Assessment() {
               query: createNotifications,
               variables: { input: newNote },
             });
-
-
           } catch (err) {
             console.error("Error responding to recommendation:", err);
           }
           console.log(`Notification sent to ${email}`);
         }
-
       } catch (error) {
         console.error("Error getting users professionals:", error);
       }
-
     } catch (err) {
       console.error("Failed to submit SDOH:", err);
     } finally {
@@ -2119,54 +2619,50 @@ export default function Assessment() {
 
   // Shared styles to match glowing blue toggles
   const buttonBaseStyle = {
-    minWidth: '100%',
-    border: '2px solid',
-    borderColor: '#ccc',
-    padding: '10px',
+    minWidth: "100%",
+    border: "2px solid",
+    borderColor: "#ccc",
+    padding: "10px",
     borderRadius: 12,
-    background: '#fff',
-    cursor: 'pointer',
-    fontWeight: 'normal',
+    background: "#fff",
+    cursor: "pointer",
+    fontWeight: "normal",
     fontSize: 14,
-    textAlign: 'center',
-    boxShadow: 'none',
-    transition: 'all 0.3s',
+    textAlign: "center",
+    boxShadow: "none",
+    transition: "all 0.3s",
 
-    margin: '10px auto',
-
+    margin: "10px auto",
   };
 
   const selectedButtonStyle = {
-    border: '2px solid',
-    borderColor: '#4da6ff',
-    padding: '10px',
+    border: "2px solid",
+    borderColor: "#4da6ff",
+    padding: "10px",
     borderRadius: 12,
-    background: '#d9eaff',
-    cursor: 'pointer',
-    fontWeight: 'normal',
+    background: "#d9eaff",
+    cursor: "pointer",
+    fontWeight: "normal",
     fontSize: 14,
-    textAlign: 'center',
-    boxShadow: '0 0 10px #4da6ffaa',
-    transition: 'all 0.3s',
+    textAlign: "center",
+    boxShadow: "0 0 10px #4da6ffaa",
+    transition: "all 0.3s",
   };
 
   const selectStyle = {
-    minWidth: '100%',
-    border: '2px solid',
-    borderColor: '#ccc',
-    padding: '10px',
+    minWidth: "100%",
+    border: "2px solid",
+    borderColor: "#ccc",
+    padding: "10px",
     borderRadius: 12,
-    background: '#fff',
-    cursor: 'pointer',
-    fontWeight: 'normal',
+    background: "#fff",
+    cursor: "pointer",
+    fontWeight: "normal",
     fontSize: 14,
-    textAlign: 'center',
-    boxShadow: 'none',
-    transition: 'all 0.3s',
-
-
+    textAlign: "center",
+    boxShadow: "none",
+    transition: "all 0.3s",
   };
-
 
   return (
     <div
@@ -2177,14 +2673,15 @@ export default function Assessment() {
         fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
         color: "#333",
       }}
-
-    ><div style={{ textAlign: "center", marginBottom: 14, marginTop: -80 }}>
-        <img
-          src="/Wholistic-Depiction-Circle-Assessment.png"
-          alt="Logo"
-          style={{ width: '100%', height: "auto" }}
-        />
-      </div>
+    >
+      <img
+        src="/Wholistic-Depiction-Circle-Assessment.png"
+        alt="Logo"
+        style={{ width: 250, height: "auto", marginBottom: 70 }}
+      />
+      <div
+        style={{ textAlign: "center", marginBottom: 14, marginTop: -80 }}
+      ></div>
       {step === "trauma" && (
         <div
           className="trauma-box"
@@ -2193,17 +2690,14 @@ export default function Assessment() {
             border: "1.5px solid #000000",
             borderRadius: 16,
 
-
             userSelect: "none",
           }}
         >
-
-          <h1 style={{ marginBottom: 16, color: "#000000" }}>
-            Trauma
-          </h1>
-          <hr style={{ border: '2px solid #ccc', margin: '34px 0' }} />
+          <h1 style={{ marginBottom: 16, color: "#000000" }}>Trauma</h1>
+          <hr style={{ border: "2px solid #ccc", margin: "34px 0" }} />
           <h3 style={{ marginBottom: 16, color: "#0077cc" }}>
-            Do you consider yourself to have experienced any of the following? (Select all that apply)
+            Do you consider yourself to have experienced any of the following?
+            (Select all that apply)
           </h3>
           {traumaExperiences.map(({ key, label }) => (
             <button
@@ -2223,21 +2717,26 @@ export default function Assessment() {
           ))}
 
           <h3 style={{ marginTop: 20, marginBottom: 10, color: "#0077cc" }}>
-            For any experiences you chose above, do you consider them to be traumatic? (Trauma is defined as "an event, or series of events, that causes or caused moderate to severe stress reactions")
+            For any experiences you chose above, do you consider them to be
+            traumatic? (Trauma is defined as "an event, or series of events,
+            that causes or caused moderate to severe stress reactions")
           </h3>
           <div style={{ display: "flex", flexWrap: "wrap" }}>
             {considerTraumaOptions.map(({ key, label }) => (
               <button
                 key={key}
                 type="button"
-                className={`trauma-toggle ${formData.traumaBeliefKey === key ? "selected" : ""
-                  }`}
+                className={`trauma-toggle ${
+                  formData.traumaBeliefKey === key ? "selected" : ""
+                }`}
                 onClick={() => setTraumaBelief(key)}
                 style={{
                   ...buttonBaseStyle,
 
                   padding: "10px 20px",
-                  ...(formData.traumaBeliefKey === key ? selectedButtonStyle : {}),
+                  ...(formData.traumaBeliefKey === key
+                    ? selectedButtonStyle
+                    : {}),
                 }}
               >
                 {label}
@@ -2246,7 +2745,8 @@ export default function Assessment() {
           </div>
 
           <h3 style={{ marginTop: 24, marginBottom: 12, color: "#0077cc" }}>
-            Which statements are true regarding the response to your traumatic experience(s)? (Select all that apply)
+            Which statements are true regarding the response to your traumatic
+            experience(s)? (Select all that apply)
           </h3>
           {traumaResponseOptions.map(({ key, label }) => (
             <button
@@ -2259,18 +2759,17 @@ export default function Assessment() {
                 ...(formData[key] ? selectedButtonStyle : {}),
                 textAlign: "center",
                 display: "block",
-
               }}
             >
               {label}
             </button>
           ))}
-          <hr style={{ border: '1px solid #ccc', margin: '24px 0' }} />
+          <hr style={{ border: "1px solid #ccc", margin: "24px 0" }} />
           <button
             onClick={handleTraumaNext}
             disabled={isSubmitting}
             style={{
-              width: '100%',
+              width: "100%",
               marginTop: 16,
               width: "100%",
               backgroundColor: "#0077cc",
@@ -2300,9 +2799,7 @@ export default function Assessment() {
               {traumaWarning}
             </div>
           )}
-
         </div>
-
       )}
 
       {step === "coping" && (
@@ -2313,15 +2810,16 @@ export default function Assessment() {
             border: "1.5px solid #000000",
             borderRadius: 16,
 
-
             userSelect: "none",
           }}
-        ><h1 style={{ marginBottom: 16, color: "#000000" }}>
+        >
+          <h1 style={{ marginBottom: 16, color: "#000000" }}>
             Coping Mechanisms
           </h1>
-          <hr style={{ border: '2px solid #ccc', margin: '34px 0' }} />
+          <hr style={{ border: "2px solid #ccc", margin: "34px 0" }} />
           <h3 style={{ marginTop: 24, marginBottom: 12, color: "#0077cc" }}>
-            Within the last four weeks, approximately how often did you use the following coping mechanisms to deal with unpleasant experiences?
+            Within the last four weeks, approximately how often did you use the
+            following coping mechanisms to deal with unpleasant experiences?
           </h3>
           {copingMechanisms.map(({ key, label }) => (
             <div
@@ -2339,7 +2837,7 @@ export default function Assessment() {
                 style={{
                   flex: 1,
                   marginRight: 16,
-                  fontWeight: 'normal',
+                  fontWeight: "normal",
                   color: "#000000",
                 }}
               >
@@ -2360,7 +2858,7 @@ export default function Assessment() {
               </select>
             </div>
           ))}
-          <hr style={{ border: '1px solid #ccc', margin: '24px 0' }} />
+          <hr style={{ border: "1px solid #ccc", margin: "24px 0" }} />
           <div className="coping-buttons" style={{ marginTop: 32 }}>
             <button
               onClick={() => setStep("trauma")}
@@ -2410,23 +2908,23 @@ export default function Assessment() {
             </button>
           </div>
           {copingWarning && (
-            <div style={{
-              color: "#cc0000",
-              backgroundColor: "#ffeeee",
-              padding: "10px",
-              borderRadius: "8px",
-              marginBottom: "16px",
-              width: "100%",
-              textAlign: "center",
-              fontWeight: "bold"
-            }}>
+            <div
+              style={{
+                color: "#cc0000",
+                backgroundColor: "#ffeeee",
+                padding: "10px",
+                borderRadius: "8px",
+                marginBottom: "16px",
+                width: "100%",
+                textAlign: "center",
+                fontWeight: "bold",
+              }}
+            >
               Please answer all coping mechanism questions before continuing.
             </div>
           )}
         </div>
-
       )}
-
 
       {step === "mental" && (
         <div
@@ -2436,15 +2934,11 @@ export default function Assessment() {
             border: "1.5px solid #000000",
             borderRadius: 16,
 
-
             userSelect: "none",
           }}
         >
-
-          <h1 style={{ marginBottom: 16, color: "#000000" }}>
-            Mental Health
-          </h1>
-          <hr style={{ border: '2px solid #ccc', margin: '34px 0' }} />
+          <h1 style={{ marginBottom: 16, color: "#000000" }}>Mental Health</h1>
+          <hr style={{ border: "2px solid #ccc", margin: "34px 0" }} />
           <h3 style={{ marginBottom: 16, color: "#0077cc" }}>
             Do you have any mental health diagnoses? Select all that apply:
           </h3>
@@ -2483,7 +2977,7 @@ export default function Assessment() {
                 style={{
                   flex: 1,
                   marginRight: 16,
-                  fontWeight: 'normal',
+                  fontWeight: "normal",
                   color: "#000000",
                 }}
               >
@@ -2504,7 +2998,7 @@ export default function Assessment() {
               </select>
             </div>
           ))}
-          <hr style={{ border: '1px solid #ccc', margin: '24px 0' }} />
+          <hr style={{ border: "1px solid #ccc", margin: "24px 0" }} />
           <button
             onClick={() => setStep("coping")}
             style={{
@@ -2552,13 +3046,18 @@ export default function Assessment() {
             {isSubmitting ? "Submitting..." : "Next (Physical Health)"}
           </button>
           {mentalWarning && (
-            <div style={{ marginTop: 12, color: "red", textAlign: "center", fontWeight: "500" }}>
+            <div
+              style={{
+                marginTop: 12,
+                color: "red",
+                textAlign: "center",
+                fontWeight: "500",
+              }}
+            >
               {mentalWarning}
             </div>
           )}
-
         </div>
-
       )}
       {step === "physical" && (
         <div
@@ -2568,15 +3067,13 @@ export default function Assessment() {
             border: "1.5px solid #000000",
             borderRadius: 16,
 
-
             userSelect: "none",
           }}
         >
-
           <h1 style={{ marginBottom: 16, color: "#000000" }}>
             Physical Health
           </h1>
-          <hr style={{ border: '2px solid #ccc', margin: '34px 0' }} />
+          <hr style={{ border: "2px solid #ccc", margin: "34px 0" }} />
           <h3 style={{ marginBottom: 16, color: "#0077cc" }}>
             Do you have any physical health diagnoses? Select all that apply:
           </h3>
@@ -2597,7 +3094,8 @@ export default function Assessment() {
             </button>
           ))}
           <h3 style={{ marginTop: 24, marginBottom: 12, color: "#0077cc" }}>
-            Within the last four weeks, how often did you consume at least one serving of:
+            Within the last four weeks, how often did you consume at least one
+            serving of:
           </h3>
           {physicalHealth.slice(0, 8).map(({ key, label }) => (
             <div
@@ -2615,7 +3113,7 @@ export default function Assessment() {
                 style={{
                   flex: 1,
                   marginRight: 16,
-                  fontWeight: 'normal',
+                  fontWeight: "normal",
                   color: "#000000",
                 }}
               >
@@ -2655,7 +3153,7 @@ export default function Assessment() {
                 style={{
                   flex: 1,
                   marginRight: 16,
-                  fontWeight: 'normal',
+                  fontWeight: "normal",
                   color: "#000000",
                 }}
               >
@@ -2676,7 +3174,7 @@ export default function Assessment() {
               </select>
             </div>
           ))}
-          <hr style={{ border: '1px solid #ccc', margin: '24px 0' }} />
+          <hr style={{ border: "1px solid #ccc", margin: "24px 0" }} />
           <button
             onClick={() => setStep("mental")}
             style={{
@@ -2724,7 +3222,14 @@ export default function Assessment() {
             {isSubmitting ? "Submitting..." : "Next (Spiritual Health)"}
           </button>
           {physicalWarning && (
-            <div style={{ marginTop: 12, color: "red", textAlign: "center", fontWeight: "500" }}>
+            <div
+              style={{
+                marginTop: 12,
+                color: "red",
+                textAlign: "center",
+                fontWeight: "500",
+              }}
+            >
               {physicalWarning}
             </div>
           )}
@@ -2754,9 +3259,7 @@ export default function Assessment() {
             Skip Spiritual Health
           </button>
         </div>
-
       )}
-
 
       {step === "spiritual" && (
         <div
@@ -2766,13 +3269,13 @@ export default function Assessment() {
             border: "1.5px solid #000000",
             borderRadius: 16,
 
-
             userSelect: "none",
           }}
-        ><h1 style={{ marginBottom: 16, color: "#000000" }}>
+        >
+          <h1 style={{ marginBottom: 16, color: "#000000" }}>
             Spiritual Health
           </h1>
-          <hr style={{ border: '2px solid #ccc', margin: '34px 0' }} />
+          <hr style={{ border: "2px solid #ccc", margin: "34px 0" }} />
           <h3 style={{ marginTop: 24, marginBottom: 12, color: "#0077cc" }}>
             How much do you agree with the following statements?
           </h3>
@@ -2792,7 +3295,7 @@ export default function Assessment() {
                 style={{
                   flex: 1,
                   marginRight: 16,
-                  fontWeight: 'normal',
+                  fontWeight: "normal",
                   color: "#000000",
                 }}
               >
@@ -2832,7 +3335,7 @@ export default function Assessment() {
                 style={{
                   flex: 1,
                   marginRight: 16,
-                  fontWeight: 'normal',
+                  fontWeight: "normal",
                   color: "#000000",
                 }}
               >
@@ -2853,7 +3356,7 @@ export default function Assessment() {
               </select>
             </div>
           ))}
-          <hr style={{ border: '1px solid #ccc', margin: '24px 0' }} />
+          <hr style={{ border: "1px solid #ccc", margin: "24px 0" }} />
           <div className="coping-buttons" style={{ marginTop: 32 }}>
             <button
               onClick={() => setStep("physical")}
@@ -2902,14 +3405,20 @@ export default function Assessment() {
               {isSubmitting ? "Submitting..." : "Next (Outlook on Life)"}
             </button>
             {spiritualWarning && (
-              <div style={{ marginTop: 12, color: "red", textAlign: "center", fontWeight: "500" }}>
+              <div
+                style={{
+                  marginTop: 12,
+                  color: "red",
+                  textAlign: "center",
+                  fontWeight: "500",
+                }}
+              >
                 {spiritualWarning}
               </div>
             )}
           </div>
         </div>
       )}
-
 
       {step === "outlook" && (
         <div
@@ -2919,16 +3428,15 @@ export default function Assessment() {
             border: "1.5px solid #000000",
             borderRadius: 16,
 
-
             userSelect: "none",
           }}
-        ><h1 style={{ marginBottom: 16, color: "#000000" }}>
+        >
+          <h1 style={{ marginBottom: 16, color: "#000000" }}>
             Outlook On Life
           </h1>
-          <hr style={{ border: '2px solid #ccc', margin: '34px 0' }} />
+          <hr style={{ border: "2px solid #ccc", margin: "34px 0" }} />
           <h3 style={{ marginTop: 24, marginBottom: 12, color: "#0077cc" }}>
             Within the last four weeks, how often did you feel:
-
           </h3>
           {outlookonlife.slice(0, -1).map(({ key, label }) => (
             <div
@@ -2946,7 +3454,7 @@ export default function Assessment() {
                 style={{
                   flex: 1,
                   marginRight: 16,
-                  fontWeight: 'normal',
+                  fontWeight: "normal",
                   color: "#000000",
                 }}
               >
@@ -2970,7 +3478,6 @@ export default function Assessment() {
 
           <h3 style={{ marginTop: 24, marginBottom: 12, color: "#0077cc" }}>
             Within the last four weeks:
-
           </h3>
           {outlookonlife.slice(-1).map(({ key, label }) => (
             <div
@@ -2988,7 +3495,7 @@ export default function Assessment() {
                 style={{
                   flex: 1,
                   marginRight: 16,
-                  fontWeight: 'normal',
+                  fontWeight: "normal",
                   color: "#000000",
                 }}
               >
@@ -3010,7 +3517,7 @@ export default function Assessment() {
             </div>
           ))}
 
-          <hr style={{ border: '1px solid #ccc', margin: '24px 0' }} />
+          <hr style={{ border: "1px solid #ccc", margin: "24px 0" }} />
           <div className="coping-buttons" style={{ marginTop: 32 }}>
             <button
               onClick={() => setStep("spiritual")}
@@ -3056,10 +3563,19 @@ export default function Assessment() {
                 boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
               }}
             >
-              {isSubmitting ? "Submitting..." : "Next (Social Determinants of Health)"}
+              {isSubmitting
+                ? "Submitting..."
+                : "Next (Social Determinants of Health)"}
             </button>
             {outlookWarning && (
-              <div style={{ marginTop: 12, color: "red", textAlign: "center", fontWeight: "500" }}>
+              <div
+                style={{
+                  marginTop: 12,
+                  color: "red",
+                  textAlign: "center",
+                  fontWeight: "500",
+                }}
+              >
                 {outlookWarning}
               </div>
             )}
@@ -3090,23 +3606,37 @@ export default function Assessment() {
           >
             <option value="">Select Age Range</option>
             {[
-              "9-12", "13-16", "17-19", "20-29", "30-39", "40-49",
-              "50-59", "60-69", "70-79", "80-89", "90-99", "100+"
+              "9-12",
+              "13-16",
+              "17-19",
+              "20-29",
+              "30-39",
+              "40-49",
+              "50-59",
+              "60-69",
+              "70-79",
+              "80-89",
+              "90-99",
+              "100+",
             ].map((range) => (
-              <option key={range} value={range}>{range}</option>
+              <option key={range} value={range}>
+                {range}
+              </option>
             ))}
           </select>
 
           {/* I Identify As */}
-          <h3 style={{ marginTop: 24, marginBottom: 12, color: "#0077cc" }}>I Identify As</h3>
+          <h3 style={{ marginTop: 24, marginBottom: 12, color: "#0077cc" }}>
+            I Identify As
+          </h3>
           <select
             name="identify"
             value={
               IdentifyAsOptions.includes(formData.SDoHRace)
                 ? formData.SDoHRace
                 : formData.SDoHRace
-                  ? "Other"
-                  : ""
+                ? "Other"
+                : ""
             }
             onChange={(e) => {
               const selected = e.target.value;
@@ -3120,9 +3650,7 @@ export default function Assessment() {
                 {eth}
               </option>
             ))}
-
           </select>
-
 
           {formData.SDoHRace &&
             (formData.SDoHRace === "Other" ||
@@ -3131,7 +3659,9 @@ export default function Assessment() {
               <input
                 type="text"
                 placeholder="Please specify"
-                value={formData.SDoHRace === "Other" ? "" : formData.SDoHRace || ""}
+                value={
+                  formData.SDoHRace === "Other" ? "" : formData.SDoHRace || ""
+                }
                 onChange={(e) => handleCopingChange("SDoHRace", e.target.value)}
                 style={{ ...selectStyle, marginTop: 8 }}
               />
@@ -3147,8 +3677,8 @@ export default function Assessment() {
               NationalityOptions.includes(formData.SDoHGeographicRegion)
                 ? formData.SDoHGeographicRegion
                 : formData.SDoHGeographicRegion
-                  ? "Other"
-                  : ""
+                ? "Other"
+                : ""
             }
             onChange={(e) => {
               const selected = e.target.value;
@@ -3162,9 +3692,7 @@ export default function Assessment() {
                 {eth}
               </option>
             ))}
-
           </select>
-
 
           {formData.SDoHGeographicRegion &&
             (formData.SDoHGeographicRegion === "Other" ||
@@ -3173,8 +3701,14 @@ export default function Assessment() {
               <input
                 type="text"
                 placeholder="Please specify"
-                value={formData.SDoHGeographicRegion === "Other" ? "" : formData.SDoHGeographicRegion || ""}
-                onChange={(e) => handleCopingChange("SDoHGeographicRegion", e.target.value)}
+                value={
+                  formData.SDoHGeographicRegion === "Other"
+                    ? ""
+                    : formData.SDoHGeographicRegion || ""
+                }
+                onChange={(e) =>
+                  handleCopingChange("SDoHGeographicRegion", e.target.value)
+                }
                 style={{ ...selectStyle, marginTop: 8 }}
               />
             )}
@@ -3189,8 +3723,8 @@ export default function Assessment() {
               ethnicityOptions.includes(formData.SDoHEthnicity)
                 ? formData.SDoHEthnicity
                 : formData.SDoHEthnicity
-                  ? "Other"
-                  : ""
+                ? "Other"
+                : ""
             }
             onChange={(e) => {
               const selected = e.target.value;
@@ -3204,9 +3738,7 @@ export default function Assessment() {
                 {eth}
               </option>
             ))}
-
           </select>
-
 
           {formData.SDoHEthnicity &&
             (formData.SDoHEthnicity === "Other" ||
@@ -3215,12 +3747,17 @@ export default function Assessment() {
               <input
                 type="text"
                 placeholder="Please specify"
-                value={formData.SDoHEthnicity === "Other" ? "" : formData.SDoHEthnicity || ""}
-                onChange={(e) => handleCopingChange("SDoHEthnicity", e.target.value)}
+                value={
+                  formData.SDoHEthnicity === "Other"
+                    ? ""
+                    : formData.SDoHEthnicity || ""
+                }
+                onChange={(e) =>
+                  handleCopingChange("SDoHEthnicity", e.target.value)
+                }
                 style={{ ...selectStyle, marginTop: 8 }}
               />
             )}
-
 
           {/* State */}
           <h3 style={{ marginTop: 24, marginBottom: 12, color: "#0077cc" }}>
@@ -3234,16 +3771,60 @@ export default function Assessment() {
           >
             <option value="">Select State</option>
             {[
-              "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
-              "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa",
-              "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan",
-              "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada",
-              "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina",
-              "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island",
-              "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont",
-              "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
+              "Alabama",
+              "Alaska",
+              "Arizona",
+              "Arkansas",
+              "California",
+              "Colorado",
+              "Connecticut",
+              "Delaware",
+              "Florida",
+              "Georgia",
+              "Hawaii",
+              "Idaho",
+              "Illinois",
+              "Indiana",
+              "Iowa",
+              "Kansas",
+              "Kentucky",
+              "Louisiana",
+              "Maine",
+              "Maryland",
+              "Massachusetts",
+              "Michigan",
+              "Minnesota",
+              "Mississippi",
+              "Missouri",
+              "Montana",
+              "Nebraska",
+              "Nevada",
+              "New Hampshire",
+              "New Jersey",
+              "New Mexico",
+              "New York",
+              "North Carolina",
+              "North Dakota",
+              "Ohio",
+              "Oklahoma",
+              "Oregon",
+              "Pennsylvania",
+              "Rhode Island",
+              "South Carolina",
+              "South Dakota",
+              "Tennessee",
+              "Texas",
+              "Utah",
+              "Vermont",
+              "Virginia",
+              "Washington",
+              "West Virginia",
+              "Wisconsin",
+              "Wyoming",
             ].map((state) => (
-              <option key={state} value={state}>{state}</option>
+              <option key={state} value={state}>
+                {state}
+              </option>
             ))}
           </select>
 
@@ -3267,15 +3848,18 @@ export default function Assessment() {
           <select
             name="maritalStatus"
             value={formData.SDoHMaritalStatus || ""}
-            onChange={(e) => handleCopingChange("SDoHMaritalStatus", e.target.value)}
+            onChange={(e) =>
+              handleCopingChange("SDoHMaritalStatus", e.target.value)
+            }
             style={selectStyle}
           >
             <option value="">Select Marital Status</option>
             {["Single", "Married", "Divorced", "Widowed"].map((status) => (
-              <option key={status} value={status}>{status}</option>
+              <option key={status} value={status}>
+                {status}
+              </option>
             ))}
           </select>
-
 
           {/* Military Status */}
           <h3 style={{ marginTop: 24, marginBottom: 12, color: "#0077cc" }}>
@@ -3284,15 +3868,20 @@ export default function Assessment() {
           <select
             name="militaryStatus"
             value={formData.SDoHMilitaryStatus || ""}
-            onChange={(e) => handleCopingChange("SDoHMilitaryStatus", e.target.value)}
+            onChange={(e) =>
+              handleCopingChange("SDoHMilitaryStatus", e.target.value)
+            }
             style={selectStyle}
           >
             <option value="">Select Military Status</option>
-            {["Active", "Discharged", "Veteran", "Not Applicable"].map((status) => (
-              <option key={status} value={status}>{status}</option>
-            ))}
+            {["Active", "Discharged", "Veteran", "Not Applicable"].map(
+              (status) => (
+                <option key={status} value={status}>
+                  {status}
+                </option>
+              )
+            )}
           </select>
-
 
           {/* Gender Identity */}
           <h3 style={{ marginTop: 24, marginBottom: 12, color: "#0077cc" }}>
@@ -3304,8 +3893,8 @@ export default function Assessment() {
               GenderIdentityOptions.includes(formData.SDoHGender)
                 ? formData.SDoHGender
                 : formData.SDoHGender
-                  ? "Other"
-                  : ""
+                ? "Other"
+                : ""
             }
             onChange={(e) => {
               const selected = e.target.value;
@@ -3319,9 +3908,7 @@ export default function Assessment() {
                 {eth}
               </option>
             ))}
-
           </select>
-
 
           {formData.SDoHGender &&
             (formData.SDoHGender === "Other" ||
@@ -3330,8 +3917,14 @@ export default function Assessment() {
               <input
                 type="text"
                 placeholder="Please specify"
-                value={formData.SDoHGender === "Other" ? "" : formData.SDoHGender || ""}
-                onChange={(e) => handleCopingChange("SDoHGender", e.target.value)}
+                value={
+                  formData.SDoHGender === "Other"
+                    ? ""
+                    : formData.SDoHGender || ""
+                }
+                onChange={(e) =>
+                  handleCopingChange("SDoHGender", e.target.value)
+                }
                 style={{ ...selectStyle, marginTop: 8 }}
               />
             )}
@@ -3343,7 +3936,9 @@ export default function Assessment() {
           <select
             name="education"
             value={formData.SDoHEducation || ""}
-            onChange={(e) => handleCopingChange("SDoHEducation", e.target.value)}
+            onChange={(e) =>
+              handleCopingChange("SDoHEducation", e.target.value)
+            }
             style={selectStyle}
           >
             <option value="">Select Highest Education</option>
@@ -3355,10 +3950,11 @@ export default function Assessment() {
               "Masters",
               "Doctorate",
             ].map((edu) => (
-              <option key={edu} value={edu}>{edu}</option>
+              <option key={edu} value={edu}>
+                {edu}
+              </option>
             ))}
           </select>
-
 
           {/* Job Status */}
           <h3 style={{ marginTop: 24, marginBottom: 12, color: "#0077cc" }}>
@@ -3367,15 +3963,18 @@ export default function Assessment() {
           <select
             name="jobStatus"
             value={formData.SDoHJobStatus || ""}
-            onChange={(e) => handleCopingChange("SDoHJobStatus", e.target.value)}
+            onChange={(e) =>
+              handleCopingChange("SDoHJobStatus", e.target.value)
+            }
             style={selectStyle}
           >
             <option value="">Select Job Status</option>
             {["Employed", "Unemployed", "Self Employed"].map((job) => (
-              <option key={job} value={job}>{job}</option>
+              <option key={job} value={job}>
+                {job}
+              </option>
             ))}
           </select>
-
 
           {/* Income */}
           <h3 style={{ marginTop: 24, marginBottom: 12, color: "#0077cc" }}>
@@ -3394,13 +3993,13 @@ export default function Assessment() {
               "$41K-$70K",
               "$71K-100K",
               "$101K-500K",
-              "$501K +"
-
+              "$501K +",
             ].map((income) => (
-              <option key={income} value={income}>{income}</option>
+              <option key={income} value={income}>
+                {income}
+              </option>
             ))}
           </select>
-
 
           {/* Housing Status */}
           <h3 style={{ marginTop: 24, marginBottom: 12, color: "#0077cc" }}>
@@ -3412,8 +4011,8 @@ export default function Assessment() {
               HousingOptions.includes(formData.SDoHHousingStatus)
                 ? formData.SDoHHousingStatus
                 : formData.SDoHHousingStatus
-                  ? "Other"
-                  : ""
+                ? "Other"
+                : ""
             }
             onChange={(e) => {
               const selected = e.target.value;
@@ -3427,9 +4026,7 @@ export default function Assessment() {
                 {eth}
               </option>
             ))}
-
           </select>
-
 
           {formData.SDoHHousingStatus &&
             (formData.SDoHHousingStatus === "Other" ||
@@ -3438,8 +4035,14 @@ export default function Assessment() {
               <input
                 type="text"
                 placeholder="Please specify"
-                value={formData.SDoHHousingStatus === "Other" ? "" : formData.SDoHHousingStatus || ""}
-                onChange={(e) => handleCopingChange("SDoHHousingStatus", e.target.value)}
+                value={
+                  formData.SDoHHousingStatus === "Other"
+                    ? ""
+                    : formData.SDoHHousingStatus || ""
+                }
+                onChange={(e) =>
+                  handleCopingChange("SDoHHousingStatus", e.target.value)
+                }
                 style={{ ...selectStyle, marginTop: 8 }}
               />
             )}
@@ -3454,8 +4057,8 @@ export default function Assessment() {
               HomeGrewUpOptions.includes(formData.SDoHHomeAsChild)
                 ? formData.SDoHHomeAsChild
                 : formData.SDoHHomeAsChild
-                  ? "Other"
-                  : ""
+                ? "Other"
+                : ""
             }
             onChange={(e) => {
               const selected = e.target.value;
@@ -3469,9 +4072,7 @@ export default function Assessment() {
                 {eth}
               </option>
             ))}
-
           </select>
-
 
           {formData.SDoHHomeAsChild &&
             (formData.SDoHHomeAsChild === "Other" ||
@@ -3480,8 +4081,14 @@ export default function Assessment() {
               <input
                 type="text"
                 placeholder="Please specify"
-                value={formData.SDoHHomeAsChild === "Other" ? "" : formData.SDoHHomeAsChild || ""}
-                onChange={(e) => handleCopingChange("SDoHHomeAsChild", e.target.value)}
+                value={
+                  formData.SDoHHomeAsChild === "Other"
+                    ? ""
+                    : formData.SDoHHomeAsChild || ""
+                }
+                onChange={(e) =>
+                  handleCopingChange("SDoHHomeAsChild", e.target.value)
+                }
                 style={{ ...selectStyle, marginTop: 8 }}
               />
             )}
@@ -3505,7 +4112,9 @@ export default function Assessment() {
               "Judaism",
               "None or N/A",
             ].map((religion) => (
-              <option key={religion} value={religion}>{religion}</option>
+              <option key={religion} value={religion}>
+                {religion}
+              </option>
             ))}
           </select>
           {formData.religion === "Other" && (
@@ -3531,8 +4140,8 @@ export default function Assessment() {
                   DenominationOptions.includes(formData.SDoHDenomination)
                     ? formData.SDoHDenomination
                     : formData.SDoHDenomination
-                      ? "Other"
-                      : ""
+                    ? "Other"
+                    : ""
                 }
                 onChange={(e) => {
                   const selected = e.target.value;
@@ -3546,9 +4155,7 @@ export default function Assessment() {
                     {eth}
                   </option>
                 ))}
-
               </select>
-
 
               {formData.SDoHDenomination &&
                 (formData.SDoHDenomination === "Other" ||
@@ -3557,15 +4164,21 @@ export default function Assessment() {
                   <input
                     type="text"
                     placeholder="Please specify"
-                    value={formData.SDoHDenomination === "Other" ? "" : formData.SDoHDenomination || ""}
-                    onChange={(e) => handleCopingChange("SDoHDenomination", e.target.value)}
+                    value={
+                      formData.SDoHDenomination === "Other"
+                        ? ""
+                        : formData.SDoHDenomination || ""
+                    }
+                    onChange={(e) =>
+                      handleCopingChange("SDoHDenomination", e.target.value)
+                    }
                     style={{ ...selectStyle, marginTop: 8 }}
                   />
                 )}
             </>
           )}
 
-          <hr style={{ border: '1px solid #ccc', margin: '24px 0' }} />
+          <hr style={{ border: "1px solid #ccc", margin: "24px 0" }} />
           {/* Buttons */}
           <div style={{ marginTop: 32 }}>
             <button
@@ -3595,9 +4208,7 @@ export default function Assessment() {
             </button>
 
             <button
-
               onClick={() => handleSDOHSubmit(true)}
-
               disabled={isSubmitting}
               style={{
                 marginTop: 16,
@@ -3617,15 +4228,20 @@ export default function Assessment() {
               {isSubmitting ? "Submitting..." : "Submit"}
             </button>
             {sdohWarning && (
-              <div style={{ marginTop: 12, color: "red", textAlign: "center", fontWeight: "500" }}>
+              <div
+                style={{
+                  marginTop: 12,
+                  color: "red",
+                  textAlign: "center",
+                  fontWeight: "500",
+                }}
+              >
                 {sdohWarning}
               </div>
             )}
           </div>
         </div>
       )}
-
-
     </div>
   );
 }

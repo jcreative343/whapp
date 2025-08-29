@@ -4,7 +4,8 @@ const { SESClient, SendEmailCommand } = require("@aws-sdk/client-ses");
 const ses = new SESClient({ region: "us-east-1" });
 
 // Replace with your AppSync endpoint and API key
-const APPSYNC_API_URL = "https://t7lr2ugphzbedefmsvd7m6xzhy.appsync-api.us-east-1.amazonaws.com/graphql";
+const APPSYNC_API_URL =
+  "https://t7lr2ugphzbedefmsvd7m6xzhy.appsync-api.us-east-1.amazonaws.com/graphql";
 const APPSYNC_API_KEY = "da2-7tpjb4gicfbplemh2ftvujuzo4";
 
 const listCreatePlansQuery = `
@@ -61,21 +62,33 @@ module.exports.handler = async () => {
 
     for (const plan of plans) {
       const createdAt = new Date(plan.createdAt);
-      const daysSinceCreation = Math.floor((Date.now() - createdAt) / (1000 * 60 * 60 * 24));
 
-      // Send email every 7 days since creation
-      if (daysSinceCreation % 7 !== 0) continue;
+      // Compute full days difference in UTC to avoid timezone issues
+      const now = new Date();
+      const daysSinceCreation = Math.floor(
+        (Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) -
+          Date.UTC(
+            createdAt.getFullYear(),
+            createdAt.getMonth(),
+            createdAt.getDate()
+          )) /
+          (1000 * 60 * 60 * 24)
+      );
+
+      // Trigger on 6th day and every 7 days after
+      if (daysSinceCreation < 6 || (daysSinceCreation - 6) % 7 !== 0) continue;
 
       // ✅ Use list query to get email
       const userData = await graphqlRequest(listUserEmailQuery, {
-        filter: { userId: { eq: plan.userId } }
+        filter: { userId: { eq: plan.userId } },
       });
 
       const email = userData.listGeneralInformations.items[0]?.Email;
       if (!email) continue;
 
-      const subject = "Your Weekly Reminder from Wholistic Health App";
-      const body = "Hi! This is your weekly reminder from the Wholistic Health App.";
+      const subject = "Reminder to Track Progress in Wholistic Health App®";
+      const body =
+        "This is a friendly reminder to track progress for your actions in the Wholistic Health App®.";
 
       const params = {
         Destination: { ToAddresses: [email] },
